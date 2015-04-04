@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/UltraFlat/mimetypes/scalable/application-vnd.ms-powerpoint.svg</file>
+        <file>icons/UltraFlat/mimetypes/scalable/application-vnd.openxmlformats-officedocument.presentationml.presentation.svg</file>
+        <file>icons/UltraFlat/index.theme</file>
+        <file>FontAwesome.otf</file>
+    </qresource>
+</RCC>

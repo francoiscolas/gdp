@@ -1,0 +1,15 @@
+[Icon Theme]
+Name=UltraFlat
+Comment=An icon theme for Linux desktops, the set is inspired by the latest flat design trend.
+Inherits=
+
+Example=x-directory-normal
+
+Directories=mimetypes/scalable
+
+[mimetypes/scalable]
+Size=512
+Context=MimeTypes
+Type=Scalable
+MinSize=8
+MaxSize=512
