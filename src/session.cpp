@@ -14,18 +14,9 @@ Session::Session(const QString& file, QObject* parent)
     : QObject(parent),
       m_file(file)
 {
-    m_saveTimer = new QTimer(this);
-    m_saveTimer->setInterval(1000);
-    m_saveTimer->setSingleShot(true);
-    connect(m_saveTimer, &QTimer::timeout, this, &Session::saveNow);
 }
 
 void Session::save()
-{
-    m_saveTimer->start();
-}
-
-void Session::saveNow()
 {
     QSaveFile file(m_file);
     QByteArray state(saveState());

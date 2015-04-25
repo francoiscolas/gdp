@@ -3,8 +3,6 @@
 
 #include <QObject>
 
-class QTimer;
-
 class Session : public QObject
 {
     Q_OBJECT
@@ -14,7 +12,6 @@ class Session : public QObject
 
     public:
         void save();
-        void saveNow();
         void restore();
 
     private:
@@ -22,7 +19,6 @@ class Session : public QObject
         void restoreState(const QByteArray& state) const;
 
     private:
-        QTimer* m_saveTimer;
         QString m_file;
 };
 #endif // SESSION_H

@@ -24,7 +24,7 @@ App::App(int argc, char** argv)
 
     m_session = new Session(dataDir().absoluteFilePath("state"), this);
     m_session->restore();
-    connect(this, &App::aboutToQuit, m_session, &Session::saveNow);
+    connect(this, &App::aboutToQuit, m_session, &Session::save);
 }
 
 QDir App::dataDir() const
