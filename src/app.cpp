@@ -29,9 +29,17 @@ App::App(int argc, char** argv)
 
 QDir App::dataDir() const
 {
-    QDir dir(QString("%1/data")
-             .arg(applicationDirPath()));
+    QDir dir;
 
+#if defined(Q_OS_WIN)
+    dir = QString("%1/%2")
+            .arg(QString::fromLocal8Bit(getenv("APPDATA")))
+            .arg(applicationName());
+#elif defined(Q_OS_LINUX)
+    dir = QString("%1/.config/%2")
+            .arg(getenv("HOME"))
+            .arg(applicationName());
+#endif
     if (dir.exists() == false)
         dir.mkpath(dir.absolutePath());
     return dir;
