@@ -103,6 +103,7 @@ void MainWindow::setupUi()
     m_publishBtn = new QToolButton(this);
     m_publishBtn->setFont(QFont("FontAwesome", 20));
     m_publishBtn->setText(tr("\uF178"));
+    m_publishBtn->setMaximumWidth(m_publishBtn->fontMetrics().averageCharWidth() * 2);
     connect(m_publishBtn, &QToolButton::clicked, this, &MainWindow::publish);
 
     QHBoxLayout* layout = new QHBoxLayout(this);
@@ -121,7 +122,8 @@ void MainWindow::updateLayout()
 {
     QRect lwRect = m_leftWrapper->geometry();
     QRect rwRect = m_rightWrapper->geometry();
-    int   x      = lwRect.x() + (rwRect.x() - lwRect.x()) - m_publishBtn->width() / 2;
+    int   w      = rwRect.right() - lwRect.left();
+    int   x      = lwRect.x() + w / 2 - m_publishBtn->width() / 2 + 2;
     int   y      = lwRect.center().y();
 
     m_publishBtn->move(x, y);
