@@ -2,7 +2,7 @@
 
 #include <QAxObject>
 #include <QDateTime>
-#include <QToolButton>
+#include <QPushButton>
 #include <QVBoxLayout>
 
 #include "biglabel.h"
@@ -77,17 +77,19 @@ void PowerPointViewer::setupUi()
 
         m_pagingLbl = new QLabel(this);
 
-        QToolButton* backBtn = new QToolButton(this);
-        backBtn->setFont(QFont("FontAwesome"));
+        QPushButton* backBtn = new QPushButton(this);
+        backBtn->setFlat(true);
+        backBtn->setFont(QFont("FontAwesome", 13));
         backBtn->setText("\uF060");
-        connect(backBtn, &QToolButton::clicked, [=]() {
+        connect(backBtn, &QPushButton::clicked, [=]() {
             setCurrentSlide(currentSlide() - 1);
         });
 
-        QToolButton* forwBtn = new QToolButton(this);
-        forwBtn->setFont(QFont("FontAwesome"));
+        QPushButton* forwBtn = new QPushButton(this);
+        forwBtn->setFlat(true);
+        forwBtn->setFont(QFont("FontAwesome", 13));
         forwBtn->setText("\uF061");
-        connect(forwBtn, &QToolButton::clicked, [=]() {
+        connect(forwBtn, &QPushButton::clicked, [=]() {
             setCurrentSlide(currentSlide() + 1);
         });
 
