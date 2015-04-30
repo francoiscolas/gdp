@@ -1,5 +1,6 @@
 #include "powerpointviewer.h"
 
+#include <QApplication>
 #include <QAxObject>
 #include <QDateTime>
 #include <QPushButton>
@@ -21,8 +22,10 @@ PowerPointViewer::PowerPointViewer(const QUrl& itemUrl, QWidget* parent)
       m_slideDisplay(NULL)
 {
     if (!loadSlidesFromCache()) {
+        qApp->setOverrideCursor(Qt::WaitCursor);
         if (!loadSlidesFromPresentation())
             m_hasError = true;
+        qApp->setOverrideCursor(Qt::ArrowCursor);
     }
     setupUi();
 }
