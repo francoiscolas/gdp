@@ -14,6 +14,9 @@
 
 #include "itemviewerfactory.h"
 
+static const int UrlRole    = Qt::UserRole + 1;
+static const int SearchRole = Qt::UserRole + 2;
+
 ItemsWidget::ItemsWidget(QWidget* parent)
     : QWidget(parent)
 {
@@ -72,6 +75,7 @@ void ItemsWidget::setupUi()
     m_listModel = new QSortFilterProxyModel(this);
     m_listModel->setSourceModel(m_model);
     m_listModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
+    m_listModel->setFilterRole(SearchRole);
 
     m_listView = new QListView(this);
     m_listView->setModel(m_listModel);
@@ -110,7 +114,7 @@ QByteArray ItemsWidgetModel::saveState() const
     out.setVersion(QDataStream::Qt_5_0);
     out << (qint32) rowCount();
     for (int i = 0; i < rowCount(); ++i)
-        out << data(index(i, 0), Qt::UserRole).toUrl();
+        out << data(index(i, 0), UrlRole).toUrl();
     return state;
 }
 
@@ -175,7 +179,7 @@ QMimeData* ItemsWidgetModel::mimeData(const QModelIndexList& indexes) const
 
     foreach (const QModelIndex& index, indexes) {
         if (index.isValid())
-            urls.append(data(index, Qt::UserRole).toUrl());
+            urls.append(data(index, UrlRole).toUrl());
     }
     mimeData->setUrls(urls);
     return mimeData;
@@ -216,8 +220,11 @@ QVariant ItemsWidgetItem::data(int role) const
     if (role == Qt::DecorationRole) {
         return QIcon::fromTheme(m_mimeType.iconName());
     }
-    if (role == Qt::UserRole) {
+    if (role == UrlRole) {
         return m_url;
+    }
+    if (role == SearchRole) {
+        return data(Qt::DisplayRole).toString().normalized(QString::NormalizationForm_KD);
     }
     return QVariant();
 }
