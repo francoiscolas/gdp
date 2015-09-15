@@ -17,7 +17,7 @@ ItemViewerFactory::ItemViewerFactory()
 {
 }
 
-ItemViewer* ItemViewerFactory::create(const QUrl &itemUrl, QWidget* parent)
+ItemViewer* ItemViewerFactory::create(const QUrl& itemUrl, QWidget* parent)
 {
     QString mimeType = QMimeDatabase().mimeTypeForFile(itemUrl.toString()).name();
 

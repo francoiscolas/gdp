@@ -3,7 +3,6 @@
 #include <QApplication>
 #include <QDrag>
 #include <QDragEnterEvent>
-#include <QFileInfo>
 #include <QLineEdit>
 #include <QListView>
 #include <QMessageBox>
@@ -14,7 +13,7 @@
 
 #include "itemviewerfactory.h"
 
-static const int UrlRole    = Qt::UserRole + 1;
+static const int SourceRole = Qt::UserRole + 1;
 static const int SearchRole = Qt::UserRole + 2;
 
 ItemsWidget::ItemsWidget(QWidget* parent)
@@ -85,7 +84,7 @@ void ItemsWidget::setupUi()
         ItemsWidgetItem* item = dynamic_cast<ItemsWidgetItem*>(m_model->itemFromIndex(m_listModel->mapToSource(index)));
 
         if (item != NULL)
-            emit activated(item->url());
+            emit activated(QUrl::fromLocalFile(item->target()));
     });
 
     QVBoxLayout* layout = new QVBoxLayout(this);
@@ -114,7 +113,7 @@ QByteArray ItemsWidgetModel::saveState() const
     out.setVersion(QDataStream::Qt_5_0);
     out << (qint32) rowCount();
     for (int i = 0; i < rowCount(); ++i)
-        out << data(index(i, 0), UrlRole).toUrl();
+        out << data(index(i, 0), SourceRole).toString();
     return state;
 }
 
@@ -130,10 +129,12 @@ void ItemsWidgetModel::restoreState(const QByteArray& state)
         in.setVersion(QDataStream::Qt_5_0);
         in >> count;
         for (int i = 0; i < count; ++i) {
-            QUrl url;
+            QString fp;
 
-            in >> url;
-            appendRow(new ItemsWidgetItem(url));
+            in >> fp;
+            if (QFileInfo::exists(fp)) {
+                appendRow(new ItemsWidgetItem(fp));
+            }
         }
     }
 }
@@ -145,7 +146,12 @@ bool ItemsWidgetModel::canDropMimeData(const QMimeData* data, Qt::DropAction act
     Q_UNUSED(parent);
     if (action == Qt::CopyAction) {
         foreach (const QUrl& url, data->urls()) {
-            if (gItemViewerFactory->supports(url))
+            QString   target   = url.toLocalFile();
+            QFileInfo targetFi = target;
+
+            if (targetFi.isSymLink())
+                target = targetFi.symLinkTarget();
+            if (gItemViewerFactory->supports(target))
                 return true;
         }
     }
@@ -161,9 +167,9 @@ bool ItemsWidgetModel::dropMimeData(const QMimeData* data, Qt::DropAction action
 
     if (action == Qt::CopyAction) {
         foreach (const QUrl& url, data->urls()) {
-            ItemsWidgetItem item(url);
+            ItemsWidgetItem item(url.toLocalFile());
 
-            if (gItemViewerFactory->supports(item.url()) && findItems(item.text()).isEmpty()) {
+            if (gItemViewerFactory->supports(item.target()) && findItems(item.text()).isEmpty()) {
                 appendRow(new ItemsWidgetItem(item));
                 rowsAppended = true;
             }
@@ -179,7 +185,7 @@ QMimeData* ItemsWidgetModel::mimeData(const QModelIndexList& indexes) const
 
     foreach (const QModelIndex& index, indexes) {
         if (index.isValid())
-            urls.append(data(index, UrlRole).toUrl());
+            urls.append(data(index, SourceRole).toString());
     }
     mimeData->setUrls(urls);
     return mimeData;
@@ -190,11 +196,11 @@ QStringList ItemsWidgetModel::mimeTypes() const
     return QStringList();
 }
 
-ItemsWidgetItem::ItemsWidgetItem(const QUrl& url)
+ItemsWidgetItem::ItemsWidgetItem(const QString& source)
     : QStandardItem()
 {
-    m_url = url;
-    m_mimeType = QMimeDatabase().mimeTypeForFile(url.toString());
+    m_source = source;
+    m_mimeType = QMimeDatabase().mimeTypeForFile(target());
 }
 
 ItemsWidgetItem::ItemsWidgetItem(const ItemsWidgetItem& other)
@@ -205,7 +211,7 @@ ItemsWidgetItem::ItemsWidgetItem(const ItemsWidgetItem& other)
 
 ItemsWidgetItem& ItemsWidgetItem::operator=(const ItemsWidgetItem& other)
 {
-    m_url = other.m_url;
+    m_source = other.m_source;
     m_mimeType = other.m_mimeType;
     return *this;
 }
@@ -213,15 +219,13 @@ ItemsWidgetItem& ItemsWidgetItem::operator=(const ItemsWidgetItem& other)
 QVariant ItemsWidgetItem::data(int role) const
 {
     if (role == Qt::DisplayRole || role == Qt::ToolTipRole) {
-        if (m_url.isLocalFile())
-            return QFileInfo(m_url.toLocalFile()).baseName();
-        return m_url.toString();
+        return m_source.baseName();
     }
     if (role == Qt::DecorationRole) {
         return QIcon::fromTheme(m_mimeType.iconName());
     }
-    if (role == UrlRole) {
-        return m_url;
+    if (role == SourceRole) {
+        return m_source.absoluteFilePath();
     }
     if (role == SearchRole) {
         return data(Qt::DisplayRole).toString().normalized(QString::NormalizationForm_KD);
@@ -229,9 +233,14 @@ QVariant ItemsWidgetItem::data(int role) const
     return QVariant();
 }
 
-const QUrl& ItemsWidgetItem::url() const
+QString ItemsWidgetItem::source() const
 {
-    return m_url;
+    return m_source.absoluteFilePath();
+}
+
+QString ItemsWidgetItem::target() const
+{
+    return (m_source.isSymLink()) ? m_source.symLinkTarget() : source();
 }
 
 const QMimeType& ItemsWidgetItem::mimeType() const

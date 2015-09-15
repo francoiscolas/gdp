@@ -1,6 +1,7 @@
 #ifndef ITEMSWIDGET_H
 #define ITEMSWIDGET_H
 
+#include <QFileInfo>
 #include <QMimeType>
 #include <QStandardItem>
 #include <QStandardItemModel>
@@ -61,7 +62,7 @@ class ItemsWidgetModel : public QStandardItemModel
 class ItemsWidgetItem : public QStandardItem
 {
     public:
-        ItemsWidgetItem(const QUrl& url);
+        ItemsWidgetItem(const QString& source);
 
         ItemsWidgetItem(const ItemsWidgetItem& other);
         ItemsWidgetItem& operator=(const ItemsWidgetItem& other);
@@ -69,11 +70,12 @@ class ItemsWidgetItem : public QStandardItem
     public:
         virtual QVariant data(int role) const;
 
-        const QUrl& url() const;
+        QString source() const;
+        QString target() const;
         const QMimeType& mimeType() const;
 
     private:
-        QUrl m_url;
+        QFileInfo m_source;
         QMimeType m_mimeType;
 };
 
