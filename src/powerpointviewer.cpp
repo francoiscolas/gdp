@@ -1,10 +1,12 @@
 #include "powerpointviewer.h"
 
 #include <QApplication>
-#include <QAxObject>
 #include <QDateTime>
+#include <QProcess>
 #include <QPushButton>
 #include <QVBoxLayout>
+
+#include <poppler-qt5.h>
 
 #include "biglabel.h"
 #include "pixmaplabel.h"
@@ -23,7 +25,9 @@ PowerPointViewer::PowerPointViewer(const QUrl& itemUrl, QWidget* parent)
 {
     if (!loadSlidesFromCache()) {
         qApp->setOverrideCursor(Qt::WaitCursor);
-        if (!loadSlidesFromPresentation())
+        if (makePdfFromPresentation())
+            m_hasError = !loadSlidesFromCache();
+        else
             m_hasError = true;
         qApp->setOverrideCursor(Qt::ArrowCursor);
     }
@@ -74,7 +78,7 @@ void PowerPointViewer::setCurrentSlide(int index)
 void PowerPointViewer::setupUi()
 {
     if (m_hasError) {
-        contentLayout()->addWidget(new BigLabel(tr("Erreur: Impossible d'instancier l'ActiveX de PowerPoint."), this));
+        contentLayout()->addWidget(new BigLabel(tr("Erreur: Impossible d'afficher le PowerPoint."), this));
     } else {
         m_slideDisplay = new PixmapLabel(this);
 
@@ -110,53 +114,39 @@ void PowerPointViewer::setupUi()
 
 bool PowerPointViewer::loadSlidesFromCache()
 {
-    QFileInfo presentationInfo = itemUrl().toLocalFile();
+    QFileInfo pptInfo = itemUrl().toLocalFile();
+    QFileInfo pdfInfo = cacheDir().entryInfoList({"*.pdf"}, QDir::Files, QDir::Name).value(0);
 
     m_slides.clear();
-    foreach (QFileInfo entry, cacheDir().entryInfoList({"*.png"}, QDir::Files, QDir::Name)) {
-        if (entry.lastModified() < presentationInfo.lastModified())
-            return false;
-        m_slides.append(entry.absoluteFilePath());
-    }
-    return (m_slides.length() > 0);
-}
+    if (pdfInfo.lastModified() >= pptInfo.lastModified()) {
+        Poppler::Document* document = Poppler::Document::load(pdfInfo.absoluteFilePath());
 
-bool PowerPointViewer::loadSlidesFromPresentation()
-{
-    QString   presentationFile = itemUrl().toString();
-    QAxObject pptApp;
+        if (document != NULL) {
+            for (int i = 0; i < document->numPages(); ++i) {
+                Poppler::Page* slide = document->page(i);
 
-    foreach (QString fileName, cacheDir().entryList())
-        QFile::remove(cacheDir().absoluteFilePath(fileName));
-
-    if (pptApp.setControl("PowerPoint.Application")) {
-        QAxObject* presentations = pptApp.querySubObject("Presentations");
-
-        if (presentations != NULL) {
-            QAxObject* presentation = presentations->querySubObject("Open(QString)", presentationFile);
-
-            if (presentation != NULL) {
-                QAxObject* slides = presentation->querySubObject("Slides");
-
-                if (slides != NULL) {
-                    int count = slides->dynamicCall("Count()").toInt();
-
-                    for (int i = 1; i <= count; ++i) {
-                        QAxObject* slide     = slides->querySubObject("Item(int)", i);
-                        QString    slidePath = cacheDir().absoluteFilePath(QString("%1.png").arg(i, 3, 10, QChar('0')));
-
-                        if (slide != NULL)
-                            slide->dynamicCall("Export(QString,QString)", "file:///" + slidePath, "png");
-                    }
-                    delete slides;
+                if (slide != NULL) {
+                    m_slides.append(QPixmap::fromImage(slide->renderToImage(300, 300)));
+                    delete slide;
                 }
-                presentation->dynamicCall("Close()");
-                delete presentation;
             }
-            delete presentations;
+            delete document;
+            return true;
         }
-        pptApp.dynamicCall("Quit()");
-        return loadSlidesFromCache();
     }
     return false;
+}
+
+bool PowerPointViewer::makePdfFromPresentation()
+{
+    QString  pptFile = itemUrl().toString();
+    QProcess convert;
+
+    convert.setProgram("libreoffice");
+    convert.setArguments({
+        "--headless", "--convert-to", "pdf", "--outdir", cacheDir().absolutePath(), pptFile
+    });
+    convert.start();
+    return (convert.waitForFinished(10000)
+            && convert.exitCode() == QProcess::NormalExit);
 }

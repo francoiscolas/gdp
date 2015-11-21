@@ -25,14 +25,14 @@ class PowerPointViewer : public ItemViewer
         void setupUi();
 
         bool loadSlidesFromCache();
-        bool loadSlidesFromPresentation();
+        bool makePdfFromPresentation();
 
     private:
         int          m_currentSlide;
         bool         m_hasError;
         QLabel*      m_pagingLbl;
         PixmapLabel* m_slideDisplay;
-        QStringList  m_slides;
+        QList<QPixmap> m_slides;
 };
 
 #endif // POWERPOINTVIEWER_H

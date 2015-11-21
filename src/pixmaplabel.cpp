@@ -28,7 +28,6 @@ void PixmapLabel::paintEvent(QPaintEvent* event)
         pixmapRect.moveCenter(contentsRect().center());
 
         QPainter painter(this);
-        painter.setRenderHint(QPainter::Antialiasing);
-        painter.drawPixmap(pixmapRect, m_pixmap.scaled(pixmapRect.size()));
+        painter.drawPixmap(pixmapRect, m_pixmap.scaled(pixmapRect.size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
     }
 }

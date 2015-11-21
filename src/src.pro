@@ -1,7 +1,10 @@
 TEMPLATE = app
-QT       = core gui widgets svg axcontainer
+QT       = core gui widgets svg
 TARGET   = gdp
 CONFIG  += c++11
+
+INCLUDEPATH += /usr/include/poppler/qt5
+LIBS        += -lpoppler-qt5
 
 SOURCES += \
     app.cpp \
