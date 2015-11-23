@@ -142,7 +142,11 @@ bool PowerPointViewer::makePdfFromPresentation()
     QString  pptFile = itemUrl().toString();
     QProcess convert;
 
+#ifdef Q_OS_WIN
+    convert.setProgram("C:/Program Files (x86)/LibreOffice 4/program/soffice.exe");
+#else
     convert.setProgram("libreoffice");
+#endif
     convert.setArguments({
         "--headless", "--convert-to", "pdf", "--outdir", cacheDir().absolutePath(), pptFile
     });
