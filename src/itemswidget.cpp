@@ -185,7 +185,7 @@ QMimeData* ItemsWidgetModel::mimeData(const QModelIndexList& indexes) const
 
     foreach (const QModelIndex& index, indexes) {
         if (index.isValid())
-            urls.append(data(index, SourceRole).toString());
+            urls.append(QUrl::fromLocalFile(data(index, SourceRole).toString()));
     }
     mimeData->setUrls(urls);
     return mimeData;
