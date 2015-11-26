@@ -2,7 +2,6 @@ BUILD_DIR    = build
 BUILD_TARGET = $(BUILD_DIR)/src/release/gdp.exe
 PKG_DIR 	 = GdP-$(shell git describe --tags)
 PKG_TARGET   = $(PKG_DIR)/gdp.exe
-QT_BINDIR	 = $(shell qmake -query QT_INSTALL_BINS)
 
 all: build package
 
@@ -17,8 +16,6 @@ $(BUILD_TARGET):
 package:
 	mkdir -p $(PKG_DIR) \
 	&& cp -p $(BUILD_TARGET) $(PKG_DIR) \
-	&& cp -p $(QT_BINDIR)/libpoppler-57.dll $(PKG_DIR) \
-	&& cp -p $(QT_BINDIR)/libpoppler-qt5-1.dll $(PKG_DIR) \
 	&& windeployqt --no-translations $(PKG_TARGET)
 
 clean:

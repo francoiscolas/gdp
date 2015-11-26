@@ -6,8 +6,6 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-#include <poppler-qt5.h>
-
 #include "biglabel.h"
 #include "pixmaplabel.h"
 
@@ -25,7 +23,7 @@ PowerPointViewer::PowerPointViewer(const QUrl& itemUrl, QWidget* parent)
 {
     if (!loadSlidesFromCache()) {
         qApp->setOverrideCursor(Qt::WaitCursor);
-        if (makePdfFromPresentation())
+        if (makeSlidesFromPpt())
             m_hasError = !loadSlidesFromCache();
         else
             m_hasError = true;
@@ -115,42 +113,39 @@ void PowerPointViewer::setupUi()
 bool PowerPointViewer::loadSlidesFromCache()
 {
     QFileInfo pptInfo = itemUrl().toLocalFile();
-    QFileInfo pdfInfo = cacheDir().entryInfoList({"*.pdf"}, QDir::Files, QDir::Name).value(0);
 
     m_slides.clear();
-    if (pdfInfo.lastModified() >= pptInfo.lastModified()) {
-        Poppler::Document* document = Poppler::Document::load(pdfInfo.absoluteFilePath());
+    foreach (QFileInfo entry, cacheDir().entryInfoList({"*.jpg"}, QDir::Files, QDir::Name)) {
+        if (entry.lastModified() < pptInfo.lastModified())
+            return false;
+        m_slides.append(entry.absoluteFilePath());
+    }
+    return (m_slides.length() > 0);
+}
 
-        if (document != NULL) {
-            for (int i = 0; i < document->numPages(); ++i) {
-                Poppler::Page* slide = document->page(i);
+bool PowerPointViewer::makeSlidesFromPpt()
+{
+    QFileInfo pptFile = itemUrl().toLocalFile();
+    QFileInfo pdfFile = cacheDir().absoluteFilePath(pptFile.baseName() + ".pdf");
+    int       ec;
 
-                if (slide != NULL) {
-                    m_slides.append(QPixmap::fromImage(slide->renderToImage(300, 300)));
-                    delete slide;
-                }
-            }
-            delete document;
+#ifdef Q_OS_WIN
+    QString libreoffice = "C:/Program Files (x86)/LibreOffice 4/program/soffice.exe";
+    QString convert     = "C:/Program Files (x86)/ImageMagick-6.9.2-Q16/convert.exe";
+#else
+    QString libreoffice = "libreoffice";
+    QString convert     = "convert";
+#endif
+    ec = QProcess::execute(libreoffice, {
+        "--headless", "--convert-to", "pdf", "--outdir", cacheDir().absolutePath(), pptFile.absoluteFilePath()
+    });
+    if (ec == QProcess::NormalExit) {
+        ec = QProcess::execute(convert, {
+            pdfFile.absoluteFilePath(), cacheDir().absoluteFilePath("%07d.jpg")
+        });
+        if (ec == QProcess::NormalExit) {
             return true;
         }
     }
     return false;
-}
-
-bool PowerPointViewer::makePdfFromPresentation()
-{
-    QString  pptFile = itemUrl().toString();
-    QProcess convert;
-
-#ifdef Q_OS_WIN
-    convert.setProgram("C:/Program Files (x86)/LibreOffice 4/program/soffice.exe");
-#else
-    convert.setProgram("libreoffice");
-#endif
-    convert.setArguments({
-        "--headless", "--convert-to", "pdf", "--outdir", cacheDir().absolutePath(), pptFile
-    });
-    convert.start();
-    return (convert.waitForFinished(10000)
-            && convert.exitCode() == QProcess::NormalExit);
 }

@@ -25,7 +25,7 @@ class PowerPointViewer : public ItemViewer
         void setupUi();
 
         bool loadSlidesFromCache();
-        bool makePdfFromPresentation();
+        bool makeSlidesFromPpt();
 
     private:
         int          m_currentSlide;
