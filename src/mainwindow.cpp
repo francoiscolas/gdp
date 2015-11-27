@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget* parent)
     : QWidget(parent)
 {
     setupUi();
+    setAttribute(Qt::WA_QuitOnClose);
 }
 
 MainWindow::~MainWindow()

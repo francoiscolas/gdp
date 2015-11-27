@@ -9,9 +9,12 @@
 #include <QMimeData>
 #include <QMimeDatabase>
 #include <QSortFilterProxyModel>
+#include <QToolButton>
 #include <QVBoxLayout>
 
+#include "app.h"
 #include "itemviewerfactory.h"
+#include "settingsdialog.h"
 
 static const int SourceRole = Qt::UserRole + 1;
 static const int SearchRole = Qt::UserRole + 2;
@@ -69,6 +72,11 @@ void ItemsWidget::setupUi()
     m_search->setPlaceholderText(tr("Recherche"));
     m_search->setClearButtonEnabled(true);
 
+    QToolButton* settingsBtn = new QToolButton(this);
+    settingsBtn->setToolTip(tr("Paramètres"));
+    settingsBtn->setFont(QFont("FontAwesome", 12));
+    settingsBtn->setText("\uF085");
+
     m_model = new ItemsWidgetModel(this);
 
     m_listModel = new QSortFilterProxyModel(this);
@@ -87,13 +95,25 @@ void ItemsWidget::setupUi()
             emit activated(QUrl::fromLocalFile(item->target()));
     });
 
+    QHBoxLayout* hBox = new QHBoxLayout();
+    hBox->addWidget(settingsBtn);
+    hBox->addWidget(m_search);
+
     QVBoxLayout* layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
-    layout->addWidget(m_search);
+    layout->addLayout(hBox);
     layout->addWidget(m_listView);
 
     connect(m_model, &ItemsWidgetModel::rowsInserted, [=]() {
         m_listModel->sort(0);
+    });
+    connect(settingsBtn, &QToolButton::clicked, [=]() {
+        SettingsDialog* dialog = new SettingsDialog(this);
+
+        dialog->setSettings(gApp->settings());
+        if (dialog->exec())
+            dialog->save();
+        dialog->deleteLater();
     });
     connect(m_search, &QLineEdit::textChanged,
             m_listModel, &QSortFilterProxyModel::setFilterWildcard);
