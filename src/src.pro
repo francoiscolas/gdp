@@ -15,7 +15,8 @@ SOURCES += \
     mainwindow.cpp \
     pixmaplabel.cpp \
     powerpointviewer.cpp \
-    session.cpp
+    session.cpp \
+    settings.cpp
 HEADERS += \
     app.h \
     biglabel.h \
@@ -27,6 +28,7 @@ HEADERS += \
     mainwindow.h \
     pixmaplabel.h \
     powerpointviewer.h \
-    session.h
+    session.h \
+    settings.h
 RESOURCES += \
     resources.qrc

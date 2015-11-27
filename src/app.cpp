@@ -6,6 +6,7 @@
 
 #include "mainwindow.h"
 #include "session.h"
+#include "settings.h"
 
 App::App(int argc, char** argv)
     : QApplication(argc, argv)
@@ -25,6 +26,9 @@ App::App(int argc, char** argv)
     m_session = new Session(dataDir().absoluteFilePath("state"), this);
     m_session->restore();
     connect(this, &App::aboutToQuit, m_session, &Session::save);
+
+    m_settings = new Settings(dataDir().absoluteFilePath("settings"), this);
+    m_settings->detectDependencies();
 }
 
 QDir App::dataDir() const
@@ -53,4 +57,9 @@ MainWindow* App::mainWindow() const
 Session* App::session() const
 {
     return m_session;
+}
+
+Settings* App::settings() const
+{
+    return m_settings;
 }

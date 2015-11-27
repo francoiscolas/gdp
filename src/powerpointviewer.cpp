@@ -6,8 +6,10 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
+#include "app.h"
 #include "biglabel.h"
 #include "pixmaplabel.h"
+#include "settings.h"
 
 ITEMVIEWER_REGISTER(PowerPointViewer, QStringList({
      "application/vnd.ms-powerpoint",
@@ -129,18 +131,11 @@ bool PowerPointViewer::makeSlidesFromPpt()
     QFileInfo pdfFile = cacheDir().absoluteFilePath(pptFile.baseName() + ".pdf");
     int       ec;
 
-#ifdef Q_OS_WIN
-    QString libreoffice = "C:/Program Files (x86)/LibreOffice 4/program/soffice.exe";
-    QString convert     = "C:/Program Files (x86)/ImageMagick-6.9.2-Q16/convert.exe";
-#else
-    QString libreoffice = "libreoffice";
-    QString convert     = "convert";
-#endif
-    ec = QProcess::execute(libreoffice, {
+    ec = QProcess::execute(gApp->settings()->value<QString>(Settings::LibreOfficePath), {
         "--headless", "--convert-to", "pdf", "--outdir", cacheDir().absolutePath(), pptFile.absoluteFilePath()
     });
     if (ec == QProcess::NormalExit) {
-        ec = QProcess::execute(convert, {
+        ec = QProcess::execute(gApp->settings()->value<QString>(Settings::ImageMagickPath), {
             pdfFile.absoluteFilePath(), cacheDir().absoluteFilePath("%07d.jpg")
         });
         if (ec == QProcess::NormalExit) {

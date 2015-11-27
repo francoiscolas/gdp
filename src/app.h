@@ -8,6 +8,7 @@
 
 class MainWindow;
 class Session;
+class Settings;
 
 class App : public QApplication
 {
@@ -18,10 +19,12 @@ class App : public QApplication
         QDir dataDir() const;
         MainWindow* mainWindow() const;
         Session* session() const;
+        Settings* settings() const;
 
     private:
         MainWindow* m_mainWindow;
         Session* m_session;
+        Settings* m_settings;
 };
 
 #endif // APP_H
