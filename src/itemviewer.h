@@ -27,6 +27,7 @@ class ItemViewer : public QWidget
 
     public:
         ItemViewer(const QUrl& itemUrl, QWidget* parent = NULL);
+        virtual ~ItemViewer();
 
     public:
         virtual QByteArray saveState() const = 0;

@@ -5,6 +5,7 @@
 #include <QIcon>
 #include <QLabel>
 #include <QMimeDatabase>
+#include <QToolButton>
 #include <QVBoxLayout>
 
 #include "app.h"
@@ -15,6 +16,12 @@ ItemViewer::ItemViewer(const QUrl& itemUrl, QWidget* parent)
       m_buddy(NULL)
 {
     setupUi();
+}
+
+ItemViewer::~ItemViewer()
+{
+    if (m_buddy != NULL)
+        m_buddy->deleteLater();
 }
 
 QDir ItemViewer::cacheDir() const
@@ -100,12 +107,18 @@ void ItemViewer::setupUi()
     QLabel* textLabel = new QLabel(this);
     textLabel->setText(QFileInfo(itemUrl().toString()).baseName());
 
+    QToolButton* closeButton = new QToolButton(this);
+    closeButton->setFont(QFont("FontAwesome"));
+    closeButton->setText("\uF00D");
+    connect(closeButton, &QToolButton::clicked, this, &ItemViewer::deleteLater);
+
     QWidget* controlsWidget = new QWidget(this);
 
     m_headerLayout = new QHBoxLayout(headerWidget);
     m_headerLayout->addWidget(iconLabel);
     m_headerLayout->addWidget(textLabel);
     m_headerLayout->addStretch(1);
+    m_headerLayout->addWidget(closeButton);
 
     m_contentLayout = new QVBoxLayout();
 

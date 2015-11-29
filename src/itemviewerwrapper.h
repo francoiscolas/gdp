@@ -2,11 +2,13 @@
 #define ITEMVIEWERWRAPPER_H
 
 #include <QFrame>
+#include <QPointer>
+
+#include "itemviewer.h"
 
 class QStackedLayout;
 
 class BigLabel;
-class ItemViewer;
 
 class ItemViewerWrapper : public QFrame
 {
@@ -30,7 +32,7 @@ class ItemViewerWrapper : public QFrame
     private:
         QStackedLayout* m_stack;
         BigLabel* m_placeholder;
-        ItemViewer* m_itemViewer;
+        QPointer<ItemViewer> m_itemViewer;
 };
 
 #endif // ITEMVIEWERWRAPPER_H
