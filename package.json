@@ -21,8 +21,8 @@
     }
   },
   "scripts": {
-    "electron": "./node_modules/.bin/electron app",
-    "pack": "./node_modules/.bin/build --dir",
-    "dist": "./node_modules/.bin/build"
+    "app": "./node_modules/.bin/gulp run",
+    "pack": "./node_modules/.bin/gulp pack",
+    "dist": "./node_modules/.bin/gulp dist"
   }
 }
