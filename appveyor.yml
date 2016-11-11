@@ -1,4 +1,4 @@
-version: 2.0.{build}
+version: 2.0.0.{build}
 
 platform:
   - x64
@@ -23,5 +23,8 @@ build_script:
   - node --version
   - npm --version
   - npm run dist
+
+artifacts:
+  - path: dist/*.exe
 
 test: off
