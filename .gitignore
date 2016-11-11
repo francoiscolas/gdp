@@ -1,3 +1,4 @@
-/gdp.pro.user
-/src/icons/UltraFlat/mimetypes/scalable/*.svg
-/win/dependencies/
+app/assets/css/
+app/assets/js/
+dist/
+node_modules/

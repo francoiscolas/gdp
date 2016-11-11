@@ -1,0 +1,15 @@
+@import 'foundation-settings';
+@import 'lib/foundation-icons';
+@import 'lib/foundation/foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+
+body {
+  overflow: hidden;
+  user-select: none;
+}
+.fi-mobile-signal {
+  font-size: 100px;
+}

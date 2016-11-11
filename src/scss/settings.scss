@@ -1,0 +1,19 @@
+@import 'foundation-settings';
+@import 'lib/foundation/foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-button;
+@include foundation-menu;
+@include foundation-visibility-classes;
+
+body {
+  overflow: hidden;
+  user-select: none;
+}
+.actions {
+  position: absolute;
+  bottom: 0;
+}

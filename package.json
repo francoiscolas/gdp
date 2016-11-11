@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "electron": "^1.4.5",
+    "electron-builder": "^7.24.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-include": "^2.3.1",
+    "gulp-sass": "^2.3.2"
+  },
+  "build": {
+    "compression": "store",
+    "linux": {
+      "target": "AppImage"
+    },
+    "win": {
+      "target": "nsis",
+      "extraResources": [{"from": "build/win", "to": ".", "filter": ["**/*"]}]
+    },
+    "nsis": {
+      "oneClick": false
+    }
+  },
+  "scripts": {
+    "electron": "./node_modules/.bin/electron app",
+    "pack": "./node_modules/.bin/build --dir",
+    "dist": "./node_modules/.bin/build"
+  }
+}
