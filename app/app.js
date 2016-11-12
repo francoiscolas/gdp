@@ -155,6 +155,11 @@ var startMainWindow = function () {
         }, {
           type: 'separator',
         }, {
+          label: 'À propos',
+          click() {
+            startAboutWindow();
+          }
+        }, {
           label: 'Quitter',
           accelerator: 'CmdOrCtrl+Q',
           role: 'quit',
@@ -224,7 +229,25 @@ startAssociateWindow = function () {
   });
 };
 
+startAboutWindow = function () {
+  var win = new Electron.BrowserWindow({
+    parent: App.mainWindow,
+    modale: true,
+    icon: `${__dirname}/assets/img/icon.png`,
+    show: false,
+    width: 350,
+    height: 250,
+  });
+  win.loadURL(`file://${__dirname}/ui/about.html`);
+  win.setMenu(null);
+  win.on('ready-to-show', function () {
+    win.show();
+  });
+};
+
 var App = module.exports = _.extend(Electron.app, {
+
+  version: require('./package.json').version,
 
   isDev: !!process.env.DEV,
 
