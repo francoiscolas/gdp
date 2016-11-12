@@ -21,8 +21,8 @@
     }
   },
   "scripts": {
-    "app": "./node_modules/.bin/gulp run",
-    "pack": "./node_modules/.bin/gulp pack",
-    "dist": "./node_modules/.bin/gulp dist"
+    "app": "gulp run",
+    "pack": "gulp pack",
+    "dist": "gulp dist"
   }
 }

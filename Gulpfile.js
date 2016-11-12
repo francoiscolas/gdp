@@ -5,14 +5,11 @@ var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var include      = require('gulp-include');
 var exec         = require('child_process').exec;
-var Path         = require('path');
-
-var BINDIR = Path.join('node_modules', '.bin');
 
 gulp.task('default', ['build']);
 
 gulp.task('run', ['assets'], callback => {
-  exec(`${Path.join(BINDIR, 'electron')} app`, function (error, stdout, stderr) {
+  exec('electron app', function (error, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     callback(error);
@@ -20,7 +17,7 @@ gulp.task('run', ['assets'], callback => {
 });
 
 gulp.task('pack', ['assets'], callback => {
-  exec(`${Path.join(BINDIR, 'build')} --dir`, function (error, stdout, stderr) {
+  exec('build --dir', function (error, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     callback(error);
@@ -28,7 +25,7 @@ gulp.task('pack', ['assets'], callback => {
 });
 
 gulp.task('dist', ['assets'], callback => {
-  exec(`${Path.join(BINDIR, 'build')}`, function (error, stdout, stderr) {
+  exec('build', function (error, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     callback(error);
