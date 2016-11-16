@@ -41,11 +41,14 @@ var initSources = function () {
       var Sources = require('./sources');
 
       App.sources = new Sources();
-      App.sources.setSourcesDir(App.settings.getSync('sourcesDir'));
-      App.sources.setUserDir(App.getPath('userData'));
+      App.sources.on('error', function (error) {
+        Electron.dialog.showErrorBox('Sources introuvables', error.message);
+      });
       App.sources.on('change', function () {
         App.settings.setSync('sourcesDir', App.sources.sourcesDir);
       });
+      App.sources.setSourcesDir(App.settings.getSync('sourcesDir'));
+      App.sources.setUserDir(App.getPath('userData'));
       resolve();
     });
   });

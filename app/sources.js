@@ -112,6 +112,7 @@ class Sources extends EventEmitter {
       FS.accessSync(this.sourcesDir);
       this._startIndexing()
     } catch (error) {
+      this.emit('error', new Error(`Impossible de trouver le dossier : ${this.sourcesDir}. Merci de vérifier vos paramètres.`));
       console.log(error);
     }
 
