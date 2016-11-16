@@ -1,8 +1,0 @@
-DriverVersion: 10.18.10.4358
-DriverDate: 12-21-2015
-DeviceID: PCI\VEN_8086&DEV_0156&SUBSYS_FA311179&REV_09
-AdapterVendorID: 0x8086
-AdapterDeviceID: 0x0156
-AdapterSubsysID: 0xfa311179
-DeviceKey: System\CurrentControlSet\Control\Video\{C6384D37-2ED3-4A05-9FE5-64A6FD86776E}\0000
-DeviceString: Intel(R) HD Graphics
