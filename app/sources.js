@@ -108,8 +108,12 @@ class Sources extends EventEmitter {
 
     this.sourcesDir = sourcesDir;
 
-    if (this.sourcesDir)
+    try {
+      FS.accessSync(this.sourcesDir);
       this._startIndexing()
+    } catch (error) {
+      console.log(error);
+    }
 
     this.emit('change');
   }
