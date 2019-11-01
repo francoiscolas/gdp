@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Eof Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="eof"></a>
+<a name="bm_id3154598"></a>
+  <meta itemprop="keywords" content="Eof function">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3154598">Eof Function</h1>
+<p id="par_id3147182" class="paragraph">Determines if the file pointer has reached the end of a file.</p>
+
+
+<h2 itemprop="articleSection" id="hd_id3149119">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Eof (intexpression As Integer)
+</code></pre></div>
+
+<h2 itemprop="articleSection" id="hd_id3153539">Return value:</h2>
+<p id="par_id3156027" class="paragraph">Bool</p>
+
+<h2 itemprop="articleSection" id="hd_id3152924">Parameters:</h2>
+<p id="par_id3153990" class="paragraph"> <span class="emph">Intexpression:</span> Any integer expression that evaluates to the number of an open file.</p>
+<p id="par_id3153527" class="paragraph">Use EOF to avoid errors when you attempt to get input past the end of a file. When you use the Input or Get statement to read from a file, the file pointer is advanced by the number of bytes read. When the end of a file is reached, EOF returns the value "True" (-1).</p>
+<div class="embedded">
+<a name="errorcode"></a>
+
+<h2 itemprop="articleSection" id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h2>
+</div>
+<div class="embedded"><p class="embedded"><a name="err5"></a>5 Invalid procedure call</p></div>
+<div class="embedded"><p class="embedded"><a name="err52"></a>52 Invalid file name or file number</p></div>
+
+<h2 itemprop="articleSection" id="hd_id3154046">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleWorkWithAFile
+Dim iNumber As Integer
+Dim sLine As String
+Dim aFile As String
+Dim sMsg As String
+    aFile = "c:\data.txt"
+    iNumber = Freefile
+    Open aFile For Output As #iNumber
+    Print #iNumber, "First line of text"
+    Print #iNumber, "Another line of text"
+    Close #iNumber
+    iNumber = Freefile
+    Open aFile For Input As iNumber
+    While Not eof(iNumber)
+        Line Input #iNumber, sLine
+        If sLine &lt;&gt;"" Then
+            sMsg = sMsg &amp; sLine &amp; chr(13)
+        End If
+    Wend
+    Close #iNumber
+    MsgBox sMsg
+End Sub
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03020301.xhp" target="_blank">/text/sbasic/shared/03020301.xhp</a></p>
+<p>Title is: Eof Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

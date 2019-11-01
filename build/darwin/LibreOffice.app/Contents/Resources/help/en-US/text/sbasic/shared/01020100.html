@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Using Variables</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="variable"></a>
+<a name="bm_id3149346"></a>
+  <meta itemprop="keywords" content="names of variables">
+  <meta itemprop="keywords" content="variables, using">
+  <meta itemprop="keywords" content="types of variables">
+  <meta itemprop="keywords" content="declaring variables">
+  <meta itemprop="keywords" content="values,of variables">
+  <meta itemprop="keywords" content="constants">
+  <meta itemprop="keywords" content="arrays,declaring">
+  <meta itemprop="keywords" content="defining,constants">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3149346">Using Variables</h1>
+<p id="par_id3154346" class="paragraph">The following describes the basic use of variables in LibreOffice Basic.</p>
+
+
+<h2 itemprop="articleSection" id="hd_id3153361">Naming Conventions for Variable Identifiers</h2>
+<p id="par_id3148797" class="paragraph">A variable name can consist of a maximum of 255 characters. The first character of a variable name <span class="emph">must</span> be a letter A-Z or a-z. Numbers can also be used in a variable name, but punctuation symbols and special characters are not permitted, with exception of the underscore character ("_"). In LibreOffice Basic variable identifiers are not case-sensitive. Variable names may contain spaces but must be enclosed in square brackets if they do.</p>
+<p id="par_id3156422" class="paragraph">Examples for variable identifiers:</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      MyNumber=5
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3156441" class="paragraphintable">Correct</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      MyNumber5=15
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3149664" class="paragraphintable">Correct</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      MyNumber_5=20
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3146119" class="paragraphintable">Correct</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      My Number=20
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153876" class="paragraphintable">Not valid, variable with space must be enclosed in square brackets</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      [My Number]=12
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154510" class="paragraphintable">Correct</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      DéjàVu=25
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150330" class="paragraphintable">Not valid, special characters are not allowed</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      5MyNumber=12
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154254" class="paragraphintable">Not valid, variable may not begin with a number</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Number,Mine=12
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3149256" class="paragraphintable">Not valid, punctuation marks are not allowed</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+
+<h2 itemprop="articleSection" id="hd_id3146317">Declaring Variables</h2>
+<p id="par_id3150299" class="paragraph">In LibreOffice Basic you don't need to declare variables explicitly. A variable declaration can be performed with the <span class="emph">Dim</span> statement. You can declare more than one variable at a time by separating the names with a comma. To define the variable type, use either a type-declaration sign after the name, or the appropriate key word. </p>
+<p id="par_id3154118" class="paragraph">Examples for variable declarations:</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim a$
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150982" class="paragraphintable">Declares the variable "a" as a String</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim a As String
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150343" class="paragraphintable">Declares the variable "a" as a String</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim a$, b As Integer
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3155507" class="paragraphintable">Declares one variable as a String and one as an Integer</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim c As Boolean
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10859" class="paragraphintable">Declares c as a Boolean variable that can be TRUE or FALSE</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p id="par_id3150519" class="paragraph">It is very important when declaring variables that you use the type-declaration character each time, even if it was used in the declaration instead of a keyword. Thus the following statements are invalid:</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim a$
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154527" class="paragraphintable">Declares "a" as a String</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      a="TestString"
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153064" class="paragraphintable">Type-declaration missing: "a$="</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Once you have declared a variable as a certain type, you cannot declare the variable under the same name again as a different type!</p></div>
+</div>
+<br>
+
+<h3 id="hd_id3149331">Forcing Variable Declarations</h3>
+<p id="par_id3149443" class="paragraph">To force declaration of variables, use the following command:</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Option Explicit
+</code></pre></div>
+<p id="par_id3155072" class="paragraph">The <span class="emph">Option Explicit</span> statement has to be the first line in the module, before the first SUB. Generally, only arrays need to be declared explicitly. All other variables are declared according to the type-declaration character, or - if omitted - as the default type <span class="emph">Single</span>.</p>
+
+<h2 itemprop="articleSection" id="hd_id3154614">Variable Types</h2>
+<p id="par_id3155383" class="paragraph">LibreOffice Basic supports four variable classes:</p>
+
+<ul>
+  <li>
+    <p id="par_id3153972" class="listitem"> <span class="emph">Numeric</span> variables can contain number values. Some variables are used to store large or small numbers, and others are used for floating-point or fractional numbers. </p>
+  </li>
+  <li>
+    <p id="par_id3159226" class="listitem"> <span class="emph">String</span> variables contain character strings.</p>
+  </li>
+  <li>
+    <p id="par_id3145217" class="listitem"> <span class="emph">Boolean</span> variables contain either the TRUE or the FALSE value.</p>
+  </li>
+  <li>
+    <p id="par_id3154762" class="listitem"> <span class="emph">Object</span> variables can store objects of various types, like tables and documents within a document.</p>
+  </li>
+</ul>
+
+<h3 id="hd_id3153805">Integer Variables</h3>
+<p id="par_id3146966" class="paragraph">Integer variables range from -32768 to 32767. If you assign a floating-point value to an integer variable, the decimal places are rounded to the next integer. Integer variables are rapidly calculated in procedures and are suitable for counter variables in loops. An integer variable only requires two bytes of memory. "%" is the type-declaration character.</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Dim Variable%
+Dim Variable As Integer
+</code></pre></div>
+
+<h3 id="hd_id3147546">Long Integer Variables</h3>
+<p id="par_id3151193" class="paragraph">Long integer variables range from -2147483648 to 2147483647. If you assign a floating-point value to a long integer variable, the decimal places are rounded to the next integer. Long integer variables are rapidly calculated in procedures and are suitable for counter variables in loops for large values. A long integer variable requires four bytes of memory. "&amp;" is the type-declaration character.</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Dim Variable&amp;
+Dim Variable As Long
+</code></pre></div>
+
+<h3 id="hd_id7596972">Decimal Variables</h3>
+<p id="par_id2649311" class="paragraph">Decimal variables can take positive or negative numbers or zero. Accuracy is up to 29 digits.</p>
+<p id="par_id7617114" class="paragraph">You can use plus (+) or minus (-) signs as prefixes for decimal numbers (with or without spaces).</p>
+<p id="par_id1593676" class="paragraph">If a decimal number is assigned to an integer variable, LibreOffice Basic rounds the figure up or down.</p>
+
+<h3 id="hd_id3147500">Single Variables</h3>
+<p id="par_id3153070" class="paragraph">Single variables can take positive or negative values ranging from 3.402823 x 10E38 to 1.401298 x 10E-45. Single variables are floating-point variables, in which the decimal precision decreases as the non-decimal part of the number increases. Single variables are suitable for mathematical calculations of average precision. Calculations require more time than for Integer variables, but are faster than calculations with Double variables. A Single variable requires 4 bytes of memory. The type-declaration character is "!".</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Dim Variable!
+Dim Variable As Single
+</code></pre></div>
+
+<h3 id="hd_id3155753">Double Variables</h3>
+<p id="par_id3150953" class="paragraph">Double variables can take positive or negative values ranging from 1.79769313486232 x 10E308 to 4.94065645841247 x 10E-324. Double variables are floating-point variables, in which the decimal precision decreases as the non-decimal part of the number increases. Double variables are suitable for precise calculations. Calculations require more time than for Single variables. A Double variable requires 8 bytes of memory. The type-declaration character is "#".</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Dim Variable#
+Dim Variable As Double
+</code></pre></div>
+
+<h3 id="hd_id3155747">Currency Variables</h3>
+<p id="par_id3153337" class="paragraph">Currency variables are internally stored as 64-bit numbers (8 Bytes) and displayed as a fixed-decimal number with 15 non-decimal and 4 decimal places. The values range from -922337203685477.5808 to +922337203685477.5807. Currency variables are used to calculate currency values with a high precision. The type-declaration character is "@".</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Dim Variable@
+Dim Variable As Currency
+</code></pre></div>
+
+<h3 id="hd_id3148742">String Variables</h3>
+<p id="par_id3151393" class="paragraph">String variables can hold character strings with up to 65,535 characters. Each character is stored as the corresponding Unicode value. String variables are suitable for word processing within programs and for temporary storage of any non-printable character up to a maximum length of 64 Kbytes. The memory required for storing string variables depends on the number of characters in the variable. The type-declaration character is "$".</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Dim Variable$
+Dim Variable As String
+</code></pre></div>
+
+<h3 id="hd_id3150534">Boolean Variables</h3>
+<p id="par_id3145632" class="paragraph">Boolean variables store only one of two values: TRUE or FALSE. A number 0 evaluates to FALSE, every other value evaluates to TRUE.</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Dim Variable As Boolean
+</code></pre></div>
+
+<h3 id="hd_id3149722">Date Variables</h3>
+<p id="par_id3159116" class="paragraph">Date variables can only contain dates and time values stored in an internal format. Values assigned to Date variables with <a target="_top" href="en-US/text/sbasic/shared/03030101.html"><span class="emph">Dateserial</span></a>, <a target="_top" href="en-US/text/sbasic/shared/03030102.html"><span class="emph">Datevalue</span></a>, <a target="_top" href="en-US/text/sbasic/shared/03030205.html"><span class="emph">Timeserial</span></a> or <a target="_top" href="en-US/text/sbasic/shared/03030206.html"><span class="emph">Timevalue</span></a> are automatically converted to the internal format. Date-variables are converted to normal numbers by using the <a target="_top" href="en-US/text/sbasic/shared/03030103.html"><span class="emph">Day</span></a>, <a target="_top" href="en-US/text/sbasic/shared/03030104.html"><span class="emph">Month</span></a>, <a target="_top" href="en-US/text/sbasic/shared/03030106.html"><span class="emph">Year</span></a> or the <a target="_top" href="en-US/text/sbasic/shared/03030201.html"><span class="emph">Hour</span></a>, <a target="_top" href="en-US/text/sbasic/shared/03030202.html"><span class="emph">Minute</span></a>, <a target="_top" href="en-US/text/sbasic/shared/03030204.html"><span class="emph">Second</span></a> function. The internal format enables a comparison of date/time values by calculating the difference between two numbers. These variables can only be declared with the key word <span class="emph">Date</span>.</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Dim Variable As Date
+</code></pre></div>
+
+<h2 itemprop="articleSection" id="hd_id3148732">Initial Variable Values</h2>
+<p id="par_id3154549" class="paragraph">As soon as the variable has been declared, it is automatically set to the "Null" value. Note the following conventions:</p>
+<p id="par_id3143222" class="paragraph"> <span class="emph">Numeric</span> variables are automatically assigned the value "0" as soon as they are declared.</p>
+<p id="par_id3150693" class="paragraph"> <span class="emph">Date variables</span> are assigned the value 0 internally; equivalent to converting the value to "0" with the <a target="_top" href="en-US/text/sbasic/shared/03030103.html"><span class="emph">Day</span></a>, <a target="_top" href="en-US/text/sbasic/shared/03030104.html"><span class="emph">Month</span></a>, <a target="_top" href="en-US/text/sbasic/shared/03030106.html"><span class="emph">Year</span></a> or the <a target="_top" href="en-US/text/sbasic/shared/03030201.html"><span class="emph">Hour</span></a>, <a target="_top" href="en-US/text/sbasic/shared/03030202.html"><span class="emph">Minute</span></a>, <a target="_top" href="en-US/text/sbasic/shared/03030204.html"><span class="emph">Second</span></a> function.</p>
+<p id="par_id3154807" class="paragraph"> <span class="emph">String variables</span> are assigned an empty-string ("") when they are declared.</p>
+
+<h2 itemprop="articleSection" id="hd_id3153936">Arrays</h2>
+<p id="par_id3148736" class="paragraph">LibreOffice Basic knows one- or multi-dimensional arrays, defined by a specified variable type. Arrays are suitable for editing lists and tables in programs. Individual elements of an array can be addressed through a numeric index.</p>
+<p id="par_id3149546" class="paragraph">Arrays <span class="emph">must</span> be declared with the <span class="emph">Dim</span> statement. There are several ways to define the index range of an array:</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim Text$(20)
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154567" class="paragraphintable">21 elements numbered from 0 to 20</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim Text$(5,4)
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154397" class="paragraphintable">30 elements (a matrix of 6 x 5 elements)</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim Text$(5 To 25)
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3149690" class="paragraphintable">21 elements numbered from 5 to 25</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim Text$(-15 To 5)
+</code></pre></div>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153113" class="paragraphintable">21 elements (including 0), numbered from -15 to 5</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p id="par_id3153005" class="paragraph">The index range can include positive as well as negative numbers. </p>
+
+<h2 itemprop="articleSection" id="hd_id3154507">Constants</h2>
+<p id="par_id3156357" class="paragraph">Constants have a fixed value. They are only defined once in the program and cannot be redefined later:</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Const ConstName=Expression
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/01020100.xhp" target="_blank">/text/sbasic/shared/01020100.xhp</a></p>
+<p>Title is: Using Variables</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>LibreOffice Basic Glossary</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<h1 itemprop="articleSection" id="hd_id3145068">LibreOffice Basic Glossary</h1>
+<p id="par_id3150792" class="paragraph">This glossary explains some technical terms that you may come across when working with LibreOffice Basic.</p>
+
+
+
+
+
+
+<a name="colors"></a>
+<h2 itemprop="articleSection" id="hd_id3155854">Colors</h2>
+<p id="par_id3145366" class="paragraph">In LibreOffice Basic, colors are treated as long integer value. The return value of color queries is also always a long integer value. When defining properties, colors can be specified using their RGB code that is converted to a long integer value using the <a target="_top" href="en-US/text/sbasic/shared/03010305.html">RGB function</a>.</p>
+<a name="dezimal"></a>
+<h2 itemprop="articleSection" id="hd_id3155133">Decimal Point</h2>
+<p id="par_id3156443" class="paragraph">When converting numbers, LibreOffice Basic uses the locale settings of the system for determining the type of decimal and thousand separator.</p>
+<p id="par_id3153092" class="paragraph">The behavior has an effect on both the implicit conversion ( 1 + "2.3" = 3.3 ) as well as the function <a target="_top" href="en-US/text/sbasic/shared/03102700.html">IsNumeric</a>.</p>
+<a name="measurementunits"></a>
+<h2 itemprop="articleSection" id="hd_id3146119">Measurement Units</h2>
+<p id="par_id3154013" class="paragraph">In LibreOffice Basic, a <span class="emph">method parameter</span> or a <span class="emph">property</span> expecting unit information can be specified either as integer or long integer expression without a unit, or as a character string containing a unit. If no unit is passed to the method the default unit defined for the active document type will be used. If the parameter is passed as a character string containing a measurement unit, the default setting will be ignored. The default measurement unit for a document type can be set under <span id="swlnsysidm311943291728" class="switchinline"><span hidden="true" id="MACidm311943294144" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm311943298992"><span class="emph">Tools - Options</span></span></span><span class="emph"> - (Document Type) - General</span>.</p>
+<a name="twips"></a>
+<a name="bm_id3145801"></a><meta itemprop="keywords" content="twips, definition">
+
+<h2 itemprop="articleSection" id="hd_id3145801">Twips</h2>
+<p id="par_id3154731" class="paragraph">A twip is a screen-independent unit which is used to define the uniform position and size of screen elements on all display systems. A twip is 1/1440th of an inch or 1/20 of a printer's point. There are 1440 twips to an inch or about 567 twips to a centimeter.</p>
+<a name="urlnotation"></a>
+<h2 itemprop="articleSection" id="hd_id3153159">URL Notation</h2>
+<p id="par_id3153415" class="paragraph">URLs (<span class="emph">Uniform Resource Locators</span>) are used to determine the location of a resource like a file in a file system, typically inside a network environment. A URL consists of a protocol specifier, a host specifier and a file and path specifier:</p>
+<p id="par_id3149121" class="paragraph">
+<span class="emph">protocol</span>://<span class="emph">host.name</span>/<span class="emph">path/to/the/file.html</span>
+</p>
+<p id="par_id3168612" class="paragraph">The most common usage of URLs is on the internet when specifying web pages. Example for protocols are <span class="emph">http</span>, <span class="emph">ftp</span>, or <span class="emph">file</span>. The <span class="emph">file</span> protocol specifier is used when referring to a file on the local file system.</p>
+<p id="par_id3150324" class="paragraph">URL notation does not allow certain special characters to be used. These are either replaced by other characters or encoded. A slash (<span class="emph">/</span>) is used as a path separator. For example, a file referred to as <span class="emph">C:\Users\alice\Documents\My File.odt</span> on the local host in "Windows notation" becomes <span class="emph">file:///C:/Users/alice/Documents/My%20File.odt</span> in URL notation.</p>
+
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/00000002.xhp" target="_blank">/text/sbasic/shared/00000002.xhp</a></p>
+<p>Title is: $[officename] Basic Glossary</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

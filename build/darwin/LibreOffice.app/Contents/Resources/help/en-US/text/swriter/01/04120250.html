@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Edit Concordance File</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+<a name="bm_id3148768"></a>
+  <meta itemprop="keywords" content="editing, concordance files">
+  <meta itemprop="keywords" content="concordance files, definition">
+
+
+<a name="bm_id3147169"></a>
+<a name="bm_@@nowidget@@"></a>
+
+<h1 itemprop="articleSection" id="hd_id3148768">Edit Concordance File</h1>
+<p id="par_id3151180" class="paragraph"><span class="avis">Create or edit a list of words to include in an Alphabetical Index.</span> A concordance file lists words that should be referenced in an alphabetical index, together with the page number(s) where they appear in the document.</p>
+<p id="par_id837427" class="paragraph">You can use the Find All button on the Find &amp; Replace dialog to highlight all places where a word appears, then open the Insert Index Entry dialog to add that word and places to the alphabetical index. However, if you need the same set of alphabetical indexes in multiple documents, the concordance file allows you to enter every word just once, then use the list many times.</p>
+
+<h2 itemprop="articleSection" id="hd_id3154645">To access the Edit Concordance File dialog:</h2>
+
+<ol>
+  <li>
+    <p id="par_id3149292" class="listitem">Choose <span class="emph">Insert - Table of Contents and Index - Table of Contents, Index or Bibliography - Type</span>.</p>
+  </li>
+  <li>
+    <p id="par_id3145420" class="listitem">In the <span class="emph">Type </span>box, select "Alphabetical Index".</p>
+  </li>
+  <li>
+    <p id="par_id3154107" class="listitem">In the <span class="emph">Options </span>area, select the <span class="emph">Concordance file</span> check box.</p>
+  </li>
+  <li>
+    <p id="par_id3153668" class="listitem">Click the <span class="emph">File</span> button, and then choose <span class="emph">New</span> or <span class="emph">Edit</span>.</p>
+  </li>
+</ol>
+<p id="par_id3154470" class="paragraph">A concordance file contains the following fields:</p>
+<p id="par_id3152953" class="paragraph">"Search term" refers to the index entry that you want to mark in the document.</p>
+<p id="par_id3155896" class="paragraph">"Alternative entry" refers to the index entry that you want to appear in the index.</p>
+<p id="par_id3154194" class="paragraph">The 1st and 2nd Keys are parent index entries. The "Search term" or the "Alternative entry" appears as a subentry under the 1st and 2nd Keys.</p>
+<p id="par_id3155184" class="paragraph">"Match case" means that uppercase and lowercase letters are considered.</p>
+<p id="par_id3143282" class="paragraph">"Word only" searches for the term as a single word.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>To enable the "Match case" or "Word only" options, click in the corresponding cell, and then select the check box.</p></div>
+</div>
+<br>
+
+<h2 itemprop="articleSection" id="hd_id3153629">To create a concordance file without the Edit Concordance File dialog:</h2>
+<p id="par_id3153644" class="paragraph">Use the following format guidelines when you create a concordance file:</p>
+
+<ul>
+  <li>
+    <p id="par_id3152770" class="listitem">Each entry in the concordance file is on a separate line.</p>
+  </li>
+  <li>
+    <p id="par_id3155142" class="listitem">Commented lines start with #.</p>
+  </li>
+  <li>
+    <p id="par_id3153354" class="listitem">Use the following format for the entries:</p>
+  </li>
+</ul>
+<p id="par_id3149172" class="paragraph">Search term;Alternative entry;1st key;2nd key;Match case;Word only</p>
+<p id="par_id3156270" class="paragraph">The entries "Match case" and "Word only" are interpreted as "No" or FALSE if they are empty or zero (0). All other contents are interpreted as "Yes" or TRUE.</p>
+
+<h3 id="hd_id3145778">Example</h3>
+<p id="par_id3155907" class="paragraph">For example, to include the word "Boston" in your alphabetical index under the "Cities" entry, enter the following line in the concordance file:</p>
+<p id="par_id3151370" class="paragraph">Boston;Boston;Cities;;0;0 </p>
+<p id="par_id3151383" class="paragraph">This also finds "Boston" if it is written in lowercase letters.</p>
+<p id="par_id3155866" class="paragraph">To include the "Beacon Hill" district in Boston under the "Cities" entry, enter the following line:</p>
+<p id="par_id3150116" class="paragraph">Beacon Hill;Boston;Cities;</p>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/swriter/01/04120250.xhp" target="_blank">/text/swriter/01/04120250.xhp</a></p>
+<p>Title is: Edit Concordance File</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

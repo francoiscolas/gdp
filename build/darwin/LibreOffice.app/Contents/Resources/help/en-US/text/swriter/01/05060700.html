@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Macro</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<a name="makro"></a>
+<a name="bm_id9825433"></a>
+<a name="bm_id9825433"></a>
+<h1 itemprop="articleSection" id="hd_id3145241">Macro</h1>
+<p id="par_id3158429" class="paragraph"><span class="avis">Specifies the macro to run when you click an image, frame, or an OLE object.</span></p>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+  <div class="embedded">
+<a name="makrografik"></a>
+         <p id="par_id3146938" class="paragraph">Choose <span class="emph">Insert/Format - Image - Properties - Macro</span> tab.</p>
+         <p id="par_id3154323" class="paragraph">Choose <span class="emph">Format - Frame and Object - Properties - Macro</span> tab.</p>
+         <p id="par_id3153238" class="paragraph">Choose <span class="emph">Tools - AutoText - AutoText (button) - Macro</span>.</p>
+         <p id="par_id3148792" class="paragraph">Choose <span class="emph">Edit - ImageMap</span> - open context menu <span class="emph">Macro</span>.</p>
+         <p id="par_id3150039" class="paragraph">Choose <span class="emph">Format - Character - Hyperlink</span> tab - <span class="emph">Events</span> button.</p>
+      </div>
+</div>
+</div>
+<br>
+<a name="bm_id9825434"></a>
+<h2 itemprop="articleSection" id="hd_id3147176">Event</h2>
+<p id="par_id3147564" class="paragraph"><span class="avis">Lists the events that can trigger a macro.</span> Only the events that are relevant to the selected object are listed.</p>
+<p id="par_id3149286" class="paragraph">The following table lists the object types and the events that can trigger a macro:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3152949" class="tableheadintable">Event</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3149808" class="tableheadintable">Event trigger</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3152957" class="tableheadintable">OLE object</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3154564" class="tableheadintable">Image</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3153675" class="tableheadintable">Frame</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3154473" class="tableheadintable">AutoText</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3149684" class="tableheadintable">ImageMap area</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3154197" class="tableheadintable">Hyperlink</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3155182" class="tablecontentintable">Click object</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149489" class="tablecontentintable">object is selected</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3151249" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149104" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147089" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3153637" class="tablecontentintable">Mouse over object</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147579" class="tablecontentintable">mouse pointer moves over the object</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3152779" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3153349" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149174" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3151031" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3145784" class="tablecontentintable">✓</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3155910" class="tablecontentintable">Trigger Hyperlink</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155857" class="tablecontentintable">hyperlink that is assigned to the object is clicked</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150693" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147423" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3145256" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149554" class="tablecontentintable">✓</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3155976" class="tablecontentintable">Mouse leaves object </p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149216" class="tablecontentintable">mouse pointer moves off the object</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147739" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3146336" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149841" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148436" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3151082" class="tablecontentintable">✓</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154780" class="tablecontentintable">Image loaded successfully</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3145304" class="tablecontentintable">image is loaded successfully</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150169" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154718" class="tablecontentintable">Image loading terminated</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3156136" class="tablecontentintable">loading of the image is terminated by the user (for example, when downloading)</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3156105" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3155079" class="tablecontentintable">Could not load image</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149250" class="tablecontentintable">image is not successfully loaded</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154327" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3148779" class="tablecontentintable">Input of alpha characters </p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150030" class="tablecontentintable">text is inputted</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155792" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154623" class="tablecontentintable">Input of non-alpha characters </p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147391" class="tablecontentintable">Nonprinting characters, such as tabs and line breaks, are entered</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150666" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3149963" class="tablecontentintable">Resize frame</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147284" class="tablecontentintable">frame is resized</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150774" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3148713" class="tablecontentintable">Move frame</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155349" class="tablecontentintable">frame is moved</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155553" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154227" class="tablecontentintable">Before inserting AutoText</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155785" class="tablecontentintable">before AutoText is inserted</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3145292" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3145096" class="tablecontentintable">After inserting AutoText</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149577" class="tablecontentintable">after AutoText is inserted</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3156237" class="tablecontentintable">✓</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+</table>
+<br>
+
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For events that are linked to controls in forms, see <a target="_top" href="en-US/text/shared/02/01170103.html">Control properties</a> or <a target="_top" href="en-US/text/shared/02/01170202.html">Form properties</a>.</p></div>
+</div>
+<br>
+<h2 itemprop="articleSection" id="hd_id3156030">Assigned Action</h2>
+<p id="par_id3156043" class="paragraph">Specify the macro that executes when the selected event occurs.</p>
+<p id="par_id3156058" class="paragraph">Frames allow you to link certain events to a function that then decides if the event is handled by LibreOffice Writer or by the function. See the LibreOffice Basic Help for more information.</p>
+<a name="bm_id4656819"></a>
+<h3 id="hd_id3149271">Macro From</h3>
+<p id="par_id3149284" class="paragraph"><span class="avis">Lists the LibreOffice program and any open LibreOffice document.</span> Within this list, select the location where you want to pick the macro from.</p>
+<a name="bm_id3767815"></a>
+<h3 id="hd_id3156441">Existing Macros</h3>
+<p id="par_id3148458" class="paragraph"><span class="avis">Lists the available macros. Select the macro that you want to assign to the selected event, and then click <span class="emph">Assign</span>.</span></p>
+<a name="bm_id3767816"></a>
+<h2 itemprop="articleSection" id="hd_id3145173">Assign</h2>
+<p id="par_id3145197" class="paragraph"><span class="avis">Assigns the selected macro to the selected event.</span></p>
+<a name="bm_id3767817"></a>
+<h2 itemprop="articleSection" id="hd_id3150811">Remove</h2>
+<p id="par_id3150882" class="paragraph"><a name="aufheb"></a><span class="avis">Removes the macro assignment from the selected entry.</span>
+</p>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/swriter/01/05060700.xhp" target="_blank">/text/swriter/01/05060700.xhp</a></p>
+<p>Title is: Macro</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Form Controls</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<a name="formularfunktionen"></a>
+<a name="bm_id3154142"></a><meta itemprop="keywords" content="form controls,toolbars">
+<meta itemprop="keywords" content="inserting, form fields">
+<meta itemprop="keywords" content="form fields">
+<meta itemprop="keywords" content="command button creation">
+<meta itemprop="keywords" content="buttons, form functions">
+<meta itemprop="keywords" content="controls, inserting">
+<meta itemprop="keywords" content="push buttons,creating">
+<meta itemprop="keywords" content="radio button creation">
+<meta itemprop="keywords" content="check box creation">
+<meta itemprop="keywords" content="labels, form functions">
+<meta itemprop="keywords" content="fixed text, form functions">
+<meta itemprop="keywords" content="text boxes,form functions">
+<meta itemprop="keywords" content="list box creation">
+<meta itemprop="keywords" content="picklist creation">
+<meta itemprop="keywords" content="drop-down lists in form functions">
+<meta itemprop="keywords" content="combo box creation">
+<meta itemprop="keywords" content="selecting,controls">
+<meta itemprop="keywords" content="controls, select mode">
+
+<a name="bm_id4029443"></a>
+<a name="bm_id3153252"></a>
+<h1 itemprop="articleSection" id="hd_id3154142">Form Controls</h1>
+<p id="par_id3151378" class="paragraph"><a name="formulartext"></a><span class="avis">The <span class="emph">Form Controls</span> toolbar contains tools that you need to create an interactive form.</span>
+ You can use the toolbar to add controls to a form in a text, spreadsheet, presentation, or HTML document, for example a button that runs a macro.</p>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1027200809391346" class="paragraph">Choose <span class="menuitem">View - Toolbars - Form Controls</span>.</p>
+<p id="par_id3147336" class="paragraph">Icon on the <span class="emph">Insert</span> toolbar (you may need to enable this initially invisible icon):</p>
+<a name="syformular"></a>
+
+   <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3155341" class="paragraphintable"><img src="media/icon-themes/cmd/sc_config.svg" alt="Icon" title="Icon" style="width:16px;height:16px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3149670" class="paragraphintable">Form Controls</p>
+    </div>
+  </div>
+
+
+</div>
+</div>
+<br>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p><a target="_top" href="en-US/text/shared/guide/xforms.html">XML Form documents</a> (XForms) use the same controls.</p></div>
+</div>
+<br>
+<p id="par_id3152771" class="paragraph">To create a form, open a document and use the Form Controls toolbar to add and define the form controls. If you want, you can also link the form to a database, so that you can use the controls to manipulate a database.</p>
+<p id="par_id3150791" class="paragraph">When you create a form in an HTML document, you can use the form to send data over the Internet.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>LibreOffice only exports the form properties that are supported by the HTML version that you export to. To specify the HTML version, choose <span id="swlnsysidm283201449552" class="switchinline"><span hidden="true" id="MACidm283201449168" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm283201448528"><span class="emph">Tools - Options</span></span></span><span class="emph"> - Load/Save - HTML Compatibility</span>.</p></div>
+</div>
+<br>
+<h2 itemprop="articleSection" id="par_idN10C39">To add a control to a document</h2>
+<ol>
+  <li>
+    <p id="par_id3154918" class="paragraph">On the <span class="emph">Form Controls</span> toolbar, click the icon of the control that you want to add.</p>
+  </li>
+  <li>
+    <p id="par_idN10C4D" class="paragraph">In the document, drag to create the control.</p>
+    <p id="par_idN10C50" class="paragraph">To create a square control field, hold down the <span class="emph">Shift</span> key while you drag.</p>
+  </li>
+</ol>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>To add a field from the field list of a table or query to a form, drag a cell into the form. In a text document, you can also drag a column header to add a field to a form. To include a label for the field, hold down the <span id="swlnsysidm283201439504" class="switchinline"><span hidden="true" id="MACidm283201439152" class="MAC"><span class="emph">Command</span></span><span hidden="true" id="defaultidm283201438544"><span class="emph">Ctrl</span></span></span>+<span class="emph">Shift</span> key down when you drag a column head.</p></div>
+</div>
+<br>
+<h2 itemprop="articleSection" id="par_idN10C87">Modifying a Control</h2>
+<ol>
+  <li>
+    <p id="par_id3148645" class="paragraph">Right-click the control and choose <span class="emph">Control</span>. A dialog opens where you can define the properties of the control.</p>
+  </li>
+  <li>
+    <p id="par_id3153363" class="paragraph">To specify a accelerator key for a control, add a tilde (<span class="emph">~</span>) in front of the character in the label for the control.</p>
+  </li>
+  <li>
+    <p id="par_id3152792" class="paragraph">You can drag and drop controls from one document to another document. You can also copy and paste controls between documents. When you insert a control from another document, LibreOffice analyzes the data source, content type, and content properties of the control so that the control fits the logical structure in the target document. For example, a control that displays contents from an address book continues to display the same contents after you copy the control to a different document. You can view these properties on the <span class="emph">Data</span> tab page of the <span class="emph">Form properties</span> dialog.</p>
+  </li>
+</ol>
+<a name="Section3"></a>
+<h2 itemprop="articleSection" id="hd_id3154411">Select</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3156106" class="paragraphintable"><img src="media/icon-themes/cmd/sc_selectobject.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3150470" class="paragraphintable">This icon switches the mouse pointer to the select mode, or deactivates this mode. The select mode is used to select the controls of the current form.</p>
+    </div>
+  </div>
+
+<div class="embedded">
+<a name="designmodus"></a>
+
+
+<h2 itemprop="articleSection" id="hd_id3151100"><a target="_top" href="en-US/text/shared/02/01170500.html">Design Mode On/Off</a></h2>
+<p id="par_id3150040" class="paragraph"><span class="avis">Toggles the Design mode on or off. This function is used to switch quickly between <a target="_top" href="en-US/text/shared/explorer/database/04030000.html">Design</a> and User mode. Activate to edit the form controls, deactivate to use the form controls.</span></p>
+</div>
+<div class="embedded">
+<a name="sydesign"></a>
+            
+                <div class="icontable">
+                    <div class="iconcell">
+                        <p id="par_id3156056" class="paragraphintable"><img src="media/icon-themes/cmd/sc_testmode.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+                    </div>
+                    <div class="iconcell">
+                        <p id="par_id3153767" class="paragraphintable">Design Mode On/Off</p>
+                    </div>
+                </div>
+            
+        </div>
+<div class="embedded">
+<a name="control"></a>
+
+
+
+
+<h2 itemprop="articleSection" id="hd_id3147102"><a target="_top" href="en-US/text/shared/02/01170100.html">Control Properties</a></h2>
+  <p id="par_id3145345" class="paragraph"><a name="kontroll"></a><span class="avis">Opens a dialog for editing the properties of a selected control.</span></p>
+</div>
+<div class="embedded">
+<a name="sycontroleigenschaften"></a>
+            
+                <div class="icontable">
+                    <div class="iconcell">
+                        <p id="par_id3153953" class="paragraphintable"><img src="media/icon-themes/cmd/sc_controlproperties.svg" alt="Icon" title="Icon" style="width:16px;height:16px"></p>
+                    </div>
+                    <div class="iconcell">
+                        <p id="par_id3156442" class="paragraphintable">Control</p>
+                    </div>
+                </div>
+            
+        </div>
+<div class="embedded">
+<a name="formular"></a>
+  
+
+<h2 itemprop="articleSection" id="hd_id3147285"><a target="_top" href="en-US/text/shared/02/01170200.html">Form Properties</a></h2>
+  <p id="par_id3147088" class="paragraph"><a name="form"></a><span class="avis">In this dialog you can specify, among others, the data source and the events for the whole form.</span></p>
+  </div>
+<div class="embedded">
+<a name="syformulareigenschaften"></a>
+            
+                <div class="icontable">
+                    <div class="iconcell">
+                        <p id="par_id3152933" class="paragraphintable"><img src="media/icon-themes/cmd/sc_formproperties.svg" alt="Icon" title="Icon" style="width:16px;height:16px"></p>
+                    </div>
+                    <div class="iconcell">
+                        <p id="par_id3144760" class="paragraphintable">Form</p>
+                    </div>
+                </div>
+            
+        </div>
+
+<a name="Section19"></a>
+<a name="bm_id8176164"></a>
+<a name="bm_id3150751"></a>
+<h2 itemprop="articleSection" id="hd_id3146914">Check Box</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3148483" class="paragraphintable"><img src="media/icon-themes/cmd/sc_checkbox.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3153927" class="paragraphintable"><span class="avis">Creates a check box.</span> Check boxes allow you to activate or deactivate a function in a form.</p>
+    </div>
+  </div>
+
+
+<a name="Section16"></a>
+<a name="bm_id7355178"></a>
+<a name="bm_id3153785"></a>
+<h2 itemprop="articleSection" id="hd_id3153794">Text Box</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+     <p id="par_id3163665" class="paragraphintable"><img src="media/icon-themes/cmd/sc_edit.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3158444" class="paragraphintable"><span class="avis">Creates a text box.</span> Text boxes are fields in which the user can enter text. In a form, text boxes display data or allow for new data input.</p>
+    </div>
+  </div>
+
+
+<a name="Section7"></a>
+<a name="bm_id6606960"></a>
+<a name="bm_id3155526"></a>
+<h2 itemprop="articleSection" id="hd_id3151218">Formatted Field</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3154836" class="paragraphintable"><img src="media/icon-themes/cmd/sc_formattedfield.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3147547" class="paragraphintable"><span class="avis">Creates a formatted field.</span> A formatted field is a text box in which you can define how the inputs and outputs are formatted, and which limiting values apply.</p>
+    </div>
+  </div>
+
+<p id="par_id3155346" class="paragraph">A formatted field has <a target="_top" href="en-US/text/shared/02/01170002.html">special control properties</a> (choose <span class="emph">Format - Control</span>).</p>
+
+<a name="Section21"></a>
+<a name="bm_id6486131"></a>
+<a name="bm_id3153878"></a>
+<h2 itemprop="articleSection" id="hd_id3148774">Push Button</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3145801" class="paragraphintable"><img src="media/icon-themes/cmd/sc_pushbutton.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3147046" class="paragraphintable"><span class="avis">Creates a push button.</span> This function can be used to execute a command for a defined event, such as a mouse click.</p>
+      <p id="par_id3154731" class="paragraphintable">You can apply text and graphics to these buttons.</p>
+    </div>
+  </div>
+
+
+<a name="Section20"></a>
+<a name="bm_id3862451"></a>
+<a name="bm_id3153418"></a>
+<h2 itemprop="articleSection" id="hd_id3157844">Option Button</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3152971" class="paragraphintable"><img src="media/icon-themes/cmd/sc_radiobutton.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3149123" class="paragraphintable"><span class="avis">Creates an option button.</span> Option buttons enable the user to choose one of several options. Option buttons with the same functionality are given the same name (<a target="_top" href="en-US/text/shared/02/01170101.html"><span class="emph">Name</span></a> <span class="emph">property</span>). Normally, they are given a group box.</p>
+    </div>
+  </div>
+
+
+<a name="Section15"></a>
+<a name="bm_id7238352"></a>
+<a name="bm_id3154475"></a>
+<h2 itemprop="articleSection" id="hd_id3156064">List Box</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3154326" class="paragraphintable"><img src="media/icon-themes/cmd/sc_listbox.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3166428" class="paragraphintable"><span class="avis">Creates a list box.</span> A list box lets users select an entry from a list. If the form is linked to a database and the database connection is active, the <a target="_top" href="en-US/text/shared/02/01170900.html"><span class="emph">List Box Wizard</span></a> will automatically appear after the list box is inserted in the document. This wizard helps you create the list box.</p>
+    </div>
+  </div>
+
+
+<a name="Section14"></a>
+<a name="bm_id5504530"></a>
+<a name="bm_id3156169"></a>
+<h2 itemprop="articleSection" id="hd_id3147171">Combo Box</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3149981" class="paragraphintable"><img src="media/icon-themes/cmd/sc_combobox.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3149407" class="paragraphintable"><span class="avis">Creates a combo box.</span> A combo box is a single-line list box with a drop-down list from which users choose an option. You can assign the "read-only" property to the combo box so that users cannot enter other entries than those found in the list. If the form is bound to a database and the database connection is active, the <a target="_top" href="en-US/text/shared/02/01170900.html"><span class="emph">Combo Box Wizard</span></a> will automatically appear after you insert the combo box in the document.</p>
+    </div>
+  </div>
+
+
+<a name="Section18"></a>
+<a name="bm_id7047484"></a>
+<a name="bm_id3154255"></a>
+<h2 itemprop="articleSection" id="hd_id3145618">Label Field</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3145295" class="paragraphintable"><img src="media/icon-themes/cmd/sc_insertfixedtext.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3148534" class="paragraphintable"><span class="avis">Creates a field for displaying text.</span> These labels are only for displaying predefined text. Entries cannot be made in these fields.</p>
+    </div>
+  </div>
+
+
+<a name="bm_id1433643"></a>
+<a name="bm_id4851832"></a>
+<h2 itemprop="articleSection" id="par_idN10CC6">More Controls</h2>
+<p id="par_idN10CDC" class="paragraph"><span class="avis">Opens the <a target="_top" href="en-US/text/shared/02/more_controls.html"><span class="emph">More Controls</span></a> toolbar.</span></p>
+<a name="bm_id6078501"></a>
+<a name="bm_id3258766"></a>
+<h2 itemprop="articleSection" id="par_idN10CF7">Form Design</h2>
+<p id="par_idN10D0D" class="paragraph"><span class="avis">Opens the <a target="_top" href="en-US/text/shared/main0226.html"><span class="emph">Form Design</span></a> toolbar.</span></p>
+<a name="Section25"></a>
+<h2 itemprop="articleSection" id="par_idN11B57">Wizards On/Off</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_idN11B65" class="paragraphintable"><img src="media/icon-themes/cmd/sc_autopilotmenu.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_idN11B76" class="paragraphintable">Turns on and turns off the automatic form controls wizards.</p>
+      <p id="par_id6403088" class="paragraphintable">These wizards help you to enter the properties of list boxes, table controls, and other controls.</p>
+    </div>
+  </div>
+
+
+<h2 itemprop="articleSection" id="hd_id3149436"><a target="_top" href="en-US/text/shared/02/01170001.html">Context Menu Commands</a></h2>
+<span id="swlnsysidm283201301504" class="switch">
+<span hidden="true" id="HIDE_HEREidm283201301024" class="HIDE_HERE">
+<a name="more_controls"></a>
+<a name="Section22"></a>
+<a name="bm_id8342120"></a>
+<a name="bm_id5568102"></a>
+<h2 itemprop="articleSection" id="par_idN11A56">Spin Button</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_idN11A64" class="paragraphintable"><img src="media/icon-themes/cmd/sc_spinbutton.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_idN11A75" class="paragraphintable"><span class="avis">Creates a spin button.</span></p>
+    </div>
+  </div>
+
+<p id="par_id710776" class="paragraph">If you add a spin button to a Calc spreadsheet, you can use the Data tab page to create a two-way link between the spin button and a cell. As a result, when you change the contents of a cell, the contents of the spin button are updated. Conversely, if you change the value of the spin button, the contents of the cell are updated.</p>
+
+<a name="Section23"></a>
+<a name="bm_id633802"></a>
+<a name="bm_id8119449"></a>
+<h2 itemprop="articleSection" id="par_idN11ABC">Scrollbar</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_idN11ACA" class="paragraphintable"><img src="media/icon-themes/cmd/sc_scrollbar.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_idN11ADB" class="paragraphintable"><span class="avis">Creates a scrollbar.</span></p>
+    </div>
+  </div>
+
+<p id="par_idN11CA3" class="paragraph">You can specify the following properties for a scrollbar:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN11CDA" class="tableheadintable">UI name</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN11CE0" class="tableheadintable">Semantics</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11CE7" class="tablecontentintable">Scroll value min</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11CED" class="tablecontentintable">Specifies the minimum height or the minimum width of a scrollbar.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11CF4" class="tablecontentintable">Scroll value max</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11CFA" class="tablecontentintable">Specifies the maximum height or the maximum width of a scrollbar.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D01" class="tablecontentintable">Default scroll value</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D07" class="tablecontentintable">Specifies the default value of a scrollbar, used when the form is reset.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D0E" class="tablecontentintable">Orientation</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D14" class="tablecontentintable">Specifies the orientation of a scrollbar, that is, horizontal or vertical.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D1B" class="tablecontentintable">Small change</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D21" class="tablecontentintable">Specifies the minimum amount by which you can scroll a scrollbar, for example, by clicking an arrow.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D28" class="tablecontentintable">Large change</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D2E" class="tablecontentintable">Specifies the amount that a large step scrolls a scrollbar, for example, when you click between the scrollbar thumb and a scrollbar arrow.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D35" class="tablecontentintable">Delay</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D3B" class="tablecontentintable">Specifies the delay in milliseconds between scrollbar trigger events. For example, the delay that occurs when you click an arrow button on the scrollbar and hold down the mouse button.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D42" class="tablecontentintable">Symbol color</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D48" class="tablecontentintable">Specifies the color of the arrows on the scrollbar.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D4F" class="tablecontentintable">Visible Size</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11D55" class="tablecontentintable">Specifies the size of the scrollbar thumb in "value units". For example, a value of <span class="emph">("Scroll value max." minus "Scroll value min.") / 2</span> results in a scrollbar thumb that occupies half of the scrollbar.</p>
+      <p id="par_idN11D58" class="tablecontentintable">To make the width of the scrollbar equal to the height of the scrollbar, set the <span class="emph">Visible Size</span> to zero.</p>
+    </td>
+  </tr>
+</table>
+<br>
+<p id="par_idN11D63" class="paragraph">In a Calc spreadsheet, you can use the <span class="emph">Data</span> tab page to create a two-way link between a scrollbar and a cell.</p>
+
+<a name="Section13"></a>
+<a name="bm_id2102401"></a>
+<a name="bm_id3151373"></a>
+<h2 itemprop="articleSection" id="hd_id3153316">Image Button</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3159622" class="paragraphintable"><img src="media/icon-themes/cmd/sc_imagebutton.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3148601" class="paragraphintable"><span class="avis">Creates a button displayed as an image.</span> Aside from the graphic representation, an image button has the same properties as a "normal" button.</p>
+    </div>
+  </div>
+
+
+<a name="Section12"></a>
+<a name="bm_id7383386"></a>
+<a name="bm_id3150947"></a>
+<h2 itemprop="articleSection" id="hd_id3159171">Image Control</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3155869" class="paragraphintable"><img src="media/icon-themes/cmd/sc_objectcatalog.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3149596" class="paragraphintable"><span class="avis">Creates an image control. It can only be used to add images from a database.</span> In the form document, double-click one of these controls to open the <span class="emph">Insert Graphic</span> dialog to insert the image. There is also a context menu (not in design mode) with commands for inserting and deleting the image.</p>
+      <p id="par_id3150318" class="paragraphintable">Images from a database can be displayed in a form, and new images can be inserted in the database as long as the image control is not write-protected. The control must refer to a database field of the image type. Therefore, enter the data field into the properties window on the <span class="emph">Data</span> tab page.</p>
+    </div>
+  </div>
+
+
+<a name="Section10"></a>
+<a name="bm_id4810502"></a>
+<a name="bm_id3145656"></a>
+<h2 itemprop="articleSection" id="hd_id3156040">Date Field</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3149423" class="paragraphintable"><img src="media/icon-themes/cmd/sc_datefield.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3151312" class="paragraphintable"><span class="avis">Creates a date field.</span> If the form is linked to a database, the date values can be adopted from the database.</p>
+    </div>
+  </div>
+
+<p id="par_id3151302" class="paragraph">If you assign the "Dropdown" property to the date field, the user can open a calendar to select a date under the date field. This also applies to a date field within a <span class="emph">Table Control</span> field.</p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Date fields can be easily edited by the user with the up arrow and down arrow keys. Depending on the cursor position, the day, month, or the year is can be increased or decreased using the arrow keys.</p></div>
+</div>
+<br>
+<p id="par_id3153112" class="paragraph"><a target="_top" href="en-US/text/shared/02/01170003.html">Specific Remarks on Date Fields</a>.</p>
+
+<a name="Section9"></a>
+<a name="bm_id4739584"></a>
+<a name="bm_id3154541"></a>
+<h2 itemprop="articleSection" id="hd_id3152369">Time Field</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3153687" class="paragraphintable"><img src="media/icon-themes/cmd/sc_timefield.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3155399" class="paragraphintable"><span class="avis">Creates a time field.</span> If the form is linked to a database, the time values for the form can be adopted from the database.</p>
+    </div>
+  </div>
+
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Time fields can be easily edited by the user with the up and down arrow keys. Depending on the cursor position, the hours, minutes, or the seconds are increased or decreased using the arrow keys.</p></div>
+</div>
+<br>
+
+<a name="Section11"></a>
+<a name="bm_id1460134"></a>
+<a name="bm_id3154859"></a>
+<h2 itemprop="articleSection" id="hd_id3156186">File Selection</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3150531" class="paragraphintable"><img src="media/icon-themes/cmd/sc_filecontrol.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3149438" class="paragraphintable"><span class="avis">Creates a button that enables file selection.</span></p>
+    </div>
+  </div>
+
+
+<a name="Section8"></a>
+<a name="bm_id3301501"></a>
+<a name="bm_id3154211"></a>
+<h2 itemprop="articleSection" id="hd_id3154652">Numerical Field</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3149396" class="paragraphintable"><img src="media/icon-themes/cmd/sc_numberformatstandard.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3145601" class="paragraphintable"><span class="avis">Creates a numerical field.</span> If the form is linked to a database, the numerical values in the form can be adopted from the database.</p>
+    </div>
+  </div>
+
+
+<a name="Section6"></a>
+<a name="bm_id9766539"></a>
+<a name="bm_id3151327"></a>
+<h2 itemprop="articleSection" id="hd_id3153612">Currency Field</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3145324" class="paragraphintable"><img src="media/icon-themes/cmd/sc_currencyfield.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3145115" class="paragraphintable"><span class="avis">Creates a currency field.</span> If the form is linked to a database, the currency field contents for in the form can be adopted from the database.</p>
+    </div>
+  </div>
+
+
+<a name="Section5"></a>
+<a name="bm_id1317017"></a>
+<a name="bm_id3155746"></a>
+<h2 itemprop="articleSection" id="hd_id3148825">Pattern Field</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3149742" class="paragraphintable"><img src="media/icon-themes/cmd/sc_patternfield.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3150122" class="paragraphintable"><span class="avis">Creates a pattern field.</span> Pattern fields consist of an edit mask and a literal mask. The edit mask determines which data can be entered. The literal mask determines the contents of the pattern field when loading the form.</p>
+    </div>
+  </div>
+
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Please note that pattern fields are not exported into HTML format.</p></div>
+</div>
+<br>
+
+<a name="Section17"></a>
+<a name="bm_id3430892"></a>
+<a name="bm_id3147364"></a>
+<h2 itemprop="articleSection" id="hd_id3145147">Group Box</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3159334" class="paragraphintable"><img src="media/icon-themes/cmd/sc_groupbox.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3154572" class="paragraphintable"><span class="avis">Creates a frame to visually group several controls.</span> <span class="emph">Group boxes</span> allow you to group option buttons in a frame.</p>
+      <p id="par_id3148394" class="paragraphintable">If you insert a group frame into the document, the <a target="_top" href="en-US/text/shared/autopi/01120000.html"><span class="emph">Group Element Wizard</span></a> starts, which allows you to easily create an option group.</p>
+    </div>
+  </div>
+
+<p id="par_id3150567" class="paragraph"><span class="emph">Note:</span> When you drag a group box over already existing controls and then want to select a control, you have to first open the context menu of the group box and choose <span class="emph">Arrange - Send to Back</span>. Then select the control while pressing <span id="swlnsysidm283201123264" class="switchinline"><span hidden="true" id="MACidm283201122912" class="MAC"><span class="emph">Command</span></span><span hidden="true" id="defaultidm283201122288"><span class="emph">Ctrl</span></span></span>.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p><span class="emph">Group boxes</span> are used only for a visual effect. A functional grouping of option fields can be made through the name definition: under the <a target="_top" href="en-US/text/shared/02/01170101.html"><span class="emph">Name</span></a> properties of all option fields, enter the same name in order to group them.</p></div>
+</div>
+<br>
+
+<a name="Section4"></a>
+<a name="bm_id74623"></a>
+<a name="bm_id3147372"></a>
+<h2 itemprop="articleSection" id="hd_id3157996">Table Control</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3156402" class="paragraphintable"><img src="media/icon-themes/cmd/sc_insertspreadsheet.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3154579" class="paragraphintable"><span class="avis">Creates a <span class="emph">table control</span> to display a database table.</span> If you create a new table control, the <a target="_top" href="en-US/text/shared/02/01170800.html"><span class="emph">Table Element Wizard</span></a> appears.</p>
+    </div>
+  </div>
+
+<p id="par_id3154697" class="paragraph"><a target="_top" href="en-US/text/shared/02/01170004.html">Special information about Table Controls</a>.</p>
+
+<a name="Section24"></a>
+<a name="bm_id8951689"></a>
+<a name="bm_id9112521"></a>
+<h2 itemprop="articleSection" id="par_idN11B1E">Navigation bar</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_idN11B2C" class="paragraphintable"><img src="media/icon-themes/cmd/sc_navigationbar.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+       <p id="par_idN11B3D" class="paragraphintable"><span class="avis">Creates a <span class="emph">Navigation</span> bar.</span></p>
+    </div>
+  </div>
+
+<p id="par_idN11DB1" class="paragraph">The <span class="emph">Navigation</span> bar allows you to move through the records of a database or a database form. The controls on this <span class="emph">Navigation</span> bar work the same way as the controls on the default <a target="_top" href="en-US/text/shared/main0213.html"><span class="emph">Navigation</span> bar</a> in LibreOffice.</p>
+
+
+</span>
+</span>
+<span id="swlnsysidm283201089568" class="switch">
+<span hidden="true" id="HIDE_HEREidm283201089088" class="HIDE_HERE">
+<a name="Section1"></a>
+<a name="bm_id8170669"></a>
+<a name="bm_id3149198"></a>
+<h2 itemprop="articleSection" id="hd_id3146815">Automatic Control Focus</h2>
+
+  <div class="icontable">
+    <div class="iconcell">
+      <p id="par_id3150261" class="paragraphintable"><img src="media/icon-themes/cmd/sc_autocontrolfocus.svg" alt="Icon" title="Icon" style="width:21px;height:21px"></p>
+    </div>
+    <div class="iconcell">
+      <p id="par_id3109848" class="paragraphintable"><span class="avis">If <span class="emph">Automatic Control Focus</span> is activated, the first form control will be selected when you open the document. If the button is not activated, the text will be selected after opening. The <a target="_top" href="en-US/text/shared/02/01170300.html">Tab Order</a> that you have specified determines which is the first form control.</span></p>
+    </div>
+  </div>
+
+
+</span>
+</span>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/02/01170000.xhp" target="_blank">/text/shared/02/01170000.xhp</a></p>
+<p>Title is: Form Controls</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

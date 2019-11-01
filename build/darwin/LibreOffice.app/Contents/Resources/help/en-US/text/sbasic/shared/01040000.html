@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Event-Driven Macros</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+      <a name="weitere"></a>
+<a name="bm_id3154581"></a><meta itemprop="keywords" content="deleting, macro assignments to events">
+         <meta itemprop="keywords" content="macros, assigning to events">
+         <meta itemprop="keywords" content="assigning macros to events">
+         <meta itemprop="keywords" content="events, assigning macros">
+
+<h1 itemprop="articleSection" id="hd_id3147348">Event-Driven Macros</h1>
+         <p id="par_id3146120" class="paragraph">This section describes how to assign Basic programs to program events.</p>
+      
+      <p id="par_id3149263" class="paragraph">You can automatically execute a macro when a specified software event occurs by assigning the desired macro to the event. The following table provides an overview of program events and at what point an assigned macro is executed.</p>
+      <table border="1" class="" cellpadding="0" cellspacing="0">
+         <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3148455" class="tableheadintable">Event</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3145799" class="tableheadintable">An assigned macro is executed...</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3149379" class="tablecontentintable">Program Start</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3150715" class="tablecontentintable">... after a LibreOffice application is started.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3146914" class="tablecontentintable">Program End</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3153765" class="tablecontentintable">...before a LibreOffice application is terminated.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3145150" class="tablecontentintable">Create Document</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3163808" class="tablecontentintable">...after a new document is created with <span class="emph">File - New</span> or with the <span class="emph">New</span> icon.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3145790" class="tablecontentintable">Open Document</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3154572" class="tablecontentintable">...after a document is opened with <span class="emph">File - Open</span> or with the <span class="emph">Open</span> icon.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3153266" class="tablecontentintable">Save Document As</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3150208" class="tablecontentintable">...before a document is saved under a specified name (with <span class="emph">File - Save As</span>, or with <span class="emph">File - Save</span> or the <span class="emph">Save</span> icon, if a document name has not yet been specified).</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3158215" class="tablecontentintable">Document has been saved as</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3150980" class="tablecontentintable">... after a document was saved under a specified name (with <span class="emph">File - Save As</span>, or with <span class="emph">File - Save</span> or with the <span class="emph">Save</span> icon, if a document name has not yet been specified).</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3150519" class="tablecontentintable">Save Document</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3155529" class="tablecontentintable">...before a document is saved with <span class="emph">File - Save</span> or the <span class="emph">Save</span> icon, provided that a document name has already been specified.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3149404" class="tablecontentintable">Document has been saved</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3151332" class="tablecontentintable">...after a document is saved with <span class="emph">File - Save</span> or the <span class="emph">Save</span> icon, provided that a document name has already been specified.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3159171" class="tablecontentintable">Document is closing</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3146868" class="tablecontentintable">...before a document is closed.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3159097" class="tablecontentintable">Document closed</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3148606" class="tablecontentintable">...after a document was closed. Note that the "Save Document" event may also occur when the document is saved before closing.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3144772" class="tablecontentintable">Activate Document</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3149442" class="tablecontentintable">...after a document is brought to the foreground.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3150888" class="tablecontentintable">Deactivate Document</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3154060" class="tablecontentintable">...after another document is brought to the foreground.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3152384" class="tablecontentintable">Print Document</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3152873" class="tablecontentintable">...after the <span class="emph">Print</span> dialog is closed, but before the actual print process begins.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3159227" class="tablecontentintable">JavaScript run-time error</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3145362" class="tablecontentintable">...when a JavaScript run-time error occurs.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3154767" class="tablecontentintable">Print Mail Merge</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3153555" class="tablecontentintable">...after the <span class="emph">Print</span> dialog is closed, but before the actual print process begins. This event occurs for each copy printed.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3156366" class="tablecontentintable">Change of the page count</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3154627" class="tablecontentintable">...when the page count changes.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3154737" class="tablecontentintable">Message received</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3150952" class="tablecontentintable">...if a message was received.</p>
+            </td>
+         </tr>
+      </table>
+<br>
+
+      <h2 itemprop="articleSection" id="hd_id3153299">Assigning a Macro to an Event</h2>
+      <ol>
+         <li>
+            <p id="par_id3147244" class="listitem">Choose <span class="emph">Tools - Customize</span> and click the <span class="emph">Events</span> tab.</p>
+         </li>
+         <li>
+            <p id="par_id3146098" class="listitem">Select whether you want the assignment to be globally valid or just valid in the current document in the <span class="emph">Save In</span> listbox.</p>
+         </li>
+         <li>
+            <p id="par_id3150431" class="listitem">Select the event from the <span class="emph">Event</span> list.</p>
+         </li>
+         <li>
+            <p id="par_id3148742" class="listitem">Click <span class="emph">Macro</span> and select the macro to be assigned to the selected event.</p>
+         </li>
+         <li>
+            <p id="par_id3146321" class="listitem">Click <span class="emph">OK</span> to assign the macro.</p>
+         </li>
+         <li>
+            <p id="par_id3147414" class="listitem">Click <span class="emph">OK</span> to close the dialog.</p>
+         </li>
+      </ol>
+      <h2 itemprop="articleSection" id="hd_id3154581">Removing the Assignment of a Macro to an Event</h2>
+      <ol>
+         <li>
+            <p id="par_id3146883" class="listitem">Choose <span class="emph">Tools - Customize</span> and click the <span class="emph">Events</span> tab.</p>
+         </li>
+         <li>
+            <p id="par_id3155909" class="listitem">Select whether you want to remove a global assignment or an assignment that is just valid in the current document by selecting the option in the <span class="emph">Save In</span> listbox.</p>
+         </li>
+         <li>
+            <p id="par_id3159129" class="listitem">Select the event that contains the assignment to be removed from the <span class="emph">Event</span> list.</p>
+         </li>
+         <li>
+            <p id="par_id3149143" class="listitem">Click <span class="emph">Remove</span>.</p>
+         </li>
+         <li>
+            <p id="par_id3149351" class="listitem">Click <span class="emph">OK</span> to close the dialog.</p>
+         </li>
+      </ol>
+   </div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/01040000.xhp" target="_blank">/text/sbasic/shared/01040000.xhp</a></p>
+<p>Title is: Event-Driven Macros</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

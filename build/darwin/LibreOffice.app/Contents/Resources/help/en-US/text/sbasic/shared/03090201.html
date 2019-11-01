@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Do...Loop Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="doloop"></a>
+<a name="bm_id3156116"></a>
+  <meta itemprop="keywords" content="Do...Loop statement">
+  <meta itemprop="keywords" content="While, Do loop">
+  <meta itemprop="keywords" content="Until">
+  <meta itemprop="keywords" content="loops">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3156116">Do...Loop Statement</h1>
+<p id="par_id3109850" class="paragraph">Repeats the statements between the Do and the Loop statement while the condition is True or until the condition becomes True.</p>
+
+
+<h2 itemprop="articleSection" id="hd_id3149119">Syntax</h2>
+Do [{While | Until} condition = True]
+<p id="par_id3154422" class="paragraph">statement block</p>
+[Exit Do]
+<p id="par_id3155805" class="paragraph">statement block</p>
+Loop
+<p id="par_id3154749" class="paragraph">or</p>
+Do
+<p id="par_id3149762" class="paragraph">statement block</p>
+[Exit Do]
+<p id="par_id3143228" class="paragraph">statement block</p>
+Loop [{While | Until} condition = True]
+
+<h2 itemprop="articleSection" id="hd_id3156024">Parameters/Elements</h2>
+<p id="par_id3156344" class="paragraph"> <span class="emph">Condition:</span> A comparison, numeric or string expression, that evaluates either True or False.</p>
+<p id="par_id3149669" class="paragraph"> <span class="emph">Statement block:</span> Statements that you want to repeat while or until the condition is True.</p>
+<p id="par_id3150791" class="paragraph">The <span class="emph">Do...Loop</span> statement executes a loop as long as, or until, a certain condition is True. The condition for exiting the loop must be entered following either the <span class="emph">Do</span> or the <span class="emph">Loop</span> statement. The following examples are valid combinations:</p>
+
+<h2 itemprop="articleSection" id="hd_id3154366">Syntax</h2>
+Do While condition = True
+<p id="par_id3149203" class="paragraph">...statement block</p>
+Loop
+<p id="par_id3154124" class="paragraph">The statement block between the Do While and the Loop statements is repeated so long as the condition is true.</p>
+Do Until condition = True
+<p id="par_id3154909" class="paragraph">...statement block</p>
+Loop
+<p id="par_id3150440" class="paragraph">The statement block between the Do Until and the Loop statements is repeated if the condition so long as the condition is false.</p>
+Do
+<p id="par_id3147349" class="paragraph">...statement block</p>
+Loop While condition = True
+<p id="par_id3146985" class="paragraph">The statement block between the Do and the Loop statements repeats so long as the condition is true.</p>
+Do
+<p id="par_id3153189" class="paragraph">...statement block</p>
+Loop Until condition = True
+<p id="par_id3151117" class="paragraph">The statement block between the Do and the Loop statements repeats until the condition is true.</p>
+<p id="par_id3149484" class="paragraph">Use the <span class="emph">Exit Do</span> statement to unconditionally end the loop. You can add this statement anywhere in a <span class="emph">Do</span>...<span class="emph">Loop</span> statement. You can also define an exit condition using the <span class="emph">If...Then</span> structure as follows:</p>
+Do...
+<p id="par_id3149298" class="paragraph">statements</p>
+If condition = True Then Exit Do
+<p id="par_id3154490" class="paragraph">statements</p>
+Loop...
+
+<h2 itemprop="articleSection" id="hd_id3147396">Example</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleDoLoop
+Dim sFile As String
+Dim sPath As String
+    sPath = "c:\"
+    sFile = Dir$( sPath ,22)
+    If sFile &lt;&gt; "" Then
+        Do
+            MsgBox sFile
+            sFile = Dir$
+        Loop Until sFile = ""
+    End If
+End Sub
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03090201.xhp" target="_blank">/text/sbasic/shared/03090201.xhp</a></p>
+<p>Title is: Do...Loop Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

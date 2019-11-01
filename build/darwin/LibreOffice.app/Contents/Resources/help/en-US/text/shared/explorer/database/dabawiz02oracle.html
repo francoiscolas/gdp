@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Oracle Database Connection</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<a name="bm_id5900753"></a><meta itemprop="keywords" content="Oracle databases (base)">
+
+<h1 itemprop="articleSection" id="par_idN105A4">Oracle Database Connection</h1>
+<p id="par_idN105A8" class="paragraph"><span class="avis">Specifies the options to access an Oracle database.</span></p>
+<h2 itemprop="articleSection" id="par_idN105BD">Oracle database</h2>
+<p id="par_idN105C1" class="paragraph">You can use a JDBC driver to access an Oracle database from Solaris or Linux. To access the database from Windows, you need an ODBC driver.</p>
+<span id="swlnsysidm252306469984" class="switch">
+<span hidden="true" id="UNIXidm252306469472" class="UNIX">
+<p id="par_idN105D4" class="paragraph">On UNIX, ensure that the Oracle database client is installed with JDBC support. The JDBC driver class for the Solaris Oracle client version 8.x is located in the &lt;Oracle client&gt;/product/jdbc/lib/classes111.zip directory. You can also download the latest version of the driver from the Oracle web site.</p>
+</span>
+</span>
+<p id="par_idN105EA" class="paragraph"><span class="avis">In the <span class="emph">Data source URL</span> box, enter the location of the Oracle database server. The syntax of the URL depends on the database type. See the documentation that came with the JDBC driver for more information.</span></p>
+<p id="par_idN105F1" class="paragraph">For an Oracle database, the syntax of the URL is:</p>
+<p id="par_idN105F4" class="example">oracle:thin:@hostname:port:database_name</p>
+<ul>
+<li>
+<p id="par_idN105FD" class="listitem">hostname is the name of the machine that runs the Oracle database. You can also replace hostname with the IP address of the server.</p>
+</li>
+<li>
+<p id="par_idN10601" class="listitem">port is the port where the Oracle database listens. Ask your database administrator for the correct port address.</p>
+</li>
+<li>
+<p id="par_idN10605" class="listitem">database_name is the name of the Oracle database. Ask your database administrator for the correct name.</p>
+</li>
+</ul>
+<a name="bm_id6442152"></a>
+<h2 itemprop="articleSection" id="par_idN10608">Name of the Oracle database</h2>
+<p id="par_idN1060C" class="paragraph"><span class="avis">Enter the name of the Oracle database.</span></p>
+<a name="bm_id7636036"></a>
+<h2 itemprop="articleSection" id="par_idN1060F">Server URL</h2>
+<p id="par_idN10613" class="paragraph"><span class="avis">Enter the URL for the database server. </span></p>
+<a name="bm_id7325357"></a>
+<h2 itemprop="articleSection" id="par_idN10616">Port number</h2>
+<p id="par_idN1061A" class="paragraph"><span class="avis">Enter the port number for the database server.</span></p>
+
+<h2 itemprop="articleSection" id="par_idN1061D">Oracle JDBC Driver Class</h2>
+<p id="par_idN10621" class="paragraph"><span class="avis">Enter the name of the JDBC driver.</span></p>
+
+<h2 itemprop="articleSection" id="par_idN10630">Test Class</h2>
+<p id="par_idN10634" class="paragraph"><span class="avis">Tests the connection with the current settings.</span></p>
+<p id="par_idN10637" class="paragraph"><a target="_top" href="en-US/text/shared/explorer/database/dabawiz03auth.html">Authentication</a></p>
+<p id="par_idN10646" class="paragraph"><a target="_top" href="en-US/text/shared/explorer/database/dabawiz00.html">Database Wizard</a></p>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/explorer/database/dabawiz02oracle.xhp" target="_blank">/text/shared/explorer/database/dabawiz02oracle.xhp</a></p>
+<p>Title is: Oracle Database Connection</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

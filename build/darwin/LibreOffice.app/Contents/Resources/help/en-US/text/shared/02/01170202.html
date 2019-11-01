@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Events</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+      <a name="ereignisse"></a>
+<a name="bm_id3150499"></a><meta itemprop="keywords" content="forms, events">
+         <meta itemprop="keywords" content="events,in forms">
+
+<h1 itemprop="articleSection" id="hd_id3150499">Events</h1>
+         <p id="par_id3147043" class="paragraph">The<span class="emph"> Events </span>tab page, allows you to assign a macro to certain events which occur in a form.</p>
+      
+      <a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+         <div class="embedded">
+<a name="formulareigenschaftenereignisse"></a>
+        <p id="par_id3145364" class="paragraph">Open context menu of a selected form element - choose <span class="emph">Form - Events</span> tab.</p>
+        <p id="par_id3153575" class="paragraph">Open <span class="emph">Form Controls</span> toolbar or <span class="emph">Form Design</span> toolbar, click <span class="emph">Form</span> icon - <span class="emph">Events</span> tab.</p>
+    </div>
+      </div>
+</div>
+<br>
+      <p id="par_id3159233" class="paragraph">To link an event with a macro, first write a macro that contains all the commands to be executed when the event happens. Then assign this macro to the respective event by clicking the <span class="emph">... </span>button beside the corresponding event. The<span class="emph"> Assign Macro </span>dialog opens, where you can select the macro.</p>
+      <p id="par_id3149182" class="paragraph">The following actions can be configured individually, meaning that you can use your own dialogs to depict an action:</p>
+      <ol>
+         <li>
+            <p id="par_id3166460" class="listitem">Displaying an error message,</p>
+         </li>
+      </ol>
+      <ol>
+         <li>
+            <p id="par_id3152996" class="listitem">Confirming a delete process (for data records),</p>
+         </li>
+      </ol>
+      <ol>
+         <li>
+            <p id="par_id3153541" class="listitem">Querying parameters,</p>
+         </li>
+      </ol>
+      <ol>
+         <li>
+            <p id="par_id3155261" class="listitem">Checking input when saving a data record.</p>
+         </li>
+      </ol>
+      <p id="par_id3153127" class="paragraph">For example, you can issue a "confirm deletion" request such as "Really delete customer xyz?" when deleting a data record.</p>
+      <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The events that are shown in the Events dialog cannot be edited directly. You can delete an event from the list by pressing the Del key.</p></div>
+</div>
+<br>
+      <p id="par_id3150986" class="paragraph">The following lists and describes all events in a form that can be linked to a macro:</p>
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+<a name="Section5"></a>
+<a name="bm_id3150685"></a>
+<h2 itemprop="articleSection" id="hd_id3145749">After record action</h2>
+         <p id="par_id3146975" class="paragraph"><span class="avis">The<span class="emph"> After record action </span>event occurs directly after the current record has been changed.</span></p>
+      <a name="Section3"></a>
+<a name="bm_id3150420"></a>
+<h2 itemprop="articleSection" id="hd_id3157975">After record change</h2>
+         <p id="par_id3154098" class="paragraph"><span class="avis">The<span class="emph"> After record change </span>event occurs directly after the current record pointer has been changed.</span></p>
+      <a name="Section6"></a>
+<a name="bm_id3151351"></a>
+<h2 itemprop="articleSection" id="hd_id3149481">Before record action</h2>
+         <p id="par_id3156007" class="paragraph"><span class="avis">The<span class="emph"> Before record action </span>event occurs before the current record is changed.</span> For example, the linked macro can request confirmation in a dialog.</p>
+      <a name="Section4"></a>
+<a name="bm_id3155413"></a>
+<h2 itemprop="articleSection" id="hd_id3154012">Before record change</h2>
+         <p id="par_id3149664" class="paragraph"><span class="avis">The<span class="emph"> Before record change </span>event occurs before the current record pointer is changed.</span> For example, the linked macro can prevent this action by returning "FALSE".</p>
+      <a name="Section11"></a>
+<a name="bm_id3157320"></a>
+<h2 itemprop="articleSection" id="hd_id3148451">Before reloading</h2>
+         <p id="par_id3154218" class="paragraph"><span class="avis">The<span class="emph"> Before reloading </span>event occurs before the form is reloaded.</span> The data content has not yet been refreshed.</p>
+      <a name="Section13"></a>
+<a name="bm_id3147084"></a>
+<h2 itemprop="articleSection" id="hd_id3150870">Before submitting</h2>
+         <p id="par_id3159152" class="paragraph"><span class="avis">The<span class="emph"> Before submitting </span>event occurs before the form data is sent.</span></p>
+      <a name="Section9"></a>
+<a name="bm_id3151116"></a>
+<h2 itemprop="articleSection" id="hd_id3152792">Before unloading</h2>
+         <p id="par_id3152598" class="paragraph"><span class="avis">The<span class="emph"> Before unloading </span>event occurs before the form is unloaded; that is, separated from its data source.</span></p>
+      <a name="reset_update"></a>
+         <h2 itemprop="articleSection" id="hd_id3147559">Before update</h2>
+         <p id="par_id3149669" class="paragraph"><span class="avis">The Before update event occurs before the control content changed by the user is written into the data source.</span> The linked macro can, for example, prevent this action by returning "FALSE".</p>
+<a name="bm_id3154073"></a>
+<h2 itemprop="articleSection" id="hd_id3153779">After update</h2>
+         <p id="par_id3153360" class="paragraph"><span class="avis">The After update event occurs after the control content changed by the user has been written into the data source.</span></p>
+<a name="bm_id3154851"></a>
+<h2 itemprop="articleSection" id="hd_id3157909">Prior to reset</h2>
+         <p id="par_id3155390" class="paragraph"><span class="avis">The<span class="emph"> Prior to reset </span>event occurs before a form is reset.</span> The linked macro can, for example, prevent this action by returning "FALSE".</p>
+         <p id="par_id3149236" class="paragraph">A form is reset if one of the following conditions is met:</p>
+         <ol>
+            <li>
+               <p id="par_id3149164" class="listitem">The user presses an (HTML) button that is defined as a reset button.</p>
+            </li>
+            <li>
+               <p id="par_id3153666" class="listitem">A new and empty record is created in a form that is linked to a data source. For example, in the last record, the <span class="emph">Next Record</span> button may be pressed.</p>
+            </li>
+         </ol>
+<a name="bm_id3152473"></a>
+<h2 itemprop="articleSection" id="hd_id3156119">After resetting</h2>
+         <p id="par_id3148563" class="paragraph"><span class="avis">The<span class="emph"> After resetting </span>event occurs after a form has been reset.</span></p>
+      <a name="Section7"></a>
+<a name="bm_id3154127"></a>
+<h2 itemprop="articleSection" id="hd_id3147426">Confirm deletion</h2>
+         <p id="par_id3154988" class="paragraph"><span class="avis">The<span class="emph"> Confirm deletion </span>event occurs as soon as data has been deleted from the form.</span> For example, the linked macro can request confirmation in a dialog.</p>
+      <a name="Section1"></a>
+<a name="bm_id3148387"></a>
+<h2 itemprop="articleSection" id="hd_id3146926">Error occurred</h2>
+         <p id="par_id3149485" class="paragraph"><span class="avis">The<span class="emph"> Error occurred </span>event is activated if an error occurs when accessing the data source.</span> This applies to forms, list boxes and combo boxes.</p>
+      <a name="Section2"></a>
+<a name="bm_id3149298"></a>
+<h2 itemprop="articleSection" id="hd_id3151076">Fill parameters</h2>
+         <p id="par_id3147396" class="paragraph"><span class="avis">The<span class="emph"> Fill parameters </span>event occurs when the form to be loaded has parameters that must be filled out.</span> For example, the data source of the form can be the following SQL command:</p>
+         <p id="par_id3148773" class="paragraph">SELECT * FROM address WHERE name=:name</p>
+         <p id="par_id3149581" class="paragraph">Here :name is a parameter that must be filled out when loading. The parameter is automatically filled out from the parent form if possible. If the parameter cannot be filled out, this event is called and a linked macro can fill out the parameter.</p>
+      <a name="Section12"></a>
+<a name="bm_id3151383"></a>
+<h2 itemprop="articleSection" id="hd_id3149167">When loading</h2>
+         <p id="par_id3156423" class="paragraph"><span class="avis">The<span class="emph"> When loading </span>event occurs directly after the form has been loaded.</span></p>
+      <a name="Section10"></a>
+<a name="bm_id3154946"></a>
+<h2 itemprop="articleSection" id="hd_id3155102">When reloading</h2>
+         <p id="par_id3157895" class="paragraph"><span class="avis">The<span class="emph"> When reloading </span>event occurs directly after the form has been reloaded.</span> The data content has already been refreshed.</p>
+      <a name="Section8"></a>
+<a name="bm_id3152938"></a>
+<h2 itemprop="articleSection" id="hd_id3154145">When unloading</h2>
+         <p id="par_id3154638" class="paragraph"><span class="avis">The<span class="emph"> When unloading </span>event occurs directly after the form has been unloaded; that is, separated from its data source.</span></p>
+      
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/02/01170202.xhp" target="_blank">/text/shared/02/01170202.xhp</a></p>
+<p>Title is: Events</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

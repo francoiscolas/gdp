@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Solver</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="solverhead"></a>
+<a name="bm_id7654652"></a>
+  <meta itemprop="keywords" content="goal seeking,solver">
+  <meta itemprop="keywords" content="what if operations,solver">
+  <meta itemprop="keywords" content="back-solving">
+  <meta itemprop="keywords" content="solver">
+
+
+<a name="bm_id5634023"></a>
+<a name="bm_id5634023"></a>
+<a name="bm_id5634022"></a>
+
+<h1 itemprop="articleSection" id="hd_id9216284">
+<a name="solver"></a>Solver</h1>
+<p id="par_id9210486" class="paragraph"><span class="avis">Opens the Solver dialog. A solver allows you to solve equations with multiple unknown variables by goal-seeking methods.</span></p>
+
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<div class="embedded"><p class="embedded"><a name="solver"></a>Choose <span class="emph">Tools - Solver</span>.</p></div>
+</div>
+</div>
+<br>
+<a name="bm_id8861964"></a>
+<p id="par_id8538773" class="paragraph"></p>
+<a name="bm_id8373973"></a>
+<p id="par_id7564012" class="paragraph"></p>
+<a name="bm_id6767174"></a>
+<p id="par_id1186254" class="paragraph"></p>
+<a name="bm_id5222022"></a>
+<p id="par_id7432477" class="paragraph"></p>
+<a name="bm_id2756126"></a>
+<p id="par_id7141026" class="paragraph"></p>
+<a name="bm_id4908902"></a>
+<p id="par_id8531449" class="paragraph"></p>
+<a name="bm_id8499099"></a>
+<a name="bm_id9544663"></a>
+<a name="bm_id5762199"></a>
+<a name="bm_id9534287"></a>
+<p id="par_id9183935" class="paragraph"></p>
+<a name="bm_id9408551"></a>
+<a name="bm_id1329386"></a>
+<a name="bm_id4931180"></a>
+<a name="bm_id5970030"></a>
+<p id="par_id946684" class="paragraph"></p>
+<a name="bm_id496841"></a>
+<a name="bm_id7440717"></a>
+<a name="bm_id2470778"></a>
+<a name="bm_id3389080"></a>
+<p id="par_id9607226" class="paragraph"></p>
+<a name="bm_id5104220"></a>
+<a name="bm_id6714"></a>
+<a name="bm_id8507339"></a>
+<a name="bm_id5296792"></a>
+<a name="bm_id3949400"></a>
+<a name="bm_id9991760"></a>
+<a name="bm_id2726828"></a>
+<a name="bm_id6034424"></a>
+<a name="bm_id6998809"></a>
+<a name="bm_id71413"></a>
+<a name="bm_id2924283"></a>
+<p id="par_id1939451" class="paragraph"></p>
+<a name="bm_id5781731"></a>
+<a name="bm_id6942045"></a>
+<a name="bm_id4721823"></a>
+<a name="bm_id5806756"></a>
+<p id="par_id9038972" class="paragraph"></p>
+<a name="bm_id8915372"></a>
+<p id="par_id2423780" class="paragraph"></p>
+<a name="bm_id6070436"></a>
+<p id="par_id2569658" class="paragraph"></p>
+
+<h2 itemprop="articleSection" id="par_id5474410">To solve equations with the solver</h2>
+<p id="par_id2216559" class="paragraph">The goal of the solver process is to find those variable values of an equation that result in an optimized value in the <span class="emph">target cell</span>, also named the "objective". You can choose whether the value in the target cell should be a maximum, a minimum, or approaching a given value.</p>
+<p id="par_id7869502" class="paragraph">The initial variable values are inserted in a rectangular cell range that you enter in the <span class="emph">By changing cells</span> box.</p>
+<p id="par_id9852900" class="paragraph">You can define a series of limiting conditions that set constraints for some cells. For example, you can set the constraint that one of the variables or cells must not be bigger than another variable, or not bigger than a given value. You can also define the constraint that one or more variables must be integers (values without decimals), or binary values (where only 0 and 1 are allowed).</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The default solver engine supports only linear equations.</p></div>
+</div>
+<br>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/solver.xhp" target="_blank">/text/scalc/01/solver.xhp</a></p>
+<p>Title is: Solver</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

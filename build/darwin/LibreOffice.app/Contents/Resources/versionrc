@@ -1,0 +1,11 @@
+[Version]
+AllLanguages=en-US
+BuildVersion=
+buildid=a64200df03143b798afd1ec74a12ab50359878ed
+ExtensionUpdateURL=http://updateexte.libreoffice.org/ExtensionUpdateService/check.Update
+ReferenceOOoMajorMinor=4.1
+UpdateChannel=
+UpdateID=LibreOffice_6_en-US
+UpdateURL=https://update.libreoffice.org/check.php?pkgfmt=dmg
+UpdateUserAgent=<PRODUCT> (${buildid}; ${_OS}; ${_ARCH}; <OPTIONAL_OS_HW_DATA>)
+Vendor=The Document Foundation

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Open Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="open"></a>
+<a name="bm_id3150791"></a>
+  <meta itemprop="keywords" content="Open statement">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3150791">Open Statement</h1>
+<p id="par_id3150769" class="paragraph">Opens a data channel.</p>
+
+
+<h2 itemprop="articleSection" id="hd_id3147230">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Open FileName As String [For Mode] [Access IOMode] [Protected] As [#]FileNumber As Integer [Len = DatasetLength]i37502
+</code></pre></div>
+
+<h2 itemprop="articleSection" id="hd_id3156280">Parameters:</h2>
+<p id="par_id3155132" class="paragraph"> <span class="emph">FileName: </span>Name and path of the file to open. If you try to read a file that does not exist (Access = Read), an error message appears. If you try to write to a file that does not exist (Access = Write), a new file is created.</p>
+<p id="par_id3149262" class="paragraph"> <span class="emph">Mode:</span> Keyword that specifies the file mode. Valid values: Append (append to sequential file), Binary (data can be accessed by bytes using Get and Put), Input (opens data channel for reading), Output (opens data channel for writing), and Random (edits relative files).</p>
+<p id="par_id3154014" class="paragraph"> <span class="emph">IOMode:</span> Keyword that defines the access type. Valid values: Read (read-only), Write (write-only), Read Write (both).</p>
+<p id="par_id3150011" class="paragraph"> <span class="emph">Protected:</span> Keyword that defines the security status of a file after opening. Valid values: Shared (file may be opened by other applications), Lock Read (file is protected against reading), Lock Write (file is protected against writing), Lock Read Write (denies file access).</p>
+<p id="par_id3153190" class="paragraph"> <span class="emph">FileNumber:</span> Any integer expression from 0 to 511 to indicate the number of a free data channel. You can then pass commands through the data channel to access the file. The file number must be determined by the FreeFile function immediately before the Open statement.</p>
+<p id="par_id3151115" class="paragraph"> <span class="emph">DatasetLength:</span> For random access files, set the length of the records.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>You can only modify the contents of a file that was opened with the Open statement. If you try to open a file that is already open, an error message appears.</p></div>
+</div>
+<br>
+
+<h2 itemprop="articleSection" id="hd_id3149123">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleWorkWithAFile
+Dim iNumber As Integer
+Dim sLine As String
+Dim aFile As String
+Dim sMsg As String
+    aFile = "c:\data.txt"
+    iNumber = Freefile
+    Open aFile For Output As #iNumber
+    Print #iNumber, "This is a line of text"
+    Print #iNumber, "This is another line of text"
+    Close #iNumber
+    iNumber = Freefile
+    Open aFile For Input As iNumber
+    While Not eof(iNumber)
+        Line Input #iNumber, sLine
+        If sLine &lt;&gt;"" Then
+            sMsg = sMsg &amp; sLine &amp; chr(13)
+        End If
+    Wend
+    Close #iNumber
+    MsgBox sMsg
+End Sub
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03020103.xhp" target="_blank">/text/sbasic/shared/03020103.xhp</a></p>
+<p>Title is: Open Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

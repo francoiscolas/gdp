@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Renaming Sheets</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<a name="bm_id3150398"></a><meta itemprop="keywords" content="renaming,sheets">
+      <meta itemprop="keywords" content="sheet tabs,renaming">
+      <meta itemprop="keywords" content="tables,renaming">
+      <meta itemprop="keywords" content="names, sheets">
+
+<h1 itemprop="articleSection" id="hd_id3150398">
+<a name="rename_table"></a>Renaming Sheets
+</h1>
+<p id="par_id701519308848244" class="paragraph">Setting sheet names is an important feature to produce readable and understandable spreadsheets documents. To rename a sheet in your document:</p>
+      <ol>
+         <li>
+            <p id="par_id3155131" class="listitem">Click on the sheet tab to select it.</p>
+         </li>
+         <li>
+            <p id="par_id3146976" class="listitem">Open the context menu of the sheet tab and choose the <span class="emph">Rename Sheet</span> command. A dialog box appears where you can enter a new name.</p>
+         </li>
+         <li>
+            <p id="par_id3149260" class="listitem">Enter a new name for the sheet and click <span class="emph">OK</span>.</p>
+         </li>
+         <li>
+            <p id="par_id3149667" class="listitem">Alternatively, hold down the <span id="swlnsysidm97036413104" class="switchinline"><span hidden="true" id="MACidm97036412752" class="MAC">Option key
+</span><span hidden="true" id="defaultidm97036412272">Alt key</span></span> and click on any sheet name and enter the new name directly.</p>
+            <div class="embedded"><p class="embedded"><a name="winmanager"></a>The availability of this function depends on your X Window Manager. 
+</p></div>
+         </li>
+      </ol>
+      <p id="par_id0909200810502833" class="paragraph">Sheet names can contain almost any character. Some naming restrictions apply, the following characters are not allowed in sheet names:</p>
+      <ul>
+         <li>
+            <p id="par_id090920081050281" class="paragraph">colon :</p>
+         </li>
+         <li>
+            <p id="par_id0909200810502897" class="paragraph">back slash \</p>
+         </li>
+         <li>
+            <p id="par_id090920081050299" class="paragraph">forward slash /</p>
+         </li>
+         <li>
+            <p id="par_id0909200810502913" class="paragraph">question mark ?</p>
+         </li>
+         <li>
+            <p id="par_id090920081050298" class="paragraph">asterisk *</p>
+         </li>
+         <li>
+            <p id="par_id0909200810502969" class="paragraph">left square bracket [</p>
+         </li>
+         <li>
+            <p id="par_id0909200810502910" class="paragraph">right square bracket ]</p>
+         </li>
+         <li>
+            <p id="par_id0909200810502971" class="paragraph">single quote ' as the first or last character of the name</p>
+         </li>
+      </ul>
+      <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>In cell references, a sheet name must be enclosed in single quotes ' when the name contains other characters than alphanumeric or underscore. A single quote contained within a name has to be escaped by doubling it (two single quotes).</p></div>
+</div>
+<br>
+      <p id="par_id321519307869857" class="paragraph">For example, you want to reference the cell A1 on a sheet with the following name:</p>
+      <p id="par_id0909200810503071" class="code">This year's sheet</p>
+      <p id="par_id0909200810503054" class="paragraph">The reference must be enclosed in single quotes, and the one single quote inside the name must be doubled:</p>
+      <p id="par_id0909200810503069" class="code">'This year''s sheet'.A1</p>
+      <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The name of a sheet is independent of the name of the spreadsheet. You enter the spreadsheet name when you save it for the first time as a file.</p></div>
+</div>
+<br>
+      <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The document can contain up to 10,000 individual sheets, which must have different names.</p></div>
+</div>
+<br>
+      <p id="par_id81519309108908" class="paragraph">You can set a prefix for the names of new sheets you create. See <a target="_top" href="en-US/text/shared/optionen/01061000.html">this page of Calc options.</a></p>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+          <p id="par_id81519379108908" class="paragraph"><a target="_top" href="en-US/text/shared/optionen/01061000.html">New sheet names prefixing.</a></p>
+         <div class="embedded"><p class="embedded"><a name="multitables"></a><a target="_top" href="en-US/text/scalc/guide/multitables.html">Applying Multiple Sheets</a>
+</p></div>
+      </div>
+</div>
+   </div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/guide/rename_table.xhp" target="_blank">/text/scalc/guide/rename_table.xhp</a></p>
+<p>Title is: Renaming Sheets</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

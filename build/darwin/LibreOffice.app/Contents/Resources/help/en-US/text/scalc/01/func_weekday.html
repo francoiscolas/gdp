@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>WEEKDAY </title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+<a name="bm_id3154925"></a>
+  <meta itemprop="keywords" content="WEEKDAY function">
+
+
+<a name="bm_id3152359"></a>
+
+<h2 itemprop="articleSection" id="hd_id3154925">
+<a name="weekday"></a>WEEKDAY </h2>
+<p id="par_id3154228" class="paragraph"><span class="avis">Returns the day of the week for the given date value.</span> The day is returned as an integer between 1 (Sunday) and 7 (Saturday) if no type or type=1 is specified. For other types, see the table below.</p>
+
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+<p id="par_id3149033" class="code">WEEKDAY(Number; Type)</p>
+<p id="par_id3149046" class="paragraph"> <span class="emph">Number</span>, as a date value, is a decimal for which the weekday is to be returned.</p>
+<p id="par_id3154394" class="paragraph"> <span class="emph">Type</span> is optional and determines the type of calculation. </p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id050220170615596613" class="tableheadintable">Type</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id05022017061559141" class="tableheadintable">Weekday number returned</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170615599995" class="tablecontentintable">1 or omitted</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170615597231" class="tablecontentintable">1 (Sunday) through 7 (Saturday). For compatibility with Microsoft Excel.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170609471518" class="tablecontentintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170615596260" class="tablecontentintable">1 (Monday) through 7 (Sunday).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170609564629" class="tablecontentintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170615597630" class="tablecontentintable">0 (Monday) through 6 (Sunday)</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170609575426" class="tablecontentintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170615592023" class="tablecontentintable">1 (Monday) through 7 (Sunday).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170609583004" class="tablecontentintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170615591349" class="tablecontentintable">1 (Tuesday) through 7 (Monday).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id05022017060959167" class="tablecontentintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170615593664" class="tablecontentintable">1 (Wednesday) through 7 (Tuesday).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170609591975" class="tablecontentintable">14</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170615599110" class="tablecontentintable">1 (Thursday) through 7 (Wednesday).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id05022017061000285" class="tablecontentintable">15</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id05022017061600535" class="tablecontentintable">1 (Friday) through 7 (Thursday).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170610017288" class="tablecontentintable">16</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170616003219" class="tablecontentintable">1 (Saturday) through 7 (Friday).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170610027543" class="tablecontentintable">17</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id050220170616002095" class="tablecontentintable">1 (Sunday) through 7 (Saturday).</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>These values apply only to the standard date format that you select under <span id="swlnsysidm337332560112" class="switchinline"><span hidden="true" id="MACidm337332559728" class="MAC"><span class="menuitem">LibreOffice - Preferences</span>
+</span><span hidden="true" id="defaultidm337332558736"><span class="menuitem">Tools - Options</span></span></span><span class="menuitem">- LibreOffice Calc - Calculate</span>.</p></div>
+</div>
+<br>
+<div class="embedded">
+<a name="datenumberinfo"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>When entering dates as part of formulas, slashes or dashes used as date separators are interpreted as arithmetic operators. Therefore, dates entered in this format are not recognized as dates and result in erroneous calculations. To keep dates from being interpreted as parts of formulas use the DATE function, for example, DATE(1954;7;20), or place the date in quotation marks and use the ISO 8601 notation, for example, "1954-07-20". Avoid using locale dependent date formats such as "07/20/54", the calculation may produce errors if the document is loaded under different locale settings.</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="datenumberwarn"></a>
+    <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Unambiguous conversion is possible for ISO 8601 dates and times in their extended formats with separators. If a <span class="emph">#VALUE!</span> error occurs, then unselect <span class="emph">Generate #VALUE! error</span> in <span id="swlnsysidm337333600704" class="switchinline"><span hidden="true" id="MACidm337333600352" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm337333599744"><span class="emph">Tools - Options</span></span></span> <span class="emph">- LibreOffice Calc - Formula</span>, button <span class="emph">Details...</span> in section "Detailed Calculation Settings", <span class="emph">Conversion from text to number</span> list box.</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id3150317" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=WEEKDAY("2000-06-14")</span> returns 4 (the Type parameter is missing, therefore the standard count is used. The standard count starts with Sunday as day number 1. June 14, 2000 was a Wednesday and therefore day number 4).</p>
+<p id="par_id3153174" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=WEEKDAY("1996-07-24";2)</span> returns 3 (the Type parameter is 2, therefore Monday is day number 1. July 24, 1996 was a Wednesday and therefore day number 3).</p>
+<p id="par_id3153525" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=WEEKDAY("1996-07-24";1)</span> returns 4 (the Type parameter is 1, therefore Sunday is day number 1. July 24, 1996 was a Wednesday and therefore day number 4).</p>
+<p id="par_id050220170616006699" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=WEEKDAY("2017-05-02";14)</span> returns 6 (the Type parameter is 14, therefore Thursday is day number 1. May 2, 2017 was a Tuesday and therefore day number 6)</p>
+<p id="par_id3150575" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=WEEKDAY(NOW())</span> returns the number of the current day.</p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>To obtain a function indicating whether a day in A1 is a business day, use the IF and WEEKDAY functions as follows: <br><span class="input" data-tooltip="Click on text to copy to clipboard">IF(WEEKDAY(A1;2)&lt;6;"Business day";"Weekend")</span></p></div>
+</div>
+<br>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_weekday.xhp" target="_blank">/text/scalc/01/func_weekday.xhp</a></p>
+<p>Title is: WEEKDAY </p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

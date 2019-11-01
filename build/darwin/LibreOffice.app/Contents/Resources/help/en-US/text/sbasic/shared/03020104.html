@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Reset Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="reset"></a>
+<a name="bm_id3154141"></a>
+  <meta itemprop="keywords" content="Reset statement">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3154141">Reset Statement</h1>
+<p id="par_id3156423" class="paragraph">Closes all open files and writes the contents of all file buffers to the harddisk.</p>
+
+
+<h2 itemprop="articleSection" id="hd_id3154124">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Reset
+</code></pre></div>
+
+<h2 itemprop="articleSection" id="hd_id3161831">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleReset
+On Error GoTo ErrorHandler
+Dim iNumber As Integer
+Dim iCount As Integer
+Dim sLine As String
+Dim aFile As String
+    aFile = "c:\data.txt"
+    iNumber = Freefile
+    Open aFile For Output As #iNumber
+    Print #iNumber, "This is a new line of text"
+    Close #iNumber
+    iNumber = Freefile
+    Open aFile For Input As iNumber
+    For iCount = 1 To 5
+        Line Input #iNumber, sLine
+        If sLine &lt;&gt;"" Then
+            Rem
+        End If
+    Next iCount
+    Close #iNumber
+    Exit Sub
+ErrorHandler:
+    Reset
+    MsgBox "All files will be closed",0,"Error"
+End Sub
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03020104.xhp" target="_blank">/text/sbasic/shared/03020104.xhp</a></p>
+<p>Title is: Reset Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

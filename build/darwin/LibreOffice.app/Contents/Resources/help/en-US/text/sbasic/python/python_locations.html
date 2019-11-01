@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Python Scripts Organization</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+    <a name="pythonlocation"></a>
+        <h1 itemprop="articleSection" id="hd_id391543358231021">
+<a name="pythonlocations1"></a>Python Scripts Organization and Location</h1>
+        <p id="par_id771543358231022" class="paragraph">The Python script files are stored in the filesystem, in folders controlled by LibreOffice. The macros can be started at installation, user or file level.</p>
+    
+    <h2 id="hd_id911544049584458">Python Script Locations</h2>
+        <p id="par_id121551089455774" class="paragraph">Refer to <a target="_top" href="en-US/text/sbasic/python/python_session.html">Getting Session Information</a> in order to get programmatic access to Python script locations.</p>
+    <h3 id="hd_id591544049572647">LibreOffice Macros container</h3>
+    <p id="par_id261544049064421" class="paragraph">Existing macros in this location (container) were copied by the installation program and are available to every computer user, and any open document can access macros stored the container. You need administrative rights to store or edit macros here.</p>
+
+    <p id="par_id861544210028670" class="paragraph">The LibreOffice  Macros container location in the file system depends on the operating system:</p>
+    <ul>
+        <li>
+            <p id="par_id191544210072242" class="listitem">For <span class="emph">Windows</span>: <span class="literal">{Installation}\share\Scripts\python</span>.</p>
+        </li>
+        <li>
+            <p id="par_id61544210078654" class="listitem">For <span class="emph">Linux</span> and <span class="emph">macOS</span>: <span class="literal">{Installation}/share/Scripts/python</span>.</p>
+        </li>
+    </ul>
+    <h3 id="hd_id861544049692222">My Macros</h3>
+    <p id="par_id981544049055996" class="paragraph">This container is accessible only by the LibreOffice user. Any open document can access macros stored the container. Macros in this location are stored in the LibreOffice user profile.</p>
+    <p id="par_id341544210187846" class="paragraph">The My Macros container location is in the user space and depends on the operating system:</p>
+    <ul>
+        <li>
+            <p id="par_id381544210213190" class="listitem">For <span class="emph">Windows</span>,<br><span class="literal">%APPDATA%\LibreOffice\4\user\Scripts\python</span>.</p>
+        </li>
+        <li>
+            <p id="par_id691544210219850" class="listitem">For <span class="emph">Linux</span> and <span class="emph">macOS</span>,<br><span class="literal">$HOME/.config/libreoffice/4/user/Scripts/python</span>.</p>
+        </li>
+    </ul>
+    <h3 id="hd_id101544049707712">Document macros</h3>
+    <p id="par_id31544049046497" class="paragraph">Document macros are embedded in the document and are accessible only when the document is open.</p>
+    <h2 id="hd_id171544049715310">Libraries, Modules and Macros</h2>
+    <p id="par_id181544209916707" class="paragraph">Like BASIC macros, Python macros can be organized in libraries, modules and macros.</p>
+    <h3 id="hd_id21544209865082">Creating a Python Library</h3>
+    <p id="par_id191544209928221" class="paragraph">Libraries are folders in the container tree. To create a library, add a folder in the target container. The library name is the folder name.</p>
+    <h3 id="hd_id31544209872869">Creating a Python Module.</h3>
+    <p id="par_id161544209936743" class="paragraph">A module is a python file in the library or the container. Create a module adding a file in the container.</p>
+    <h3 id="hd_id151544209895574">Python macros</h3>
+    <p id="par_id61544209944591" class="paragraph">A macro is a python object in the module.</p>
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <div class="embedded"><p class="embedded"><a name="pythonsession"></a><a target="_top" href="en-US/text/sbasic/python/python_session.html">Getting Session Information</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="pythonscriptshelp"></a><a target="_top" href="en-US/text/sbasic/python/main0000.html">LibreOffice Python Scripts Help</a></p></div>
+    </div>
+</div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/python/python_locations.xhp" target="_blank">/text/sbasic/python/python_locations.xhp</a></p>
+<p>Title is: Python Scripts Organization</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

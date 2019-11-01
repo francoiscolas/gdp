@@ -137,7 +137,7 @@ var startMainWindow = function () {
       App.mainWindow.show();
       resolve();
     });
-    App.mainWindow.setMenu((function () {
+    Electron.Menu.setApplicationMenu((function () {
       var template = [];
 
       template.push({

@@ -1,0 +1,3793 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Data Statistics in Calc</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<h1 itemprop="articleSection" id="hd_id1000010">Data Statistics in Calc</h1>
+<p id="par_id1000010" class="paragraph">Use the data statistics in Calc to perform complex data analysis</p>
+<p id="par_id1000020" class="paragraph">To work on a complex statistical or engineering analysis, you can save steps and time by using Calc Data Statistics. You provide the data and parameters for each analysis, and the set of tools uses the appropriate statistical or engineering functions to calculate and display the results in an output table.</p>
+<a name="datasampling"></a>
+<a name="bm_id2764278"></a>
+<meta itemprop="keywords" content="Analysis toolpack,sampling">
+<meta itemprop="keywords" content="sampling,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,sampling">
+
+<a name="bm_id2745673"></a>
+<a name="bm_id2745673"></a>
+<h2 itemprop="articleSection" id="hd_id1000020">Sampling</h2>
+<p id="par_id1000030" class="paragraph"><span class="avis">Create a table with data sampled from another table.</span></p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1000040" class="paragraph"><a name="sam01"></a>Choose <span class="emph">Data - Statistics - Sampling</span></p>
+</div>
+</div>
+<br>
+<p id="par_id1000050" class="paragraph">Sampling allows you to pick data from a <span class="emph">source</span> table to fill a <span class="emph">target</span> table. The sampling can be random or in a periodic basis.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Sampling is done row-wise. That means, the sampled data will pick the whole line of the source table and copy into a line of the target table.</p></div>
+</div>
+<br><div class="embedded">
+<a name="data"></a>
+
+<h3 id="hd_id1000010">Data</h3>
+<p id="par_id1000010" class="paragraph"><span class="emph">Input Range</span>: The reference of the range of the data to analyze.</p>
+<p id="par_id1000020" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the results will be displayed.</p>
+</div>
+<h3 id="hd_id1000030">Sampling Method</h3>
+<p id="par_id1000070" class="paragraph"><span class="emph">Random</span>: Picks exactly <span class="emph">Sample Size</span> lines of the source table in a random way.</p>
+<p id="par_id1000080" class="paragraph"><span class="emph">Sample size</span>: Number of lines sampled from the source table.</p>
+<p id="par_id1000090" class="paragraph"><span class="emph">Periodic</span>: Picks lines in a pace defined by <span class="emph">Period</span>.</p>
+<p id="par_id1000100" class="paragraph"><span class="emph">Period</span>: the number of lines to skip periodically when sampling.</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000110" class="paragraph">The following data will be used as example of source data table for sampling:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000120" class="tableheadintable">A</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000130" class="tableheadintable">B</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000140" class="tableheadintable">C</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000150" class="tableheadintable">1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000160" class="tablecontentintable">11</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000170" class="tablecontentintable">21</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000180" class="tablecontentintable">31</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000190" class="tableheadintable">2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000200" class="tablecontentintable">12</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000210" class="tablecontentintable">22</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000220" class="tablecontentintable">32</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000230" class="tableheadintable">3</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000240" class="tablecontentintable">13</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000250" class="tablecontentintable">23</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000260" class="tablecontentintable">33</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000270" class="tableheadintable">4</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000280" class="tablecontentintable">14</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000290" class="tablecontentintable">24</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000300" class="tablecontentintable">34</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000310" class="tableheadintable">5</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000320" class="tablecontentintable">15</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000330" class="tablecontentintable">25</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000340" class="tablecontentintable">35</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000350" class="tableheadintable">6</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000360" class="tablecontentintable">16</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000370" class="tablecontentintable">26</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000380" class="tablecontentintable">36</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000390" class="tableheadintable">7</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000400" class="tablecontentintable">17</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000410" class="tablecontentintable">27</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000420" class="tablecontentintable">37</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000430" class="tableheadintable">8</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000440" class="tablecontentintable">18</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000450" class="tablecontentintable">28</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000460" class="tablecontentintable">38</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000470" class="tableheadintable">9</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000480" class="tablecontentintable">19</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000490" class="tablecontentintable">29</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000500" class="tablecontentintable">39</p>
+</td>
+</tr>
+</table>
+<br>
+
+<p id="par_id1000510" class="paragraph">Sampling with a period of 2 will result in the following table:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1000520" class="tablecontentintable">12</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000530" class="tablecontentintable">22</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000540" class="tablecontentintable">32</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1000550" class="tablecontentintable">14</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000560" class="tablecontentintable">24</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000570" class="tablecontentintable">34</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1000580" class="tablecontentintable">16</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000590" class="tablecontentintable">26</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000600" class="tablecontentintable">36</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1000610" class="tablecontentintable">18</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000620" class="tablecontentintable">28</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000630" class="tablecontentintable">38</p>
+</td>
+</tr>
+</table>
+<br>
+
+
+<a name="descriptivestatistics"></a>
+<a name="bm_id01001"></a>
+<meta itemprop="keywords" content="Analysis toolpack,descriptive statistics">
+<meta itemprop="keywords" content="descriptive statistics,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,descriptive statistics">
+
+<a name="bm_id01002"></a>
+<a name="bm_id01002"></a>
+<h2 itemprop="articleSection" id="hd_id1000050">Descriptive Statistics</h2>
+<p id="par_id1000640" class="paragraph"><span class="avis">Fill a table in the spreadsheet with the main statistical properties of the data set.</span></p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1000650" class="paragraph"><a name="sam01"></a>Choose <span class="emph">Data - Statistics - Descriptive Statistics</span></p>
+</div>
+</div>
+<br>
+<p id="par_id1000660" class="paragraph">The Descriptive Statistics analysis tool generates a report of univariate statistics for data in the input range, providing information about the central tendency and variability of your data.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information on descriptive statistics, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/Descriptive_statistics">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br><div class="embedded">
+<a name="data"></a>
+
+<h3 id="hd_id1000010">Data</h3>
+<p id="par_id1000010" class="paragraph"><span class="emph">Input Range</span>: The reference of the range of the data to analyze.</p>
+<p id="par_id1000020" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the results will be displayed.</p>
+</div>
+<div class="embedded">
+<a name="grouped"></a>
+
+<h3 id="hd_id1000020">Grouped By</h3>
+<p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+</div>
+<div class="embedded">
+<a name="sampledata01"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000040" class="paragraph">The following data will be used as example </p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000050" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000060" class="tableheadintable">B</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000070" class="tableheadintable">C</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000080" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000090" class="tableheadintable">Maths</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000100" class="tableheadintable">Physics</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000110" class="tableheadintable">Biology</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000120" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000130" class="tablecontentintable">47</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000140" class="tablecontentintable">67</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000150" class="tablecontentintable">33</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000160" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000170" class="tablecontentintable">36</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000180" class="tablecontentintable">68</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000190" class="tablecontentintable">42</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000200" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000210" class="tablecontentintable">40</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000220" class="tablecontentintable">65</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000230" class="tablecontentintable">44</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000240" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000250" class="tablecontentintable">39</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000260" class="tablecontentintable">64</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000270" class="tablecontentintable">60</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000280" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000290" class="tablecontentintable">38</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000300" class="tablecontentintable">43</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000310" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000320" class="tablecontentintable">47</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000330" class="tablecontentintable">84</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000340" class="tablecontentintable">62</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000350" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000360" class="tablecontentintable">29</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000370" class="tablecontentintable">80</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000380" class="tablecontentintable">51</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000390" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000400" class="tablecontentintable">27</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000410" class="tablecontentintable">49</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000420" class="tablecontentintable">40</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000430" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000440" class="tablecontentintable">57</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000450" class="tablecontentintable">49</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000460" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000470" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000480" class="tablecontentintable">56</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000490" class="tablecontentintable">33</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000500" class="tablecontentintable">60</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000510" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000520" class="tablecontentintable">57</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000530" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000540" class="tablecontentintable">26</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+<p id="par_id1000680" class="paragraph">The following table displays the results of the descriptive statistics of the sample data above.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000690" class="tableheadintable">Column 1</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000700" class="tableheadintable">Column 2</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000710" class="tableheadintable">Column 3</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000720" class="tableheadintable">Mean</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000730" class="tablecontentintable">41.9090909091</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000740" class="tablecontentintable">59.7</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000750" class="tablecontentintable">44.7</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000760" class="tableheadintable">Standard Error</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000770" class="tablecontentintable">3.5610380138</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000780" class="tablecontentintable">5.3583786934</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000790" class="tablecontentintable">4.7680650629</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000800" class="tableheadintable">Mode</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000810" class="tablecontentintable">47</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000820" class="tablecontentintable">49</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000830" class="tablecontentintable">60</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000840" class="tableheadintable">Median</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000850" class="tablecontentintable">40</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000860" class="tablecontentintable">64.5</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000870" class="tablecontentintable">43.5</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000880" class="tableheadintable">Variance</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000890" class="tablecontentintable">139.4909090909</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000900" class="tablecontentintable">287.1222222222</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000910" class="tablecontentintable">227.3444444444</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000920" class="tableheadintable">Standard Deviation</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000930" class="tablecontentintable">11.8106269559</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000940" class="tablecontentintable">16.944681237</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000950" class="tablecontentintable">15.0779456308</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1000960" class="tableheadintable">Kurtosis</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000970" class="tablecontentintable">-1.4621677981</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000980" class="tablecontentintable">-0.9415988746</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1000990" class="tablecontentintable">1.418052719</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001000" class="tableheadintable">Skewness</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001010" class="tablecontentintable">0.0152409533</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001020" class="tablecontentintable">-0.2226426904</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001030" class="tablecontentintable">-0.9766803373</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001040" class="tableheadintable">Range</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001050" class="tablecontentintable">31</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001060" class="tablecontentintable">51</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001070" class="tablecontentintable">50</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001080" class="tableheadintable">Minimum</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001090" class="tablecontentintable">26</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001100" class="tablecontentintable">33</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001110" class="tablecontentintable">12</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001120" class="tableheadintable">Maximum</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001130" class="tablecontentintable">57</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001140" class="tablecontentintable">84</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001150" class="tablecontentintable">62</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001160" class="tableheadintable">Sum</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001170" class="tablecontentintable">461</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001180" class="tablecontentintable">597</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001190" class="tablecontentintable">447</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001200" class="tableheadintable">Count</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001210" class="tablecontentintable">11</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001220" class="tablecontentintable">10</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001230" class="tablecontentintable">10</p>
+</td>
+</tr>
+</table>
+<br>
+
+<a name="anova"></a>
+<a name="bm_id02001"></a>
+<meta itemprop="keywords" content="Analysis toolpack,analysis of variance">
+<meta itemprop="keywords" content="Analysis toolpack,ANOVA">
+<meta itemprop="keywords" content="analysis of variance,Analysis toolpack">
+<meta itemprop="keywords" content="ANOVA,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,analysis of variance">
+<meta itemprop="keywords" content="Data statistics,ANOVA">
+
+<a name="bm_id02002"></a>
+<a name="bm_id02002"></a>
+<h2 itemprop="articleSection" id="hd_id1000060">Analysis of Variance (ANOVA)</h2>
+<p id="par_id1001240" class="paragraph"><span class="avis">Produces the analysis of variance (ANOVA) of a given data set</span></p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1001250" class="paragraph"><a name="sam01"></a>Choose <span class="emph">Data - Statistics - Analysis of Variance (ANOVA)</span></p>
+</div>
+</div>
+<br>
+<p id="par_id1001260" class="paragraph">ANOVA is the acronym for <span class="emph">AN</span>alysis <span class="emph">O</span>f <span class="emph">VA</span>riance. This tool produces the analysis of variance of a given data set</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information on ANOVA, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/ANOVA">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br><div class="embedded">
+<a name="data"></a>
+
+<h3 id="hd_id1000010">Data</h3>
+<p id="par_id1000010" class="paragraph"><span class="emph">Input Range</span>: The reference of the range of the data to analyze.</p>
+<p id="par_id1000020" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the results will be displayed.</p>
+</div>
+<div class="embedded">
+<a name="grouped"></a>
+
+<h3 id="hd_id1000020">Grouped By</h3>
+<p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+</div>
+<h3 id="hd_id1000070">Type</h3>
+<p id="par_id1001280" class="paragraph">Select if the analysis is for a <span class="emph">single factor</span> or for <span class="emph">two factor</span> ANOVA.</p>
+<h3 id="hd_id1000080">Parameters</h3>
+<p id="par_id1001290" class="paragraph"><span class="emph">Alpha</span>: the level of significance of the test.</p>
+<p id="par_id1001300" class="paragraph"><span class="emph">Rows per sample</span>: Define how many rows a sample has.</p>
+<div class="embedded">
+<a name="sampledata01"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000040" class="paragraph">The following data will be used as example </p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000050" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000060" class="tableheadintable">B</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000070" class="tableheadintable">C</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000080" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000090" class="tableheadintable">Maths</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000100" class="tableheadintable">Physics</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000110" class="tableheadintable">Biology</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000120" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000130" class="tablecontentintable">47</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000140" class="tablecontentintable">67</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000150" class="tablecontentintable">33</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000160" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000170" class="tablecontentintable">36</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000180" class="tablecontentintable">68</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000190" class="tablecontentintable">42</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000200" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000210" class="tablecontentintable">40</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000220" class="tablecontentintable">65</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000230" class="tablecontentintable">44</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000240" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000250" class="tablecontentintable">39</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000260" class="tablecontentintable">64</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000270" class="tablecontentintable">60</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000280" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000290" class="tablecontentintable">38</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000300" class="tablecontentintable">43</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000310" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000320" class="tablecontentintable">47</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000330" class="tablecontentintable">84</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000340" class="tablecontentintable">62</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000350" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000360" class="tablecontentintable">29</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000370" class="tablecontentintable">80</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000380" class="tablecontentintable">51</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000390" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000400" class="tablecontentintable">27</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000410" class="tablecontentintable">49</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000420" class="tablecontentintable">40</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000430" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000440" class="tablecontentintable">57</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000450" class="tablecontentintable">49</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000460" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000470" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000480" class="tablecontentintable">56</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000490" class="tablecontentintable">33</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000500" class="tablecontentintable">60</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000510" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000520" class="tablecontentintable">57</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000530" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000540" class="tablecontentintable">26</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+<p id="par_id1001310" class="paragraph">The following table displays the results of the <span class="emph">analysis of variance (ANOVA)</span> of the sample data above.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001320" class="tableheadintable">ANOVA - Single Factor</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1001330" class="tablecontentintable">Alpha</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001340" class="tablecontentintable">0.05</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1001350" class="tablecontentintable">Groups</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001360" class="tablecontentintable">Count</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001370" class="tablecontentintable">Sum</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001380" class="tablecontentintable">Mean</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001390" class="tablecontentintable">Variance</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1001400" class="tablecontentintable">Column 1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001410" class="tablecontentintable">11</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001420" class="tablecontentintable">461</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001430" class="tablecontentintable">41.9090909091</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001440" class="tablecontentintable">139.4909090909</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1001450" class="tablecontentintable">Column 2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001460" class="tablecontentintable">10</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001470" class="tablecontentintable">597</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001480" class="tablecontentintable">59.7</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001490" class="tablecontentintable">287.1222222222</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1001500" class="tablecontentintable">Column 3</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001510" class="tablecontentintable">10</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001520" class="tablecontentintable">447</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001530" class="tablecontentintable">44.7</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001540" class="tablecontentintable">227.3444444444</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1001550" class="tablecontentintable">Source of Variation</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001560" class="tablecontentintable">SS</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001570" class="tablecontentintable">df</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001580" class="tablecontentintable">MS</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001590" class="tablecontentintable">F</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001600" class="tablecontentintable">P-value</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id841554943563747" class="paragraphintable">F-critical</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1001610" class="tablecontentintable">Between Groups</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001620" class="tablecontentintable">1876.5683284457</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001630" class="tablecontentintable">2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001640" class="tablecontentintable">938.2841642229</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001650" class="tablecontentintable">4.3604117704</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001660" class="tablecontentintable">0.0224614952</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id411554944014360" class="paragraphintable">3.340385558</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1001670" class="tablecontentintable">Within Groups</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001680" class="tablecontentintable">6025.1090909091</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001690" class="tablecontentintable">28</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001700" class="tablecontentintable">215.1824675325</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1001710" class="tablecontentintable">Total</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001720" class="tablecontentintable">7901.6774193548</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001730" class="tablecontentintable">30</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+</table>
+<br>
+
+
+<a name="correlation"></a>
+<a name="bm_id1464278"></a>
+<meta itemprop="keywords" content="Analysis toolpack,correlation">
+<meta itemprop="keywords" content="correlation,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,correlation">
+
+<a name="bm_id3145673"></a>
+<a name="bm_id3145673"></a>
+<h2 itemprop="articleSection" id="hd_id1000090">Correlation</h2>
+<p id="par_id1001740" class="paragraph"><span class="avis">Calculates the correlation of two sets of numeric data.</span></p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1001750" class="paragraph"><a name="corr01"></a>Choose <span class="emph">Data - Statistics - Correlation</span></p>
+</div>
+</div>
+<br>
+<p id="par_id1001760" class="paragraph">The correlation coefficient (a value between -1 and +1) means how strongly two variables are related to each other. You can use the CORREL function or the Data Statistics to find the correlation coefficient between two variables.</p>
+<p id="par_id1001770" class="paragraph">A correlation coefficient of +1 indicates a perfect positive correlation. </p>
+<p id="par_id1001780" class="paragraph">A correlation coefficient of -1 indicates a perfect negative correlation</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information on statistical correlation, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/Correlation">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br><div class="embedded">
+<a name="data"></a>
+
+<h3 id="hd_id1000010">Data</h3>
+<p id="par_id1000010" class="paragraph"><span class="emph">Input Range</span>: The reference of the range of the data to analyze.</p>
+<p id="par_id1000020" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the results will be displayed.</p>
+</div>
+<div class="embedded">
+<a name="grouped"></a>
+
+<h3 id="hd_id1000020">Grouped By</h3>
+<p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+</div>
+<div class="embedded">
+<a name="sampledata01"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000040" class="paragraph">The following data will be used as example </p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000050" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000060" class="tableheadintable">B</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000070" class="tableheadintable">C</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000080" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000090" class="tableheadintable">Maths</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000100" class="tableheadintable">Physics</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000110" class="tableheadintable">Biology</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000120" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000130" class="tablecontentintable">47</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000140" class="tablecontentintable">67</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000150" class="tablecontentintable">33</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000160" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000170" class="tablecontentintable">36</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000180" class="tablecontentintable">68</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000190" class="tablecontentintable">42</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000200" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000210" class="tablecontentintable">40</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000220" class="tablecontentintable">65</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000230" class="tablecontentintable">44</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000240" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000250" class="tablecontentintable">39</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000260" class="tablecontentintable">64</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000270" class="tablecontentintable">60</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000280" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000290" class="tablecontentintable">38</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000300" class="tablecontentintable">43</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000310" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000320" class="tablecontentintable">47</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000330" class="tablecontentintable">84</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000340" class="tablecontentintable">62</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000350" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000360" class="tablecontentintable">29</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000370" class="tablecontentintable">80</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000380" class="tablecontentintable">51</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000390" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000400" class="tablecontentintable">27</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000410" class="tablecontentintable">49</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000420" class="tablecontentintable">40</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000430" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000440" class="tablecontentintable">57</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000450" class="tablecontentintable">49</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000460" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000470" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000480" class="tablecontentintable">56</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000490" class="tablecontentintable">33</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000500" class="tablecontentintable">60</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000510" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000520" class="tablecontentintable">57</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000530" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000540" class="tablecontentintable">26</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+<p id="par_id1001800" class="paragraph">The following table displays the results of the correlation of the sample data above.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001810" class="tableheadintable">Correlations</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001820" class="tableheadintable">Column 1</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001830" class="tableheadintable">Column 2</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001840" class="tableheadintable">Column 3</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001850" class="tableheadintable">Column 1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001860" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001870" class="tableheadintable">Column 2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001880" class="tablecontentintable">-0.4029254917</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001890" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001900" class="tableheadintable">Column 3</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001910" class="tablecontentintable">-0.2107642836</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001920" class="tablecontentintable">0.2309714048</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001930" class="tablecontentintable">1</p>
+</td>
+</tr>
+</table>
+<br>
+
+
+<a name="covariance"></a>
+<a name="bm_id2964278"></a>
+<meta itemprop="keywords" content="Analysis toolpack,covariance">
+<meta itemprop="keywords" content="covariance,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,covariance">
+
+<a name="bm_id2945673"></a>
+<a name="bm_id2945673"></a>
+<h2 itemprop="articleSection" id="hd_id1000100">Covariance</h2>
+<p id="par_id1001940" class="paragraph"><span class="avis">Calculates the covariance of two sets of numeric data.</span></p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1001950" class="paragraph"><a name="cov01"></a>Choose <span class="emph">Data - Statistics - Covariance</span></p>
+</div>
+</div>
+<br>
+<p id="par_id1001960" class="paragraph">The covariance is a measure of how much two random variables change together.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information on statistical covariance, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/Covariance">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br><div class="embedded">
+<a name="data"></a>
+
+<h3 id="hd_id1000010">Data</h3>
+<p id="par_id1000010" class="paragraph"><span class="emph">Input Range</span>: The reference of the range of the data to analyze.</p>
+<p id="par_id1000020" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the results will be displayed.</p>
+</div>
+<div class="embedded">
+<a name="grouped"></a>
+
+<h3 id="hd_id1000020">Grouped By</h3>
+<p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+</div>
+<div class="embedded">
+<a name="sampledata01"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000040" class="paragraph">The following data will be used as example </p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000050" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000060" class="tableheadintable">B</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000070" class="tableheadintable">C</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000080" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000090" class="tableheadintable">Maths</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000100" class="tableheadintable">Physics</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000110" class="tableheadintable">Biology</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000120" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000130" class="tablecontentintable">47</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000140" class="tablecontentintable">67</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000150" class="tablecontentintable">33</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000160" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000170" class="tablecontentintable">36</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000180" class="tablecontentintable">68</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000190" class="tablecontentintable">42</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000200" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000210" class="tablecontentintable">40</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000220" class="tablecontentintable">65</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000230" class="tablecontentintable">44</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000240" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000250" class="tablecontentintable">39</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000260" class="tablecontentintable">64</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000270" class="tablecontentintable">60</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000280" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000290" class="tablecontentintable">38</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000300" class="tablecontentintable">43</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000310" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000320" class="tablecontentintable">47</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000330" class="tablecontentintable">84</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000340" class="tablecontentintable">62</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000350" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000360" class="tablecontentintable">29</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000370" class="tablecontentintable">80</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000380" class="tablecontentintable">51</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000390" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000400" class="tablecontentintable">27</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000410" class="tablecontentintable">49</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000420" class="tablecontentintable">40</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000430" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000440" class="tablecontentintable">57</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000450" class="tablecontentintable">49</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000460" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000470" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000480" class="tablecontentintable">56</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000490" class="tablecontentintable">33</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000500" class="tablecontentintable">60</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000510" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000520" class="tablecontentintable">57</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000530" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000540" class="tablecontentintable">26</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+<p id="par_id1001980" class="paragraph">The following table displays the results of the covariance of the sample data above.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001990" class="tableheadintable">Covariances</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002000" class="tableheadintable">Column 1</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002010" class="tableheadintable">Column 2</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002020" class="tableheadintable">Column 3</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002030" class="tableheadintable">Column 1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002040" class="tablecontentintable">126.8099173554</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002050" class="tableheadintable">Column 2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002060" class="tablecontentintable">-61.4444444444</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002070" class="tablecontentintable">258.41</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002080" class="tableheadintable">Column 3</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002090" class="tablecontentintable">-32</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002100" class="tablecontentintable">53.11</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002110" class="tablecontentintable">204.61</p>
+</td>
+</tr>
+</table>
+<br>
+
+
+<a name="exponentialsmoothing"></a>
+<a name="bm_id03001"></a>
+<meta itemprop="keywords" content="Analysis toolpack,exponential smoothing">
+<meta itemprop="keywords" content="exponential smoothing,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,exponential smoothing">
+
+<a name="bm_id03002"></a>
+<a name="bm_id03002"></a>
+<h2 itemprop="articleSection" id="hd_id1000110">Exponential Smoothing</h2>
+<p id="par_id1002120" class="paragraph"><span class="avis">Results in a smoothed data series</span></p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1002130" class="paragraph"><a name="sam01"></a>Choose <span class="emph">Data - Statistics - Exponential Smoothing</span></p>
+</div>
+</div>
+<br>
+<p id="par_id1002140" class="paragraph">Exponential smoothing is a filtering technique that when applied to a data set, produces smoothed results. It is employed in many domains such as stock market, economics and in sampled measurements.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information on exponential smoothing, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/Exponential_smoothing">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br><div class="embedded">
+<a name="data"></a>
+
+<h3 id="hd_id1000010">Data</h3>
+<p id="par_id1000010" class="paragraph"><span class="emph">Input Range</span>: The reference of the range of the data to analyze.</p>
+<p id="par_id1000020" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the results will be displayed.</p>
+</div>
+<div class="embedded">
+<a name="grouped"></a>
+
+<h3 id="hd_id1000020">Grouped By</h3>
+<p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+</div>
+<h3 id="hd_id1000120">Parameters</h3>
+<p id="par_id1002160" class="paragraph"><span class="emph">Smoothing Factor</span>: A parameter between 0 and 1 that represents the damping factor Alpha in the smoothing equation.</p>
+<div class="embedded">
+<a name="timeseries01"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000550" class="paragraph">The following table has two time series, one representing an impulse function at time t=0 and the other an impulse function at time t=2.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000560" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000570" class="tableheadintable">B</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000580" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000590" class="tablecontentintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000600" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000610" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000620" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000630" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000640" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000650" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000660" class="tablecontentintable">1</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000670" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000680" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000690" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000700" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000710" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000720" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000730" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000740" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000750" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000760" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000770" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000780" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000790" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000800" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000810" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000820" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000830" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000840" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000850" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000860" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000870" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000880" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000890" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000900" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000910" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000920" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000930" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000940" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000950" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000960" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+<p id="par_id1002170" class="paragraph">The resulting smoothing is below with smoothing factor as 0.5:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002180" class="tableheadintable">Alpha</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002190" class="tablecontentintable">0.5</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002200" class="tableheadintable">Column 1</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002210" class="tableheadintable">Column 2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002220" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002230" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002240" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002250" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002260" class="tablecontentintable">0.5</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002270" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002280" class="tablecontentintable">0.25</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002290" class="tablecontentintable">0.5</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002300" class="tablecontentintable">0.125</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002310" class="tablecontentintable">0.25</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002320" class="tablecontentintable">0.0625</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002330" class="tablecontentintable">0.125</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002340" class="tablecontentintable">0.03125</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002350" class="tablecontentintable">0.0625</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002360" class="tablecontentintable">0.015625</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002370" class="tablecontentintable">0.03125</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002380" class="tablecontentintable">0.0078125</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002390" class="tablecontentintable">0.015625</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002400" class="tablecontentintable">0.00390625</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002410" class="tablecontentintable">0.0078125</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002420" class="tablecontentintable">0.001953125</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002430" class="tablecontentintable">0.00390625</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002440" class="tablecontentintable">0.0009765625</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002450" class="tablecontentintable">0.001953125</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002460" class="tablecontentintable">0.0004882813</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002470" class="tablecontentintable">0.0009765625</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002480" class="tablecontentintable">0.0002441406</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002490" class="tablecontentintable">0.0004882813</p>
+</td>
+</tr>
+</table>
+<br>
+
+
+<a name="movingaverage"></a>
+<a name="bm_id04001"></a>
+<meta itemprop="keywords" content="Analysis toolpack,moving average">
+<meta itemprop="keywords" content="moving average,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,moving average">
+
+<a name="bm_id04002"></a>
+<a name="bm_id04002"></a>
+<h2 itemprop="articleSection" id="hd_id1000130">Moving Average</h2>
+<p id="par_id1002500" class="paragraph"><span class="avis">Calculates the moving average of a time series</span></p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1002510" class="paragraph"><a name="sam01"></a>Choose <span class="emph">Data - Statistics - Moving Average</span></p>
+</div>
+</div>
+<br>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information on the moving average, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/Moving_average">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br><div class="embedded">
+<a name="data"></a>
+
+<h3 id="hd_id1000010">Data</h3>
+<p id="par_id1000010" class="paragraph"><span class="emph">Input Range</span>: The reference of the range of the data to analyze.</p>
+<p id="par_id1000020" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the results will be displayed.</p>
+</div>
+<div class="embedded">
+<a name="grouped"></a>
+
+<h3 id="hd_id1000020">Grouped By</h3>
+<p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+</div>
+<h3 id="hd_id1000140">Parameters</h3>
+<p id="par_id1002530" class="paragraph"><span class="emph">Interval</span>: The number of samples used in the moving average calculation.</p>
+<div class="embedded">
+<a name="timeseries01"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000550" class="paragraph">The following table has two time series, one representing an impulse function at time t=0 and the other an impulse function at time t=2.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000560" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000570" class="tableheadintable">B</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000580" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000590" class="tablecontentintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000600" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000610" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000620" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000630" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000640" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000650" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000660" class="tablecontentintable">1</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000670" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000680" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000690" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000700" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000710" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000720" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000730" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000740" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000750" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000760" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000770" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000780" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000790" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000800" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000810" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000820" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000830" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000840" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000850" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000860" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000870" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000880" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000890" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000900" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000910" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000920" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000930" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000940" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000950" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000960" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+<h3 id="hd_id1000171">Results of the moving average:</h3>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002540" class="tableheadintable">Column 1</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002550" class="tableheadintable">Column 2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002560" class="tablecontentintable">#N/A</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002570" class="tablecontentintable">#N/A</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002580" class="tablecontentintable">0.3333333333</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002590" class="tablecontentintable">0.3333333333</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002600" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002610" class="tablecontentintable">0.3333333333</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002620" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002630" class="tablecontentintable">0.3333333333</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002640" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002650" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002660" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002670" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002680" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002690" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002700" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002710" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002720" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002730" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002740" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002750" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002760" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002770" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002780" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002790" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002800" class="tablecontentintable">#N/A</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002810" class="tablecontentintable">#N/A</p>
+</td>
+</tr>
+</table>
+<br>
+
+
+<a name="ttest"></a>
+<a name="bm_id05001"></a>
+<meta itemprop="keywords" content="Analysis toolpack,t-test">
+<meta itemprop="keywords" content="Analysis toolpack,paired t-test">
+<meta itemprop="keywords" content="t-test,Analysis toolpack">
+<meta itemprop="keywords" content="paired t-test,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,paired t-test">
+
+<a name="bm_id05002"></a>
+<a name="bm_id05002"></a>
+<h2 itemprop="articleSection" id="hd_id1000150">Paired t-test</h2>
+<p id="par_id1002820" class="paragraph"><span class="avis">Calculates the paired t-Test of two data samples.</span></p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1002830" class="paragraph"><a name="sam01"></a>Choose <span class="emph">Data - Statistics - Paired t-test</span></p>
+</div>
+</div>
+<br>
+<p id="par_id1002840" class="paragraph">A <span class="emph">paired t-test</span> is any statistical hypothesis test that follows a Student's t distribution.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information on paired t-tests, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/T-test">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br>
+<h3 id="hd_id1000160">Data</h3>
+<p id="par_id1002860" class="paragraph"><span class="emph">Variable 1 range</span>: The reference of the range of the first data series to analyze.</p>
+<p id="par_id1002870" class="paragraph"><span class="emph">Variable 2 range</span>: The reference of the range of the second data series to analyze.</p>
+<p id="par_id1002880" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the test will be displayed.</p>
+<div class="embedded">
+<a name="grouped"></a>
+
+<h3 id="hd_id1000020">Grouped By</h3>
+<p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+</div>
+<div class="embedded">
+<a name="datafortests"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000970" class="paragraph">The following table has two data sets.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000980" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000990" class="tableheadintable">B</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001000" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001010" class="tablecontentintable">28</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001020" class="tablecontentintable">19</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001030" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001040" class="tablecontentintable">26</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001050" class="tablecontentintable">13</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001060" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001070" class="tablecontentintable">31</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001080" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001090" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001100" class="tablecontentintable">23</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001110" class="tablecontentintable">5</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001120" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001130" class="tablecontentintable">20</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001140" class="tablecontentintable">34</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001150" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001160" class="tablecontentintable">27</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001170" class="tablecontentintable">31</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001180" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001190" class="tablecontentintable">28</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001200" class="tablecontentintable">31</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001210" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001220" class="tablecontentintable">14</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001230" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001240" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001250" class="tablecontentintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001260" class="tablecontentintable">24</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001270" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001280" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001290" class="tablecontentintable">23</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001300" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001310" class="tablecontentintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001320" class="tablecontentintable">19</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001330" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001340" class="tablecontentintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001350" class="tablecontentintable">10</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001360" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001370" class="tablecontentintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001380" class="tablecontentintable">33</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+<h3 id="hd_id1000170">Results for paired t-test:</h3>
+<p id="par_id1002890" class="paragraph">The following table shows the <span class="emph">paired t-test</span> for the data series above:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002900" class="tableheadintable">paired t-test</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002910" class="tablecontentintable">Alpha</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002920" class="tablecontentintable">0.05</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002930" class="tablecontentintable">Hypothesized Mean Difference</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002940" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002950" class="tablecontentintable">Variable 1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002960" class="tablecontentintable">Variable 2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002970" class="tablecontentintable">Mean</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002980" class="tablecontentintable">16.9230769231</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002990" class="tablecontentintable">20.4615384615</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003000" class="tablecontentintable">Variance</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003010" class="tablecontentintable">125.0769230769</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003020" class="tablecontentintable">94.4358974359</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003030" class="tablecontentintable">Observations</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003040" class="tablecontentintable">13</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003050" class="tablecontentintable">13</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003060" class="tablecontentintable">Pearson Correlation</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003070" class="tablecontentintable">-0.0617539772</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003080" class="tablecontentintable">Observed Mean Difference</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003090" class="tablecontentintable">-3.5384615385</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003100" class="tablecontentintable">Variance of the Differences</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003110" class="tablecontentintable">232.9358974359</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003120" class="tablecontentintable">df </p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003130" class="tablecontentintable">12</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003140" class="tablecontentintable">t Stat</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003150" class="tablecontentintable">-0.8359262137</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003160" class="tablecontentintable">P (T&lt;=t) one-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003170" class="tablecontentintable">0.2097651442</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003180" class="tablecontentintable">t Critical one-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003190" class="tablecontentintable">1.7822875556</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003200" class="tablecontentintable">P (T&lt;=t) two-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003210" class="tablecontentintable">0.4195302884</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003220" class="tablecontentintable">t Critical two-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003230" class="tablecontentintable">2.1788128297</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+</table>
+<br>
+
+
+<a name="ftest"></a>
+<a name="bm_id05002"></a>
+<meta itemprop="keywords" content="Analysis toolpack,F-test">
+<meta itemprop="keywords" content="F-test,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,F-test">
+
+<a name="bm_id05003"></a>
+<a name="@@nowidget@@"></a>
+<h2 itemprop="articleSection" id="hd_id1000180">F-test</h2>
+<p id="par_id1003240" class="paragraph"><span class="avis">Calculates the F-Test of two data samples.</span></p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1003250" class="paragraph"><a name="sam02"></a>Choose <span class="emph">Data - Statistics - F-test</span></p>
+</div>
+</div>
+<br>
+<p id="par_id1003260" class="paragraph">A <span class="emph">F-test</span> is any statistical test based on the F-distribution under the null hypothesis.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information on F-tests, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/F-test">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br>
+<h3 id="hd_id1000190">Data</h3>
+<p id="par_id1003280" class="paragraph"><span class="emph">Variable 1 range</span>: The reference of the range of the first data series to analyze.</p>
+<p id="par_id1003290" class="paragraph"><span class="emph">Variable 2 range</span>: The reference of the range of the second data series to analyze.</p>
+<p id="par_id1003300" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the test will be displayed.</p>
+<div class="embedded">
+<a name="grouped"></a>
+
+<h3 id="hd_id1000020">Grouped By</h3>
+<p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+</div>
+<div class="embedded">
+<a name="datafortests"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000970" class="paragraph">The following table has two data sets.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000980" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000990" class="tableheadintable">B</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001000" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001010" class="tablecontentintable">28</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001020" class="tablecontentintable">19</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001030" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001040" class="tablecontentintable">26</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001050" class="tablecontentintable">13</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001060" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001070" class="tablecontentintable">31</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001080" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001090" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001100" class="tablecontentintable">23</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001110" class="tablecontentintable">5</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001120" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001130" class="tablecontentintable">20</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001140" class="tablecontentintable">34</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001150" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001160" class="tablecontentintable">27</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001170" class="tablecontentintable">31</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001180" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001190" class="tablecontentintable">28</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001200" class="tablecontentintable">31</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001210" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001220" class="tablecontentintable">14</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001230" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001240" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001250" class="tablecontentintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001260" class="tablecontentintable">24</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001270" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001280" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001290" class="tablecontentintable">23</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001300" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001310" class="tablecontentintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001320" class="tablecontentintable">19</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001330" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001340" class="tablecontentintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001350" class="tablecontentintable">10</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001360" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001370" class="tablecontentintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001380" class="tablecontentintable">33</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+<h3 id="hd_id1000200">Results for F-Test:</h3>
+<p id="par_id1003310" class="paragraph">The following table shows the <span class="emph">F-Test</span> for the data series above:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003320" class="tablecontentintable">Ftest</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003330" class="tablecontentintable">Alpha</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003340" class="tablecontentintable">0.05</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003350" class="tablecontentintable">Variable 1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003360" class="tablecontentintable">Variable 2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003370" class="tablecontentintable">Mean</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003380" class="tablecontentintable">16.9230769231</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003390" class="tablecontentintable">20.4615384615</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003400" class="tablecontentintable">Variance</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003410" class="tablecontentintable">125.0769230769</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003420" class="tablecontentintable">94.4358974359</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003430" class="tablecontentintable">Observations</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003440" class="tablecontentintable">13</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003450" class="tablecontentintable">13</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003460" class="tablecontentintable">df</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003470" class="tablecontentintable">12</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003480" class="tablecontentintable">12</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003490" class="tablecontentintable">F</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003500" class="tablecontentintable">1.3244637524</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003510" class="tablecontentintable">P (F&lt;=f) right-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003520" class="tablecontentintable">0.3170614146</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003530" class="tablecontentintable">F Critical right-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003540" class="tablecontentintable">2.6866371125</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003550" class="tablecontentintable">P (F&lt;=f) left-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003560" class="tablecontentintable">0.6829385854</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003570" class="tablecontentintable">F Critical left-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003580" class="tablecontentintable">0.3722125312</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003590" class="tablecontentintable">P two-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003600" class="tablecontentintable">0.6341228293</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003610" class="tablecontentintable">F Critical two-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003620" class="tablecontentintable">0.3051313549</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003630" class="tablecontentintable">3.277277094</p>
+</td>
+</tr>
+</table>
+<br>
+
+
+<a name="ztest"></a>
+<a name="bm_id05003"></a>
+<meta itemprop="keywords" content="Analysis toolpack,Z-test">
+<meta itemprop="keywords" content="Z-test,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,Z-test">
+
+<a name="bm_id05004"></a>
+<a name="bm_id05004"></a>
+<h2 itemprop="articleSection" id="hd_id1000210">Z-test</h2>
+<p id="par_id1003640" class="paragraph"><span class="avis">Calculates the z-Test of two data samples.</span></p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1003650" class="paragraph"><a name="sam02"></a>Choose <span class="emph">Data - Statistics - Z-test</span></p>
+</div>
+</div>
+<br>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information on Z-tests, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/Z-test">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br>
+<h3 id="hd_id1000220">Data</h3>
+<p id="par_id1003670" class="paragraph"><span class="emph">Variable 1 range</span>: The reference of the range of the first data series to analyze.</p>
+<p id="par_id1003680" class="paragraph"><span class="emph">Variable 2 range</span>: The reference of the range of the second data series to analyze.</p>
+<p id="par_id1003690" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the test will be displayed.</p>
+<div class="embedded">
+<a name="grouped"></a>
+
+<h3 id="hd_id1000020">Grouped By</h3>
+<p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+</div>
+<div class="embedded">
+<a name="datafortests"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000970" class="paragraph">The following table has two data sets.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000980" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000990" class="tableheadintable">B</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001000" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001010" class="tablecontentintable">28</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001020" class="tablecontentintable">19</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001030" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001040" class="tablecontentintable">26</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001050" class="tablecontentintable">13</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001060" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001070" class="tablecontentintable">31</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001080" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001090" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001100" class="tablecontentintable">23</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001110" class="tablecontentintable">5</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001120" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001130" class="tablecontentintable">20</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001140" class="tablecontentintable">34</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001150" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001160" class="tablecontentintable">27</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001170" class="tablecontentintable">31</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001180" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001190" class="tablecontentintable">28</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001200" class="tablecontentintable">31</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001210" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001220" class="tablecontentintable">14</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001230" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001240" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001250" class="tablecontentintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001260" class="tablecontentintable">24</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001270" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001280" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001290" class="tablecontentintable">23</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001300" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001310" class="tablecontentintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001320" class="tablecontentintable">19</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001330" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001340" class="tablecontentintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001350" class="tablecontentintable">10</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001360" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001370" class="tablecontentintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001380" class="tablecontentintable">33</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+<h3 id="hd_id1000230">Results for z-Test:</h3>
+<p id="par_id1003700" class="paragraph">The following table shows the <span class="emph">z-Test</span> for the data series above:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003710" class="tablecontentintable">z-test</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003720" class="tablecontentintable">Alpha</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003730" class="tablecontentintable">0.05</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003740" class="tablecontentintable">Hypothesized Mean Difference</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003750" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003760" class="tablecontentintable">Variable 1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003770" class="tablecontentintable">Variable 2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003780" class="tablecontentintable">Known Variance</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003790" class="tablecontentintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003800" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003810" class="tablecontentintable">Mean</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003820" class="tablecontentintable">16.9230769231</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003830" class="tablecontentintable">20.4615384615</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003840" class="tablecontentintable">Observations</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003850" class="tablecontentintable">13</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003860" class="tablecontentintable">13</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003870" class="tablecontentintable">Observed Mean Difference</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003880" class="tablecontentintable">-3.5384615385</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003890" class="tablecontentintable">z</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003900" class="tablecontentintable">#DIV/0!</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003910" class="tablecontentintable">P (Z&lt;=z) one-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003920" class="tablecontentintable">#DIV/0!</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003930" class="tablecontentintable">z Critical one-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003940" class="tablecontentintable">1.644853627</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003950" class="tablecontentintable">P (Z&lt;=z) two-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003960" class="tablecontentintable">#DIV/0!</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003970" class="tablecontentintable">z Critical two-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003980" class="tablecontentintable">1.9599639845</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+</table>
+<br>
+
+
+<a name="chisqtest"></a>
+<a name="bm_id05004"></a>
+<meta itemprop="keywords" content="Analysis toolpack,Chi-square test">
+<meta itemprop="keywords" content="Chi-square test,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,Chi-square test">
+
+<a name="bm_id05005"></a>
+<a name="bm_id05005"></a>
+<h2 itemprop="articleSection" id="hd_id1000240">Chi-square test</h2>
+<p id="par_id1003641" class="paragraph"><span class="avis">Calculates the Chi-square test of a data sample.</span></p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1003990" class="paragraph"><a name="sam02"></a>Choose <span class="emph">Data - Statistics - Chi-square Test</span></p>
+</div>
+</div>
+<br>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information on chi-square tests, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/Chi-square_test">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br>
+<h3 id="hd_id1000250">Data</h3>
+<p id="par_id1004010" class="paragraph"><span class="emph">Input range</span>: The reference of the range of the data series to analyze.</p>
+<p id="par_id1004020" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the test will be displayed.</p>
+<div class="embedded">
+<a name="grouped"></a>
+
+<h3 id="hd_id1000020">Grouped By</h3>
+<p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+</div>
+<div class="embedded">
+<a name="datafortests"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000970" class="paragraph">The following table has two data sets.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000980" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000990" class="tableheadintable">B</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001000" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001010" class="tablecontentintable">28</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001020" class="tablecontentintable">19</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001030" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001040" class="tablecontentintable">26</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001050" class="tablecontentintable">13</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001060" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001070" class="tablecontentintable">31</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001080" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001090" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001100" class="tablecontentintable">23</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001110" class="tablecontentintable">5</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001120" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001130" class="tablecontentintable">20</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001140" class="tablecontentintable">34</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001150" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001160" class="tablecontentintable">27</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001170" class="tablecontentintable">31</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001180" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001190" class="tablecontentintable">28</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001200" class="tablecontentintable">31</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001210" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001220" class="tablecontentintable">14</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001230" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001240" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001250" class="tablecontentintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001260" class="tablecontentintable">24</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001270" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001280" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001290" class="tablecontentintable">23</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001300" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001310" class="tablecontentintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001320" class="tablecontentintable">19</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001330" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001340" class="tablecontentintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001350" class="tablecontentintable">10</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001360" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001370" class="tablecontentintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001380" class="tablecontentintable">33</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+<h3 id="hd_id1000231">Results for Chi-square Test:</h3>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1004030" class="tableheadintable">Test of Independence (Chi-Square)</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1004040" class="tablecontentintable">Alpha</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1004050" class="tablecontentintable">0.05</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1004060" class="tablecontentintable">df</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1004070" class="tablecontentintable">12</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1004080" class="tablecontentintable">P-value</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1004090" class="tablecontentintable">2.32567054678584E-014</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1004100" class="tablecontentintable">Test Statistic</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1004110" class="tablecontentintable">91.6870055842</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1004120" class="tablecontentintable">Critical Value</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1004130" class="tablecontentintable">21.0260698175</p>
+</td>
+</tr>
+</table>
+<br>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<p id="par_id1004140" class="paragraph"><a target="_top" href="en-US/text/scalc/01/statistics_regression.html#regressionanalysis">Regression Analysis</a></p>
+</div>
+</div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/statistics.xhp" target="_blank">/text/scalc/01/statistics.xhp</a></p>
+<p>Title is: Data Statistics in Calc</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

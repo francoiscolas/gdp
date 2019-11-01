@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Variables</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<a name="variablen"></a>
+<a name="bm_id8526261"></a><meta itemprop="keywords" content="user-defined fields, restriction">
+
+<a name="bm_@@nowidget@@"></a>
+<a name="bm_id3151266"></a>
+<h1 itemprop="articleSection" id="hd_id3153716">Variables</h1>
+<p id="par_id3150764" class="paragraph"><span class="avis">Variable fields let you add dynamic content to your document. For example, you can use a variable to reset the page numbering.</span></p>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<div class="embedded"><p class="embedded"><a name="feldvariablen"></a>Choose <span class="emph">Insert - Field - More Fields - Variables</span> tab</p></div>
+</div>
+</div>
+<br>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>User-defined fields are only available in the current document.</p></div>
+</div>
+<br>
+<a name="bm_id3154692"></a>
+<p id="par_id0903200802243625" class="paragraph"></p>
+<div class="embedded">
+<a name="feldtyp"></a>
+
+
+<h2 itemprop="articleSection" id="hd_id3151312">Type</h2>
+<p id="par_id3153672" class="paragraph"><span class="avis">Lists the available field types. To add a field to your document, click a field type, click a field in the <span class="emph">Select </span>list, and then click <span class="emph">Insert</span>.</span> The following fields are available:</p>
+</div>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3150703" class="tableheadintable">Type</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3154096" class="tableheadintable">Description</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3149803" class="tablecontentintable">Set Variable</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150996" class="tablecontentintable">Defines a variable and its value. You can change the value of a variable by clicking in front of the variable field, and then choosing <span class="emph">Edit - Field</span>.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154571" class="tablecontentintable">Show Variable</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3153669" class="tablecontentintable">Inserts the current value of the variable that you click in the <span class="emph">Selection </span>list.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3147531" class="tablecontentintable">DDE field</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149684" class="tablecontentintable">Inserts a <a target="_top" href="en-US/text/shared/00/00000005.html#dde">DDE</a> link into the document, that you can update as often as you want through the assigned name.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3159196" class="tablecontentintable">Insert Formula</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3151322" class="tablecontentintable">Inserts a fixed number, or the result of a formula.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3149494" class="tablecontentintable">Input field</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154829" class="tablecontentintable">Inserts a new value for a variable or a User Field.</p>
+<p id="par_id3149098" class="tablecontentintable">The value of a variable in an Input field is only valid from where the field is inserted and onwards. To change the value of the variable later in the document, insert another Input field of the same name, but with a different value. However, the value of a User Field is changed globally.</p>
+<p id="par_id3151255" class="tablecontentintable">The variables are displayed in the <span class="emph">Selection</span> field. When you click the <span class="emph">Insert</span> button, the dialog<a target="_top" href="en-US/text/swriter/01/04090100.html"><span class="emph">Input Field</span></a> appears, where you can enter the new value or additional text as a remark.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3149034" class="tablecontentintable">Number range</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3152772" class="tablecontentintable">Inserts automatic numbering for tables, graphics, or text frames.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3147073" class="tablecontentintable">Set page variable</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154389" class="tablecontentintable">Inserts a reference point in the document, after which the page count restarts. Select "on" to enable the reference point, and "off" to disable it. You can also enter an offset to start the page count at a different number.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3156267" class="tablecontentintable">Show Page Variable</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150588" class="tablecontentintable">Displays the number of pages from the "Set page variable" reference point to this field.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3145779" class="tablecontentintable">User Field</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3151377" class="tablecontentintable">Inserts a custom global variable. You can use the User Field to define a variable for a condition statement. When you change a User Field, all instances of the variable in the document are updated.</p>
+</td>
+</tr>
+</table>
+<br>
+<div class="embedded">
+<a name="hinweis"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The following fields can only be inserted if the corresponding field type is selected in the <span class="emph">Type </span>list.</p></div>
+</div>
+<br>
+</div>
+<a name="bm_id3148875"></a>
+<p id="par_id0903200802243892" class="paragraph"></p>
+<div class="embedded">
+<a name="format"></a>
+
+
+<h2 itemprop="articleSection" id="hd_id3145595">Format</h2>
+<p id="par_id3145613" class="paragraph"><span class="avis">Click the format that you want to apply to the selected field, or click "Additional formats" to define a custom format.</span></p>
+</div>
+<p id="par_id3148886" class="paragraph">For user-defined fields, click the format that you want to apply in the <span class="emph">Format </span>list, or click "Additional formats" to define a custom format.</p>
+<a name="bm_id3150108"></a>
+<p id="par_id0903200802243880" class="paragraph"></p>
+<div class="embedded">
+<a name="name"></a>
+
+<h2 itemprop="articleSection" id="hd_id3156242">Name</h2>
+<p id="par_id3156259" class="paragraph"><span class="avis">Type the name of the user-defined field that you want to create.</span> To set a target, click "Set Reference" in the <span class="emph">Type</span> list, type a name in this box, and then click <span class="emph">Insert</span>. To reference the new target, click the target name in the <span class="emph">Selection</span> list.</p>
+</div>
+<a name="bm_id3150119"></a>
+<p id="par_id0903200802243951" class="paragraph"></p>
+<div class="embedded">
+<a name="wert"></a>
+
+<h2 itemprop="articleSection" id="hd_id3154922">Value</h2>
+<p id="par_id3153049" class="paragraph"><span class="avis">Enter the contents that you want to add to a user-defined field.</span></p>
+</div>
+<a name="bm_id3155871"></a>
+<p id="par_id3155860" class="paragraph"><span class="avis">In the <span class="emph">Format</span> list, define if the value is inserted as text or a number.</span></p>
+<a name="bm_id3150684"></a>
+<h2 itemprop="articleSection" id="hd_id3888363">Select</h2>
+<p id="par_id7453535" class="paragraph"><span class="avis">Lists the available fields for the field type selected in the <span class="emph">Type </span>list. To insert a field, click the field, and then click <span class="emph">Insert</span>.</span></p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>To quickly insert a field from the list, hold down <span id="swlnsysidm191090225888" class="switchinline"><span hidden="true" id="MACidm191090228096" class="MAC">Command
+</span><span hidden="true" id="defaultidm191090231040">Ctrl</span></span> and double-click the field.</p></div>
+</div>
+<br>
+<p id="par_id3150696" class="paragraph">In an HTML document, two additional fields are available for the "Set variable" field type: HTML_ON and HTML_OFF. The text that you type in the <span class="emph">Value </span>box is converted to an opening HTML <a target="_top" href="en-US/text/shared/00/00000002.html#tags">tag</a> (&lt;Value&gt;) or to a closing HTML (&lt;/Value&gt;) tag when the file is saved as an HTML document, depending on the option that you select.</p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>If you double-click an entry while holding the Ctrl key or select the desired variable and press the spacebar, it is immediately inserted into your document.</p></div>
+</div>
+<br>
+<h2 itemprop="articleSection" id="hd_id3155969">Formula</h2>
+<p id="par_id3155982" class="paragraph">This option is only available if the "Insert formula" field type is selected.</p>
+<div class="embedded">
+<a name="hinweis"></a>
+<h2 itemprop="articleSection" id="hd_id3155136">Reference</h2>
+<p id="par_id3155149" class="paragraph">Type the text that you want to display in the field. If you are inserting a placeholder field, type the text that you want to display as a help tip when you rest the mouse pointer over the field. </p>
+</div>
+<div class="embedded">
+<a name="korrektur"></a>
+
+
+<h2 itemprop="articleSection" id="hd_id3150891">Offset</h2>
+<p id="par_id3155312" class="paragraph"><span class="avis">Enter the offset value that you want to apply to a page number field, for example "+1".</span></p>
+</div>
+<a name="unsichtbar"></a>
+<a name="bm_id3156226"></a>
+<h2 itemprop="articleSection" id="hd_id3149229">Invisible</h2>
+<p id="par_id3156233" class="paragraph"><span class="avis">Hides the field contents in the document.</span> The field is inserted as a thin gray mark in the document. This option is only available for the "Set Variable" and "User Field" field types.</p>
+
+<h2 itemprop="articleSection" id="hd_id3146326">Chapter numbering</h2>
+<p id="par_id3146340" class="paragraph">Sets the options for resetting chapter numbers.</p>
+<a name="bm_id3149829"></a>
+<h3 id="hd_id3147456">Level</h3>
+<p id="par_id3149836" class="paragraph"><span class="avis">Choose the heading or chapter level at which to restart numbering in the document.</span></p>
+<a name="bm_id3147605"></a>
+<h3 id="hd_id3147594">Separator</h3>
+<p id="par_id3148846" class="paragraph"><span class="avis">Type the character that you want to use as a separator between the heading or chapter levels.</span></p>
+<a name="uebernehmen"></a>
+<a name="bm_id3147069"></a>
+<h2 itemprop="articleSection" id="hd_id3147057">Apply</h2>
+<p id="par_id3155562" class="paragraph"><span class="avis">Adds the user-defined field to the <span class="emph">Selection</span> list.</span></p>
+<div class="embedded">
+<a name="syuebernehmen"></a>
+  
+   
+   
+   
+    <div class="icontable">
+     <div class="iconcell">
+      <p id="par_id3149286" class="paragraphintable"><img src="media/icon-themes/cmd/sc_ok.svg" alt="Icon" title="Icon" style="width:;height:"></p>
+     </div>
+     <div class="iconcell">
+      <p id="par_id3150749" class="paragraphintable">Apply</p>
+     </div>
+    </div>
+   
+  
+  </div>
+
+<a name="loeschen"></a>
+<a name="bm_id3151092"></a>
+<h2 itemprop="articleSection" id="hd_id3151080">Delete</h2>
+<p id="par_id3154769" class="paragraph"><span class="avis">Removes the user-defined field from the selection list. You can only remove fields that are not used in the current document.</span> To remove a field that is used in the current document from the list, first delete all instances of the field in the document, and then remove it from the list.</p>
+
+<div class="icontable">
+<div class="iconcell">
+<p id="par_id3145318" class="paragraphintable">
+<img src="media/icon-themes/cmd/sc_cancel.svg" alt="Icon" title="Icon" style="width:16px;height:16px"></p>
+</div>
+<div class="iconcell">
+<p id="par_id3150169" class="paragraphintable">Delete</p>
+</div>
+</div>
+
+
+
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/swriter/01/04090005.xhp" target="_blank">/text/swriter/01/04090005.xhp</a></p>
+<p>Title is: Variables</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

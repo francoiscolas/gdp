@@ -242,7 +242,7 @@ var SlidesGenerator = (function () {
                 return ChildProcess.execFile(Binaries.convert, [
                   current.source.getPdfPath(),
                   Path.join(dir, '%07d.jpg'),
-                ])
+                ], Binaries.env)
               })
               .catch(error => console.log(error));
             }
@@ -283,26 +283,45 @@ var SlidesGenerator = (function () {
 
 var Binaries = (function () {
 
-  var root;
+  var isWin32  = (Process.platform == 'win32');
+  var isDarwin = (Process.platform == 'darwin');
+  var root     = null;
 
-  if (Process.platform == 'win32') {
+  if (isWin32 || isDarwin) {
     if (App.isDev)
-      root = Path.join(__dirname, '..', 'build', 'win');
+      root = Path.join(__dirname, '..', 'build', Process.platform);
     else
       root = Process.resourcesPath;
-  }
+  } 
 
   return {
 
+    env: (function () {
+      var env = Process.env;
+
+      if (isDarwin) {
+        env['MAGICK_HOME'] = Path.join(root, 'ImageMagick');
+        env['MAGICK_CONFIGURE_PATH'] = Path.join(env['MAGICK_HOME'], 'etc', 'ImageMagick-7');
+        env['PATH'] += ':' + Path.join(env['MAGICK_HOME'], 'bin');
+        env['DYLD_LIBRARY_PATH'] = Path.join(env['MAGICK_HOME'], 'lib');
+        env['PATH'] += ':' + Path.join(root, 'Ghostscript', 'bin');
+      }
+      return env;
+    })(),
+
     libreoffice: (function () {
       if (root)
-        return Path.join(root, 'LibreOffice', 'LibreOfficePortable');
+        return (isWin32)
+          ? Path.join(root, 'LibreOffice', 'LibreOfficePortable')
+          : Path.join(root, 'LibreOffice.app', 'Contents', 'MacOS', 'soffice');
       return 'libreoffice';
     })(),
 
     convert: (function () {
       if (root)
-        return Path.join(root, 'ImageMagick', 'convert');
+        return (isWin32)
+          ? Path.join(root, 'ImageMagick', 'convert')
+          : Path.join(root, 'ImageMagick', 'bin', 'convert');
       return 'convert';
     })(),
 

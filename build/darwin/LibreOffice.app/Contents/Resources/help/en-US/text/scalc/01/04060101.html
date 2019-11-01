@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Database Functions</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<a name="bm_id3148946"></a><meta itemprop="keywords" content="Function Wizard, databases">
+      <meta itemprop="keywords" content="functions, database functions">
+      <meta itemprop="keywords" content="databases, functions in $[officename] Calc">
+
+<h1 itemprop="articleSection" id="hd_id3148946">Database Functions</h1>
+      <p id="par_id3145173" class="paragraph"><a name="datenbanktext"></a>This section deals with functions used with data organized as one row of data for one record.</p>
+      <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The Database category may be confused with a database integrated in LibreOffice. However, there is no connection between a database in LibreOffice and the Database category in LibreOffice Calc.</p></div>
+</div>
+<br>
+      <h3 id="hd_id3150329">Example Data:</h3>
+      <p id="par_id3153713" class="paragraph">The following data will be used in some of the function description examples:</p>
+      <p id="par_id3155766" class="paragraph">The range A1:E10 lists the children invited to Joe's birthday party. The following information is given for each entry: column A shows the name, B the grade, then age in years, distance to school in meters and weight in kilograms.</p>
+      <table border="1" class="" cellpadding="0" cellspacing="0">
+         <tr>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3145232" class="tableheadintable">A</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3146316" class="tableheadintable">B</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3150297" class="tableheadintable">C</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3150344" class="tableheadintable">D</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3150785" class="tableheadintable">E</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3150090" class="tablecontentintable">1</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3152992" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Name</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3155532" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Grade</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3156448" class="tablecontentintable">
+<span class="input">Age</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3154486" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Distance to School</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3152899" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Weight</span>
+</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3153816" class="tablecontentintable">2</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3151240" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Andy</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3156016" class="tablecontentintable"><span class="input">3</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3145073" class="tablecontentintable"><span class="input">9</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3154956" class="tablecontentintable"><span class="input">150</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3153976" class="tablecontentintable"><span class="input">40</span></p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3150894" class="tablecontentintable">3</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3152870" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Betty</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3149692" class="tablecontentintable"><span class="input">4</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3154652" class="tablecontentintable"><span class="input">10</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3149381" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">1000</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3153812" class="tablecontentintable"><span class="input">42</span></p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3146965" class="tablecontentintable">4</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3155596" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Charles</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3147244" class="tablecontentintable"><span class="input">3</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3149871" class="tablecontentintable"><span class="input">10</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3155752" class="tablecontentintable"><span class="input">300</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3149052" class="tablecontentintable"><span class="input">51</span></p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3146097" class="tablecontentintable">5</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3147296" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Daniel</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3150393" class="tablecontentintable"><span class="input">5</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3145236" class="tablecontentintable"><span class="input">11</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3150534" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">1200</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3150375" class="tablecontentintable"><span class="input">48</span></p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3159121" class="tablecontentintable">6</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3150456" class="tablecontentintable">
+<span class="input">Eva</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3146886" class="tablecontentintable"><span class="input">2</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3149945" class="tablecontentintable"><span class="input">8</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3157904" class="tablecontentintable"><span class="input">650</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3149352" class="tablecontentintable"><span class="input">33</span></p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3150028" class="tablecontentintable">7</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3145826" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Frank</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3150743" class="tablecontentintable"><span class="input">2</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3154844" class="tablecontentintable"><span class="input">7</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3148435" class="tablecontentintable"><span class="input">300</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3148882" class="tablecontentintable"><span class="input">42</span></p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3150140" class="tablecontentintable">8</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3146137" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Greta</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3148739" class="tablecontentintable"><span class="input">1</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3148583" class="tablecontentintable"><span class="input">7</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3154556" class="tablecontentintable"><span class="input">200</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3155255" class="tablecontentintable"><span class="input">36</span></p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3145141" class="tablecontentintable">9</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3153078" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Harry</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3149955" class="tablecontentintable"><span class="input">3</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3150005" class="tablecontentintable"><span class="input">9</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3155951" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">1200</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3145169" class="tablecontentintable"><span class="input">44</span></p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3153571" class="tablecontentintable">10</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3148761" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Irene</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3149877" class="tablecontentintable"><span class="input">2</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3154327" class="tablecontentintable"><span class="input">8</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3155435" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">1000</span></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3145353" class="tablecontentintable"><span class="input">42</span></p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3150662" class="tablecontentintable">11</p>
+            </td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3150568" class="tablecontentintable">12</p>
+            </td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3149393" class="tablecontentintable">13</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3153544" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Name</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3158414" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Grade</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3152820" class="tablecontentintable">
+<span class="input">Age</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3154866" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Distance to School</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3150471" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">Weight</span>
+</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3153920" class="tablecontentintable">14</p>
+            </td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+               <p id="par_id3148429" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">&gt;600</span></p>
+            </td>
+            <td rowspan="" colspan="">
+</td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3152588" class="tablecontentintable">15</p>
+            </td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3083286" class="tablecontentintable">16</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3163823" class="tablecontentintable">
+<span class="input" data-tooltip="Click on text to copy to clipboard">DCOUNT</span>
+</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3145083" class="tablecontentintable"><span class="input">5</span></p>
+            </td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="">
+</td>
+         </tr>
+      </table>
+<br>
+
+      <p id="par_id3149282" class="paragraph">The formula in cell B16 is =DCOUNT(A1:E10;D1;A13:E14)</p>
+      <h3 id="hd_id3150962">Database Function Parameters:</h3>
+      <p id="par_id3155837" class="paragraph">The following items are the parameter definitions for all database functions:</p>
+      <p id="par_id3149453" class="paragraph">
+<span class="emph">Database</span> is the cell range defining the database.</p>
+      <p id="par_id3151272" class="paragraph">
+<span class="emph">DatabaseField</span> specifies the column where the function operates on after the search criteria of the first parameter is applied and the data rows are selected. It is not related to the search criteria itself. <a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p>
+      <p id="par_id3147083" class="paragraph">
+<span class="emph">SearchCriteria</span> is the cell range containing search criteria. If you write several criteria in one row they are connected by AND. If you write the criteria in different rows they are connected by OR. Empty cells in the search criteria range will be ignored.</p>
+      <p id="par_id3151188" class="paragraph">Choose <span id="swlnsysidm511917241840" class="switchinline"><span hidden="true" id="MACidm511917241488" class="MAC">LibreOffice - Preferences</span><span hidden="true" id="defaultidm511917240976">Tools - Options</span></span> - <a target="_top" href="en-US/text/shared/optionen/01060500.html">LibreOffice Calc - Calculate</a> to define how LibreOffice Calc acts when searching for identical entries.</p>
+      <p id="par_id3882869" class="paragraph">See also the Wiki page about <a target="_blank" href="https://wiki.documentfoundation.org/Documentation/How_Tos/Conditional_Counting_and_Summation">Conditional Counting and Summation</a>.</p>
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+<a name="Section6"></a>
+<a name="bm_id3154274"></a><meta itemprop="keywords" content="DAVERAGE function">
+         <meta itemprop="keywords" content="averages, in Calc databases">
+         <meta itemprop="keywords" content="calculating,averages in Calc databases">
+
+<a name="bm_id3166435"></a>
+<h2 itemprop="articleSection" id="hd_id3154274">DAVERAGE</h2>
+         <p id="par_id3166453" class="paragraph"><span class="avis">DAVERAGE returns the average of the values of all cells (fields) in all rows (database records) that match the specified search criteria.</span></p>
+         <div class="embedded"><p class="embedded"><a name="regulaer"></a>The search supports <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a>. You can enter "all.*", for example to find the first location of "all" followed by any characters. If you want to search for a text that is also a regular expression, you must precede every character with a "\" character. You can switch the automatic evaluation of regular expression on and off in <span id="swlnsysidm511945744080" class="switchinline"><span hidden="true" id="MACidm511945743728" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm511945743120"><span class="emph">Tools - Options</span></span></span><span class="emph"> - </span><a target="_top" href="en-US/text/shared/optionen/01060500.html"><span class="emph">LibreOffice Calc - Calculate</span></a>.</p></div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3150710" class="code">DAVERAGE(Database; DatabaseField; SearchCriteria)</p>
+         <div class="embedded"><p class="embedded"><a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p></div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3149104" class="paragraph">To find the average weight of all children of the same age in the above example (scroll up, please), enter the following formula in B16:</p>
+         <p id="par_id3153688" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=DAVERAGE(A1:E10;"Weight";A13:E14)</span>
+</p>
+         <p id="par_id3155587" class="paragraph">In row 14, under Age, enter <span class="input" data-tooltip="Click on text to copy to clipboard">7, 8, 9,</span> and so on, one after the other. The average weight of all children of the same age appears.</p>
+      <a name="Section1"></a>
+<a name="bm_id3150882"></a><meta itemprop="keywords" content="DCOUNT function">
+         <meta itemprop="keywords" content="counting rows,with numeric values">
+
+<a name="bm_id3152926"></a>
+<h2 itemprop="articleSection" id="hd_id3150882">DCOUNT</h2>
+         <p id="par_id3156133" class="paragraph"><span class="avis">DCOUNT counts the number of rows (records) in a database that match the specified search criteria and contain numerical values in the DatabaseField column.</span></p>
+         <div class="embedded"><p class="embedded"><a name="regulaer"></a>The search supports <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a>. You can enter "all.*", for example to find the first location of "all" followed by any characters. If you want to search for a text that is also a regular expression, you must precede every character with a "\" character. You can switch the automatic evaluation of regular expression on and off in <span id="swlnsysidm511945744080" class="switchinline"><span hidden="true" id="MACidm511945743728" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm511945743120"><span class="emph">Tools - Options</span></span></span><span class="emph"> - </span><a target="_top" href="en-US/text/shared/optionen/01060500.html"><span class="emph">LibreOffice Calc - Calculate</span></a>.</p></div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3153218" class="code">DCOUNT(Database; [DatabaseField]; SearchCriteria)</p>
+         <p id="par_id3153273" class="paragraph">If the DatabaseField argument is omitted, DCOUNT returns the count of all records that satisfy Criteria. <a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3153623" class="paragraph">In the example above (scroll up, please), we want to know how many children have to travel more than 600 meters to school. The result is to be stored in cell B16. Set the cursor in cell B16. Enter the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNT(A1:E10;D1;A13:E14)</span> in B16. The <span class="emph">Function Wizard</span> helps you to input ranges.</p>
+         <p id="par_id3149142" class="paragraph">
+<span class="emph">Database</span> is the range of data to be evaluated, including its headers: in this case A1:E10. <span class="emph">DatabaseField</span> specifies the column for the search criteria: in this case, the column with the numerical distance values. <span class="emph">SearchCriteria</span> is the range where you can enter the search parameters: in this case, A13:E14.</p>
+         <p id="par_id3145652" class="paragraph">To learn how many children in second grade are over 7 years of age, delete the entry &gt;600 in cell D14 and enter <span class="input">2</span> in cell B14 under Grade, and enter <span class="input">&gt;7</span> in cell C14 to the right. The result is 2. Two children are in second grade and over 7 years of age. As both criteria are in the same row, they are connected by AND.</p>
+      <a name="Section2"></a>
+<a name="bm_id3156123"></a><meta itemprop="keywords" content="DCOUNTA function">
+         <meta itemprop="keywords" content="records,counting in Calc databases">
+         <meta itemprop="keywords" content="counting rows,with numeric or alphanumeric values">
+
+<a name="bm_id3154055"></a>
+<h2 itemprop="articleSection" id="hd_id3156123">DCOUNTA</h2>
+         <p id="par_id3156110" class="paragraph"><span class="avis">DCOUNTA counts the number of rows (records) in a database that match the specified search conditions, and contain numeric or alphanumeric values.</span></p>
+         <div class="embedded"><p class="embedded"><a name="regulaer"></a>The search supports <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a>. You can enter "all.*", for example to find the first location of "all" followed by any characters. If you want to search for a text that is also a regular expression, you must precede every character with a "\" character. You can switch the automatic evaluation of regular expression on and off in <span id="swlnsysidm511945744080" class="switchinline"><span hidden="true" id="MACidm511945743728" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm511945743120"><span class="emph">Tools - Options</span></span></span><span class="emph"> - </span><a target="_top" href="en-US/text/shared/optionen/01060500.html"><span class="emph">LibreOffice Calc - Calculate</span></a>.</p></div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3146893" class="code">DCOUNTA(Database; [DatabaseField]; SearchCriteria)</p>
+         <p id="par_id3153274" class="paragraph">If the DatabaseField argument is omitted, DCOUNTA returns the count of all records that satisfy Criteria. <a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3153982" class="paragraph">In the example above (scroll up, please), you can search for the number of children whose name starts with an E or a subsequent letter. Edit the formula in B16 to read <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNTA(A1:E10;"Name";A13:E14)</span>. Delete the old search criteria and enter <span class="input">&gt;=E</span> under Name in field A14. The result is 5. If you now delete all number values for Greta in row 8, the result changes to 4. Row 8 is no longer included in the count because it does not contain any values. The name Greta is text, not a value. Note that the DatabaseField parameter must point to a column that can contain values.</p>
+      <a name="Section3"></a>
+<a name="bm_id3147256"></a><meta itemprop="keywords" content="DGET function">
+         <meta itemprop="keywords" content="cell contents,searching in Calc databases">
+         <meta itemprop="keywords" content="searching,cell contents in Calc databases">
+
+<a name="bm_id3149198"></a>
+<h2 itemprop="articleSection" id="hd_id3147256">DGET</h2>
+         <p id="par_id3152801" class="paragraph"><span class="avis">DGET returns the contents of the referenced cell in a database which matches the specified search criteria.</span> In case of an error, the function returns either #VALUE! for no row found, or Err502 for more than one cell found.</p>
+         <div class="embedded"><p class="embedded"><a name="regulaer"></a>The search supports <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a>. You can enter "all.*", for example to find the first location of "all" followed by any characters. If you want to search for a text that is also a regular expression, you must precede every character with a "\" character. You can switch the automatic evaluation of regular expression on and off in <span id="swlnsysidm511945744080" class="switchinline"><span hidden="true" id="MACidm511945743728" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm511945743120"><span class="emph">Tools - Options</span></span></span><span class="emph"> - </span><a target="_top" href="en-US/text/shared/optionen/01060500.html"><span class="emph">LibreOffice Calc - Calculate</span></a>.</p></div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3154696" class="code">DGET(Database; DatabaseField; SearchCriteria)</p>
+         <div class="embedded"><p class="embedded"><a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p></div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3155388" class="paragraph">In the above example (scroll up, please), we want to determine what grade a child is in, whose name was entered in cell A14. The formula is entered in cell B16 and differs slightly from the earlier examples because only one column (one database field) can be entered for <span class="emph">DatabaseField</span>. Enter the following formula:</p>
+         <p id="par_id3153096" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=DGET(A1:E10;"Grade";A13:E14)</span>
+</p>
+         <p id="par_id3150524" class="paragraph">Enter the name <span class="input" data-tooltip="Click on text to copy to clipboard">Frank</span> in A14, and you see the result 2. Frank is in second grade. Enter <span class="input" data-tooltip="Click on text to copy to clipboard">"Age"</span> instead of "Grade" and you will get Frank's age.</p>
+         <p id="par_id3148833" class="paragraph">Or enter the value <span class="input">11</span> in cell C14 only, and delete the other entries in this row. Edit the formula in B16 as follows:</p>
+         <p id="par_id3149912" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=DGET(A1:E10;"Name";A13:E14)</span>
+</p>
+         <p id="par_id3148813" class="paragraph">Instead of the grade, the name is queried. The answer appears at once: Daniel is the only child aged 11.</p>
+      <a name="Section4"></a>
+<a name="bm_id3149766"></a><meta itemprop="keywords" content="DMAX function">
+         <meta itemprop="keywords" content="maximum values in Calc databases">
+         <meta itemprop="keywords" content="searching,maximum values in columns">
+
+<a name="bm_id3158401"></a>
+<h2 itemprop="articleSection" id="hd_id3149766">DMAX</h2>
+         <p id="par_id3154903" class="paragraph"><span class="avis">DMAX returns the maximum content of a cell (field) in a database (all records) that matches the specified search conditions.</span></p>
+         <div class="embedded"><p class="embedded"><a name="regulaer"></a>The search supports <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a>. You can enter "all.*", for example to find the first location of "all" followed by any characters. If you want to search for a text that is also a regular expression, you must precede every character with a "\" character. You can switch the automatic evaluation of regular expression on and off in <span id="swlnsysidm511945744080" class="switchinline"><span hidden="true" id="MACidm511945743728" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm511945743120"><span class="emph">Tools - Options</span></span></span><span class="emph"> - </span><a target="_top" href="en-US/text/shared/optionen/01060500.html"><span class="emph">LibreOffice Calc - Calculate</span></a>.</p></div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3159157" class="code">DMAX(Database; DatabaseField; SearchCriteria)</p>
+         <div class="embedded"><p class="embedded"><a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p></div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3148442" class="paragraph">To find out how much the heaviest child in each grade weighed in the above example (scroll up, please), enter the following formula in B16:</p>
+         <p id="par_id3148804" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=DMAX(A1:E10;"Weight";A13:E14)</span>
+</p>
+         <p id="par_id3150510" class="paragraph">Under Grade, enter <span class="input" data-tooltip="Click on text to copy to clipboard">1, 2, 3,</span> and so on, one after the other. After entering a grade number, the weight of the heaviest child in that grade appears.</p>
+      <a name="Section5"></a>
+<a name="bm_id3159141"></a><meta itemprop="keywords" content="DMIN function">
+         <meta itemprop="keywords" content="minimum values in Calc databases">
+         <meta itemprop="keywords" content="searching,minimum values in columns">
+
+<a name="bm_id3159152"></a>
+<h2 itemprop="articleSection" id="hd_id3159141">DMIN</h2>
+         <p id="par_id3154261" class="paragraph"><span class="avis">DMIN returns the minimum content of a cell (field) in a database that matches the specified search criteria.</span></p>
+         <div class="embedded"><p class="embedded"><a name="regulaer"></a>The search supports <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a>. You can enter "all.*", for example to find the first location of "all" followed by any characters. If you want to search for a text that is also a regular expression, you must precede every character with a "\" character. You can switch the automatic evaluation of regular expression on and off in <span id="swlnsysidm511945744080" class="switchinline"><span hidden="true" id="MACidm511945743728" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm511945743120"><span class="emph">Tools - Options</span></span></span><span class="emph"> - </span><a target="_top" href="en-US/text/shared/optionen/01060500.html"><span class="emph">LibreOffice Calc - Calculate</span></a>.</p></div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3148479" class="code">DMIN(Database; DatabaseField; SearchCriteria)</p>
+         <div class="embedded"><p class="embedded"><a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p></div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3148925" class="paragraph">To find the shortest distance to school for the children in each grade in the above example (scroll up, please), enter the following formula in B16:</p>
+         <p id="par_id3149161" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=DMIN(A1:E10;"Distance to School";A13:E14)</span>
+</p>
+         <p id="par_id3148917" class="paragraph">In row 14, under Grade, enter <span class="input" data-tooltip="Click on text to copy to clipboard">1, 2, 3,</span> and so on, one after the other. The shortest distance to school for each grade appears.</p>
+      <a name="Section7"></a>
+<a name="bm_id3159269"></a><meta itemprop="keywords" content="DPRODUCT function">
+         <meta itemprop="keywords" content="multiplying,cell contents in Calc databases">
+
+<a name="bm_id3159281"></a>
+<h2 itemprop="articleSection" id="hd_id3159269">DPRODUCT</h2>
+         <p id="par_id3152879" class="paragraph"><span class="avis">DPRODUCT multiplies all cells of a data range where the cell contents match the search criteria.</span></p>
+         <div class="embedded"><p class="embedded"><a name="regulaer"></a>The search supports <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a>. You can enter "all.*", for example to find the first location of "all" followed by any characters. If you want to search for a text that is also a regular expression, you must precede every character with a "\" character. You can switch the automatic evaluation of regular expression on and off in <span id="swlnsysidm511945744080" class="switchinline"><span hidden="true" id="MACidm511945743728" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm511945743120"><span class="emph">Tools - Options</span></span></span><span class="emph"> - </span><a target="_top" href="en-US/text/shared/optionen/01060500.html"><span class="emph">LibreOffice Calc - Calculate</span></a>.</p></div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3154854" class="code">DPRODUCT(Database; DatabaseField; SearchCriteria)</p>
+         <div class="embedded"><p class="embedded"><a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p></div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3148986" class="paragraph">With the birthday party example above (scroll up, please), there is no meaningful application of this function.</p>
+      <a name="Section8"></a>
+<a name="bm_id3148462"></a><meta itemprop="keywords" content="DSTDEV function">
+         <meta itemprop="keywords" content="standard deviations in databases,based on a sample">
+
+<a name="bm_id3145370"></a>
+<h2 itemprop="articleSection" id="hd_id3148462">DSTDEV</h2>
+         <p id="par_id3154605" class="paragraph"><span class="avis">DSTDEV calculates the standard deviation of a population based on a sample, using the numbers in a database column that match the given conditions.</span> The records are treated as a sample of data. That means that the children in the example represent a cross section of all children. Note that a representative result can not be obtained from a sample of less than one thousand.</p>
+         <div class="embedded"><p class="embedded"><a name="regulaer"></a>The search supports <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a>. You can enter "all.*", for example to find the first location of "all" followed by any characters. If you want to search for a text that is also a regular expression, you must precede every character with a "\" character. You can switch the automatic evaluation of regular expression on and off in <span id="swlnsysidm511945744080" class="switchinline"><span hidden="true" id="MACidm511945743728" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm511945743120"><span class="emph">Tools - Options</span></span></span><span class="emph"> - </span><a target="_top" href="en-US/text/shared/optionen/01060500.html"><span class="emph">LibreOffice Calc - Calculate</span></a>.</p></div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3148661" class="code">DSTDEV(Database; DatabaseField; SearchCriteria)</p>
+         <div class="embedded"><p class="embedded"><a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p></div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3149934" class="paragraph">To find the standard deviation of the weight for all children of the same age in the example (scroll up, please), enter the following formula in B16:</p>
+         <p id="par_id3150630" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=DSTDEV(A1:E10;"Weight";A13:E14)</span>
+</p>
+         <p id="par_id3153536" class="paragraph">In row 14, under Age, enter <span class="input" data-tooltip="Click on text to copy to clipboard">7, 8, 9,</span> and so on, one after the other. The result shown is the standard deviation of the weight of all children of this age.</p>
+      <a name="Section9"></a>
+<a name="bm_id3150429"></a><meta itemprop="keywords" content="DSTDEVP function">
+         <meta itemprop="keywords" content="standard deviations in databases,based on populations">
+
+<a name="bm_id3149523"></a>
+<h2 itemprop="articleSection" id="hd_id3150429">DSTDEVP</h2>
+         <p id="par_id3145598" class="paragraph"><span class="avis">DSTDEVP calculates the standard deviation of a population based on all cells of a data range which match the search criteria.</span> The records from the example are treated as the whole population.</p>
+         <div class="embedded"><p class="embedded"><a name="regulaer"></a>The search supports <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a>. You can enter "all.*", for example to find the first location of "all" followed by any characters. If you want to search for a text that is also a regular expression, you must precede every character with a "\" character. You can switch the automatic evaluation of regular expression on and off in <span id="swlnsysidm511945744080" class="switchinline"><span hidden="true" id="MACidm511945743728" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm511945743120"><span class="emph">Tools - Options</span></span></span><span class="emph"> - </span><a target="_top" href="en-US/text/shared/optionen/01060500.html"><span class="emph">LibreOffice Calc - Calculate</span></a>.</p></div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3149484" class="code">DSTDEVP(Database; DatabaseField; SearchCriteria)</p>
+         <div class="embedded"><p class="embedded"><a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p></div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3155431" class="paragraph">To find the standard deviation of the weight for all children of the same age at Joe's birthday party (scroll up, please), enter the following formula in B16:</p>
+         <p id="par_id3148411" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=DSTDEVP(A1:E10;"Weight";A13:E14)</span>
+</p>
+         <p id="par_id3143271" class="paragraph">In row 14, under Age, enter <span class="input" data-tooltip="Click on text to copy to clipboard">7, 8, 9,</span> and so on, one after the other. The result is the standard deviation of the weight for all same-aged children whose weight was checked.</p>
+      <a name="Section10"></a>
+<a name="bm_id3154794"></a><meta itemprop="keywords" content="DSUM function">
+         <meta itemprop="keywords" content="calculating,sums in Calc databases">
+         <meta itemprop="keywords" content="sums,cells in Calc databases">
+
+<a name="bm_id3148687"></a>
+<h2 itemprop="articleSection" id="hd_id3154794">DSUM</h2>
+         <p id="par_id3149591" class="paragraph"><span class="avis">DSUM returns the total of all cells in a database field in all rows (records) that match the specified search criteria.</span></p>
+         <div class="embedded"><p class="embedded"><a name="regulaer"></a>The search supports <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a>. You can enter "all.*", for example to find the first location of "all" followed by any characters. If you want to search for a text that is also a regular expression, you must precede every character with a "\" character. You can switch the automatic evaluation of regular expression on and off in <span id="swlnsysidm511945744080" class="switchinline"><span hidden="true" id="MACidm511945743728" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm511945743120"><span class="emph">Tools - Options</span></span></span><span class="emph"> - </span><a target="_top" href="en-US/text/shared/optionen/01060500.html"><span class="emph">LibreOffice Calc - Calculate</span></a>.</p></div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3150989" class="code">DSUM(Database; DatabaseField; SearchCriteria)</p>
+         <div class="embedded"><p class="embedded"><a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p></div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3152766" class="paragraph">To find the length of the combined distance to school of all children at Joe's birthday party (scroll up, please) who are in second grade, enter the following formula in B16:</p>
+         <p id="par_id3151312" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=DSUM(A1:E10;"Distance to School";A13:E14)</span>
+</p>
+         <p id="par_id3150596" class="paragraph">Enter <span class="input">2</span> in row 14 under Grade. The sum (1950) of the distances to school of all the children who are in second grade is displayed.</p>
+      <a name="Section11"></a>
+<a name="bm_id3155614"></a><meta itemprop="keywords" content="DVAR function">
+         <meta itemprop="keywords" content="variances,based on samples">
+
+<a name="bm_id3159391"></a>
+<h2 itemprop="articleSection" id="hd_id3155614">DVAR</h2>
+         <p id="par_id3154418" class="paragraph"><span class="avis">DVAR returns the variance of all cells of a database field in all records that match the specified search criteria.</span> The records from the example are treated as a sample of data. A representative result cannot be obtained from a sample population of less than one thousand.</p>
+         <div class="embedded"><p class="embedded"><a name="regulaer"></a>The search supports <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a>. You can enter "all.*", for example to find the first location of "all" followed by any characters. If you want to search for a text that is also a regular expression, you must precede every character with a "\" character. You can switch the automatic evaluation of regular expression on and off in <span id="swlnsysidm511945744080" class="switchinline"><span hidden="true" id="MACidm511945743728" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm511945743120"><span class="emph">Tools - Options</span></span></span><span class="emph"> - </span><a target="_top" href="en-US/text/shared/optionen/01060500.html"><span class="emph">LibreOffice Calc - Calculate</span></a>.</p></div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3156138" class="code">DVAR(Database; DatabaseField; SearchCriteria)</p>
+         <div class="embedded"><p class="embedded"><a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p></div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3153701" class="paragraph">To find the variance of the weight of all children of the same age of the above example (scroll up, please), enter the following formula in B16:</p>
+         <p id="par_id3153676" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=DVAR(A1:E10;"Weight";A13:E14)</span>
+</p>
+         <p id="par_id3153798" class="paragraph">In row 14, under Age, enter <span class="input" data-tooltip="Click on text to copy to clipboard">7, 8, 9,</span> and so on, one after the other. You will see as a result the variance of the weight values for all children of this age.</p>
+      <a name="Section12"></a>
+<a name="bm_id3153880"></a><meta itemprop="keywords" content="DVARP function">
+         <meta itemprop="keywords" content="variances,based on populations">
+
+<a name="bm_id3153891"></a>
+<h2 itemprop="articleSection" id="hd_id3153880">DVARP</h2>
+         <p id="par_id3155119" class="paragraph"><span class="avis">DVARP calculates the variance of all cell values in a database field in all records that match the specified search criteria.</span> The records are from the example are treated as an entire population.</p>
+         <div class="embedded"><p class="embedded"><a name="regulaer"></a>The search supports <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a>. You can enter "all.*", for example to find the first location of "all" followed by any characters. If you want to search for a text that is also a regular expression, you must precede every character with a "\" character. You can switch the automatic evaluation of regular expression on and off in <span id="swlnsysidm511945744080" class="switchinline"><span hidden="true" id="MACidm511945743728" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm511945743120"><span class="emph">Tools - Options</span></span></span><span class="emph"> - </span><a target="_top" href="en-US/text/shared/optionen/01060500.html"><span class="emph">LibreOffice Calc - Calculate</span></a>.</p></div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3153776" class="code">DVARP(Database; DatabaseField; SearchCriteria)</p>
+         <div class="embedded"><p class="embedded"><a name="quotes"></a>For the DatabaseField parameter you can enter a reference to a header cell or a number to specify the column within the Database area, starting with 1. To reference a column by means of the literal column header name, place quotation marks around the header name.
+</p></div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3147099" class="paragraph">To find the variance of the weight for all children of the same age at Joe's birthday party (scroll up, please), enter the following formula in B16:</p>
+         <p id="par_id3147322" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=DVARP(A1:E10;"Weight";A13:E14)</span>
+</p>
+         <p id="par_id3146902" class="paragraph">In row 14, under Age, enter <span class="input" data-tooltip="Click on text to copy to clipboard">7, 8, 9,</span> and so on, one after the other. The variance of the weight values for all children of this age attending Joe's birthday party appears.</p>
+      
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <div class="embedded"><p class="embedded"><a name="drking"></a><a target="_top" href="en-US/text/scalc/01/04060100.html">Functions by Category</a></p></div>
+      </div>
+</div>
+   </div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/04060101.xhp" target="_blank">/text/scalc/01/04060101.xhp</a></p>
+<p>Title is: Database Functions</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

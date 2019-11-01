@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>On...GoSub Statement; On...GoTo Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="ongosub"></a>
+<a name="bm_id3153897"></a>
+  <meta itemprop="keywords" content="On...GoSub statement">
+  <meta itemprop="keywords" content="On...GoTo statement">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3153897">On...GoSub Statement; On...GoTo Statement</h1>
+<p id="par_id3150359" class="paragraph">Branches to one of several specified lines in the program code, depending on the value of a numeric expression.</p>
+
+
+<h2 itemprop="articleSection" id="hd_id3148798">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+On N GoSub Label1[, Label2[, Label3[,...]]]
+On NumExpression GoTo Label1[, Label2[, Label3[,...]]]
+</code></pre></div>
+
+<h2 itemprop="articleSection" id="hd_id3156215">Parameters:</h2>
+<p id="par_id3148673" class="paragraph"> <span class="emph">NumExpression:</span> Any numeric expression between 0 and 255 that determines which of the lines the program branches to. If NumExpression is 0, the statement is not executed. If NumExpression is greater than 0, the program jumps to the label that has a position number that corresponds to the expression (1 = First label; 2 = Second label)</p>
+<p id="par_id3153194" class="paragraph"> <span class="emph">Label:</span> Target line according to<span class="emph"> GoTo </span>or <span class="emph">GoSub</span> structure.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The <span class="emph">GoTo</span> or <span class="emph">GoSub </span>conventions are valid.</p></div>
+</div>
+<br>
+
+<h2 itemprop="articleSection" id="hd_id3148645">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleOnGosub
+Dim iVar As Integer
+Dim sVar As String
+    iVar = 2
+    sVar =""
+    On iVar GoSub Sub1, Sub2
+    On iVar GoTo Line1, Line2
+    Exit Sub
+Sub1:
+    sVar =sVar &amp; " From Sub 1 to" : Return
+Sub2:
+    sVar =sVar &amp; " From Sub 2 to" : Return
+Line1:
+    sVar =sVar &amp; " Label 1" : GoTo Ende
+Line2:
+    sVar =sVar &amp; " Label 2"
+Ende:
+    MsgBox sVar,0,"On...GoSub"
+End Sub
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03090303.xhp" target="_blank">/text/sbasic/shared/03090303.xhp</a></p>
+<p>Title is: On...GoSub Statement; On...GoTo Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

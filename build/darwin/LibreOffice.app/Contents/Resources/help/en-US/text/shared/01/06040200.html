@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Replace</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<a name="ersetzung"></a>
+<a name="bm_id3152876"></a><meta itemprop="keywords" content="AutoCorrect function, replacement table">
+<meta itemprop="keywords" content="replacement table">
+<meta itemprop="keywords" content="replacing, AutoCorrect function">
+<meta itemprop="keywords" content="text, replacing with format">
+<meta itemprop="keywords" content="frames, AutoCorrect function">
+<meta itemprop="keywords" content="pictures, inserting automatically">
+<meta itemprop="keywords" content="AutoCorrect function, pictures and frames">
+
+<a name="bm_id3150502"></a>
+<a name="bm_id3150502"></a>
+<h1 itemprop="articleSection" id="hd_id3152876">Replace</h1>
+<p id="par_id3151262" class="paragraph"><span class="avis">Edits the replacement table for automatically correcting or replacing words or abbreviations in your document.</span></p>
+
+<p id="par_id3149999" class="paragraph"><span id="swlnapplidm541528379120" class="switchinline"><span hidden="true" id="WRITERidm541528378768" class="WRITER">To enable the replacement table, choose <span class="emph">Tools - AutoCorrect - AutoCorrect Options</span>, click the <span class="emph">Options</span> tab, and then select <span class="emph">Use replacement table</span>. To use the replacement table while you type, check <span class="emph">Tools - AutoCorrect - While Typing</span>.
+</span></span></p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<div class="embedded"><p class="embedded"><a name="autokoersetzung"></a>Choose <span class="emph">Tools - AutoCorrect - AutoCorrect Options - Replace</span> tab.</p></div>
+</div>
+</div>
+<br>
+<div class="embedded">
+<a name="sprache"></a>
+
+<h2 itemprop="articleSection" id="hd_id3149205">Replacements and exceptions for language:</h2>
+<p id="par_id3156027" class="paragraph"><span class="avis">Select the language for which you want to create or edit the replacement rules.</span> LibreOffice first searches for exceptions that are defined for the language at the current cursor position in the document, and then searches the remaining languages.</p>
+</div>
+<a name="bm_id3154810"></a>
+<h2 itemprop="articleSection" id="hd_id3155321">Replacement table</h2>
+<p id="par_id3152945" class="paragraph"><span class="avis">Lists the entries for automatically replacing words, abbreviations or word parts while you type. To add an entry, enter text in the <span class="emph">Replace </span>and <span class="emph">With </span>boxes, and then click <span class="emph">New</span>. To edit an entry, select it, change the text in the <span class="emph">With</span> box, and then click <span class="emph">Replace</span>. To delete an entry, select it, and then click <span class="emph">Delete</span>.</span></p>
+<p id="par_id3153349" class="paragraph">You can use the AutoCorrect feature to apply a specific character format to a word, abbreviation or a word part. Select the formatted text in your document, open this dialog, clear the <span class="emph">Text only</span> box, and then enter the text that you want to replace in the<span class="emph"> Replace</span> box.</p>
+<p id="par_id3154173" class="paragraph"><span id="swlnapplidm541528365152" class="switchinline"><span hidden="true" id="WRITERidm541528364800" class="WRITER">You can also include frames, graphics, and OLE objects in an AutoCorrect entry, so long as they are anchored <span class="emph">as characters</span> in the text. Select the frame, graphic or OLE object and at least one text character in front of and behind the object. Open this dialog, type a name for this AutoCorrect entry in the <span class="emph">Replace </span>box, and then click <span class="emph">New</span>.
+</span></span></p>
+<a name="bm_id1574449"></a>
+<h3 id="hd_id3148943">Replace</h3>
+<p id="par_id3147560" class="paragraph"><span class="avis">Enter the word, abbreviation or word part that you want to replace while you type. Wildcard character sequence .* in the end of word results the replacement of the word before arbitrary suffixes, too. Wildcard character sequence .* before the word results the replacement after arbitrary prefixes, too. For example, the pattern "i18n.*" with the replacement text "internationalization" finds and replaces "i18ns" with "internationalizations", or the pattern ".*..." with the replacement text "…" finds and replaces three dots in "word..." with the typographically correct precomposed Unicode horizontal ellipsis ("word…").</span></p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>To replace word parts or characters within words, you can use starting and terminating wildcard character sequences in the same pattern. For example, entering time values can be faster using only numerical keys, and double decimal separators as colons in the following way: set the pattern ".*...*" or ".*,,.*" (double dots or commas within words) and the replacement text ":", and entering "10..30" or "10,,30" results "10:30" automatically.</p></div>
+</div>
+<br>
+<a name="bm_id6447340"></a>
+<h3 id="hd_id3148947">With:</h3>
+<p id="par_id3149456" class="paragraph"><span class="avis">Enter the replacement text, graphic, frame, or OLE object that you want to replace the text in the<span class="emph"> Replace</span> box. If you have selected text, a graphic, a frame, or an OLE object in your document, the relevant information is already entered here.</span></p>
+<a name="bm_id8239997"></a>
+<h3 id="hd_id3150400">Text only</h3>
+<p id="par_id3153379" class="paragraph"><span class="avis">Saves the entry in the <span class="emph">With</span> box without formatting. When the replacement is made, the text uses the same format as the document text.</span></p>
+<a name="bm_id8823511"></a>
+<a name="bm_id8823512"></a>
+<h2 itemprop="articleSection" id="hd_id3153797">New</h2>
+<p id="par_id3153968" class="paragraph"><span class="avis">Adds or replaces an entry in the replacement table.</span></p>
+<div class="embedded">
+<a name="loeschen1"></a>
+
+
+
+
+
+
+
+
+<h2 itemprop="articleSection" id="hd_id3147557">Delete</h2>
+  <p id="par_id3155338" class="paragraph"><span class="avis">Deletes the selected element or elements without requiring confirmation.</span></p>
+</div>
+<div class="embedded">
+<a name="AutocorrectButtons"></a>
+
+<h2 itemprop="articleSection" id="hd_id3149671">Dialog Buttons</h2>
+<h3 id="par_id3145069">Reset</h3>
+  <p id="par_id3145169" class="paragraph"><span class="avis">Resets modified values back to the tab page previous values.</span></p>
+
+<h3 id="par_id3145070">Cancel</h3>
+  <p id="par_id3145269" class="paragraph"><span class="avis">Closes dialog and discards all changes.</span></p>
+
+<h3 id="par_id3145071">OK</h3>
+  <p id="par_id3145369" class="paragraph"><span class="avis">Saves all changes and closes dialog.</span></p>
+</div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/01/06040200.xhp" target="_blank">/text/shared/01/06040200.xhp</a></p>
+<p>Title is: Replace</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

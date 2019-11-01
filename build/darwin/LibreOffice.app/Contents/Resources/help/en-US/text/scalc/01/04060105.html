@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Logical Functions</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<a name="bm_id3153484"></a><meta itemprop="keywords" content="logical functions">
+      <meta itemprop="keywords" content="Function Wizard, logical">
+      <meta itemprop="keywords" content="functions, logical functions">
+
+<h1 itemprop="articleSection" id="hd_id3153484">Logical Functions</h1>
+      <p id="par_id3149312" class="paragraph"><a name="logischtext"></a>This category contains the <span class="emph">Logical</span> functions.
+</p>
+<h3 id="hd_id631520887352751">Handling non-logical arguments in logical functions</h3>
+<ul>
+    <li>
+        <p id="par_id431520887384579" class="listitem">Zero (0) is equivalent to FALSE and all other numbers are equivalent to TRUE.</p>
+    </li>
+    <li>
+        <p id="par_id881520887475288" class="listitem">Empty cells and text in cells are ignored.</p>
+    </li>
+    <li>
+        <p id="par_id461520887504085" class="listitem">A #VALUE error is raised if all arguments are ignored.</p>
+    </li>
+    <li>
+        <p id="par_id591520888006686" class="listitem">A #VALUE error is raised if one argument is direct text (not text in a cell).</p>
+    </li>
+    <li>
+        <p id="par_id321520889630477" class="listitem">Errors as argument lead to an error.</p>
+    </li>
+</ul>
+      <a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+         <div class="embedded"><p class="embedded"><a name="eikalo"></a><span class="emph">Insert - Function</span> - Category <span class="emph">Logical</span>
+</p></div>
+      </div>
+</div>
+<br>
+
+
+      
+      
+      
+      
+      
+      
+<a name="Section6"></a>
+<a name="bm_id3147505"></a><meta itemprop="keywords" content="AND function">
+
+<a name="bm_id3145320"></a>
+<h2 itemprop="articleSection" id="hd_id3147505">AND</h2>
+         <p id="par_id3153959" class="paragraph"><span class="avis">Returns TRUE if all arguments are TRUE.</span> If one of the elements is FALSE, this function returns the FALSE value.</p>
+         <p id="par_id3146100" class="paragraph">The arguments are either logical expressions themselves (TRUE, 1&lt;5, 2+3=7, B8&lt;10) that return logical values, or arrays (A1:C3) containing logical values.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3159123" class="code">AND(LogicalValue1; LogicalValue2 ...LogicalValue30)</p>
+         <p id="par_id3150038" class="paragraph">
+            <span class="emph">LogicalValue1; LogicalValue2 ...LogicalValue30</span> are conditions to be checked. All conditions can be either TRUE or FALSE. If a range is entered as a parameter, the function uses all values of the range. The result is TRUE if the logical value in all cells within the cell range is TRUE.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3153123" class="paragraph">The logical values of entries 12&lt;13; 14&gt;12, and 7&lt;6 are to be checked:</p>
+         <p id="par_id3145632" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=AND(12&lt;13;14&gt;12;7&lt;6)</span> returns FALSE.</p>
+         <p id="par_id3149946" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=AND (FALSE;TRUE)</span> returns FALSE.</p>
+      <a name="Section5"></a>
+<a name="bm_id3149015"></a><meta itemprop="keywords" content="FALSE function">
+
+<a name="bm_id3154678"></a>
+<h2 itemprop="articleSection" id="hd_id3149015">FALSE</h2>
+         <p id="par_id3149890" class="paragraph"><span class="avis">Returns the logical value FALSE.</span> The FALSE() function does not require any arguments, and always returns the logical value FALSE.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3150030" class="code">FALSE()</p>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3154842" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=FALSE()</span> returns FALSE</p>
+         <p id="par_id3147468" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=NOT(FALSE())</span> returns TRUE</p>
+      <a name="Section4"></a>
+<a name="bm_id3150141"></a><meta itemprop="keywords" content="IF function">
+
+<a name="bm_id3152789"></a>
+<h2 itemprop="articleSection" id="hd_id3150141">IF</h2>
+         <p id="par_id3148740" class="paragraph"><span class="avis">Specifies a logical test to be performed.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3154558" class="code">IF(Test; ThenValue; OtherwiseValue)</p>
+         <p id="par_id3149727" class="paragraph">
+            <span class="emph">Test</span> is any value or expression that can be TRUE or FALSE.</p>
+         <p id="par_id3155828" class="paragraph">
+            <span class="emph">ThenValue</span> (optional) is the value that is returned if the logical test is TRUE.</p>
+         <p id="par_id3154811" class="paragraph">
+            <span class="emph">OtherwiseValue</span> (optional) is the value that is returned if the logical test is FALSE.</p>
+         <p id="par_idN107FA" class="paragraph">
+            <a name="optional"></a>In the LibreOffice Calc functions, parameters marked as "optional" can be left out only when no parameter follows. For example, in a function with four parameters, where the last two parameters are marked as "optional", you can leave out parameter 4 or parameters 3 and 4, but you cannot leave out parameter 3 alone.
+         </p>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3150867" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=IF(A1&gt;5;100;"too small")</span> If the value in A1 is higher than 5, the value 100 is entered in the current cell; otherwise, the text “too small” (without quotes) is entered.</p>
+      <a name="Section3"></a>
+<a name="bm_id3155954"></a><meta itemprop="keywords" content="NOT function">
+
+<a name="bm_id3145168"></a>
+<h2 itemprop="articleSection" id="hd_id3155954">NOT</h2>
+         <p id="par_id3153570" class="paragraph"><span class="avis">Complements (inverts) a logical value.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3157996" class="code">NOT(LogicalValue)</p>
+         <p id="par_id3148766" class="paragraph">
+            <span class="emph">LogicalValue</span> is any value to be complemented.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3150132" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=NOT(A)</span>. If A=TRUE then NOT(A) will evaluate FALSE.</p>
+      <a name="Section2"></a>
+<a name="bm_id3148394"></a><meta itemprop="keywords" content="OR function">
+
+<a name="bm_id3155620"></a>
+<h2 itemprop="articleSection" id="hd_id3148394">OR</h2>
+         <p id="par_id3156060" class="paragraph"><span class="avis">Returns TRUE if at least one argument is TRUE.</span> This function returns the value FALSE, if all the arguments have the logical value FALSE.</p>
+         <p id="par_id3148771" class="paragraph">The arguments are either logical expressions themselves (TRUE, 1&lt;5, 2+3=7, B8&lt;10) that return logical values, or arrays (A1:C3) containing logical values.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3150468" class="code">OR(LogicalValue1; LogicalValue2 ...LogicalValue30)</p>
+         <p id="par_id3155819" class="paragraph">
+            <span class="emph">LogicalValue1; LogicalValue2 ...LogicalValue30</span> are conditions to be checked. All conditions can be either TRUE or FALSE. If a range is entered as a parameter, the function uses all values of the range.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3154870" class="paragraph">The logical values of entries 12&lt;11; 13&gt;22, and 45=45 are to be checked.</p>
+         <p id="par_id3155371" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=OR(12&lt;11;13&gt;22;45=45)</span> returns TRUE.</p>
+         <p id="par_id3158412" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=OR(FALSE;TRUE)</span> returns TRUE.</p>
+      <a name="Section1"></a>
+<a name="bm_id3156256"></a><meta itemprop="keywords" content="TRUE function">
+
+<a name="bm_id3148426"></a>
+<h2 itemprop="articleSection" id="hd_id3156256">TRUE</h2>
+         <p id="par_id3155985" class="paragraph"><span class="avis">The logical value is set to TRUE.</span> The TRUE() function does not require any arguments, and always returns the logical value TRUE.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3152590" class="code">TRUE()</p>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3146148" class="paragraph">If A=TRUE and B=FALSE the following examples appear:</p>
+         <p id="par_id3083285" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=AND(A;B)</span> returns FALSE</p>
+         <p id="par_id3083444" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=OR(A;B)</span> returns TRUE</p>
+         <p id="par_id3154314" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=NOT(AND(A;B))</span> returns TRUE</p>
+      <a name="Section0"></a>
+<a name="bm_id3156257"></a><meta itemprop="keywords" content="XOR function">
+
+<a name="bm_id3148427"></a>
+<h2 itemprop="articleSection" id="hd_id3156257">XOR</h2>
+         <p id="par_id3155987" class="paragraph"><span class="avis">Returns true if an odd number of arguments evaluates to TRUE.</span></p>
+         <p id="par_id3148772" class="paragraph">The arguments are either logical expressions themselves (TRUE, 1&lt;5, 2+3=7, B8&lt;10) that return logical values, or arrays (A1:C3) containing logical values.</p>
+         <div class="embedded">
+<a name="4.0"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041640"><a name="release"></a>This function is available since LibreOffice 4.0</p></div>
+</div>
+<br>
+    </div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+         <p id="par_id3150469" class="code">XOR(LogicalValue1; LogicalValue2 ...LogicalValue30)</p>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+         <p id="par_id3083286" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=XOR(TRUE;TRUE)</span> returns FALSE</p>
+         <p id="par_id3083445" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=XOR(TRUE;TRUE;TRUE)</span> returns TRUE</p>
+         <p id="par_id3154315" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=XOR(FALSE;TRUE)</span> returns TRUE</p>
+      
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <div class="embedded"><p class="embedded"><a name="drking"></a><a target="_top" href="en-US/text/scalc/01/04060100.html">Functions by Category</a></p></div>
+      </div>
+</div>
+   </div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/04060105.xhp" target="_blank">/text/scalc/01/04060105.xhp</a></p>
+<p>Title is: Logical Functions</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

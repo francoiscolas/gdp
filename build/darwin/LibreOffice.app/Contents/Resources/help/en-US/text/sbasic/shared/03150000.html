@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>FormatDateTime Function [VBA]</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+    <a name="FormatDateTime"></a>
+        <a name="bm_id3150499"></a>
+            <meta itemprop="keywords" content="FormatDateTime function">
+        
+
+        <h1 itemprop="articleSection" id="hd_id3150499">FormatDateTime Function [VBA]</h1>
+        <p id="par_id3151384" class="paragraph">Applies a date and/or time format to a date expression and returns the result as a string.</p>
+    
+    <div class="embedded">
+<a name="vbasupport"></a>
+    <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id051920171018124524">This function or constant is enabled with the statement <a target="_top" href="en-US/text/sbasic/shared/03103350.html"><span class="literal">Option VBASupport 1</span></a> placed before the executable program code in a module.</p></div>
+</div>
+<br>
+</div>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+        FormatDateTime (DateExpression as Date [, NamedFormat as Integer])
+    </code></pre></div>
+    <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+    <p id="par_id3150669" class="paragraph">String</p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id240720170117391741" class="paragraph"><span class="emph">DateExpression</span>: The date expression to be formatted.</p>
+    <p id="par_id24072017011739895" class="paragraph"><span class="emph">NamedFormat</span>: An optional <span class="emph">vbDateTimeFormat</span> enumeration specifying the format that is to be applied to the date and time expression. If omitted, the value <span class="emph">vbGeneralDate</span> is used.</p>
+    <h3 id="hd_id811512136434300">Date and Time formats (vbDateTimeFormat enumeration)</h3>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id201512137337536" class="tableheadintable">Named Constant</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id481512137342798" class="tableheadintable">Value</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id781512137345583" class="tableheadintable">Description</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id121512137348477" class="tablecontentsintable">vbGeneralDate</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id511512137351182" class="tablecontentsintable">0</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id991512137353869" class="tablecontentsintable">Displays a date and/or time as defined in your system's General Date setting. If a date only, no time is displayed; If a time only, no date is displayed.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id181512137579110" class="tablecontentsintable">vbLongDate</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id651512137595327" class="tablecontentsintable">1</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id841512137597989" class="tablecontentsintable">Display a date using the long date format specified in your computer's regional settings.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id391512138077008" class="tablecontentsintable">vbShortDate</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id651512137594327" class="tablecontentsintable">2</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id841512137397989" class="tablecontentsintable">Display a date using the short date format specified in your computer's regional settings.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id181512137679110" class="tablecontentsintable">vbLongTime</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id651512137595227" class="tablecontentsintable">3</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id841512147597989" class="tablecontentsintable">Displays a time as defined in your system's Long Time settings.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id183512137579110" class="tablecontentsintable">vbShortTime</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id651512937595327" class="tablecontentsintable">4</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id841517137597989" class="tablecontentsintable">Display a time using the 24-hour format (hh:mm).</p>
+            </td>
+        </tr>
+    </table>
+<br>
+
+    <div class="embedded">
+<a name="errorcode"></a>
+
+<h2 itemprop="articleSection" id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h2>
+</div>
+    <div class="embedded"><p class="embedded"><a name="err13"></a>13 Data type mismatch</p></div>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+        REM  *****  BASIC  *****
+        Option VBASupport 1
+        Sub DateFormat
+         Dim d as Date
+         d = ("1958-01-29 00:25")
+         msgbox("General date format : " &amp; FormatDateTime(d))
+         msgbox("Long date format : " &amp; FormatDateTime(d,vbLongDate))
+         msgbox("Short date format : " &amp; FormatDateTime(d,vbShortDate))
+         msgbox("Long time format : " &amp; FormatDateTime(d,3))
+         msgbox("Short time format : " &amp; FormatDateTime(d,vbShortTime))
+        End Sub
+    </code></pre></div>
+
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <div class="embedded"><p class="embedded"><a name="VBATimeAndDate"></a><a target="_top" href="en-US/text/sbasic/shared/special_vba_func.html#VBADateTime">VBA Time and Date functions</a></p></div>
+    </div>
+</div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03150000.xhp" target="_blank">/text/sbasic/shared/03150000.xhp</a></p>
+<p>Title is: FormatDateTime Function [VBA]</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

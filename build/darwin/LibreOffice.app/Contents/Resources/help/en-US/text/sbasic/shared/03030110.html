@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>DateAdd Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="dateadd"></a>
+<a name="bm_id6269417"></a>
+  <meta itemprop="keywords" content="DateAdd function">
+
+
+
+<h1 itemprop="articleSection" id="par_idN10548">DateAdd Function</h1>
+<p id="par_idN10558" class="paragraph">Adds a date interval to a given date a number of times and returns the resulting date.</p>
+
+
+<h2 itemprop="articleSection" id="par_idN1055B">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+DateAdd (Add, Count, Date)
+</code></pre></div>
+
+<h2 itemprop="articleSection" id="par_idN1061E">Return value:</h2>
+<p id="par_idN10622" class="paragraph">A Variant containing a date.</p>
+
+<h2 itemprop="articleSection" id="par_idN10625">Parameters:</h2>
+  <p id="par_idN10629" class="paragraph"><span class="emph">Add</span> - A string expression from the following table, specifying the date interval.</p>
+
+<a name="datetable"></a>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN10636" class="tableheadintable">Add (string value)</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN1063C" class="tableheadintable">Explanation</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10643" class="tablecontentintable">yyyy</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10649" class="tablecontentintable">Year</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10650" class="tablecontentintable">q</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10656" class="tablecontentintable">Quarter</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN1065D" class="tablecontentintable">m</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10663" class="tablecontentintable">Month</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN1066A" class="tablecontentintable">y</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10670" class="tablecontentintable">Day of year</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10677" class="tablecontentintable">w</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1067D" class="tablecontentintable">Weekday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10684" class="tablecontentintable">ww</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1068A" class="tablecontentintable">Week of year</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10691" class="tablecontentintable">d</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10697" class="tablecontentintable">Day</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN1069E" class="tablecontentintable">h</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN106A4" class="tablecontentintable">Hour</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN106AB" class="tablecontentintable">n</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN106B1" class="tablecontentintable">Minute</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN106B8" class="tablecontentintable">s</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN106BE" class="tablecontentintable">Second</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+
+<p id="par_idN106C1" class="paragraph"><span class="emph">Count</span> - A numerical expression specifying how often the Add interval will be added (Count is positive) or subtracted (Count is negative).</p>
+<p id="par_idN106C4" class="paragraph"><span class="emph">Date</span> - A given date or the name of a Variant variable containing a date. The Add value will be added Count times to this value.</p>
+
+<h2 itemprop="articleSection" id="par_idN106C7">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub example_dateadd
+    MsgBox DateAdd("m", 1, "1/31/2004") &amp;" - "&amp; DateAdd("m", 1, "1/31/2005")
+End Sub
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03030110.xhp" target="_blank">/text/sbasic/shared/03030110.xhp</a></p>
+<p>Title is: DateAdd Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

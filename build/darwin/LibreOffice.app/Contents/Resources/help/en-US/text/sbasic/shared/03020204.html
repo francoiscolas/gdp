@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Put Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="put"></a>
+<a name="bm_id3150360"></a>
+  <meta itemprop="keywords" content="Put statement">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3150360">Put Statement</h1>
+<p id="par_id3154909" class="paragraph">Writes a record to a relative file or a sequence of bytes to a binary file.</p>
+
+<p id="par_id3156281" class="paragraph">See also: <a target="_top" href="en-US/text/sbasic/shared/03020201.html"><span class="literal">Get</span></a> statement</p>
+
+<h2 itemprop="articleSection" id="hd_id3125863">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Put [#] FileNumber As Integer, [position], Variable
+</code></pre></div>
+
+<h2 itemprop="articleSection" id="hd_id3153190">Parameters:</h2>
+<p id="par_id3146120" class="paragraph"> <span class="emph">FileNumber:</span> Any integer expression that defines the file that you want to write to.</p>
+<p id="par_id3155411" class="paragraph"> <span class="emph">Position: </span>For relative files (random access files), the number of the record that you want to write.</p>
+<p id="par_id3148576" class="paragraph">For binary files (binary access), the position of the byte in the file where you want to start writing.</p>
+<p id="par_id3153729" class="paragraph"> <span class="emph">Variable:</span> Name of the variable that you want to write to the file.</p>
+<p id="par_id3146974" class="paragraph">Note for relative files: If the contents of this variable does not match the length of the record that is specified in the <span class="emph">Len</span> clause of the <span class="emph">Open</span> statement, the space between the end of the newly written record and the next record is padded with existing data from the file that you are writing to.</p>
+<p id="par_id3155855" class="paragraph">Note for binary files: The contents of the variables are written to the specified position, and the file pointer is inserted directly after the last byte. No space is left between the records.</p>
+
+<h2 itemprop="articleSection" id="hd_id3154491">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleRandomAccess
+Dim iNumber As Integer
+Dim sText As Variant ' Must be a variant type
+Dim aFile As String
+    aFile = "c:\data.txt"
+    iNumber = Freefile
+    Open aFile For Random As #iNumber Len=32
+    Seek #iNumber,1 ' Position To start writing
+    Put #iNumber,, "This is the first line of text" ' Fill line with text
+    Put #iNumber,, "This is the second line of text"
+    Put #iNumber,, "This is the third line of text"
+    Seek #iNumber,2
+    Get #iNumber,,sText
+    Print sText
+    Close #iNumber
+    iNumber = Freefile
+    Open aFile For Random As #iNumber Len=32
+    Get #iNumber,2,sText
+    Put #iNumber,,"This is new text"
+    Get #iNumber,1,sText
+    Get #iNumber,2,sText
+    Put #iNumber,20,"This is the text in record 20"
+    Print Lof(#iNumber)
+    Close #iNumber
+End Sub
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03020204.xhp" target="_blank">/text/sbasic/shared/03020204.xhp</a></p>
+<p>Title is: Put Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

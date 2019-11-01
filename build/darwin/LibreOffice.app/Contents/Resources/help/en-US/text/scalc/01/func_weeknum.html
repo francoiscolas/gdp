@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>WEEKNUM</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<a name="bm_id3159161"></a><meta itemprop="keywords" content="WEEKNUM function">
+
+<a name="bm_id3158403"></a><h2 itemprop="articleSection" id="hd_id3159161">
+<a name="weeknum"></a>WEEKNUM
+</h2>
+<p id="par_id3149770" class="paragraph"><span class="avis">WEEKNUM calculates the week number of the year for the internal date value as defined in ODF OpenFormula and compatible with other spreadsheet applications.</span></p>
+<p id="par_id3147220" class="paragraph">Supported are two week numbering systems:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+    <tr>
+        <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id851535122363435" class="tableheadintable">System</p>
+        </td>
+        <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id901535122363436" class="tableheadintable">Description</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id691535122363437" class="tablecontentintable">System 1</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id3147221" class="tablecontentintable">The week containing January 1 is the first week of the year, and is numbered week 1.</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id741535122455285" class="tablecontentintable">System 2</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id3147222" class="tablecontentintable">The week containing the first Thursday of the year is the first week of the year, and is numbered week 1. That means that week number 1 of any year is the week that contains January 4th. ISO 8601 defines this system and that the week starts on Monday.</p>
+        </td>
+    </tr>
+</table>
+<br>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h3 id="hd_id3152015">Syntax</h3>
+    </div>
+<p id="par_id3147236" class="code">WEEKNUM(Number [; Mode])</p>
+<p id="par_id3147511" class="paragraph">
+<span class="emph">Number</span> is the internal date number.</p>
+<p id="par_id3154269" class="paragraph">
+<span class="emph">Mode</span> sets the start of the week and the week numbering system. This parameter is optional, if omitted the default value is 1.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+    <tr>
+        <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id961535122993923" class="tableheadintable">System</p>
+        </td>
+        <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id151535122633826" class="tableheadintable">Mode</p>
+        </td>
+        <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id231535122633827" class="tableheadintable">Day of the week</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="9" colspan="">
+            <p id="par_id531535124180000" class="tablecontentsintable">System 1</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id931535122633827" class="tablecontentintable">1</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id351535122633828" class="tablecontentintable">Sunday</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id441535122735565" class="tablecontentsintable">2</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id591535122756686" class="tablecontentsintable">Monday</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id541535122798459" class="tablecontentsintable">11</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id881535122835126" class="tablecontentsintable">Monday</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id941535122866815" class="tablecontentintable">12</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id241535122903569" class="tablecontentsintable">Tuesday</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id271535124253476" class="tablecontentsintable">13</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id31535124277973" class="tablecontentsintable">Wednesday</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id281535124290548" class="tablecontentsintable">14</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id21535124310462" class="tablecontentsintable">Thursday</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id721535124338290" class="tablecontentsintable">15</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id921535124365435" class="tablecontentsintable">Friday</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id781535124380237" class="tablecontentsintable">16</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id211535124416253" class="tablecontentsintable">Saturday</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id601535124440320" class="tablecontentsintable">17</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id461535124473824" class="tablecontentsintable">Sunday</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="2" colspan="">
+            <p id="par_id471535124489997" class="tablecontentsintable">System 2</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id431535124539573" class="tablecontentsintable">21</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id391535124564520" class="tablecontentsintable">Monday (ISO 8601)</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id971535124578111" class="tablecontentsintable">150</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id661535124640643" class="tablecontentsintable">(ISO 8601, for interoperability with Gnumeric)</p>
+        </td>
+</tr>
+</table>
+<br>
+<div class="embedded">
+<a name="datenumberinfo"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>When entering dates as part of formulas, slashes or dashes used as date separators are interpreted as arithmetic operators. Therefore, dates entered in this format are not recognized as dates and result in erroneous calculations. To keep dates from being interpreted as parts of formulas use the DATE function, for example, DATE(1954;7;20), or place the date in quotation marks and use the ISO 8601 notation, for example, "1954-07-20". Avoid using locale dependent date formats such as "07/20/54", the calculation may produce errors if the document is loaded under different locale settings.</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="datenumberwarn"></a>
+    <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Unambiguous conversion is possible for ISO 8601 dates and times in their extended formats with separators. If a <span class="emph">#VALUE!</span> error occurs, then unselect <span class="emph">Generate #VALUE! error</span> in <span id="swlnsysidm90522428832" class="switchinline"><span hidden="true" id="MACidm90522428480" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultidm90522427872"><span class="emph">Tools - Options</span></span></span> <span class="emph">- LibreOffice Calc - Formula</span>, button <span class="emph">Details...</span> in section "Detailed Calculation Settings", <span class="emph">Conversion from text to number</span> list box.</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id3150704" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=WEEKNUM(DATE(1995;1;1);1)</span>  returns 1</p>
+<p id="par_id3149792" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=WEEKNUM(DATE(1995;1;1);2)</span>  returns 52. If the week starts on Monday, Sunday belongs to the last week of the previous year.</p>
+<p id="par_id3149793" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=WEEKNUM(DATE(1995;1;1);21)</span>  returns 52. Week 1 starts on Monday, 1995-01-02.</p>
+<p id="par_id3149794" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=WEEKNUM(DATE(1999;1;1);21)</span>  returns 53. Week 1 starts on Monday, 1999-01-04.</p>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_weeknum.xhp" target="_blank">/text/scalc/01/func_weeknum.xhp</a></p>
+<p>Title is: WEEKNUM</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

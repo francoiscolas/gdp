@@ -16,7 +16,7 @@
       "target": "nsis",
       "extraResources": [
         {
-          "from": "build/win",
+          "from": "build/win32",
           "to": ".",
           "filter": [
             "**/*"
@@ -26,6 +26,18 @@
     },
     "nsis": {
       "oneClick": false
+    },
+    "mac": {
+      "target": "dmg",
+      "extraResources": [
+        {
+          "from": "build/darwin",
+          "to": ".",
+          "filter": [
+            "**/*"
+          ]
+        }
+      ]
     }
   }
 }

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>List of Regular Expressions</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<a name="bm_id3146765"></a>
+<meta itemprop="keywords" content="regular expressions, list of">
+<meta itemprop="keywords" content="lists, regular expressions">
+<meta itemprop="keywords" content="replacing, tab stops (regular expressions)">
+<meta itemprop="keywords" content="tab stops, regular expressions">
+<meta itemprop="keywords" content="concatenation, see ampersand symbol">
+<meta itemprop="keywords" content="ampersand symbol, see also operators">
+
+<h1 itemprop="articleSection" id="hd_id3146765">
+<a name="02100001"></a>List of Regular Expressions</h1>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3149741" class="tableheadintable">Character</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3155577" class="tableheadintable">Result/Use</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id6600543" class="tablecontentintable">Any character</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id9824518.00000001" class="tablecontentintable">Represents the given character unless otherwise specified.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3152427" class="tablecontentintable">.</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3149031" class="tablecontentintable">Represents any single character except for a line break or paragraph break. For example, the search term "sh.rt" returns both "shirt" and "short".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3154682" class="tablecontentintable">^</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3155351" class="tablecontentintable">Only finds the search term if the term is at the beginning of a paragraph. Special objects such as empty fields or character-anchored frames, at the beginning of a paragraph are ignored. Example: "^Peter".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3159194" class="tablecontentintable">$</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3152542" class="tablecontentintable">Only finds the search term if the term appears at the end of a paragraph. Special objects such as empty fields or character-anchored frames at the end of a paragraph are ignored. Example: "Peter$".</p>
+      <p id="par_id3152543" class="tablecontentintable">$ on its own matches the end of a paragraph. This way it is possible to search and replace paragraph breaks.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3156414" class="tablecontentintable">*</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3155555" class="tablecontentintable">Finds zero or more of the characters in front of the "*". For example, "Ab*c" finds "Ac", "Abc", "Abbc", "Abbbc", and so on.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3147399" class="tablecontentintable">+</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3157958" class="tablecontentintable">Finds one or more of the characters in front of the "+". For example, "AX.+4" finds "AXx4", but not "AX4".</p>
+      <p id="par_id3145313" class="tablecontentintable">The longest possible string that matches this search pattern in a paragraph is always found. If the paragraph contains the string "AX 4 AX4", the entire passage is highlighted.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3143267" class="tablecontentintable">?</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153684" class="tablecontentintable">Finds zero or one of the characters in front of the "?". For example, "Texts?" finds "Text" and "Texts" and "x(ab|c)?y" finds "xy", "xaby", or "xcy".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3166410" class="tablecontentintable">\</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3147209" class="tablecontentintable">Search interprets the special character that follows the "\" as a normal character and not as a regular expression (except for the combinations \n, \t, \&gt;, and \&lt;). For example, "tree\." finds "tree.", not "treed" or "trees".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3152945" class="tablecontentintable">\n</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153700" class="tablecontentintable">Represents a line break that was inserted with the <span class="emph">Shift</span>+<span class="emph">Enter</span> key combination. To change a line break into a paragraph break, enter <span class="emph">\n</span> in the <span class="emph">Find</span> and <span class="emph">Replace</span> boxes, and then perform a search and replace.</p>
+      <p id="par_id9262672" class="tablecontentintable"><span class="emph">\n</span> in the <span class="emph">Find</span> text box stands for a line break that was inserted with the <span class="emph">Shift</span>+<span class="emph">Enter</span> key combination.</p>
+      <p id="par_id2366100" class="tablecontentintable"><span class="emph">\n</span> in the <span class="emph">Replace</span> text box stands for a paragraph break that can be entered with the <span class="emph">Enter</span> or <span class="emph">Return</span> key.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3153258" class="tablecontentintable">\t</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3157809" class="tablecontentintable">Represents a tab. You can also use this expression in the <span class="emph">Replace</span> box.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3150670" class="tablecontentintable">\b</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153666" class="tablecontentintable">Match a word boundary. For example, "\bbook" finds "bookmark" but not "checkbook" whereas "book\b" finds "checkbook" but not "bookmark". The discrete word "book" is found by both search terms.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3149576" class="tablecontentintable">^$</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3151245" class="tablecontentintable">Finds an empty paragraph.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3148550" class="tablecontentintable">^.</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3159413" class="tablecontentintable">Finds the first character of a paragraph.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3147282" class="tablecontentintable">&amp; or $0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153961" class="tablecontentintable">Adds the string that was found by the search criteria in the <span class="emph">Find</span> box to the term in the <span class="emph">Replace</span> box when you make a replacement.</p>
+      <p id="par_id3149650" class="tablecontentintable">For example, if you enter "window" in the <span class="emph">Find</span> box and "&amp;frame" in the <span class="emph">Replace</span> box, the word "window" is replaced with "windowframe".</p>
+      <p id="par_id3150543" class="tablecontentintable">You can also enter an "&amp;" in the <span class="emph">Replace</span> box to modify the <span class="emph">Attributes</span> or the <span class="emph">Format</span> of the string found by the search criteria.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3145419" class="tablecontentintable">[abc123]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154630" class="tablecontentintable">Represents one of the characters that are between the brackets.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3156293" class="tablecontentintable">[a-e]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3149167" class="tablecontentintable">Represents any of the characters that are between <span class="emph">a</span> and <span class="emph">e</span>, including both start and end characters.</p>
+      <p id="par_id100520090232005" class="tablecontentintable">The characters are ordered by their code numbers.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3155994" class="tablecontentintable">[a-eh-x]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3148676" class="tablecontentintable">Represents any of the characters that are between <span class="emph">a-e</span> and <span class="emph">h-x</span>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3145318" class="tablecontentintable">[^a-s]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153351" class="tablecontentintable">Represents everything that is <span class="emph">not</span> between <span class="emph">a</span> and <span class="emph">s</span>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3156543" class="tablecontentintable">\uXXXX</p>
+        <p id="par_id3156544" class="tablecontentintable">\UXXXXXXXX</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153768" class="tablecontentintable">Represents a character based on its four-digit hexadecimal Unicode code (XXXX).</p>
+      <p id="par_id3153769" class="tablecontentintable">For obscure characters there is a separate variant with capital U and eight hexadecimal digits (XXXXXXXX).</p>
+      <p id="par_id3159252" class="tablecontentintable">For certain symbol fonts the code for special characters may depend on the used font. You can view the codes by choosing <span class="emph">Insert - Special Character</span>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3153951" class="tablecontentintable">|</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154985" class="tablecontentintable">Finds the terms that occur before the "|" and also finds the terms that occur after the "|". For example, "this|that" finds "this" and "that".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3147376" class="tablecontentintable">{2}</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150103" class="tablecontentintable">Defines the number of times that the character in front of the opening bracket occurs. For example, "tre{2}" finds and selects "tree".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3151289" class="tablecontentintable">{1,2}</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3147317" class="tablecontentintable">Defines the minimum and maximum number of times that the character in front of the opening bracket can occur. For example, "tre{1,2}" finds and selects "tre" and "tree".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id4870754" class="tablecontentintable">{1,}</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id843836" class="tablecontentintable">Defines the minimum number of times that the character in front of the opening bracket can occur. For example, "tre{2,}" finds "tree", "treee", and "treeeee".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3148616" class="tablecontentintable">( )</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id2701803" class="tablecontentintable">In the <span class="emph">Find</span> box:</p>
+      <p id="par_id3153573" class="tablecontentintable">Defines the characters inside the parentheses as a reference. You can then refer to the first reference in the current expression with "\1", to the second reference with "\2", and so on.</p>
+      <p id="par_id3156061" class="tablecontentintable">For example, if your text contains the number <span class="emph">13487889</span> and you search using the regular expression <span class="emph">(8)7\1\1</span>, "8788" is found.</p>
+      <p id="par_id2367931" class="tablecontentintable">You can also use <span class="emph">()</span> to group terms, for example, "a(bc)?d" finds "ad" or "abcd".</p>
+      <p id="par_id9200109" class="tablecontentintable">In the <span class="emph">Replace</span> box:</p>
+      <p id="par_id5766472" class="tablecontentintable">Use <span class="emph">$</span> (dollar) instead of <span class="emph">\</span> (backslash) to replace references. Use <span class="emph">$0</span> to replace the whole found string.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3154790" class="tablecontentintable">[:alpha:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3147397" class="tablecontentintable">Represents an alphabetic character. Use <span class="emph">[:alpha:]+</span> to find one of them.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3152885" class="tablecontentintable">[:digit:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150010" class="tablecontentintable">Represents a decimal digit. Use <span class="emph">[:digit:]+</span> to find one of them.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3153743" class="tablecontentintable">[:alnum:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153281" class="tablecontentintable">Represents an alphanumeric character ([:alpha:] and [:digit:]).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3153726" class="tablecontentintable">[:space:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150961" class="tablecontentintable">Represents a space character (but not other whitespace characters).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3150486" class="tablecontentintable">[:print:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150872" class="tablecontentintable">Represents a printable character.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3155854" class="tablecontentintable">[:cntrl:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3152576" class="tablecontentintable">Represents a nonprinting character.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3149958" class="tablecontentintable">[:lower:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3145730" class="tablecontentintable">Represents a lowercase character if <span class="emph">Match case</span> is selected in <span class="emph">Options</span>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3148455" class="tablecontentintable">[:upper:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150092" class="tablecontentintable">Represents an uppercase character if <span class="emph">Match case</span> is selected in <span class="emph">Options</span>.</p>
+    </td>
+  </tr>
+</table>
+<br>
+<p id="par_id5311440" class="paragraph">For a full list of supported metacharacters and syntax, see <a target="_blank" href="http://userguide.icu-project.org/strings/regexp">ICU Regular Expressions documentation</a></p>
+<h2 itemprop="articleSection" id="hd_id5311441">Examples</h2>
+<p id="par_id956834773" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">e([:digit:])?</span>     -- finds 'e' followed by zero or one digit. Note that currently all named character classes like [:digit:] must be enclosed in parentheses.</p>
+<p id="par_id952368773" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">^([:digit:])$</span>     -- finds lines or cells with exactly one digit.</p>
+  <p id="par_id9568773" class="paragraph">You can combine the search terms to form complex searches.</p>
+<h3 id="hd_id71413">To find three-digit numbers alone in a paragraph</h3>
+<p id="par_id2924283" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">^[:digit:]{3}$</span> </p>
+  <p id="par_id5781731" class="paragraph">^ means the match has to be at the start of a paragraph, </p>
+  <p id="par_id6942045" class="paragraph">[:digit:] matches any decimal digit, </p>
+  <p id="par_id4721823" class="paragraph">{3} means there must be exactly 3 copies of "digit", </p>
+  <p id="par_id5806756" class="paragraph">$ means the match must end a paragraph. </p>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+  <div class="embedded"><p class="embedded"><a name="02100000"></a><a target="_top" href="en-US/text/shared/01/02100000.html">Find &amp; Replace</a></p></div>
+<span id="swlnapplidm70662533440" class="switch">
+<span hidden="true" id="WRITERidm70662534752" class="WRITER"><div class="embedded"><p class="embedded"><a name="search_regexp"></a><a target="_top" href="en-US/text/swriter/guide/search_regexp.html">Using Regular Expressions in Text Searches</a>
+</p></div>
+  <div class="embedded"><p class="embedded"><a name="finding"></a><a target="_top" href="en-US/text/swriter/guide/finding.html">Finding and Replacing in Writer</a>
+</p></div>
+</span>
+</span>
+<p id="par_id1751457" class="paragraph"><a target="_blank" href="https://wiki.documentfoundation.org/Documentation/How_Tos/Regular_Expressions_in_Writer">Wiki page about regular expressions in Writer</a></p>
+<p id="par_id5483870" class="paragraph"><a target="_blank" href="https://wiki.documentfoundation.org/Documentation/How_Tos/Regular_Expressions_in_Calc">Wiki page about regular expressions in Calc</a></p>
+</div>
+</div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/01/02100001.xhp" target="_blank">/text/shared/01/02100001.xhp</a></p>
+<p>Title is: List of Regular Expressions</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

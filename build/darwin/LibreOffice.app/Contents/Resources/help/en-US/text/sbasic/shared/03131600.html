@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CreateUnoService Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="createunoservice"></a>
+<a name="bm_id3150682"></a>
+  <meta itemprop="keywords" content="CreateUnoService function">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3150682">CreateUnoService Function</h1>
+<p id="par_id3152924" class="paragraph">Instantiates a Uno service with the ProcessServiceManager.</p>
+
+
+<h2 itemprop="articleSection" id="hd_id3152801">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+oService = CreateUnoService( Uno service name )
+</code></pre></div>
+<p id="par_idN1060F" class="paragraph">For a list of available services, go to: <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/namespacecom_1_1sun_1_1star.html">https://api.libreoffice.org/docs/idl/ref/namespacecom_1_1sun_1_1star.html</a></p>
+
+<h2 itemprop="articleSection" id="hd_id3151111">Examples:</h2>
+<p id="par_id3154046" class="paragraph">oIntrospection = CreateUnoService( "com.sun.star.beans.Introspection" )</p>
+<a name="bm_id8334604"></a>
+  <meta itemprop="keywords" content="filepicker,API service">
+
+
+<p id="par_idN10625" class="paragraph">The following code uses a service to open a file open dialog:</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub Main
+    fName = FileOpenDialog ("Please select a file")
+    Print "file chosen: "+fName
+End Sub
+ 
+Function FileOpenDialog(title As String) As String
+    filepicker = createUnoService("com.sun.star.ui.dialogs.FilePicker")
+    filepicker.Title = title
+    filepicker.execute()
+    files = filepicker.getFiles()
+    FileOpenDialog=files(0)
+End Function
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03131600.xhp" target="_blank">/text/sbasic/shared/03131600.xhp</a></p>
+<p>Title is: CreateUnoService Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

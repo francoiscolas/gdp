@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Referencing a Cell in Another Document</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+<a name="bm_id3147436"></a><meta itemprop="keywords" content="sheet references">
+      <meta itemprop="keywords" content="references, to cells in other sheets/documents">
+      <meta itemprop="keywords" content="cells, operating in another document">
+      <meta itemprop="keywords" content="documents,references">
+
+<h1 itemprop="articleSection" id="hd_id3147436">
+<a name="cellreferences"></a>Referencing Other Sheets
+</h1>
+      <p id="par_id9663075" class="paragraph">In a sheet cell you can show a reference to a cell in another sheet.</p>
+      <p id="par_id1879329" class="paragraph">In the same way, a reference can also be made to a cell from another document provided that this document has already been saved as a file.</p>
+      <h2 itemprop="articleSection" id="hd_id7122409">To Reference a Cell in the Same Document</h2>
+      <ol>
+         <li>
+            <p id="par_id2078005" class="listitem">Open a new, empty spreadsheet.</p>
+         </li>
+         <li>
+            <p id="par_id4943693" class="listitem">By way of example, enter the following formula in cell A1 of Sheet1:</p>
+            <p id="par_id9064302" class="listitem">
+               <span class="literal">=Sheet2.A1</span>
+            </p>
+         </li>
+         <li>
+            <p id="par_id7609790" class="listitem">Click the <span class="emph">Sheet 2</span> tab at the bottom of the spreadsheet. Set the cursor in cell A1 there and enter text or a number.</p>
+         </li>
+         <li>
+            <p id="par_id809961" class="listitem">If you switch back to Sheet1, you will see the same content in cell A1 there. If the contents of Sheet2.A1 change, then the contents of Sheet1.A1 also change.</p>
+         </li>
+      </ol>
+      <h2 itemprop="articleSection" id="hd_id9209570">To Reference a Cell in Another Document</h2>
+      <ol>
+         <li>
+            <p id="par_id5949278" class="listitem">Choose <span class="emph">File - Open</span>, to load an existing spreadsheet document.</p>
+         </li>
+         <li>
+            <p id="par_id8001953" class="listitem">Choose <span class="emph">File - New</span>, to open a new spreadsheet document. Set the cursor in the cell where you want to insert the external data and enter an equals sign to indicate that you want to begin a formula.</p>
+         </li>
+         <li>
+            <p id="par_id8571123" class="listitem">Now switch to the document you have just loaded. Click the cell with the data that you want to insert in the new document.</p>
+         </li>
+         <li>
+            <p id="par_id8261665" class="listitem">Switch back to the new spreadsheet. In the input line you will now see how LibreOffice Calc has added the reference to the formula for you. </p>
+            <p id="par_id5888241" class="listitem">The reference to a cell of another document contains the name of the other document in single inverted commas, then a hash #, then the name of the sheet of the other document, followed by a point and the name of the cell.</p>
+         </li>
+         <li>
+            <p id="par_id7697683" class="listitem">Confirm the formula by clicking the green check mark.</p>
+         </li>
+         <li>
+            <p id="par_id7099826" class="listitem">If you drag the box in the lower right corner of the active cell to select a range of cells, LibreOffice automatically inserts the corresponding references in the adjacent cells. As a result, the sheet name is preceded with a "$" sign to designate it as an absolute reference.</p>
+         </li>
+      </ol>
+      <p id="par_id674459" class="paragraph">If you examine the name of the other document in this formula, you will notice that it is written as a <a target="_top" href="en-US/text/shared/00/00000002.html#url">URL</a>. This means that you can also enter a URL from the Internet.</p>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <div class="embedded"><p class="embedded"><a name="cellreferences_url"></a><a target="_top" href="en-US/text/scalc/guide/cellreferences_url.html">Referencing URLs</a>
+</p></div>
+      </div>
+</div>
+   </div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/guide/cellreferences.xhp" target="_blank">/text/scalc/guide/cellreferences.xhp</a></p>
+<p>Title is: Referencing a Cell in Another Document</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

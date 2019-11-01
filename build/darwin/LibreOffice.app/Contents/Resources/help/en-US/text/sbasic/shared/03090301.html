@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>GoSub...Return Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="gosubreturn"></a>
+<a name="bm_id3147242"></a>
+  <meta itemprop="keywords" content="GoSub...Return statement">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3147242">GoSub...Return Statement</h1>
+<p id="par_id3145316" class="paragraph">Calls a subroutine that is indicated by a label from a subroutine or a function. The statements following the label are executed until the next Return statement. Afterwards, the program continues with the statement that follows the <span class="emph">GoSub </span>statement.</p>
+
+
+<h2 itemprop="articleSection" id="hd_id3145609">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+see Parameters
+</code></pre></div>
+
+<h2 itemprop="articleSection" id="hd_id3147265">Parameters:</h2>
+<p id="par_id3148664" class="paragraph">Sub/Function</p>
+<p id="par_id3150400" class="paragraph">statement block</p>
+<p id="par_id3154140" class="paragraph"> Label</p>
+<p id="par_id3150869" class="paragraph">statement block</p>
+<p id="par_id3154909" class="paragraph">GoSub Label</p>
+<p id="par_id3153969" class="paragraph">Exit Sub/Function</p>
+<p id="par_id3154685" class="paragraph">Label:</p>
+<p id="par_id3145786" class="paragraph">statement block</p>
+<p id="par_id3159252" class="paragraph">Return</p>
+<p id="par_id3154321" class="paragraph">End Sub/Function</p>
+<p id="par_id3147318" class="paragraph">The <span class="emph">GoSub</span> statement calls a local subroutine indicated by a label from within a subroutine or a function. The name of the label must end with a colon (":").</p>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>If the program encounters a Return statement not preceded by <span class="emph">GoSub</span>, LibreOffice Basic returns an error message. Use <span class="emph">Exit Sub</span> or <span class="emph">Exit Function</span> to ensure that the program leaves a Sub or Function before reaching the next Return statement.</p></div>
+</div>
+<br>
+<p id="par_id3145799" class="paragraph">The following example demonstrates the use of <span class="emph">GoSub</span> and <span class="emph">Return</span>. By executing a program section twice, the program calculates the square root of two numbers that are entered by the user.</p>
+
+<h2 itemprop="articleSection" id="hd_id3156284">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleGoSub
+Dim iInputa As Single
+Dim iInputb As Single
+Dim iInputc As Single
+    iInputa = Int(InputBox("Enter the first number: ","NumberInput"))
+    iInputb = Int(InputBox("Enter the second number: ","NumberInput"))
+    iInputc=iInputa
+    GoSub SquareRoot
+    Print "The square root of";iInputa;" is";iInputc
+    iInputc=iInputb
+    GoSub SquareRoot
+    Print "The square root of";iInputb;" is";iInputc
+    Exit Sub
+SquareRoot:
+    iInputc=sqr(iInputc)
+    Return
+End Sub
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03090301.xhp" target="_blank">/text/sbasic/shared/03090301.xhp</a></p>
+<p>Title is: GoSub...Return Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

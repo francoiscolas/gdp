@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Data</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="data"></a>
+
+<h3 id="hd_id1000010">Data</h3>
+<p id="par_id1000010" class="paragraph"><span class="emph">Input Range</span>: The reference of the range of the data to analyze.</p>
+<p id="par_id1000020" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the results will be displayed.</p>
+
+
+<a name="grouped"></a>
+
+<h3 id="hd_id1000020">Grouped By</h3>
+<p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+
+
+<a name="sampledata01"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000040" class="paragraph">The following data will be used as example </p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000050" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000060" class="tableheadintable">B</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000070" class="tableheadintable">C</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000080" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000090" class="tableheadintable">Maths</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000100" class="tableheadintable">Physics</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000110" class="tableheadintable">Biology</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000120" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000130" class="tablecontentintable">47</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000140" class="tablecontentintable">67</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000150" class="tablecontentintable">33</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000160" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000170" class="tablecontentintable">36</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000180" class="tablecontentintable">68</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000190" class="tablecontentintable">42</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000200" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000210" class="tablecontentintable">40</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000220" class="tablecontentintable">65</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000230" class="tablecontentintable">44</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000240" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000250" class="tablecontentintable">39</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000260" class="tablecontentintable">64</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000270" class="tablecontentintable">60</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000280" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000290" class="tablecontentintable">38</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000300" class="tablecontentintable">43</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000310" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000320" class="tablecontentintable">47</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000330" class="tablecontentintable">84</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000340" class="tablecontentintable">62</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000350" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000360" class="tablecontentintable">29</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000370" class="tablecontentintable">80</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000380" class="tablecontentintable">51</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000390" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000400" class="tablecontentintable">27</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000410" class="tablecontentintable">49</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000420" class="tablecontentintable">40</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000430" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000440" class="tablecontentintable">57</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000450" class="tablecontentintable">49</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000460" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000470" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000480" class="tablecontentintable">56</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000490" class="tablecontentintable">33</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000500" class="tablecontentintable">60</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000510" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000520" class="tablecontentintable">57</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000530" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000540" class="tablecontentintable">26</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+</table>
+<br>
+
+
+
+<a name="timeseries01"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000550" class="paragraph">The following table has two time series, one representing an impulse function at time t=0 and the other an impulse function at time t=2.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000560" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000570" class="tableheadintable">B</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000580" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000590" class="tablecontentintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000600" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000610" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000620" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000630" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000640" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000650" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000660" class="tablecontentintable">1</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000670" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000680" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000690" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000700" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000710" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000720" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000730" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000740" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000750" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000760" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000770" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000780" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000790" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000800" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000810" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000820" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000830" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000840" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000850" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000860" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000870" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000880" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000890" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000900" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000910" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000920" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000930" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000940" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000950" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1000960" class="tablecontentintable">0</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+
+
+<a name="datafortests"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1000970" class="paragraph">The following table has two data sets.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000980" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1000990" class="tableheadintable">B</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001000" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001010" class="tablecontentintable">28</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001020" class="tablecontentintable">19</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001030" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001040" class="tablecontentintable">26</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001050" class="tablecontentintable">13</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001060" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001070" class="tablecontentintable">31</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001080" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001090" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001100" class="tablecontentintable">23</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001110" class="tablecontentintable">5</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001120" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001130" class="tablecontentintable">20</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001140" class="tablecontentintable">34</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001150" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001160" class="tablecontentintable">27</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001170" class="tablecontentintable">31</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001180" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001190" class="tablecontentintable">28</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001200" class="tablecontentintable">31</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001210" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001220" class="tablecontentintable">14</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001230" class="tablecontentintable">12</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001240" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001250" class="tablecontentintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001260" class="tablecontentintable">24</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001270" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001280" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001290" class="tablecontentintable">23</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001300" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001310" class="tablecontentintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001320" class="tablecontentintable">19</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001330" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001340" class="tablecontentintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001350" class="tablecontentintable">10</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1001360" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001370" class="tablecontentintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1001380" class="tablecontentintable">33</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+
+
+<a name="regressiondata"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1701201619425624" class="paragraph">The following table has samples of a physical phenomenon taken in 1 second interval.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id170120161940524" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405255" class="tableheadintable">B</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405244" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441023" class="paragraphintable">Time</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441056" class="paragraphintable">Measurement</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405214" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441082" class="paragraphintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id190120161501214" class="paragraphintable">2.7</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405278" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441385" class="paragraphintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012191" class="paragraphintable">4.0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405257" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441322" class="paragraphintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012192" class="paragraphintable">4.4</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405289" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441312" class="paragraphintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012187" class="paragraphintable">7.1</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405317" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441399" class="paragraphintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012121" class="paragraphintable">4.9</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405368" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441393" class="paragraphintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012143" class="paragraphintable">3.6</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405345" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id190120161444136" class="paragraphintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012166" class="paragraphintable">4.0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405311" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441334" class="paragraphintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012149" class="paragraphintable">0.6</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405353" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441380" class="paragraphintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012153" class="paragraphintable">1.0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405381" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441330" class="paragraphintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012135" class="paragraphintable">4.3</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/stat_data.xhp" target="_blank">/text/scalc/01/stat_data.xhp</a></p>
+<p>Title is: Data</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

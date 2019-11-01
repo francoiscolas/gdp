@@ -1,0 +1,10 @@
+#!/bin/bash
+origpath=$(pwd)
+bindir=$(cd $(dirname "$0") ; pwd)
+cd "$origpath"
+"$bindir/../Resources/Python.app/Contents/MacOS/LibreOfficePython" - $@ <<EOF
+import sys
+from lib2to3.main import main
+
+sys.exit(main("lib2to3.fixes"))
+EOF

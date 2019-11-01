@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Mid Function, Mid Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="mid"></a>
+<a name="bm_id3143268"></a>
+  <meta itemprop="keywords" content="Mid function">
+  <meta itemprop="keywords" content="Mid statement">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3143268">Mid Function, Mid Statement</h1>
+<p id="par_id3148473" class="paragraph">Returns the specified portion of a string expression (<span class="emph">Mid function</span>), or replaces the portion of a string expression with another string (<span class="emph">Mid statement</span>).</p>
+
+
+<h2 itemprop="articleSection" id="hd_id3154285">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Mid (Text As String, Start As Long [, Length As Long]) or Mid (Text As String, Start As Long , Length As Long, Text As String)
+</code></pre></div>
+
+<h2 itemprop="articleSection" id="hd_id3145068">Return value:</h2>
+<p id="par_id3149295" class="paragraph">String (only by Function)</p>
+
+<h2 itemprop="articleSection" id="hd_id3154347">Parameters:</h2>
+<p id="par_id3148664" class="paragraph"> <span class="emph">Text:</span> Any string expression that you want to modify.</p>
+<p id="par_id3150359" class="paragraph"> <span class="emph">Start: </span>Numeric expression that indicates the character position within the string where the string portion that you want to replace or to return begins. The maximum allowed value is 65535.</p>
+<p id="par_id3148451" class="paragraph"> <span class="emph">Length:</span> Numeric expression that returns the number of characters that you want to replace or return. The maximum allowed value is 65535.</p>
+<p id="par_id3125864" class="paragraph">If the Length parameter in the <span class="emph">Mid function</span> is omitted, all characters in the string expression from the start position to the end of the string are returned.</p>
+<p id="par_id3144762" class="paragraph">If the Length parameter in the <span class="emph">Mid statement</span> is less than the length of the text that you want to replace, the text is reduced to the specified length.</p>
+<p id="par_id3150769" class="paragraph"> <span class="emph">Text:</span> The string to replace the string expression (<span class="emph">Mid statement</span>).</p>
+<div class="embedded">
+<a name="errorcode"></a>
+
+<h2 itemprop="articleSection" id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h2>
+</div>
+<div class="embedded"><p class="embedded"><a name="err5"></a>5 Invalid procedure call</p></div>
+
+<h2 itemprop="articleSection" id="hd_id3149560">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleUSDate
+Dim sInput As String
+Dim sUS_date As String
+    sInput = InputBox("Please input a date in the international format 'YYYY-MM-DD'")
+    sUS_date = Mid(sInput, 6, 2)
+    sUS_date = sUS_date &amp; "/"
+    sUS_date = sUS_date &amp; Right(sInput, 2)
+    sUS_date = sUS_date &amp; "/"
+    sUS_date = sUS_date &amp; Left(sInput, 4)
+    MsgBox sUS_date
+End Sub
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03120306.xhp" target="_blank">/text/sbasic/shared/03120306.xhp</a></p>
+<p>Title is: Mid Function, Mid Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

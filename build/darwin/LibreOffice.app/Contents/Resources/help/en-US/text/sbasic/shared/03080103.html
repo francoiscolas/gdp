@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Sin Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="sin"></a>
+<a name="bm_id3153896"></a>
+  <meta itemprop="keywords" content="Sin function">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3153896">Sin Function</h1>
+<p id="par_id3149456" class="paragraph">Returns the sine of an angle. The angle is specified in radians. The result lies between -1 and 1.</p>
+
+<p id="par_id3153379" class="paragraph">Using the angle Alpha, the Sin Function returns the ratio of the length of the opposite side of an angle to the length of the hypotenuse in a right-angled triangle.</p>
+<p id="par_id3148798" class="paragraph">Sin(Alpha) = side opposite the angle/hypotenuse</p>
+
+<h2 itemprop="articleSection" id="hd_id3147230">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sin (Number)
+</code></pre></div>
+
+<h2 itemprop="articleSection" id="hd_id3156214">Return value:</h2>
+<p id="par_id3150870" class="paragraph">Double</p>
+
+<h2 itemprop="articleSection" id="hd_id3155132">Parameters:</h2>
+<p id="par_id3145786" class="paragraph"> <span class="emph">Number:</span> Numeric expression that defines the angle in radians that you want to calculate the sine for.</p>
+<p id="par_id3155413" class="paragraph">To convert degrees to radians, multiply degrees by Pi/180, and to convert radians to degrees, multiply radians by 180/Pi.</p>
+<p id="par_id3149664" class="paragraph">grad=(radiant*180)/pi</p>
+<p id="par_id3153143" class="paragraph">radiant=(grad*pi)/180</p>
+<p id="par_id3151112" class="paragraph">Pi is approximately 3.141593.</p>
+<div class="embedded">
+<a name="errorcode"></a>
+
+<h2 itemprop="articleSection" id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h2>
+</div>
+<div class="embedded"><p class="embedded"><a name="err5"></a>5 Invalid procedure call</p></div>
+
+<h2 itemprop="articleSection" id="hd_id3163712">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+' In this example, the following entry is possible for a right-angled triangle:
+' The side opposite the angle and the angle (in degrees) to calculate the length of the hypotenuse:
+Sub ExampleSine
+' Pi = 3.1415926 is a predefined variable
+Dim d1 As Double
+Dim dAlpha As Double
+    d1 = InputBox("Enter the length of the opposite side: ","Opposite Side")
+    dAlpha = InputBox("Enter the angle Alpha (in degrees): ","Alpha")
+    Print "The length of the hypotenuse is"; (d1 / sin (dAlpha * Pi / 180))
+End Sub
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03080103.xhp" target="_blank">/text/sbasic/shared/03080103.xhp</a></p>
+<p>Title is: Sin Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

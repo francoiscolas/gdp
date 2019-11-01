@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Write Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="write"></a>
+<a name="bm_id3147229"></a>
+  <meta itemprop="keywords" content="Write statement">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3147229">Write Statement</h1>
+<p id="par_id3154685" class="paragraph">Writes data to a sequential file.</p>
+
+
+<h2 itemprop="articleSection" id="hd_id3150449">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Write [#FileName], [Expressionlist]see i61248
+</code></pre></div>
+
+<h2 itemprop="articleSection" id="hd_id3151116">Parameters:</h2>
+<p id="par_id3153728" class="paragraph"> <span class="emph">FileName:</span> Any numeric expression that contains the file number that was set by the Open statement for the respective file.</p>
+<p id="par_id3146120" class="paragraph"> <span class="emph">Expressionlist:</span> Variables or expressions that you want to enter in a file, separated by commas.</p>
+<p id="par_id3150010" class="paragraph">If the expression list is omitted, the <span class="emph">Write</span> statement appends an empty line to the file.</p>
+<p id="par_id3163713" class="paragraph">To add an expression list to a new or an existing file, the file must be opened in the <span class="emph">Output</span> or <span class="emph">Append</span> mode.</p>
+<p id="par_id3147428" class="paragraph">Strings that you write are enclosed by quotation marks and separated by commas. You do not need to enter these delimiters in the expression list.</p>
+<p id="par_id1002838" class="paragraph">Each <span class="emph">Write</span> statement outputs a line end symbol as last entry.</p>
+<p id="par_id6618854" class="paragraph">Numbers with decimal delimiters are converted according to the locale settings.</p>
+
+<h2 itemprop="articleSection" id="hd_id3151073">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleWrite
+Dim iCount As Integer
+Dim sValue As String
+    iCount = Freefile
+    Open "C:\data.txt" For Output As iCount
+    sValue = "Hamburg"
+    Write #iCount,sValue,200
+    sValue = "New York"
+    Write #iCount,sValue,300
+    sValue = "Miami"
+    Write #iCount,sValue,450
+    Close #iCount
+End Sub
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03020205.xhp" target="_blank">/text/sbasic/shared/03020205.xhp</a></p>
+<p>Title is: Write Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

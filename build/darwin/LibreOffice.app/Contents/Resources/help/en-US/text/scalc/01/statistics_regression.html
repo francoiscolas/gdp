@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Regression Analysis</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<h2 itemprop="articleSection" id="hd_id1701201615033510">Regression Analysis</h2>
+<p id="par_id1001240" class="paragraph"><span class="avis">Produces the regression analysis of a data set</span></p>
+
+<a name="regressionanalysis"></a>
+<a name="bm_id2764278"></a>
+  <meta itemprop="keywords" content="Analysis toolpack,regression analysis">
+  <meta itemprop="keywords" content="regression analysis,Analysis toolpack">
+  <meta itemprop="keywords" content="Data statistics,regression analysis">
+
+
+<a name="bm_id2745673"></a>
+<a name="bm_id2745673"></a>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1000040" class="paragraph"><a name="sam01"></a>Choose <span class="emph">Data - Statistics - Regression</span></p>
+</div>
+</div>
+<br>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information on regression analysis, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/Regression_analysis">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br>
+<div class="embedded">
+<a name="data"></a>
+
+<h3 id="hd_id1000010">Data</h3>
+<p id="par_id1000010" class="paragraph"><span class="emph">Input Range</span>: The reference of the range of the data to analyze.</p>
+<p id="par_id1000020" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the results will be displayed.</p>
+</div>
+<div class="embedded">
+<a name="grouped"></a>
+
+<h3 id="hd_id1000020">Grouped By</h3>
+<p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+</div>
+
+<h3 id="hd_id1000070">Output Regression Type</h3>
+<p id="par_id1001280" class="paragraph">Set the regression type. Three types are available: </p>
+
+<ul>
+  <li>
+    <p id="par_id1701201620334364" class="ul_item"><span class="emph">Linear Regression</span>: find a straight line in the form of <span class="literal">y = a.x + b</span>, where <span class="literal">a</span> is the slope and <span class="literal">b</span> is the intercept that best fits the data.</p>
+  </li>
+  <li>
+    <p id="par_id1701201620340168" class="ul_item"><span class="emph">Logarithmic regression</span>: find a logarithmic curve in the form of <span class="literal">y = a.ln(x) + b</span>, where <span class="literal">a</span> is the slope, <span class="literal">b</span> is the intercept and <span class="literal">ln(x)</span> is the natural logarithm of <span class="literal">x</span>, that best fits the data.</p>
+  </li>
+  <li>
+    <p id="par_id1701201620340139" class="ul_item"><span class="emph">Power regression</span>: Find a power curve in the form of <span class="literal">y = a.x^b</span>, where <span class="literal">a</span> is the coefficient, <span class="literal">b</span> is the power that best fits the data.</p>
+  </li>
+</ul>
+<div class="embedded">
+<a name="regressiondata"></a>
+
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h3 id="hd_id281171">Example</h3>
+    </div>
+<p id="par_id1701201619425624" class="paragraph">The following table has samples of a physical phenomenon taken in 1 second interval.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id170120161940524" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405255" class="tableheadintable">B</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405244" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441023" class="paragraphintable">Time</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441056" class="paragraphintable">Measurement</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405214" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441082" class="paragraphintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id190120161501214" class="paragraphintable">2.7</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405278" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441385" class="paragraphintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012191" class="paragraphintable">4.0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405257" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441322" class="paragraphintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012192" class="paragraphintable">4.4</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405289" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441312" class="paragraphintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012187" class="paragraphintable">7.1</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405317" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441399" class="paragraphintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012121" class="paragraphintable">4.9</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405368" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441393" class="paragraphintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012143" class="paragraphintable">3.6</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405345" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id190120161444136" class="paragraphintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012166" class="paragraphintable">4.0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405311" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441334" class="paragraphintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012149" class="paragraphintable">0.6</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405353" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441380" class="paragraphintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012153" class="paragraphintable">1.0</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201619405381" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201614441330" class="paragraphintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615012135" class="paragraphintable">4.3</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+<p id="par_id1001310" class="paragraph">The results of the three types of <span class="emph">regression analysis</span> of the measurements in the table above are shown below.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id1701201618090526" class="tableheadintable">Regression</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1701201618090542" class="paragraphintable">Regression Model</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1701201618090596" class="paragraphintable">Linear</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1701201618090586" class="paragraphintable">Logarithmic</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1701201618090555" class="paragraphintable">Power</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1701201618090553" class="paragraphintable">R^2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114385" class="paragraphintable">0.1243901235</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114339" class="paragraphintable">0.036283506</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114321" class="paragraphintable">0.0884254697</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1701201618090595" class="paragraphintable">Standard Error</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114322" class="paragraphintable">1.8692568609</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114330" class="paragraphintable">1.9610483597</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114373" class="paragraphintable">0.7746321053</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1701201618090563" class="paragraphintable">Slope</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id19012061511466" class="paragraphintable">-0.2193939394</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114648" class="paragraphintable">-0.4894112008</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114619" class="paragraphintable">4.812672931</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1701201618090642" class="paragraphintable">Intercept</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114679" class="paragraphintable">4.8666666667</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id190120165114664" class="paragraphintable">4.3992268695</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id190101615114697" class="paragraphintable">-0.3103085297</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id190120161511461" class="paragraphintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114631" class="paragraphintable">4.6472727273</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114663" class="paragraphintable">4.3992268695</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id19012016151142" class="paragraphintable">4.812672931</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114687" class="paragraphintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114677" class="paragraphintable">4.4278787879</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114693" class="paragraphintable">4.0599928755</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114630" class="paragraphintable">3.8812728356</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114697" class="paragraphintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114659" class="paragraphintable">4.2084848485</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114671" class="paragraphintable">3.8615537101</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114664" class="paragraphintable">3.4224061924</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id190120161511463" class="paragraphintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id190120161511462" class="paragraphintable">3.9890909091</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id190120161511466" class="paragraphintable">3.7207588815</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114649" class="paragraphintable">3.1301272785</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114699" class="paragraphintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114635" class="paragraphintable">3.7696969697</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114716" class="paragraphintable">3.6115499281</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114792" class="paragraphintable">2.9207204651</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114711" class="paragraphintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114718" class="paragraphintable">3.5503030303</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114732" class="paragraphintable">3.5223197161</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114775" class="paragraphintable">2.7600654308</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114712" class="paragraphintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id190120161511476" class="paragraphintable">3.3309090909</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114710" class="paragraphintable">3.4468766468</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615117" class="paragraphintable">2.6311476385</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114767" class="paragraphintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114753" class="paragraphintable">3.1115151515</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id19012016151147" class="paragraphintable">3.3815248876</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114720" class="paragraphintable">2.5243514679</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114746" class="paragraphintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114725" class="paragraphintable">2.8921212121</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114758" class="paragraphintable">3.3238805506</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114773" class="paragraphintable">2.4337544465</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114789" class="paragraphintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id190120161114720" class="paragraphintable">2.6727272727</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114738" class="paragraphintable">3.2723159341</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id1901201615114798" class="paragraphintable">2.3554713075</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<p id="par_id14337286612130" class="paragraph"> <a target="_top" href="en-US/text/scalc/01/statistics.html#datasampling">Sampling</a>, <a target="_top" href="en-US/text/scalc/01/statistics.html#descriptivestatistics">Descriptive Statistics</a>, <a target="_top" href="en-US/text/scalc/01/statistics.html#anova">Analysis of Variance (ANOVA)</a>, <a target="_top" href="en-US/text/scalc/01/statistics.html#correlation">Correlation</a>, <a target="_top" href="en-US/text/scalc/01/statistics.html#covariance">Covariance</a>, <a target="_top" href="en-US/text/scalc/01/statistics.html#exponentialsmoothing">Exponential Smoothing</a>, <a target="_top" href="en-US/text/scalc/01/statistics.html#movingaverage">Moving Average</a>, <a target="_top" href="en-US/text/scalc/01/statistics.html#ttest">Paired t-test</a>, <a target="_top" href="en-US/text/scalc/01/statistics.html#ftest">F-test</a>, <a target="_top" href="en-US/text/scalc/01/statistics.html#ztest">Z-test</a>, <a target="_top" href="en-US/text/scalc/01/statistics.html#chisqtest">Chi-square test</a>.</p>
+</div>
+</div>
+
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/statistics_regression.xhp" target="_blank">/text/scalc/01/statistics_regression.xhp</a></p>
+<p>Title is: Regression Analysis</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

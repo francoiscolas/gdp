@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ReDim Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="fuzzysort.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="en-US/langnames.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body itemscope="true" itemtype="http://schema.org/TechArticle">
+<div class="header-extrawurst">
+<header><div class="logo-container"><a class="logo" href="en-US/text/shared/05/new_help.html"><div class="symbol"></div>
+<p>LibreOffice 6.3 Help</p></a></div></header><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('', 'en-US');">Module</button><nav id="modules-nav"></nav>
+</div>
+</div>
+<aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="articleBody">
+
+
+<a name="redim"></a>
+<a name="bm_id3150398"></a>
+  <meta itemprop="keywords" content="ReDim statement">
+
+
+
+<h1 itemprop="articleSection" id="hd_id3150398">ReDim Statement</h1>
+<p id="par_id3154685" class="paragraph">Declares a variable or an array.</p>
+
+
+<h2 itemprop="articleSection" id="hd_id3154218">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+[ReDim]Dim VarName [(start To end)] [As VarType][, VarName2 [(start To end)] [As VarType][,...]]
+</code></pre></div>
+<p id="par_id711996" class="paragraph">Optionally, you can add the <span class="emph">Preserve</span> keyword as a parameter to preserve the contents of the array that is redimensioned.</p>
+
+<h2 itemprop="articleSection" id="hd_id3148451">Parameters:</h2>
+<p id="par_id3156423" class="paragraph"> <span class="emph">VarName:</span> Any variable or array name.</p>
+<p id="par_id3149562" class="paragraph"> <span class="emph">Start, End:</span> Numerical values or constants that define the number of elements (NumberElements=(end-start)+1) and the index range.</p>
+<p id="par_id3155307" class="paragraph">Start and End can be numeric expressions if ReDim is used at the procedure level.</p>
+<p id="par_id3153951" class="paragraph"> <span class="emph">VarType:</span> Keyword that declares the data type of a variable.</p>
+<p id="par_id3147317" class="paragraph"> <span class="emph">Keyword:</span> Variable type</p>
+<p id="par_id3153728" class="paragraph"> <span class="emph">Bool: </span>Boolean variable (True, False)</p>
+<p id="par_id3146121" class="paragraph"> <span class="emph">Date:</span> Date variable</p>
+<p id="par_id3159156" class="paragraph"> <span class="emph">Double:</span> Double floating point variable (1.79769313486232x10E308 - 4.94065645841247x10E-324)</p>
+<p id="par_id3148616" class="paragraph"> <span class="emph">Integer:</span> Integer variable (-32768 - 32767)</p>
+<p id="par_id3147348" class="paragraph"> <span class="emph">Long:</span> Long integer variable (-2,147,483,648 - 2,147,483,647)</p>
+<p id="par_id3149412" class="paragraph"> <span class="emph">Object:</span> Object variable (can only be subsequently defined by Set!)</p>
+<p id="par_id3154729" class="paragraph"> <span class="emph">[Single]:</span> Single floating-point variable (3.402823x10E38 - 1.401298x10E-45). If no key word is specified, a variable is defined as Single, unless a statement from DefBool to DefVar is used.</p>
+<p id="par_id3148458" class="paragraph"> <span class="emph">String:</span> String variable containing a maximum of 64,000 ASCII characters.</p>
+<p id="par_id3149581" class="paragraph"> <span class="emph">Variant: </span>Variant variable type (can contain all types and is set by definition).</p>
+<p id="par_id3155601" class="paragraph">In LibreOffice Basic, you do not need to declare variables explicitly. However, you need to declare an array before you can use them. You can declare a variable with the Dim statement, using commas to separate multiple declarations. To declare a variable type, enter a type-declaration character following the name or use a corresponding key word.</p>
+<p id="par_id3153415" class="paragraph">LibreOffice Basic supports single or multi-dimensional arrays that are defined by a specified variable type. Arrays are suitable if the program contains lists or tables that you want to edit. The advantage of arrays is that it is possible to address individual elements according to indexes, which can be formulated as numeric expressions or variables.</p>
+<p id="par_id3146971" class="paragraph">There are two ways to set the range of indices for arrays declared with the Dim statement:</p>
+<p id="par_id3153950" class="paragraph">DIM text(20) As String REM 21 elements numbered from 0 to 20</p>
+<p id="par_id3146912" class="paragraph">DIM text(5 to 25) As String REM 21 elements numbered from 5 to 25</p>
+<p id="par_id3153709" class="paragraph">DIM text$(-15 to 5) As String REM 21 elements (0 inclusive),</p>
+<p id="par_id3150321" class="paragraph">rem numbered from -15 to 5</p>
+<p id="par_id3149018" class="paragraph">Variable fields, regardless of type, can be made dynamic if they are dimensioned by ReDim at the procedure level in subroutines or functions. Normally, you can only set the range of an array once and you cannot modify it. Within a procedure, you can declare an array using the ReDim statement with numeric expressions to define the range of the field sizes.</p>
+
+<h2 itemprop="articleSection" id="hd_id3148405">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleRedim
+Dim iVar() As Integer, iCount As Integer
+ReDim iVar(5) As Integer
+For iCount = 1 To 5
+    iVar(iCount) = iCount
+Next iCount
+ReDim iVar(10) As Integer
+For iCount = 1 To 10
+    iVar(iCount) = iCount
+Next iCount
+End Sub
+</code></pre></div>
+</div>
+<div class="google-donation"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03102101.xhp" target="_blank">/text/sbasic/shared/03102101.xhp</a></p>
+<p>Title is: ReDim Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>
