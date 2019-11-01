@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "electron": "3",
+    "electron": "7",
     "electron-builder": "^22.1.0",
     "gulp": "*",
     "gulp-autoprefixer": "*",

@@ -91,6 +91,7 @@ var startUi = function () {
 var startScreenWindow = function () {
   return new Promise(function (resolve, reject) {
     App.screenWindow = new Electron.BrowserWindow({
+      webPreferences: {nodeIntegration: true},
       icon: `${__dirname}/assets/img/icon.png`,
       show: false
     });
@@ -137,11 +138,11 @@ var startMainWindow = function () {
       App.mainWindow.show();
       resolve();
     });
-    Electron.Menu.setApplicationMenu((function () {
+    var menu = (function () {
       var template = [];
 
       template.push({
-        label: App.getName(),
+        label: App.name,
         accelerator: 'Alt+G',
         submenu: [{
           label: 'Associer un appareil',
@@ -180,7 +181,13 @@ var startMainWindow = function () {
         });
       }
       return Electron.Menu.buildFromTemplate(template);
-    })());
+    })();
+    if (process.platform == 'darwin') {
+      Electron.Menu.setApplicationMenu(menu);
+    } else {
+      Electron.Menu.setApplicationMenu(null);
+      App.mainWindow.setMenu(menu);
+    }
   });
 };
 
@@ -202,6 +209,7 @@ var launch = function (resolve, reject) {
 
 var startSettingsWindow = function () {
   var win = new Electron.BrowserWindow({
+    webPreferences: {nodeIntegration: true},
     parent: App.mainWindow,
     modal: true,
     icon: `${__dirname}/assets/img/icon.png`,
@@ -216,10 +224,11 @@ var startSettingsWindow = function () {
   });
 };
 
-startAssociateWindow = function () {
+var startAssociateWindow = function () {
   var win = new Electron.BrowserWindow({
+    webPreferences: {nodeIntegration: true},
     parent: App.mainWindow,
-    modale: true,
+    modal: true,
     icon: `${__dirname}/assets/img/icon.png`,
     show: false,
     width: 300,
@@ -232,10 +241,11 @@ startAssociateWindow = function () {
   });
 };
 
-startAboutWindow = function () {
+var startAboutWindow = function () {
   var win = new Electron.BrowserWindow({
+    webPreferences: {nodeIntegration: true},
     parent: App.mainWindow,
-    modale: true,
+    modal: true,
     icon: `${__dirname}/assets/img/icon.png`,
     show: false,
     width: 350,
