@@ -8,43 +8,38 @@
     "gulp-sass": "*"
   },
   "build": {
+    "artifactName": "gdp-v${version}-${os}-${arch}.${ext}",
     "compression": "maximum",
     "linux": {
       "target": [
         {"target": "deb"},
-        {"target": "tar.gz"},
-        {"target": "AppImage"}
+        {"target": "AppImage"},
+        {"target": "tar.gz"}
       ]
-    },
-    "deb": {
-      "depends": ["imagemagick", "libreoffice-impress"]
     },
     "win": {
-      "target": "nsis",
-      "extraResources": [
-        {
-          "from": "build/win32",
-          "to": ".",
-          "filter": [
-            "**/*"
-          ]
-        }
-      ]
-    },
-    "nsis": {
-      "oneClick": false
+      "target": [
+        {"target": "nsis"},
+        {"target": "zip"}
+      ],
+      "extraResources": [{
+        "from": "build/win32",
+        "to": ".",
+        "filter": ["**/*"]
+      }]
     },
     "mac": {
-      "target": "dmg",
-      "extraResources": [
-        {
-          "from": "build/darwin",
-          "to": ".",
-          "filter": [
-            "**/*"
-          ]
-        }
-      ]
-    }
+      "target": [
+        {"target": "dmg"},
+        {"target": "zip"}
+      ],
+      "extraResources": [{
+        "from": "build/darwin",
+        "to": ".",
+        "filter": ["**/*"]
+      }]
+    },
+    "deb": {"depends": ["imagemagick", "libreoffice-impress"]},
+    "nsis": {"oneClick": false}
   }
 }
