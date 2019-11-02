@@ -1,10 +1,23 @@
 var _        = require('lodash');
 var Electron = require('electron');
 
+var versionStringToInt = function (str) {
+  var parts = str.split('.');
+  var result = 0;
+
+  for (var i = 0; i < parts.length; i++) {
+    result *= 100;
+    result += parseInt(parts[i]);
+  }
+  return result;
+};
+
 var initSettings = function () {
+  version = versionStringToInt(require('./package.json').version);
+
   App.settings = require('electron-settings');
   App.settings.defaults({
-    version: 0x020000,
+    version: version,
     httpPort: 3333,
     display: {
       bgColor: 'black',
@@ -12,6 +25,11 @@ var initSettings = function () {
     },
     sourcesDir: null,
   });
+
+  if (App.settings.getSync('version') == 0x020000) {
+    App.settings.setSync('version', version);
+  }
+
   return Promise.resolve();
 };
 

@@ -10,7 +10,14 @@
   "build": {
     "compression": "maximum",
     "linux": {
-      "target": "AppImage"
+      "target": [
+        {"target": "deb"},
+        {"target": "tar.gz"},
+        {"target": "AppImage"}
+      ]
+    },
+    "deb": {
+      "depends": ["imagemagick", "libreoffice-impress"]
     },
     "win": {
       "target": "nsis",
