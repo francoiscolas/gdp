@@ -22,7 +22,7 @@ $(function () {
 
   $sourcesDir.val(App.sources.sourcesDir);
   $('#sources-dir-btn').click(function () {
-    var entries = Dialog.showOpenDialog({
+    var entries = Dialog.showOpenDialogSync({
       defaultPath: $sourcesDir.val(),
       properties : ['openDirectory']
     });
@@ -35,7 +35,7 @@ $(function () {
 
   $bgImage.val(App.display.bgImage);
   $('#bg-image-btn').click(function () {
-    var entries = Dialog.showOpenDialog({
+    var entries = Dialog.showOpenDialogSync({
       defaultPath: $bgImage.val(),
       properties : ['openFile'],
       filters    : [{name: 'Images', extensions: ['jpg', 'jpeg', 'png']}],
