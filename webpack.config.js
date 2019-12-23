@@ -30,4 +30,13 @@ const rendererConfig = {
   },
 };
 
-module.exports = [electronConfig, rendererConfig];
+module.exports = function (env, argv) {
+  if (argv.mode === 'development') {
+    rendererConfig.module.rules[0].use = [
+      {loader: 'style-loader'},
+      {loader: 'css-loader', options: {url: false}},
+      {loader: 'sass-loader'},
+    ];
+  }
+  return [electronConfig, rendererConfig];
+};

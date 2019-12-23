@@ -87,8 +87,9 @@ var _startHttpServer = function () {
 
     App.webApp = Express();
     if (App.isDev) {
-      App.webApp.use(Express.static(Path.resolve(process.cwd(), 'app')));
-      App.webApp.use(Express.static(Path.resolve(process.cwd(), 'build', 'www')));
+      App.webApp.use(Express.static(Path.resolve(process.cwd(), 'app'))); // Built renderer
+      App.webApp.use(Express.static(Path.resolve(process.cwd(), 'build', 'www'))); // Static resources
+      App.webApp.use(Express.static(Path.resolve(process.cwd(), 'src', 'renderer'))); // To serve images and fonts
     } else {
       App.webApp.use(Express.static(Path.resolve(process.resourcesPath, 'www')));
     }
