@@ -1,0 +1,24 @@
+@import './scss/foundation-settings';
+@import './scss/lib/foundation-icons';
+@import './scss/lib/foundation/foundation';
+@import './scss/lib/slick';
+@import './scss/lib/slick-theme';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-button;
+@include foundation-menu;
+@include foundation-visibility-classes;
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+
+@import './scss/main';
+@import './scss/screen';
+@import './scss/settings';
+@import './scss/associate';
+@import './scss/about';

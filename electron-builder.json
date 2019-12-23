@@ -1,0 +1,36 @@
+{
+  "artifactName": "gdp-v${version}-${os}-${arch}.${ext}",
+  "compression": "maximum",
+  "files": [
+    "!resources/",
+    "!src/",
+    "!webpack.config.js"
+  ],
+  "extraResources": [
+    {"from": "build/www/", "to": "www/", "filter": "**/*"},
+    {"from": "app/", "to": "www/", "filter": "renderer.js"},
+    {"from": "build/${os}/", "to": ".", "filter": "**/*"}
+  ],
+  "linux": {
+    "category": "Utility",
+    "target": [
+      {"target": "deb"},
+      {"target": "AppImage"},
+      {"target": "tar.gz"}
+    ]
+  },
+  "deb": {"depends": ["imagemagick", "libreoffice-impress"]},
+  "win": {
+    "target": [
+      {"target": "nsis"},
+      {"target": "zip"}
+    ]
+  },
+  "nsis": {"oneClick": false},
+  "mac": {
+    "target": [
+      {"target": "dmg"},
+      {"target": "zip"}
+    ]
+  }
+}

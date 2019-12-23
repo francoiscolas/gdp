@@ -1,45 +1,38 @@
 {
-  "devDependencies": {
-    "electron": "7",
-    "electron-builder": "^22.1.0",
-    "gulp": "*",
-    "gulp-autoprefixer": "*",
-    "gulp-include": "*",
-    "gulp-sass": "*"
+  "name": "gdp",
+  "productName": "Groupe de Prière",
+  "version": "2.1.0",
+  "license": "MIT",
+  "description": "Logiciel pour gérer l'affichage de plusieurs présentations (ppt, pps, odp, etc...).",
+  "author": "François Colas <francoiscolas@gmail.com>",
+  "main": "app/main.js",
+  "scripts": {
+    "dev": "webpack --mode development && electron .",
+    "watch": "webpack --mode development --watch",
+    "compile": "webpack --mode production",
+    "dist": "yarn compile && electron-builder",
+    "dist:dir": "yarn dist --dir"
   },
-  "build": {
-    "artifactName": "gdp-v${version}-${os}-${arch}.${ext}",
-    "compression": "maximum",
-    "linux": {
-      "target": [
-        {"target": "deb"},
-        {"target": "AppImage"},
-        {"target": "tar.gz"}
-      ]
-    },
-    "win": {
-      "target": [
-        {"target": "nsis"},
-        {"target": "zip"}
-      ],
-      "extraResources": [{
-        "from": "build/win32",
-        "to": ".",
-        "filter": ["**/*"]
-      }]
-    },
-    "mac": {
-      "target": [
-        {"target": "dmg"},
-        {"target": "zip"}
-      ],
-      "extraResources": [{
-        "from": "build/darwin",
-        "to": ".",
-        "filter": ["**/*"]
-      }]
-    },
-    "deb": {"depends": ["imagemagick", "libreoffice-impress"]},
-    "nsis": {"oneClick": false}
+  "devDependencies": {
+    "css-loader": "^3.4.0",
+    "electron": "7.1.6",
+    "electron-builder": "21.2.0",
+    "file-loader": "^5.0.2",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.2",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "backbone": "^1.4.0",
+    "body-parser": "^1.15.2",
+    "electron-settings": "^2.2.1",
+    "express": "^4.14.0",
+    "jquery": "^3.4.1",
+    "lodash": "^4.16.4",
+    "mz": "^2.4.0",
+    "ws": "^7.2.1"
   }
 }
