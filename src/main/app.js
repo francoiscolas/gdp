@@ -21,8 +21,15 @@ var _initSettings = function () {
   var version = _versionStringToInt(App.getVersion());
 
   App.settings = require('electron-settings');
-  App.settings.defaults({
-    version: version,
+  if (App.settings.get('version') == 0x020000) {
+    // Nothing to do.
+  }
+
+  // Current version
+  App.settings.set('version', version);
+
+  // Defaults
+  App.settings.setAll(App.settings.getAll(), {
     httpPort: 3333,
     display: {
       bgColor: 'black',
@@ -31,49 +38,43 @@ var _initSettings = function () {
     sourcesDir: null,
   });
 
-  if (App.settings.getSync('version') == 0x020000) {
-    App.settings.setSync('version', version);
-  }
-
   return Promise.resolve();
 };
 
 var _initDisplay = function () {
   return new Promise(function (resolve, reject) {
-    App.settings.get('display').then(function (settings) {
-      var Display = require('./display');
+    let settings = App.settings.get('display');
+    let Display  = require('./display');
 
-      App.display = new Display({
-        bgColor: settings.bgColor,
-        bgImage: settings.bgImage
-      });
-      App.display.on('change', function () {
-        App.settings.set('display', {
-          bgColor: App.display.bgColor,
-          bgImage: App.display.bgImage
-        });
-      });
-      resolve();
+    App.display = new Display({
+      bgColor: settings.bgColor,
+      bgImage: settings.bgImage
     });
+    App.display.on('change', function () {
+      App.settings.set('display', {
+        bgColor: App.display.bgColor,
+        bgImage: App.display.bgImage
+      });
+    });
+    resolve();
   });
 };
 
 var _initSources = function () {
   return new Promise(function (resolve, reject) {
-    App.settings.get('sourcesDir').then(function (sourcesDir) {
-      var Sources = require('./sources');
+    let sourcesDir = App.settings.get('sourcesDir');
+    let Sources = require('./sources');
 
-      App.sources = new Sources();
-      App.sources.on('error', function (error) {
-        Electron.dialog.showErrorBox('Sources introuvables', error.message);
-      });
-      App.sources.on('change', function () {
-        App.settings.setSync('sourcesDir', App.sources.sourcesDir);
-      });
-      App.sources.setSourcesDir(App.settings.getSync('sourcesDir'));
-      App.sources.setUserDir(App.getPath('userData'));
-      resolve();
+    App.sources = new Sources();
+    App.sources.on('error', function (error) {
+      Electron.dialog.showErrorBox('Sources introuvables', error.message);
     });
+    App.sources.on('change', function () {
+      App.settings.set('sourcesDir', App.sources.sourcesDir);
+    });
+    App.sources.setSourcesDir(App.settings.get('sourcesDir'));
+    App.sources.setUserDir(App.getPath('userData'));
+    resolve();
   });
 };
 
@@ -100,7 +101,7 @@ var _startHttpServer = function () {
     App.webApp.get('/api/sources/:id', SourcesAPI.show);
     App.webApp.get('/api/sources/:id/:i.jpg', SourcesAPI.slide);
 
-    var server = App.webApp.listen(App.settings.getSync('httpPort'));
+    var server = App.webApp.listen(App.settings.get('httpPort'));
     server.once('listening', resolve);
     server.once('error', reject);
 
@@ -121,7 +122,7 @@ var _startUi = function () {
 };
 
 var _loadURL = function (window, hashtag, noDevTools) {
-  var port = App.settings.getSync("httpPort");
+  var port = App.settings.get("httpPort");
 
   if (!(noDevTools === true) && App.isDev)
     window.openDevTools();
