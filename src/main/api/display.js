@@ -8,12 +8,16 @@ var MD5 = function (text) {
 function Display(App) {
 
   var send = function (res) {
-    res.send({
+    res.send(data());
+  };
+
+  var data = function () {
+    return {
       bgColor: App.display.bgColor,
       bgImage: (App.display.bgImage) ? '/api/display/bgImage?' + MD5(App.display.bgImage) : null,
       sourceId: App.display.sourceId,
       sourcePage: App.display.sourcePage,
-    });
+    };
   };
 
   return {
@@ -50,7 +54,11 @@ function Display(App) {
         sourcePage: 0
       });
       send(res);
-    }
+    },
+
+    getData: function () {
+      return data();
+    },
 
   };
 

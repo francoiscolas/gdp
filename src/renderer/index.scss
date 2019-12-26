@@ -1,8 +1,6 @@
 @import './scss/foundation-settings';
 @import './scss/lib/foundation-icons';
 @import './scss/lib/foundation/foundation';
-@import './scss/lib/slick';
-@import './scss/lib/slick-theme';
 
 @include foundation-global-styles;
 @include foundation-grid;

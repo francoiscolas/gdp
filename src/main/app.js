@@ -99,8 +99,8 @@ var _startHttpServer = function () {
     App.webApp.post('/api/display', JsonBodyParser, DisplayAPI.update);
     App.webApp.delete('/api/display', DisplayAPI.clear);
     App.webApp.get('/api/sources', SourcesAPI.index);
+    App.webApp.get('/api/sources/:id.pdf', SourcesAPI.download);
     App.webApp.get('/api/sources/:id', SourcesAPI.show);
-    App.webApp.get('/api/sources/:id/:i.jpg', SourcesAPI.slide);
 
     var server = App.webApp.listen(App.settings.get('httpPort'));
     server.once('listening', resolve);
@@ -108,7 +108,12 @@ var _startHttpServer = function () {
 
     var wss = new WebSocket.Server({server});
     wss.on('connection', function (ws) {
-      App.display.on('change', _.bind(ws.send, ws, 'updated'));
+      App.display.on('change', function () {
+        ws.send(JSON.stringify({
+          command: 'display.change',
+          data: DisplayAPI.getData(),
+        }));
+      });
     });
   });
 };

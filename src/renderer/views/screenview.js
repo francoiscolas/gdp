@@ -22,6 +22,7 @@ var ScreenView = Backbone.View.extend({
     setInterval(_.bind(this.sources.fetch, this.sources), 5000);
 
     this.source = null;
+    this.pdfpromise = null;
 
     this.listenTo(this.settings, 'change', this.render);
     this.listenTo(this.sources, 'add', this.render);
@@ -32,23 +33,31 @@ var ScreenView = Backbone.View.extend({
   render: function () {
     let bgImage = this.settings.get('bgImage') || '';
 
-    if (this.source) {
-      this.stopListening(this.source);
-    }
+    this.$el.html('<canvas></canvas>');
+    this.$el.css('background-color', this.settings.get('bgColor'));
+    this.$el.css('background-image', `url("${bgImage}")`);
+
     if (this.settings.has('sourceId')) {
       this.source = this.sources.get(this.settings.get('sourceId'));
 
-      if (this.source) {
-        this.source.fetch();
-        this.listenTo(this.source, 'change', this.render);
+      if (this.source && !this.pdfpromise) {
+        this.pdfpromise = this.source.getPdfPage(this.settings.get('sourcePage'));
+        this.pdfpromise.then(function (pdfpage) {
+          this.pdfpromise = null;
 
-        if (this.source.has('pages')) {
-          bgImage = this.source.get('pages')[this.settings.get('sourcePage')];
-        }
+          let viewport = pdfpage.getViewport({scale: 1});
+          let canvas = this.$('canvas').get(0);
+
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          pdfpage.render({
+            canvasContext: canvas.getContext('2d'),
+            background: this.settings.get('bgColor'),
+            viewport: viewport,
+          });
+        }.bind(this));
       }
     }
-    this.$el.css('background-color', this.settings.get('bgColor'));
-    this.$el.css('background-image', `url("${bgImage}")`);
   },
 
 });

@@ -14,6 +14,14 @@ class Router extends Backbone.Router {
   }
 
   index() {
+    let ws = new WebSocket(window.location.origin.replace(/^http/, 'ws'));
+
+    ws.onmessage = _.bind(function (evt) {
+      let msg = JSON.parse(evt.data);
+
+      if (msg.command == 'display.change')
+        this.view.display.set(msg.data);
+    }, this);
     this._showView(require('./views/mainview'));
   }
 
@@ -21,8 +29,10 @@ class Router extends Backbone.Router {
     let ws = new WebSocket(window.location.origin.replace(/^http/, 'ws'));
 
     ws.onmessage = _.bind(function (evt) {
-      if (evt.data == 'updated')
-        this.view.settings.fetch();
+      let msg = JSON.parse(evt.data);
+
+      if (msg.command == 'display.change')
+        this.view.settings.set(msg.data);
     }, this);
     this._showView(require('./views/screenview'));
   }

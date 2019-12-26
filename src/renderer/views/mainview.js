@@ -87,7 +87,6 @@ let MainView = Backbone.View.extend({
 
     this.display = new Display()
     this.display.fetch()
-    setInterval(_.bind(this.display.fetch, this.display), 5000)
 
     this.sources = new SourceCollection()
     this.sources.fetch()

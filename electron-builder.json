@@ -19,7 +19,7 @@
       {"target": "tar.gz"}
     ]
   },
-  "deb": {"depends": ["imagemagick", "libreoffice-impress"]},
+  "deb": {"depends": ["libreoffice-impress"]},
   "win": {
     "target": [
       {"target": "nsis"},

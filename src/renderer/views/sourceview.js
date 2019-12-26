@@ -4,8 +4,6 @@ let _        = require('lodash');
 let $        = require('jquery');
 let Backbone = require('backbone');
 
-require('../lib/jquery.slick.js');
-
 let SourceView = Backbone.View.extend({
 
   template: _.template(`
@@ -16,27 +14,21 @@ let SourceView = Backbone.View.extend({
         <button class="small button previous"><i class="fi-arrow-left"></i></button>
         <button class="small button" disabled>
           <%
-          if (source && source.pages.length) {
-            print(currentPage + 1 + "/" + source.pages.length);
-          } else {
+          if (source)
+            print(currentPage + "/" + (numPages || '?'));
+          else
             print("-/-");
-          }
           %>
         </button>
         <button class="small button next"><i class="fi-arrow-right"></i></button>
         <button class="small button close"><i class="fi-x"></i></button>
       </div>
       <div class="source-preview" style="background-color:<%= display.bgColor %>;background-image:url(<%= display.bgImage %>);">
-        <%
-        if (source) {
-          if (source.pages.length == 0) {
-            print("<div class=\\"loading-anim\\"></div>");
-          } else {
-            for (var i = 0; i < source.pages.length; ++i)
-              print("<div><div class=\\"source-page\\" style=\\"background-image:url(" + source.pages[i] + ");\\"></div></div>");
-          }
-        }
-        %>
+        <% if (isLoading) { %>
+          <div class="loading-anim"></div>
+        <% } else { %>
+          <canvas></canvas>
+        <% } %>
       </div>
   `),
 
@@ -49,33 +41,39 @@ let SourceView = Backbone.View.extend({
   initialize: function (options) {
     this.display = options.display;
     this.source = null;
-    this.currentPage = 0;
-    this.slider = null;
+    this.currentPage = 1;
+    this.pdfpromise = null;
     this.listenTo(this.display, 'change:bgColor', this.render);
     this.listenTo(this.display, 'change:bgImage', this.render);
   },
 
   render: function () {
-    if (this.slider) {
-      this.slider.slick('unslick');
-      this.slider = null;
-    }
-
     this.$el.html(this.template({
       display    : this.display.attributes,
       source     : this.source && this.source.attributes,
-      currentPage: this.currentPage
+      numPages   : this.source && this.source.getNumPages(),
+      currentPage: this.currentPage,
+      isLoading  : this.source && !this.source.getNumPages(),
     }));
 
-    this.slider = this.$('.source-preview').slick({
-      arrows: false,
-      infinite: true,
-      slidesToShow: 1
-    });
-    this.slider.on('afterChange', _.bind(function (slick, current) {
-      this.setCurrentPage(current.currentSlide)
-    }, this));
-    this.slider.slick('goTo', this.currentPage);
+    if (this.source && !this.pdfpromise) {
+      this.pdfpromise = this.source.getPdfPage(this.currentPage);
+      this.pdfpromise.then(function (pdfpage, numPages) {
+        this.render();
+        this.pdfpromise = null; // must be after the call to render()
+
+        let viewport = pdfpage.getViewport({scale: 1});
+        let canvas = this.$('canvas').get(0);
+
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        pdfpage.render({
+          canvasContext: canvas.getContext('2d'),
+          background: this.display.bgColor,
+          viewport: viewport,
+        });
+      }.bind(this));
+    }
 
     return this;
   },
@@ -98,7 +96,7 @@ let SourceView = Backbone.View.extend({
     }
 
     this.source = source
-    this.currentPage = 0
+    this.currentPage = 1
 
     if (this.source) {
       this.source.fetch()
@@ -109,18 +107,15 @@ let SourceView = Backbone.View.extend({
   },
 
   setCurrentPage: function (page) {
-    var count = this.source.get('pages').length
+    let count = this.source && this.source.getNumPages();
 
-    if (page < 0)
-      this.currentPage = count - 1
+    if (page <= 0)
+      this.currentPage = count;
     else if (page >= count)
-      this.currentPage = 0
+      this.currentPage = 1;
     else
-      this.currentPage = page
-    this.$('button[disabled]').text(
-      this.currentPage + 1 + '/' + this.source.get('pages').length
-    )
-    this.slider.slick('goTo', this.currentPage)
+      this.currentPage = page;
+    this.render();
   }
 
 })

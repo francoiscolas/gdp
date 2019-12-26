@@ -22,9 +22,6 @@ class Source {
     this.basename = parsed.base;
     this.name     = parsed.name;
     this.extname  = parsed.ext;
-    this._slides  = [];
-
-    this.getSlides();
   }
 
   getCacheDir() {
@@ -35,8 +32,8 @@ class Source {
     return Path.join(this.getCacheDir(), this.basename.replace(RegExp(this.extname + '$'), '.pdf'));
   }
 
-  getSlides() {
-    return SlidesGenerator.enqueue(this, {force: true});
+  ensurePdfExists(options) {
+    return SlidesGenerator.enqueue(this, options);
   }
 
   deleteSlides() {
@@ -220,51 +217,26 @@ var SlidesGenerator = (function () {
 
       FS.stat(current.source.filepath, (error, srcstat) => {
         FS.stat(current.source.getPdfPath(), (error, pdfstat) => {
-          FS.readdir(dir, (error, entries) => {
-            var makeJpgs = false;
-
-            if (!pdfstat || srcstat.mtime > pdfstat.mtime) {
-              promise = ChildProcess.execFile(Binaries.libreoffice, [
-                '--headless',
-                '--convert-to', 'pdf',
-                '--outdir', dir,
-                current.source.filepath
-              ])
-              makeJpgs = true;
-            } else {
-              promise = Promise.resolve();
-            }
-            if (entries && !entries.find(entry => entry.endsWith('.jpg'))) {
-              makeJpgs = true;
-            }
-            if (makeJpgs) {
-              promise = promise.then(() => {
-                return ChildProcess.execFile(Binaries.convert, [
-                  current.source.getPdfPath(),
-                  Path.join(dir, '%07d.jpg'),
-                ], Binaries.env)
-              })
-              .catch(error => console.log(error));
-            }
-            promise
-              .then(() => {
-                return (makeJpgs) ? FS.readdir(dir) : Promise.resolve(entries);
-              })
-              .then(entries => {
-                current.source._slides = entries
-                  .filter(entry => entry.endsWith('.jpg'))
-                  .map(entry => Path.join(current.source.getCacheDir(), entry))
-                  .sort();
-                current.resolve(current.source._slides);
-                current = null;
-                this.dequeue();
-              })
-              .catch(error => {
-                console.log(error);
-                current.reject(error);
-                current = null;
-                this.dequeue();
-              });
+          if (!pdfstat || srcstat.mtime > pdfstat.mtime) {
+            promise = ChildProcess.execFile(Binaries.libreoffice, [
+              '--headless',
+              '--convert-to', 'pdf',
+              '--outdir', dir,
+              current.source.filepath
+            ]);
+          } else {
+            promise = Promise.resolve();
+          }
+          promise.then(() => {
+            current.resolve(current.source.getPdfPath());
+            current = null;
+            this.dequeue();
+          })
+          .catch(error => {
+            console.log(error);
+            current.reject(error);
+            current = null;
+            this.dequeue();
           });
         });
       });
@@ -296,18 +268,7 @@ var Binaries = (function () {
 
   return {
 
-    env: (function () {
-      var env = Process.env;
-
-      if (isDarwin) {
-        env['MAGICK_HOME'] = Path.join(root, 'ImageMagick');
-        env['MAGICK_CONFIGURE_PATH'] = Path.join(env['MAGICK_HOME'], 'etc', 'ImageMagick-7');
-        env['PATH'] += ':' + Path.join(env['MAGICK_HOME'], 'bin');
-        env['DYLD_LIBRARY_PATH'] = Path.join(env['MAGICK_HOME'], 'lib');
-        env['PATH'] += ':' + Path.join(root, 'Ghostscript', 'bin');
-      }
-      return env;
-    })(),
+    env: Process.env,
 
     libreoffice: (function () {
       if (root)
@@ -315,14 +276,6 @@ var Binaries = (function () {
           ? Path.join(root, 'LibreOffice', 'LibreOfficePortable')
           : Path.join(root, 'LibreOffice.app', 'Contents', 'MacOS', 'soffice');
       return 'libreoffice';
-    })(),
-
-    convert: (function () {
-      if (root)
-        return (isWin32)
-          ? Path.join(root, 'ImageMagick', 'convert')
-          : Path.join(root, 'ImageMagick', 'bin', 'convert');
-      return 'convert';
     })(),
 
   };

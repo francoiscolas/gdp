@@ -1,7 +1,7 @@
 var FS   = require('mz/fs');
 var Path = require('path');
 
-function Sources(App) {
+var Sources = function (App) {
 
   return {
 
@@ -19,43 +19,31 @@ function Sources(App) {
       var source = App.sources.findById(req.params.id);
 
       if (source) {
-        source.getSlides()
-          .then(slides => {
-            res.send({
-              id    : source.id,
-              name  : source.name,
-              pages: slides.map((slide, index) => req.url + '/' + index + '.jpg')
-            });
-          })
-          .catch(() => {
-            res.status(500).send('Internal Server Error');
-          });
+        res.send({
+          id     : source.id,
+          name   : source.name,
+          url    : req.url,
+          fileurl: req.url + '.pdf',
+        });
       } else {
         res.status(404).send('Not Found');
       }
     },
 
-    slide: function (req, res) {
+    download: function (req, res) {
       var source = App.sources.findById(req.params.id);
-      var i      = +req.params.i;
 
       if (source) {
-        source.getSlides()
-          .then(slides => {
-            var is;
-
-            if (i < 0 || i >= slides.length)
-              return Promise.reject();
-
-            res.setHeader('Content-Type', 'image/jpeg');
-            is = FS.createReadStream(slides[i]);
-            is.pipe(res);
+        source.ensurePdfExists({force: true})
+          .then(function (pdfPath) {
+            res.setHeader('Content-Type', 'application/pdf');
+            res.sendFile(pdfPath);
           })
           .catch(error => {
-            res.status(500).send('Internal Server Error');
+            res.sendStatus(500);
           });
       } else {
-        res.status(404).send('Not Found');
+        res.sendStatus(404);
       }
     }
 
