@@ -12,36 +12,48 @@ let SettingsView = Backbone.View.extend({
   el: '#app',
 
   template: _.template(`
-    <form action="#">
-      <div class="row">
-        <div class="small-12 columns">
-          <label for="sources-dir-btn">Dossier des sources</label>
-          <div class="input-group">
-            <input type="text" id="sources-dir-input" class="input-group-field" value="<%= App.sources.sourcesDir %>"/>
-            <div class="input-group-button">
-              <input type="button" id="sources-dir-btn" class="button" value="Parcourir...">
+    <div class="message">
+      <div class="message-body">
+        <form action="#">
+          <div class="field">
+            <label class="label" for="sources-dir-input">Dossier des sources</label>
+          </div>
+          <div class="field has-addons">
+            <div class="control">
+              <input class="input" type="text" id="sources-dir-input" value="<%= App.sources.sourcesDir %>"/>
+            </div>
+            <div class="control">
+              <input class="button" type="button" id="sources-dir-btn" value="Parcourir...">
             </div>
           </div>
-        </div>
-        <div class="small-12 columns">
-          <label for="bgcolor-input">Couleur d'arrière plan</label>
-          <input type="text" id="bg-color-input" value="<%= App.display.bgColor %>"/>
-        </div>
-        <div class="small-12 columns">
-          <label for="bg-image-input">Image d'arrière plan</label>
-          <div class="input-group">
-            <input type="text" id="bg-image-input" class="input-group-field" value="<%= App.display.bgImage %>"/>
-            <div class="input-group-button">
-              <input type="button" id="bg-image-btn" class="button" value="Parcourir...">
+          <div class="field">
+            <label class="label" for="bg-color-input">Couleur d'arrière plan</label>
+            <div class="control">
+              <input class="input" type="text" id="bg-color-input" value="<%= App.display.bgColor %>"/>
             </div>
           </div>
-        </div>
-        <div class="small-12 columns text-right actions">
-          <input type="button" id="cancel-btn" class="hollow button" value="Annuler"/>
-          <input type="submit" id="save-btn" class="hollow button" value="Enregistrer"/>
-        </div>
+          <div class="field">
+            <label class="label" for="bg-image-input">Image d'arrière plan</label>
+          </div>
+          <div class="field has-addons">
+            <div class="control">
+              <input class="input" type="text" id="bg-image-input" value="<%= App.display.bgImage %>"/>
+            </div>
+            <div class="control">
+              <input class="button" type="button" id="bg-image-btn" value="Parcourir..."/>
+            </div>
+          </div>
+          <div class="field is-grouped is-grouped-right">
+            <div class="control">
+              <input class="button" type="button" id="cancel-btn" value="Annuler"/>
+            </div>
+            <div class="control">
+              <input class="button is-primary" type="submit" id="save-btn" value="Enregistrer"/>
+            </div>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   `),
 
   events: {

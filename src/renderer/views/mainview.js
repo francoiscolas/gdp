@@ -6,8 +6,8 @@ let Backbone         = require('backbone');
 let Display          = require('../models/display');
 let DisplayView      = require('./displayview');
 let ListView         = require('./listview');
+let PreviewView      = require('./previewview');
 let SourceCollection = require('../collections/sourcecollection');
-let SourceView       = require('./sourceview');
 
 require('../lib/jquery.autocomplete');
 require('../lib/mousetrap');
@@ -57,28 +57,26 @@ let MainView = Backbone.View.extend({
   el: '#app',
 
   events: {
-    'click button#publish': 'publish'
+    'click button.publish': 'publish'
   },
 
   template: _.template(`
-    <div class="expanded collapse row">
-      <div class="large-2 columns hide-for-small-only hide-for-medium-only" id="source-list">
-        <ul class="menu vertical"></ul>
-      </div>
-      <div class="large-10 small-12 columns">
-        <div id="source-search">
-          <input type="text" placeholder="Recherche (ALT+R) ..."/>
+    <div class="column is-one-quarter">
+      <div class="panel" id="sources-panel">
+        <div class="panel-heading">Fichiers</div>
+        <div class="panel-block">
+          <p class="control has-icons-left">
+            <input class="input" type="text" placeholder="Recherche (ALT+R) ...">
+            <span class="icon is-left">
+              <i class="fas fa-search"></i>
+            </span>
+          </p>
         </div>
-        <div class="row source-display-container">
-          <div class="source-display" id="test"></div>
-          <div class="source-display" id="display"></div>
-          <button class="small button" id="publish">
-            <i class="fi-arrow-right hide-for-small-portrait"></i>
-            <i class="fi-arrow-down show-for-small-portrait"></i>
-          </button>
-        </div>
+        <div id="sources-list"></div>
       </div>
     </div>
+    <div class="column" id="test"></div>
+    <div class="column" id="display"></div>
   `),
 
   initialize: function () {
@@ -92,7 +90,7 @@ let MainView = Backbone.View.extend({
     this.sources.fetch()
     setInterval(_.bind(this.sources.fetch, this.sources), 5000)
 
-    this.testView = new SourceView({
+    this.testView = new PreviewView({
       el: '#test',
       display: this.display 
     })
@@ -103,7 +101,7 @@ let MainView = Backbone.View.extend({
     })
 
     this.listView = new ListView({
-      el: 'div#source-list ul',
+      el: 'div#sources-list',
       collection: this.sources
     })
     this.listView.on('activated', this.testView.setSource, this.testView)
@@ -141,8 +139,8 @@ let MainView = Backbone.View.extend({
   },
 
   updateSize: function () {
-    var views    = $([this.testView.el, this.displayView.el])
-    var height   = $(window).height() - $('#source-search').outerHeight()
+    var views    = $([this.testView.el, this.displayView.el]);
+    var height   = $(window).height()// - $('#source-search').outerHeight()
     var portrait =
       $(window).height() > $(window).width() || $(window).width() <= 555
 
@@ -152,9 +150,7 @@ let MainView = Backbone.View.extend({
 //        .height(height / 2)
 //        .parent().addClass('small-portrait')
 //    } else {
-      views
-        .height(height)
-        .parent().removeClass('small-portrait')
+      //views.height(height)
 //    }
   },
 

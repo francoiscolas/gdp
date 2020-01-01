@@ -5,7 +5,7 @@ let Backbone = require('backbone');
 let Router   = require('./router');
 
 require('./index.scss');
-//require('./lib/foundation');
+require('@fortawesome/fontawesome-free/js/all.js');
 
 $(function () {
   new Router();

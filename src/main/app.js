@@ -260,8 +260,8 @@ var _startSettingsWindow = function () {
     modal: true,
     icon: `${__dirname}/assets/img/icon.png`,
     show: false,
-    width: 300,
-    height: 340,
+    width: 500,
+    height: 400,
   });
   win.setMenu(null);
   win.on('ready-to-show', function () {
@@ -277,8 +277,8 @@ var startAssociateWindow = function () {
     modal: true,
     icon: `${__dirname}/assets/img/icon.png`,
     show: false,
-    width: 300,
-    height: 350,
+    width: 350,
+    height: 300,
   });
   win.setMenu(null);
   win.on('ready-to-show', function () {
@@ -295,13 +295,13 @@ var startAboutWindow = function () {
     icon: `${__dirname}/assets/img/icon.png`,
     show: false,
     width: 350,
-    height: 250,
+    height: 300,
   });
   win.setMenu(null);
   win.on('ready-to-show', function () {
     win.show();
   });
-  _loadURL(win, '#/about');
+  _loadURL(win, '#/about', true);
 };
 
 var App = module.exports = _.extend(Electron.app, {

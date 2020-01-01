@@ -3,6 +3,8 @@
 let SourceView = require('./sourceview')
 
 let DisplayView = SourceView.extend({
+  
+  viewName: 'Projection',
 
   initialize: function () {
     SourceView.prototype.initialize.apply(this, arguments)

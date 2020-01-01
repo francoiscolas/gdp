@@ -1,14 +1,5 @@
-@import './scss/foundation-settings';
-@import './scss/lib/foundation-icons';
-@import './scss/lib/foundation/foundation';
-
-@include foundation-global-styles;
-@include foundation-grid;
-@include foundation-typography;
-@include foundation-forms;
-@include foundation-button;
-@include foundation-menu;
-@include foundation-visibility-classes;
+@charset "utf-8";
+@import 'bulma/bulma.sass';
 
 html, body {
   overflow: hidden;

@@ -1,4 +1,7 @@
 body#app.settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .actions {
     position: absolute;
     bottom: 0;

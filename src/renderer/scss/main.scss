@@ -1,122 +1,90 @@
 body#app.main {
-  .autocomplete-suggestions {
-    background: $black;
-    border: 1px solid #999;
-    border-top: 0;
-    overflow: auto;
-    strong {
-      font-weight: bold;
-      color: $alert-color;
-    }
-  }
-  .autocomplete-suggestion {
-    overflow: hidden;
-    padding: 2px 5px;
-    white-space: nowrap;
-  }
-  .autocomplete-selected {
-    background: $body-background;
-  }
+  @extend .columns;
+  @extend .is-marginless;
 
-  div#source-search {
+  #sources-search {
     background: #1c1c1f;
     padding: 5px;
     input[type=text] {
       margin: 0;
     }
   }
-  div#source-list {
-    background: $black;
+
+  .autocomplete-suggestions {
+    color: $text;
+    background: $body-background-color;
+    border: 1px solid $border;
+    border-top: 0;
+    overflow: auto;
+    strong {
+      font-weight: bold;
+      color: $danger;
+    }
+  }
+  .autocomplete-suggestion {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: $size-6/2 $size-7;
+  }
+  .autocomplete-selected {
+    color: $link-invert;
+    background: $link;
+  }
+
+  #sources-panel {
     height: 100%;
-    margin: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: absolute;
-    ul, li {
-      border-bottom: 1px solid #1c1c1f;
+    #sources-list {
       a {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        span:last-child {
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
       }
     }
   }
-  .source-display-container {
-    position: relative;
-  }
-  .source-display {
-    @include grid-column(6);
-    position: relative;
-    .small-portrait & {
-      @include grid-column(12);
+
+  .source-panel {
+    @extend .is-relative;
+    height: 100%;
+    .source-actions {
+      .level-left {
+        width: calc(100% - 270px);
+        .subtitle {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
     }
-    h5 {
+    .progress {
+      @extend .is-marginless;
+      @extend .is-radiusless;
       position: absolute;
-      left: 7px;
-      top: 0px;
-      right: 180px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      display: none;
+      height: 7px;
     }
-    div.source-preview {
+    .source-content {
       background-color: black;
       background-position: center center;
       background-repeat: no-repeat;
       background-size: contain;
-      position: absolute;
-      left: 5px;
-      top: 29px;
-      right: 5px;
-      bottom: 5px;
-      overflow: hidden;
+      width: 100%;
+      //
+      //position: absolute;
+      //top: 102px;
+      //bottom: 0;
+      // or
+      height: calc(100% - 102px);
+      //
       display: flex;
       align-items: center;
       canvas {
         width: 100%;
+        max-width: 100%;
       }
-      .loading-anim {
-        background: url(images/loading-anim.svg) no-repeat center;
-        width: 100%;
-        height: 100%;
-      }
-    }
-    div.source-actions {
-      position: absolute;
-      top: 0px;
-      right: 5px;
-      button[disabled] {
-        opacity: 1;
-        width: 65px;
-      }
-      z-index: 10;
-    }
-  }
-  button#publish {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100px;
-    height: 40px;
-    font-size: 20pt;
-    padding: 0;
-    margin: auto;
-    z-index: 1000;
-    .small-portrait & {
-      width: 40px;
-      height: 100px;
-      margin: auto auto auto 10%;
-      .hide-for-small-portrait {
-        display: none;
-      }
-      .show-for-small-portrait {
-        display: block;
-      }
-    }
-    .show-for-small-portrait {
-      display: none;
     }
   }
 }

@@ -1,5 +1,8 @@
 body#app.associate {
-  .fi-mobile-signal {
-    font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ol {
+    padding: $gap $gap/2 0;
   }
 }

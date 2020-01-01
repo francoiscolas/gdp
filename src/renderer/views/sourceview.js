@@ -6,30 +6,43 @@ let Backbone = require('backbone');
 
 let SourceView = Backbone.View.extend({
 
+  viewName: '?',
+
   template: _.template(`
-      <% if (source) { %>
-        <h5><%= source.name %></h5>
-      <% } %>
-      <div class="source-actions">
-        <button class="small button previous"><i class="fi-arrow-left"></i></button>
-        <button class="small button" disabled>
-          <%
-          if (source)
-            print(currentPage + "/" + (numPages || '?'));
-          else
-            print("-/-");
-          %>
-        </button>
-        <button class="small button next"><i class="fi-arrow-right"></i></button>
-        <button class="small button close"><i class="fi-x"></i></button>
+    <div class="panel source-panel">
+      <div class="panel-heading"><%= this.viewName %></div>
+      <div class="panel-block is-block source-actions">
+        <div class="level">
+          <div class="level-left">
+            <div class="subtitle">
+              <%
+              if (this.source)
+                print(this.source.get('name'))
+              %>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="buttons are-small">
+              <button class="button previous"><i class="fas fa-arrow-left"></i></button>
+              <button class="button" disabled>
+                <%
+                if (this.source)
+                  print(this.currentPage + "/" + (this.source.getNumPages() || '?'));
+                else
+                  print("-/-");
+                %>
+              </button>
+              <button class="button next"><i class="fas fa-arrow-right"></i></button>
+              <button class="button close"><i class="fas fa-times"></i></button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="source-preview" style="background-color:<%= display.bgColor %>;background-image:url(<%= display.bgImage %>);">
-        <% if (isLoading) { %>
-          <div class="loading-anim"></div>
-        <% } else { %>
-          <canvas></canvas>
-        <% } %>
+      <progress class="progress is-info" max="100">15%</progress>
+      <div class="source-content">
+        <canvas></canvas>
       </div>
+    </div>
   `),
 
   events: {
@@ -43,35 +56,44 @@ let SourceView = Backbone.View.extend({
     this.source = null;
     this.currentPage = 1;
     this.pdfpromise = null;
+    this.canvas = null;
+    this.$content = null;
     this.listenTo(this.display, 'change:bgColor', this.render);
     this.listenTo(this.display, 'change:bgImage', this.render);
   },
 
   render: function () {
-    this.$el.html(this.template({
-      display    : this.display.attributes,
-      source     : this.source && this.source.attributes,
-      numPages   : this.source && this.source.getNumPages(),
-      currentPage: this.currentPage,
-      isLoading  : this.source && !this.source.getNumPages(),
-    }));
+    if (this.$el.is(':empty')) {
+      this.$el.html(this.template());
+      this.canvas = this.$('canvas').get(0);
+      this.$content = this.$('.source-content');
+    }
+
+    this.canvas.width = this.canvas.width;
+    this.$content.css({
+      'background-color': this.display.get('bgColor'),
+      'background-image': this.display.has('bgImage') ?
+        `url(${this.display.get('bgImage')})` : 'none',
+    });
 
     if (this.source && !this.pdfpromise) {
+      this.$('progress').show();
       this.pdfpromise = this.source.getPdfPage(this.currentPage);
       this.pdfpromise.then(function (pdfpage, numPages) {
-        this.render();
-        this.pdfpromise = null; // must be after the call to render()
+        this.pdfpromise = null;
 
-        let viewport = pdfpage.getViewport({scale: 1});
-        let canvas = this.$('canvas').get(0);
+          let viewport = pdfpage.getViewport({scale: 1});
+          let ratio = this.canvas.clientWidth / viewport.width;
 
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-        pdfpage.render({
-          canvasContext: canvas.getContext('2d'),
-          background: this.display.bgColor,
-          viewport: viewport,
-        });
+          viewport = pdfpage.getViewport({scale: ratio});
+          this.canvas.width = viewport.width;
+          this.canvas.height = viewport.height;
+          pdfpage.render({
+            canvasContext: this.canvas.getContext('2d'),
+            background: this.display.bgColor,
+            viewport: viewport,
+          });
+          this.$('progress').hide();
       }.bind(this));
     }
 
@@ -111,7 +133,7 @@ let SourceView = Backbone.View.extend({
 
     if (page <= 0)
       this.currentPage = count;
-    else if (page >= count)
+    else if (page > count)
       this.currentPage = 1;
     else
       this.currentPage = page;

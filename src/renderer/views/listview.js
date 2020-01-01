@@ -7,13 +7,16 @@ let Backbone = require('backbone');
 let ListView = Backbone.View.extend({
 
   events: {
-    'click li': '_onClick'
+    'click a': '_onClick'
   },
 
   template: _.template(`
-    <li>
-      <a><%= source.get("name") %></a>
-    </li>
+    <a class="panel-block">
+      <span class="panel-icon">
+        <i class="fas fa-book"></i>
+      </span>
+      <span><%= source.get("name") %></span>
+    </a>
   `),
 
   initialize: function () {
@@ -31,8 +34,8 @@ let ListView = Backbone.View.extend({
   },
 
   addSource: function (source) {
-    var li = this.template({source: source})
-    this.$el.append($(li).data('source', source))
+    var a = this.template({source: source})
+    this.$el.append($(a).data('source', source))
   },
 
   removeSource: function (source) {
