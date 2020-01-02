@@ -29,14 +29,14 @@ var _initSettings = function () {
   App.settings.set('version', version);
 
   // Defaults
-  App.settings.setAll(App.settings.getAll(), {
+  App.settings.setAll(_.defaults(App.settings.getAll(), {
     httpPort: 3333,
     display: {
       bgColor: 'black',
       bgImage: null,
     },
     sourcesDir: null,
-  });
+  }));
 
   return Promise.resolve();
 };
