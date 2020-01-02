@@ -14,7 +14,7 @@ let PreviewView = SourceView.extend({
     SourceView.prototype.render.apply(this, arguments);
     if (this.$('button.publish').length == 0) {
       this.$('.buttons').append(`
-        <button class="button publish">
+        <button class="button is-danger is-outlined publish">
           <span class="icon">
             <i class="fas fa-arrow-right"></i>
           </span>
