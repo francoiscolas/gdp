@@ -35,6 +35,8 @@ body#app.main {
   #sources-panel {
     height: 100%;
     #sources-list {
+      height: calc(100% - 112px);
+      overflow-y: auto;
       a {
         span:last-child {
           width: 100%;
