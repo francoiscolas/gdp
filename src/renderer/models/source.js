@@ -2,7 +2,8 @@
 
 let Backbone = require('backbone');
 
-let PDFJS    = require('../lib/pdf');
+let PDFJS = require('../lib/pdf');
+let PDFJSWorker = require('../lib/pdf.worker.js'); // ensure it's included in the build
 PDFJS.GlobalWorkerOptions.workerSrc = '../lib/pdf.worker.js';
 
 var Source = Backbone.Model.extend({
