@@ -9,6 +9,7 @@
   "extraResources": [
     {"from": "build/www/", "to": "www/", "filter": "**/*"},
     {"from": "app/", "to": "www/", "filter": "renderer.js"},
+    {"from": "build/", "to": ".", "filter": "icon.png"},
     {"from": "build/${os}/", "to": ".", "filter": "**/*"}
   ],
   "linux": {

@@ -138,7 +138,7 @@ var _loadURL = function (window, hashtag, noDevTools) {
 var _startMainWindow = function () {
   return new Promise(function (resolve, reject) {
     App.mainWindow = new Electron.BrowserWindow({
-      icon: `${__dirname}/assets/img/icon.png`,
+      icon: App.getIcon(),
       show: false,
       width: 1200,
       height: 600,
@@ -213,7 +213,7 @@ var _startMainWindow = function () {
 var _startScreenWindow = function () {
   return new Promise(function (resolve, reject) {
     App.screenWindow = new Electron.BrowserWindow({
-      icon: `${__dirname}/assets/img/icon.png`,
+      icon: App.getIcon(),
       show: false
     });
     _loadURL(App.screenWindow, '#/screen');
@@ -258,7 +258,7 @@ var _startSettingsWindow = function () {
     webPreferences: {nodeIntegration: true},
     parent: App.mainWindow,
     modal: true,
-    icon: `${__dirname}/assets/img/icon.png`,
+    icon: App.getIcon(),
     show: false,
     width: 500,
     height: 400,
@@ -275,7 +275,7 @@ var startAssociateWindow = function () {
     webPreferences: {nodeIntegration: true},
     parent: App.mainWindow,
     modal: true,
-    icon: `${__dirname}/assets/img/icon.png`,
+    icon: App.getIcon(),
     show: false,
     width: 350,
     height: 300,
@@ -292,7 +292,7 @@ var startAboutWindow = function () {
     webPreferences: {nodeIntegration: true},
     parent: App.mainWindow,
     modal: true,
-    icon: `${__dirname}/assets/img/icon.png`,
+    icon: App.getIcon(),
     show: false,
     width: 350,
     height: 300,
@@ -326,6 +326,12 @@ var App = module.exports = _.extend(Electron.app, {
     return new Promise(function (resolve, reject) {
       App.whenReady().then(_.bind(_launch, _launch, resolve, reject))
     });
-  })
+  }),
+
+  getIcon: function () {
+    if (App.isDev)
+      return Path.resolve(process.cwd(), 'build', 'icon.png');
+    return Path.resolve(process.resourcesPath, 'icon.png');
+  }
 
 });
