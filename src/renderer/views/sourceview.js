@@ -14,24 +14,12 @@ let SourceView = Backbone.View.extend({
       <div class="panel-block is-block source-actions">
         <div class="level">
           <div class="level-left">
-            <div class="subtitle">
-              <%
-              if (this.source)
-                print(this.source.get('name'))
-              %>
-            </div>
+            <div class="subtitle"></div>
           </div>
           <div class="level-right">
             <div class="buttons are-small">
               <button class="button previous"><i class="fas fa-arrow-left"></i></button>
-              <button class="button" disabled>
-                <%
-                if (this.source)
-                  print(this.currentPage + "/" + (this.source.getNumPages() || '?'));
-                else
-                  print("-/-");
-                %>
-              </button>
+              <button class="button" disabled></button>
               <button class="button next"><i class="fas fa-arrow-right"></i></button>
               <button class="button close"><i class="fas fa-times"></i></button>
             </div>
@@ -56,8 +44,10 @@ let SourceView = Backbone.View.extend({
     this.source = null;
     this.currentPage = 1;
     this.pdfpromise = null;
-    this.canvas = null;
+    this.$subtitle = null;
+    this.$pages = null;
     this.$content = null;
+    this.canvas = null;
     this.listenTo(this.display, 'change:bgColor', this.render);
     this.listenTo(this.display, 'change:bgImage', this.render);
   },
@@ -65,35 +55,43 @@ let SourceView = Backbone.View.extend({
   render: function () {
     if (this.$el.is(':empty')) {
       this.$el.html(this.template());
-      this.canvas = this.$('canvas').get(0);
+      this.$subtitle = this.$('.subtitle');
+      this.$pages = this.$('button:disabled');
       this.$content = this.$('.source-content');
+      this.canvas = this.$('canvas').get(0);
     }
 
-    this.canvas.width = this.canvas.width;
+    this.$subtitle.text('');
+    this.$pages.text('-/-');
     this.$content.css({
       'background-color': this.display.get('bgColor'),
       'background-image': this.display.has('bgImage') ?
         `url(${this.display.get('bgImage')})` : 'none',
     });
+    this.canvas.width = this.canvas.width;
 
     if (this.source && !this.pdfpromise) {
+      this.$subtitle.text(this.source.get('name'));
       this.$('progress').show();
+
       this.pdfpromise = this.source.getPdfPage(this.currentPage);
       this.pdfpromise.then(function (pdfpage, numPages) {
         this.pdfpromise = null;
 
-          let viewport = pdfpage.getViewport({scale: 1});
-          let ratio = this.canvas.clientWidth / viewport.width;
+        let viewport = pdfpage.getViewport({scale: 1});
+        let ratio = this.canvas.clientWidth / viewport.width;
 
-          viewport = pdfpage.getViewport({scale: ratio});
-          this.canvas.width = viewport.width;
-          this.canvas.height = viewport.height;
-          pdfpage.render({
-            canvasContext: this.canvas.getContext('2d'),
-            background: this.display.bgColor,
-            viewport: viewport,
-          });
-          this.$('progress').hide();
+        viewport = pdfpage.getViewport({scale: ratio});
+        this.canvas.width = viewport.width;
+        this.canvas.height = viewport.height;
+        pdfpage.render({
+          canvasContext: this.canvas.getContext('2d'),
+          background: this.display.bgColor,
+          viewport: viewport,
+        });
+
+        this.$pages.text(this.currentPage + "/" + (this.source.getNumPages() || '?'));
+        this.$('progress').hide();
       }.bind(this));
     }
 
