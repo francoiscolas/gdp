@@ -88,6 +88,10 @@ class Sources extends EventEmitter {
     return this._sources.map(callback, thisArg || this);
   }
 
+  filter(callback, thisArg) {
+    return this._sources.filter(callback, thisArg || this);
+  }
+
   add() {
     return this._sources.push.apply(this._sources, arguments);
   }
@@ -170,7 +174,7 @@ class Sources extends EventEmitter {
             this.add(new Source(this, Path.join(this.sourcesDir, entry)));
         });
 
-        removed = Array.from(this).filter(source => {
+        removed = this.filter(source => {
           return !entries.includes(Path.basename(source.filepath));
         });
         removed.forEach(source => {
