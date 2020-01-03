@@ -6,6 +6,9 @@ var FS           = require('mz/fs');
 var Path         = require('path');
 var Process      = require('process');
 var ChildProcess = require('mz/child_process');
+var Log          = require('electron-log');
+
+var TAG = 'sources.js';
 
 var MD5 = function (text) {
   return require('crypto').createHash('md5').update(text).digest('hex');
@@ -63,6 +66,10 @@ class Sources extends EventEmitter {
     this._indexing = false;
     this._walking = false;
     this._watcher = null;
+  }
+
+  get length() {
+    return this._sources.length;
   }
 
   find(callback, thisArg) {
@@ -124,7 +131,7 @@ class Sources extends EventEmitter {
   _startIndexing() {
     if (this._indexing)
       return ;
-    this.length = 0;
+    this._sources.length = 0;
     this._indexing = true;
     this._watcher = FS.watch(this.sourcesDir, _.bind(this._walk, this));
     this._walk();
@@ -187,6 +194,7 @@ var SlidesGenerator = (function () {
   return {
 
     enqueue: function (source, options) {
+      Log.debug(`${TAG}/SlidesGenerator.enqueue> source.id=${source.id}`);
       return new Promise((resolve, reject) => {
         var data = {
           source : source,
@@ -215,6 +223,7 @@ var SlidesGenerator = (function () {
       current = queue.shift();
       dir = current.source.getCacheDir();
 
+      Log.debug(`${TAG}/SlidesGenerator.dequeue> source.id=${current.source.id}> PDF being generating`);
       FS.stat(current.source.filepath, (error, srcstat) => {
         FS.stat(current.source.getPdfPath(), (error, pdfstat) => {
           if (!pdfstat || srcstat.mtime > pdfstat.mtime) {
@@ -228,6 +237,7 @@ var SlidesGenerator = (function () {
             promise = Promise.resolve();
           }
           promise.then(() => {
+            Log.debug(`${TAG}/SlidesGenerator.dequeue> source.id=${current.source.id}> PDF generated`);
             current.resolve(current.source.getPdfPath());
             current = null;
             this.dequeue();

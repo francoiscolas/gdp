@@ -1,11 +1,15 @@
 var FS   = require('mz/fs');
 var Path = require('path');
+var Log  = require('electron-log');
+
+var TAG  = 'api/sources.js';
 
 var Sources = function (App) {
 
   return {
 
     index: function (req, res) {
+      Log.debug(`${TAG}/index> ip=${req.connection.remoteAddress}> ${App.sources.length} sources`);
       res.send(App.sources.map(source => {
         return {
           id  : source.id,
@@ -16,6 +20,7 @@ var Sources = function (App) {
     },
 
     show: function (req, res) {
+      Log.debug(`${TAG}/show> ip=${req.connection.remoteAddress}> id=${req.params.id}`);
       var source = App.sources.findById(req.params.id);
 
       if (source) {
@@ -26,11 +31,13 @@ var Sources = function (App) {
           fileurl: req.url + '.pdf',
         });
       } else {
+        Log.warn(`${TAG}/show> source ${req.params.id} not found`);
         res.status(404).send('Not Found');
       }
     },
 
     download: function (req, res) {
+      Log.debug(`${TAG}/download> ip=${req.connection.remoteAddress}> id=${req.params.id}`);
       var source = App.sources.findById(req.params.id);
 
       if (source) {
@@ -40,9 +47,11 @@ var Sources = function (App) {
             res.sendFile(pdfPath);
           })
           .catch(error => {
+            Log.error(`${TAG}/download> source ${req.params.id}> ${error}`);
             res.sendStatus(500);
           });
       } else {
+        Log.warn(`${TAG}/download> source ${req.params.id} not found`);
         res.sendStatus(404);
       }
     }
