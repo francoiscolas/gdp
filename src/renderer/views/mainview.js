@@ -61,7 +61,7 @@ let MainView = Backbone.View.extend({
   },
 
   template: _.template(`
-    <div class="column is-one-quarter hero is-fullheight" id="sources-panel">
+    <div class="column is-one-quarter hero" id="sources-panel">
       <div id="sources-search">
         <div class="control has-icons-left">
           <input class="input" type="text" placeholder="Recherche (ALT+R) ...">
@@ -70,7 +70,7 @@ let MainView = Backbone.View.extend({
           </span>
         </div>
       </div>
-      <div id="sources-list"></div>
+      <div class="is-hidden-mobile" id="sources-list"></div>
     </div>
     <div class="column" id="test"></div>
     <div class="column" id="display"></div>

@@ -12,7 +12,7 @@ let SourceView = Backbone.View.extend({
     <div class="panel source-panel">
       <div class="panel-heading"><%= this.viewName %></div>
       <div class="panel-block is-block source-actions">
-        <div class="level">
+        <div class="level is-mobile">
           <div class="level-left">
             <div class="subtitle"></div>
           </div>

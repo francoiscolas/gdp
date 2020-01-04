@@ -4,12 +4,11 @@ body#app.main {
 
   #sources-panel {
     background: $light;
-    #sources-search {
-      padding-bottom: $block-spacing / 2;
-    }
+    min-height: 100vh;
     #sources-list {
-      height: calc(100% - 52px);
+      height: calc(100% - 40px);
       overflow-y: auto;
+      padding-top: $block-spacing / 2;
       .item {
         display: flex;
         align-items: center;
@@ -26,6 +25,11 @@ body#app.main {
           white-space: nowrap;
         }
       }
+    }
+  }
+  @include mobile {
+    #sources-panel {
+      min-height: auto;
     }
   }
 
@@ -53,6 +57,7 @@ body#app.main {
 
   .source-panel {
     @extend .is-relative;
+
     height: 100%;
     .source-actions {
       .level-left {

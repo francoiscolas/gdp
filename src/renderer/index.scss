@@ -1,9 +1,11 @@
 @charset "utf-8";
 @import 'bulma/bulma.sass';
 
-html, body {
-  overflow: hidden;
-  height: 100%;
+@include tablet {
+  html, body {
+    overflow: hidden;
+    height: 100%;
+  }
 }
 
 @import './scss/main';
