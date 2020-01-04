@@ -61,7 +61,7 @@ let SourceView = Backbone.View.extend({
       this.canvas = this.$('canvas').get(0);
     }
 
-    this.$subtitle.text('');
+    this.$subtitle.text(this.source ? this.source.get('name') : '');
     this.$pages.text('-/-');
     this.$content.css({
       'background-color': this.display.get('bgColor'),
@@ -71,7 +71,6 @@ let SourceView = Backbone.View.extend({
     this.canvas.width = this.canvas.width;
 
     if (this.source && !this.pdfpromise) {
-      this.$subtitle.text(this.source.get('name'));
       this.$('progress').show();
 
       this.pdfpromise = this.source.getPdfPage(this.currentPage);
