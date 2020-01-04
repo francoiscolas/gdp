@@ -17,7 +17,7 @@ let SourceView = Backbone.View.extend({
             <div class="subtitle"></div>
           </div>
           <div class="level-right">
-            <div class="buttons are-small">
+            <div class="buttons has-addons are-small">
               <button class="button previous"><i class="fas fa-arrow-left"></i></button>
               <button class="button" disabled></button>
               <button class="button next"><i class="fas fa-arrow-right"></i></button>

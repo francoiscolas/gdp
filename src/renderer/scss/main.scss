@@ -60,6 +60,9 @@ body#app.main {
           white-space: nowrap;
         }
       }
+      .level-right .publish {
+        margin-left: $block-spacing;
+      }
     }
     .progress {
       @extend .is-marginless;
