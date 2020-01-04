@@ -61,19 +61,16 @@ let MainView = Backbone.View.extend({
   },
 
   template: _.template(`
-    <div class="column is-one-quarter">
-      <div class="panel" id="sources-panel">
-        <div class="panel-heading">Fichiers</div>
-        <div class="panel-block">
-          <p class="control has-icons-left">
-            <input class="input" type="text" placeholder="Recherche (ALT+R) ...">
-            <span class="icon is-left">
-              <i class="fas fa-search"></i>
-            </span>
-          </p>
+    <div class="column is-one-quarter hero is-fullheight" id="sources-panel">
+      <div id="sources-search">
+        <div class="control has-icons-left">
+          <input class="input" type="text" placeholder="Recherche (ALT+R) ...">
+          <span class="icon is-left">
+            <i class="fas fa-search"></i>
+          </span>
         </div>
-        <div id="sources-list"></div>
       </div>
+      <div id="sources-list"></div>
     </div>
     <div class="column" id="test"></div>
     <div class="column" id="display"></div>

@@ -11,9 +11,9 @@ let ListView = Backbone.View.extend({
   },
 
   template: _.template(`
-    <a class="panel-block">
-      <span class="panel-icon">
-        <i class="fas fa-book"></i>
+    <a class="item">
+      <span class="icon">
+        <i class="fas fa-file-powerpoint"></i>
       </span>
       <span><%= source.get("name") %></span>
     </a>

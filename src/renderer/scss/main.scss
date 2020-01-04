@@ -2,11 +2,30 @@ body#app.main {
   @extend .columns;
   @extend .is-marginless;
 
-  #sources-search {
-    background: #1c1c1f;
-    padding: 5px;
-    input[type=text] {
-      margin: 0;
+  #sources-panel {
+    background: $light;
+    #sources-search {
+      padding-bottom: $block-spacing / 2;
+    }
+    #sources-list {
+      height: calc(100% - 52px);
+      overflow-y: auto;
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: $text;
+        padding: 10px 0;
+        &:hover {
+          background: $grey-lightest;
+        }
+        span:last-child {
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
     }
   }
 
@@ -30,22 +49,6 @@ body#app.main {
   .autocomplete-selected {
     color: $link-invert;
     background: $link;
-  }
-
-  #sources-panel {
-    height: 100%;
-    #sources-list {
-      height: calc(100% - 112px);
-      overflow-y: auto;
-      a {
-        span:last-child {
-          width: 100%;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-      }
-    }
   }
 
   .source-panel {
