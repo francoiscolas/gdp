@@ -63,8 +63,13 @@ body#app.main {
           white-space: nowrap;
         }
       }
-      .level-right .publish {
-        margin-left: $block-spacing;
+      .level-right {
+        button[disabled] {
+          min-width: 50px;
+        }
+        .publish {
+          margin-left: $block-spacing;
+        }
       }
     }
     .progress {
