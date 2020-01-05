@@ -21,10 +21,6 @@ let AboutView = Backbone.View.extend({
     </div>
   `),
 
-  initialize: function () {
-    this.$el.addClass('about');
-  },
-
   render: function () {
     this.$el.html(this.template({App: App}));
   },

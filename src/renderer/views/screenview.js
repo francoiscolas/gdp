@@ -26,8 +26,6 @@ var ScreenView = Backbone.View.extend({
 
     this.listenTo(this.settings, 'change', this.render);
     this.listenTo(this.sources, 'add', this.render);
-
-    this.$el.addClass('screen');
   },
 
   render: function () {

@@ -1,10 +1,16 @@
-body#app.main {
+@include mobile {
+  html.ep-index, html.ep-index body {
+    overflow: auto;
+    height: auto;
+  }
+}
+html.ep-index body {
   @extend .columns;
   @extend .is-marginless;
 
   #sources-panel {
     background: $light;
-    min-height: 100vh;
+    min-height: auto;
     #sources-list {
       height: calc(100% - 40px);
       overflow-y: auto;
@@ -25,11 +31,6 @@ body#app.main {
           white-space: nowrap;
         }
       }
-    }
-  }
-  @include mobile {
-    #sources-panel {
-      min-height: auto;
     }
   }
 

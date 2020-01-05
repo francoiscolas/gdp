@@ -1,6 +1,7 @@
 'use strict';
 
 let _        = require('lodash');
+let $        = require('jquery');
 let Backbone = require('backbone');
 
 class Router extends Backbone.Router {
@@ -11,6 +12,11 @@ class Router extends Backbone.Router {
     this.route('settings', 'settings');
     this.route('associate', 'associate');
     this.route('about', 'about');
+  }
+
+  execute(callback, args, name) {
+    super.execute(callback, args, name);
+    $('html').addClass('ep-' + name);
   }
 
   index() {

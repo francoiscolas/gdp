@@ -44,23 +44,18 @@ let SourceView = Backbone.View.extend({
     this.source = null;
     this.currentPage = 1;
     this.pdfpromise = null;
-    this.$subtitle = null;
-    this.$pages = null;
-    this.$content = null;
-    this.canvas = null;
+
+    this.$el.html(this.template());
+    this.$subtitle = this.$('.subtitle');
+    this.$pages = this.$('button:disabled');
+    this.$content = this.$('.source-content');
+    this.canvas = this.$('canvas').get(0);
+
     this.listenTo(this.display, 'change:bgColor', this.render);
     this.listenTo(this.display, 'change:bgImage', this.render);
   },
 
   render: function () {
-    if (this.$el.is(':empty')) {
-      this.$el.html(this.template());
-      this.$subtitle = this.$('.subtitle');
-      this.$pages = this.$('button:disabled');
-      this.$content = this.$('.source-content');
-      this.canvas = this.$('canvas').get(0);
-    }
-
     this.$subtitle.text(this.source ? this.source.get('name') : '');
     this.$pages.text('-/-');
     this.$content.css({

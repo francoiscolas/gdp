@@ -77,7 +77,6 @@ let MainView = Backbone.View.extend({
   `),
 
   initialize: function () {
-    this.$el.addClass('main')
     this.$el.html(this.template())
 
     this.display = new Display()

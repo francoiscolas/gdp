@@ -63,10 +63,6 @@ let SettingsView = Backbone.View.extend({
     'click #cancel-btn'     : 'close',
   },
 
-  initialize: function () {
-    this.$el.addClass('settings');
-  },
-
   $bgColor: function () {
     return this.$('#bg-color-input');
   },

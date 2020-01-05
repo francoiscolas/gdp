@@ -27,10 +27,6 @@ let AssociateView = Backbone.View.extend({
     </div>
   `),
 
-  initialize: function () {
-    this.$el.addClass('associate');
-  },
-
   render: function () {
     this.$el.html(this.template({
       ip: _.reduce(OS.networkInterfaces(), function (memo, addresses) {
