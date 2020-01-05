@@ -19,7 +19,6 @@ var _versionStringToInt = function (str) {
 
 var _initSettings = function () {
   var version = _versionStringToInt(App.getVersion());
-  console.log(version);
 
   App.settings = require('electron-settings');
   if (App.settings.get('version') == 0x020000) {

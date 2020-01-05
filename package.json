@@ -1,7 +1,7 @@
 {
   "name": "gdp",
   "productName": "Groupe de Prière",
-  "version": "2.1.0",
+  "version": "2.2-beta",
   "license": "MIT",
   "description": "Logiciel pour gérer l'affichage de plusieurs présentations (ppt, pps, odp, etc...).",
   "author": "François Colas <francoiscolas@gmail.com>",
