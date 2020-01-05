@@ -1,0 +1,26 @@
+os: linux
+language: generic
+
+branches:
+  only:
+    - master
+    - develop
+
+script:
+  - |
+    docker run --rm $ENVS \
+      -e GH_TOKEN=$GH_TOKEN -e EP_PRE_RELEASE=$EP_PRE_RELEASE \
+      -v ${PWD}:/project \
+      -v ~/.cache/electron:/root/.cache/electron \
+      -v ~/.cache/electron-builder:/root/.cache/electron-builder \
+      electronuserland/builder:wine \
+      /bin/bash -c "yarn --link-duplicates --pure-lockfile && yarn dist --linux --win --publish always"
+
+before_cache:
+  - rm -rf $HOME/.cache/electron-builder/wine
+
+cache:
+  directories:
+    - node_modules
+    - $HOME/.cache/electron
+    - $HOME/.cache/electron-builder

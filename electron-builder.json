@@ -14,24 +14,14 @@
   ],
   "linux": {
     "category": "Utility",
-    "target": [
-      {"target": "deb"},
-      {"target": "AppImage"},
-      {"target": "tar.gz"}
-    ]
+    "target": ["tar.gz", "AppImage"]
   },
   "deb": {"depends": ["libreoffice-impress"]},
   "win": {
-    "target": [
-      {"target": "nsis"},
-      {"target": "zip"}
-    ]
+    "target": ["zip", "nsis"]
   },
   "nsis": {"oneClick": false},
   "mac": {
-    "target": [
-      {"target": "dmg"},
-      {"target": "zip"}
-    ]
+    "target": ["zip"]
   }
 }
