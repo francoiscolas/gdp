@@ -10,15 +10,16 @@ var _versionStringToInt = function (str) {
   var parts = str.split('.');
   var result = 0;
 
-  for (var i = 0; i < parts.length; i++) {
+  for (var i = 0; i < 3; i++) {
     result *= 100;
-    result += parseInt(parts[i]);
+    result += parseInt(parts[i] || 0);
   }
   return result;
 };
 
 var _initSettings = function () {
   var version = _versionStringToInt(App.getVersion());
+  console.log(version);
 
   App.settings = require('electron-settings');
   if (App.settings.get('version') == 0x020000) {
