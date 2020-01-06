@@ -29,7 +29,8 @@ var ScreenView = Backbone.View.extend({
   },
 
   render: function () {
-    let bgImage = this.settings.get('bgImage') || '';
+    let bgImage = (!this.settings.get('sourceId')
+      && this.settings.get('bgImage')) || '';
 
     this.$el.html('<canvas></canvas>');
     this.$el.css('background-color', this.settings.get('bgColor'));
@@ -43,9 +44,13 @@ var ScreenView = Backbone.View.extend({
         this.pdfpromise.then(function (pdfpage) {
           this.pdfpromise = null;
 
+          let $canvas  = this.$('canvas').css({width: '100%', height: 'auto'});
+          let canvas   = $canvas.get(0);
           let viewport = pdfpage.getViewport({scale: 1});
-          let canvas = this.$('canvas').get(0);
+          let canHeight = $canvas.width() * viewport.height / viewport.width;
 
+          if (canHeight > $canvas.parent().height())
+            $canvas.css({width: 'auto', height: '100%'});
           canvas.width = viewport.width;
           canvas.height = viewport.height;
           pdfpage.render({

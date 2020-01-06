@@ -49,33 +49,43 @@ let SourceView = Backbone.View.extend({
     this.$subtitle = this.$('.subtitle');
     this.$pages = this.$('button:disabled');
     this.$content = this.$('.source-content');
-    this.canvas = this.$('canvas').get(0);
+    this.$canvas = this.$('canvas');
+    this.canvas = this.$canvas.get(0);
 
     this.listenTo(this.display, 'change:bgColor', this.render);
     this.listenTo(this.display, 'change:bgImage', this.render);
+
+    $(window).on('resize.' + this.cid, _.debounce(this.render.bind(this), 100));
+  },
+
+  remove: function () {
+    Backbone.View.prototype.remove.apply(this, arguments);
+
+    $(window).off('resize.' + this.cid);
+    return this;
   },
 
   render: function () {
     this.$subtitle.text(this.source ? this.source.get('name') : '');
-    this.$pages.text('-/-');
     this.$content.css({
       'background-color': this.display.get('bgColor'),
-      'background-image': this.display.has('bgImage') ?
+      'background-image': !this.source && this.display.has('bgImage') ?
         `url(${this.display.get('bgImage')})` : 'none',
     });
     this.canvas.width = this.canvas.width;
 
     if (this.source && !this.pdfpromise) {
-      this.$('progress').show();
-
+      this.setLoading(true);
       this.pdfpromise = this.source.getPdfPage(this.currentPage);
       this.pdfpromise.then(function (pdfpage, numPages) {
         this.pdfpromise = null;
+        this.$canvas.css({width: '100%', height: 'auto'});
 
         let viewport = pdfpage.getViewport({scale: 1});
-        let ratio = this.canvas.clientWidth / viewport.width;
+        let canHeight = this.$canvas.width() * viewport.height / viewport.width;
 
-        viewport = pdfpage.getViewport({scale: ratio});
+        if (canHeight > this.$canvas.parent().height())
+          this.$canvas.css({width: 'auto', height: '100%'});
         this.canvas.width = viewport.width;
         this.canvas.height = viewport.height;
         pdfpage.render({
@@ -84,8 +94,8 @@ let SourceView = Backbone.View.extend({
           viewport: viewport,
         });
 
-        this.$pages.text(this.currentPage + "/" + (this.source.getNumPages() || '?'));
-        this.$('progress').hide();
+        this.setLoading(false);
+        this.updateCurrentPageUi();
       }.bind(this));
     }
 
@@ -105,23 +115,12 @@ let SourceView = Backbone.View.extend({
   },
 
   setSource: function (source) {
-    if (this.source) {
-      this.stopListening(this.source)
-    }
-
     this.source = source
-    this.currentPage = 1
-
-    if (this.source) {
-      this.source.fetch()
-      this.listenTo(this.source, 'change', this.render)
-    }
-
-    this.render()
+    this.setCurrentPage(1);
   },
 
-  setCurrentPage: function (page) {
-    let count = this.source && this.source.getNumPages();
+  setCurrentPage: function (page, options) {
+    let count = (this.source && this.source.getNumPages()) || 0;
 
     if (page <= 0)
       this.currentPage = count;
@@ -129,7 +128,18 @@ let SourceView = Backbone.View.extend({
       this.currentPage = 1;
     else
       this.currentPage = page;
+
+    this.updateCurrentPageUi();
     this.render();
+  },
+
+  updateCurrentPageUi: function () {
+    let count = this.source && this.source.getNumPages();
+    this.$pages.text((count) ? this.currentPage + "/" + count : '');
+  },
+
+  setLoading: function (isLoading) {
+    this.$('progress')[isLoading ? 'show' : 'hide']();
   }
 
 })
