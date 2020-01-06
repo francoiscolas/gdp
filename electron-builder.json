@@ -1,6 +1,5 @@
 {
-  "artifactName": "gdp-v${version}-${os}-${arch}.${ext}",
-  "compression": "maximum",
+  "artifactName": "gdp-v${version}-${os}-${arch}${env.GDP_BUILD_NUMBER}.${ext}",
   "files": [
     "!resources/",
     "!src/",
@@ -23,5 +22,13 @@
   "nsis": {"oneClick": false},
   "mac": {
     "target": ["zip"]
-  }
+  },
+  "publish": [{
+    "provider": "github"
+  }, {
+    "provider": "bintray",
+    "package": "gdp",
+    "owner": "francoiscolas",
+    "publishAutoUpdate": false
+  }]
 }

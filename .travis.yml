@@ -8,13 +8,20 @@ branches:
 
 script:
   - |
-    docker run --rm $ENVS \
-      -e GH_TOKEN=$GH_TOKEN -e EP_PRE_RELEASE=$EP_PRE_RELEASE \
+    ENV_OPT="-e GH_TOKEN=$GH_TOKEN -e BT_TOKEN=$BT_TOKEN"
+    PUBLISH_OPT="-p onTagOrDraft"
+    if [ "$TRAVIS_BRANCH" = "develop" ]; then
+      ENV_OPT="$ENV_OPT -e GDP_BUILD_NUMBER=-b$TRAVIS_BUILD_NUMBER"
+      PUBLISH_OPT="-p always"
+    fi
+
+    docker run --rm $ENV_OPT \
       -v ${PWD}:/project \
       -v ~/.cache/electron:/root/.cache/electron \
       -v ~/.cache/electron-builder:/root/.cache/electron-builder \
       electronuserland/builder:wine \
-      /bin/bash -c "yarn --link-duplicates --pure-lockfile && yarn dist --linux --win --publish always"
+      /bin/bash -c "yarn --link-duplicates --pure-lockfile \
+                    && yarn dist -wl $PUBLISH_OPT"
 
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
