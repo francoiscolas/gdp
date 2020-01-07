@@ -66,6 +66,7 @@ let SourceView = Backbone.View.extend({
   },
 
   render: function () {
+    this.$subtitle.css('width', this.$subtitle.parent().width() + 'px');
     this.$subtitle.text(this.source ? this.source.get('name') : '');
     this.$content.css({
       'background-color': this.display.get('bgColor'),
