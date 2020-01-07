@@ -115,9 +115,9 @@ let SourceView = Backbone.View.extend({
     this.setSource(null)
   },
 
-  setSource: function (source) {
+  setSource: function (source, options) {
     this.source = source
-    this.setCurrentPage(1);
+    this.setCurrentPage(options && options.page || 1);
   },
 
   setCurrentPage: function (page, options) {

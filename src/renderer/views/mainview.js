@@ -131,7 +131,8 @@ let MainView = Backbone.View.extend({
   },
 
   publish: function () {
-    this.displayView.setSource(this.testView.source)
+    this.displayView.setSource(this.testView.source,
+      {page: this.testView.currentPage});
   },
 
   updateSize: function () {
