@@ -22,13 +22,5 @@
   "nsis": {"oneClick": false},
   "mac": {
     "target": ["zip"]
-  },
-  "publish": [{
-    "provider": "github"
-  }, {
-    "provider": "bintray",
-    "package": "gdp",
-    "owner": "francoiscolas",
-    "publishAutoUpdate": false
-  }]
+  }
 }

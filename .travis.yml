@@ -8,9 +8,11 @@ branches:
 
 script:
   - |
-    ENV_OPT="-e GH_TOKEN=$GH_TOKEN -e BT_TOKEN=$BT_TOKEN"
+    ENV_OPT="-e GH_TOKEN=$GH_TOKEN"
     PUBLISH_OPT="-p onTagOrDraft"
     if [ "$TRAVIS_BRANCH" = "develop" ]; then
+      ENV_OPT="-e BT_TOKEN=$BT_TOKEN"
+      ENV_OPT="$ENV_OPT -e TRAVIS_REPO_SLUG=francoiscolas/gdp"
       ENV_OPT="$ENV_OPT -e GDP_BUILD_NUMBER=-b$TRAVIS_BUILD_NUMBER"
       PUBLISH_OPT="-p always"
     fi
