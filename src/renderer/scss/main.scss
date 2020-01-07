@@ -1,9 +1,3 @@
-@include mobile {
-  html.ep-index, html.ep-index body {
-    overflow: auto;
-    height: auto;
-  }
-}
 html.ep-index body {
   @extend .columns;
   @extend .is-marginless;

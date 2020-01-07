@@ -136,18 +136,12 @@ let MainView = Backbone.View.extend({
 
   updateSize: function () {
     var views    = $([this.testView.el, this.displayView.el]);
-    var height   = $(window).height()// - $('#source-search').outerHeight()
-    var portrait =
-      $(window).height() > $(window).width() || $(window).width() <= 555
+    var padding  = views.outerHeight() - views.height();
+    var height   = $(window).height() - $('#sources-panel').height() - padding * 3;
+    var isMobile = ($(window).width() <= 768);
 
-//    // FIXME
-//    if (portrait && Foundation.MediaQuery.current == 'small') {
-//      views
-//        .height(height / 2)
-//        .parent().addClass('small-portrait')
-//    } else {
-      //views.height(height)
-//    }
+    if (isMobile) views.height(height / 2);
+    else views.height('auto');
   },
 
   _acLookup: function (query, done) {
