@@ -13,7 +13,7 @@
   ],
   "linux": {
     "category": "Utility",
-    "target": ["tar.gz", "AppImage"]
+    "target": ["tar.gz", "AppImage", "deb"]
   },
   "deb": {"depends": ["libreoffice-impress"]},
   "win": {
