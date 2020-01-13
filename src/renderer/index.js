@@ -1,11 +1,11 @@
 'use strict';
 
+require('./index.scss');
+require('@fortawesome/fontawesome-free/css/all.css');
+
 let $        = require('jquery');
 let Backbone = require('backbone');
 let Router   = require('./router');
-
-require('./index.scss');
-require('@fortawesome/fontawesome-free/js/all.js');
 
 $(function () {
   new Router();

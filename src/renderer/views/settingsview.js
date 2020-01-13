@@ -20,7 +20,7 @@ let SettingsView = Backbone.View.extend({
           </div>
           <div class="field has-addons">
             <div class="control">
-              <input class="input" type="text" id="sources-dir-input" value="<%= App.sources.sourcesDir %>"/>
+              <input class="input" type="text" id="sources-dir-input" value="<%= App.sources.path %>"/>
             </div>
             <div class="control">
               <input class="button" type="button" id="sources-dir-btn" value="Parcourir...">
@@ -101,7 +101,7 @@ let SettingsView = Backbone.View.extend({
   },
 
   save: function () {
-    App.sources.setSourcesDir(this.$sourcesDir().val());
+    App.sources.setPath(this.$sourcesDir().val());
     App.display.set({
       bgColor: this.$bgColor().val(),
       bgImage: this.$bgImage().val(),

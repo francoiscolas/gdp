@@ -19,7 +19,6 @@ var ScreenView = Backbone.View.extend({
 
     this.sources = new SourceCollection();
     this.sources.fetch();
-    setInterval(_.bind(this.sources.fetch, this.sources), 5000);
 
     this.source = null;
     this.pdfpromise = null;
@@ -55,7 +54,6 @@ var ScreenView = Backbone.View.extend({
           canvas.height = viewport.height;
           pdfpage.render({
             canvasContext: canvas.getContext('2d'),
-            background: this.settings.get('bgColor'),
             viewport: viewport,
           });
         }.bind(this));

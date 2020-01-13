@@ -9,8 +9,9 @@ PDFJS.GlobalWorkerOptions.workerSrc = '../lib/pdf.worker.js';
 var Source = Backbone.Model.extend({
 
   defaults: {
-    name   : null,
-    fileurl: null
+    name : null,
+    isDir: null,
+    formats: [],
   },
 
   initialize: function () {
@@ -23,18 +24,15 @@ var Source = Backbone.Model.extend({
 
   getFileUrl: function () {
     return new Promise(function (resolve, reject) {
-      if (this.has('fileurl')) {
-        resolve(this.get('fileurl'));
+      if (this.get('isDir')) {
+        reject(new Error("Can't download a directory."));
       } else {
-        this.fetch({
-          success: function () {
-            if (this.has('fileurl'))
-              resolve(this.get('fileurl'));
-            else
-              reject(new Error('No fileurl provided.'));
-          }.bind(this),
-          error: reject
-        });
+        let format = this.get('formats').find(format => format.type == 'pdf');
+
+        if (format)
+          resolve(format.url);
+        else
+          reject(new Error('Unsupported file type.'));
       }
     }.bind(this));
   },
@@ -49,7 +47,7 @@ var Source = Backbone.Model.extend({
             if (this.pdfdocTask) {
               this.pdfdocTask.promise.then(resolve).catch(reject);
             } else {
-              this.pdfdocTask = PDFJS.getDocument(this.get('fileurl'));
+              this.pdfdocTask = PDFJS.getDocument(fileurl);
               this.pdfdocTask.promise
                 .then(function (pdfdoc) {
                   this.pdfdoc = pdfdoc;

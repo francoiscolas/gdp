@@ -18,7 +18,7 @@ const rendererConfig = {
   },
   module: {
     rules: [{
-      test: /\.s[ac]ss$/,
+      test: /\.(sass|scss|css)$/,
       use: ['style-loader', 'css-loader', 'sass-loader'],
     }, {
       test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,

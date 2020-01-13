@@ -6,6 +6,11 @@ var Path      = require('path');
 var Url       = require('url');
 var WebSocket = require('ws');
 
+var GdpConfig = require('../config/config-main');
+
+var SourcesDirMediator = require('./sources_dir_mediator');
+var SourcesApi = require('./sources_api');
+
 var _versionStringToInt = function (str) {
   var parts = str.split('.');
   var result = 0;
@@ -21,8 +26,12 @@ var _initSettings = function () {
   var version = _versionStringToInt(App.getVersion());
 
   App.settings = require('electron-settings');
-  if (App.settings.get('version') == 0x020000) {
+  if (App.settings.get('version') == 20000) {
     // Nothing to do.
+  }
+  if (App.settings.get('version') == 20100) {
+    if (App.settings.get('sourcesDir') == null)
+      App.settings.delete('sourcesDir');
   }
 
   // Current version
@@ -33,9 +42,9 @@ var _initSettings = function () {
     httpPort: 3333,
     display: {
       bgColor: 'black',
-      bgImage: null,
+      bgImage: undefined,
     },
-    sourcesDir: null,
+    sourcesDir: App.getPath('documents'),
   }));
 
   return Promise.resolve();
@@ -61,21 +70,20 @@ var _initDisplay = function () {
 };
 
 var _initSources = function () {
-  return new Promise(function (resolve, reject) {
-    let sourcesDir = App.settings.get('sourcesDir');
-    let Sources = require('./sources');
+  let currentPath = App.settings.get('sourcesDir');
+  let privatePath = App.getPath('userData');
 
-    App.sources = new Sources();
-    App.sources.on('error', function (error) {
-      Electron.dialog.showErrorBox('Sources introuvables', error.message);
-    });
-    App.sources.on('change', function () {
-      App.settings.set('sourcesDir', App.sources.sourcesDir);
-    });
-    App.sources.setSourcesDir(App.settings.get('sourcesDir'));
-    App.sources.setUserDir(App.getPath('userData'));
-    resolve();
+  App.sourcesMediator = new SourcesDirMediator(privatePath, currentPath, GdpConfig);
+  App.sources = App.sourcesMediator.sources;
+//    App.sources.on('error', function (error) {
+//      Electron.dialog.showErrorBox('Sources introuvables', error.message);
+//    });
+  App.sources.on('change', function () {
+    App.settings.set('sourcesDir', App.sources.path);
   });
+//    App.sources.setPath(App.settings.get('sourcesDir'));
+//    App.sources.setUserDir(App.getPath('userData'));
+  return Promise.resolve();
 };
 
 var _startHttpServer = function () {
@@ -83,13 +91,14 @@ var _startHttpServer = function () {
     var Express         = require('express');
     var JsonBodyParser  = require('body-parser').json();
     var DisplayAPI      = require('./api/display')(App);
-    var SourcesAPI      = require('./api/sources')(App);
+    var sourcesApi      = new SourcesApi(App.sourcesMediator);
 
     App.webApp = Express();
     if (App.isDev) {
       App.webApp.use(Express.static(Path.resolve(process.cwd(), 'app'))); // Built renderer
       App.webApp.use(Express.static(Path.resolve(process.cwd(), 'build', 'www'))); // Static resources
       App.webApp.use(Express.static(Path.resolve(process.cwd(), 'src', 'renderer'))); // To serve images and fonts
+      App.webApp.use(Express.static(Path.resolve(process.cwd(), 'node_modules', '@fortawesome', 'fontawesome-free')));
     } else {
       App.webApp.use(Express.static(Path.resolve(process.resourcesPath, 'www')));
     }
@@ -98,9 +107,10 @@ var _startHttpServer = function () {
     App.webApp.get('/api/display/bgImage', DisplayAPI.bgImage);
     App.webApp.post('/api/display', JsonBodyParser, DisplayAPI.update);
     App.webApp.delete('/api/display', DisplayAPI.clear);
-    App.webApp.get('/api/sources', SourcesAPI.index);
-    App.webApp.get('/api/sources/:id.pdf', SourcesAPI.download);
-    App.webApp.get('/api/sources/:id', SourcesAPI.show);
+    App.webApp.get('/api/sources', sourcesApi.index.bind(sourcesApi));
+    App.webApp.put('/api/sources', JsonBodyParser, sourcesApi.update.bind(sourcesApi));
+    App.webApp.get('/api/sources/:id.:ext', sourcesApi.download.bind(sourcesApi));
+    App.webApp.get('/api/sources/:id', sourcesApi.show.bind(sourcesApi));
 
     var server = App.webApp.listen(App.settings.get('httpPort'));
     server.once('listening', resolve);
@@ -108,6 +118,12 @@ var _startHttpServer = function () {
 
     var wss = new WebSocket.Server({server});
     wss.on('connection', function (ws) {
+      App.sources.on('change', function () {
+        ws.send(JSON.stringify({
+          command: 'sources.change',
+          data: sourcesApi._getData('/api/sources'),
+        }));
+      });
       App.display.on('change', function () {
         ws.send(JSON.stringify({
           command: 'display.change',

@@ -25,6 +25,8 @@ class Router extends Backbone.Router {
     ws.onmessage = _.bind(function (evt) {
       let msg = JSON.parse(evt.data);
 
+      if (msg.command == 'sources.change')
+        this.view.sources.reset(msg.data);
       if (msg.command == 'display.change')
         this.view.display.set(msg.data);
     }, this);
@@ -37,6 +39,8 @@ class Router extends Backbone.Router {
     ws.onmessage = _.bind(function (evt) {
       let msg = JSON.parse(evt.data);
 
+      if (msg.command == 'sources.change')
+        this.view.sources.reset(msg.data);
       if (msg.command == 'display.change')
         this.view.settings.set(msg.data);
     }, this);

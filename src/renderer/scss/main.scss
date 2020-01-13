@@ -18,6 +18,21 @@ html.ep-index body {
         &:hover {
           background: $white-bis;
         }
+        &.disabled {
+          cursor: not-allowed;
+          font-style: italic;
+          text-decoration: line-through;
+          opacity: 0.8;
+          .icon {
+            color: unset;
+          }
+        }
+        &.item-dir .icon {
+          color: $orange;
+        }
+        .icon {
+          color: $primary;
+        }
         span:last-child {
           width: 100%;
           overflow: hidden;

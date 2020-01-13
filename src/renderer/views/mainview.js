@@ -84,7 +84,6 @@ let MainView = Backbone.View.extend({
 
     this.sources = new SourceCollection()
     this.sources.fetch()
-    setInterval(_.bind(this.sources.fetch, this.sources), 5000)
 
     this.testView = new PreviewView({
       el: '#test',
@@ -100,7 +99,6 @@ let MainView = Backbone.View.extend({
       el: 'div#sources-list',
       collection: this.sources
     })
-    this.listView.on('activated', this.testView.setSource, this.testView)
 
     this.$input = this.$('input[type=text]')
     this.$input.val('').autocomplete({
@@ -112,6 +110,7 @@ let MainView = Backbone.View.extend({
       this.$input.focus().select()
     }, this))
 
+    this.listenTo(this.listView, 'activated', this._onSourceActivated);
     $(window).on('resize.' + this.cid, _.bind(this.updateSize, this))
   },
 
@@ -149,12 +148,16 @@ let MainView = Backbone.View.extend({
     var suggestions = []
 
     query = rmAccents(query).toLowerCase()
-    this.sources.forEach(function (source) {
-      var name = source.get('name')
+    this.sources
+      .filter(function (source) {
+        return !source.get('isDir') && source.get('formats').length > 0;
+      })
+      .forEach(function (source) {
+        var name = source.get('name')
 
-      if (rmAccents(name).toLowerCase().includes(query))
-        suggestions.push({value: name, data: source})
-    })
+        if (rmAccents(name).toLowerCase().includes(query))
+          suggestions.push({value: name, data: source})
+      })
     done({suggestions: suggestions})
   },
 
@@ -172,6 +175,16 @@ let MainView = Backbone.View.extend({
   _acOnSelect: function (suggestion) {
     this.testView.setSource(suggestion.data)
     this.$input.val('')
+  },
+
+  _onSourceActivated: function (source) {
+    if (source == '..' || source.get('isDir')) {
+      this.sources.moveTo(source);
+      this.testView.setSource(null);
+      this.displayView.setSource(null);
+    } else if (source.get('formats').length > 0) {
+      this.testView.setSource(source);
+    }
   },
 
 })
