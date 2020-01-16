@@ -59,7 +59,7 @@ let ListView = Backbone.View.extend({
     var sources = this.collection
 
     this.listenTo(sources, 'reset', this.render)
-    this.listenTo(sources, 'add', this.addSource)
+    this.listenTo(sources, 'add', _.debounce(this.render.bind(this), 100));
     this.listenTo(sources, 'remove', this.removeSource)
   },
 
