@@ -88,7 +88,7 @@ class SourcesDir extends EventEmitter {
         return !this.find(entry => entry.basename == newEntry.name);
       });
       added.forEach(newEntry => {
-        if ((newEntry.isDirectory() || newEntry.isFile())
+        if ((/*newEntry.isDirectory() || */newEntry.isFile())
             && !newEntry.name.startsWith('.'))
           _add.call(this, new SourcesDirEntry(Path.join(this.path, newEntry.name), newEntry));
       });

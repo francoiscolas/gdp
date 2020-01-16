@@ -108,7 +108,7 @@ var _startHttpServer = function () {
     App.webApp.post('/api/display', JsonBodyParser, DisplayAPI.update);
     App.webApp.delete('/api/display', DisplayAPI.clear);
     App.webApp.get('/api/sources', sourcesApi.index.bind(sourcesApi));
-    App.webApp.put('/api/sources', JsonBodyParser, sourcesApi.update.bind(sourcesApi));
+//    App.webApp.put('/api/sources', JsonBodyParser, sourcesApi.update.bind(sourcesApi));
     App.webApp.get('/api/sources/:id.:ext', sourcesApi.download.bind(sourcesApi));
     App.webApp.get('/api/sources/:id', sourcesApi.show.bind(sourcesApi));
 

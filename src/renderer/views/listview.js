@@ -65,7 +65,7 @@ let ListView = Backbone.View.extend({
 
   render: function () {
     this.$el.empty()
-    this.$el.append(this.template({source: '..', _iconFor: _iconFor}));
+//    this.$el.append(this.template({source: '..', _iconFor: _iconFor}));
     this.collection.each(this.addSource, this)
     return this
   },
