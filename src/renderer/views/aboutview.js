@@ -13,10 +13,10 @@ let AboutView = Backbone.View.extend({
   template: _.template(`
     <div class="message">
       <div class="message-body has-text-centered">
-        <img src="${require('../images/icon.png').default}"/><br/>
+        <img src="${require('../../../build/icon.png').default}" width="96px"/><br/>
         <strong><%= App.getName() %></strong><br/>
-        v<%= App.getVersion() %><br/><br/>
-        <a>https://github.com/francoiscolas/gdp</a>
+        v<%= App.getVersion() %><br/>
+        <a>https://github.com/francoiscolas/hibiscusapp</a>
       </div>
     </div>
   `),

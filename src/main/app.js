@@ -6,7 +6,7 @@ var Path      = require('path');
 var Url       = require('url');
 var WebSocket = require('ws');
 
-var GdpConfig = require('../config/config-main');
+var HbsConfig = require('../config/config-main');
 
 var SourcesDirMediator = require('./sources_dir_mediator');
 var SourcesApi = require('./sources_api');
@@ -73,7 +73,7 @@ var _initSources = function () {
   let currentPath = App.settings.get('sourcesDir');
   let privatePath = App.getPath('userData');
 
-  App.sourcesMediator = new SourcesDirMediator(privatePath, currentPath, GdpConfig);
+  App.sourcesMediator = new SourcesDirMediator(privatePath, currentPath, HbsConfig);
   App.sources = App.sourcesMediator.sources;
 //    App.sources.on('error', function (error) {
 //      Electron.dialog.showErrorBox('Sources introuvables', error.message);
@@ -310,8 +310,8 @@ var startAboutWindow = function () {
     modal: true,
     icon: App.getIcon(),
     show: false,
-    width: 350,
-    height: 300,
+    width: 400,
+    height: 250,
   });
   win.setMenu(null);
   win.on('ready-to-show', function () {
@@ -346,8 +346,8 @@ var App = module.exports = _.extend(Electron.app, {
 
   getIcon: function () {
     if (App.isDev)
-      return Path.resolve(process.cwd(), 'build', 'icon.png');
-    return Path.resolve(process.resourcesPath, 'icon.png');
+      return Path.resolve(process.cwd(), 'build', 'icons', '64x64.png');
+    return Path.resolve(process.resourcesPath, 'icons', '64x64.png');
   }
 
 });

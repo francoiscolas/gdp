@@ -1,5 +1,5 @@
 {
-  "artifactName": "gdp-v${version}-${os}-${arch}${env.GDP_BUILD_NUMBER}.${ext}",
+  "artifactName": "hibiscus-v${version}-${os}-${arch}${env.HBS_BUILD_NUMBER}.${ext}",
   "files": [
     "!resources/",
     "!src/",
