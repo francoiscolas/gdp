@@ -13,8 +13,8 @@ const TAG = 'SourcesDirMediator';
 
 class SourcesDirMediator {
 
-  constructor(privatePath, sourcesPath, config) {
-    this.tmpPath = Path.join(privatePath, 'HbsTmp');
+  constructor(tmpPath, cachePath, sourcesPath, config) {
+    this.tmpPath = tmpPath;
     FS.mkdirSync(this.tmpPath, {recursive: true});
 
     this.formats = config.formats;
@@ -25,7 +25,7 @@ class SourcesDirMediator {
     this.converters = new ConverterFactory();
     config.converters.forEach(this.converters.registerConverter, this.converters);
 
-    this.cache = new SourcesDirCache(Path.join(privatePath, 'HbsCache'));
+    this.cache = new SourcesDirCache(cachePath);
   }
 
   formatsFor(entry) {

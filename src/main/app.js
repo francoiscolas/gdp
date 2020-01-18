@@ -2,6 +2,7 @@
 
 var _         = require('lodash');
 var Electron  = require('electron');
+var FS        = require('fs');
 var Path      = require('path');
 var Url       = require('url');
 var WebSocket = require('ws');
@@ -22,30 +23,60 @@ var _versionStringToInt = function (str) {
   return result;
 };
 
+var _importSettingsFromGdp = function () {
+  let gdpDir = Path.join(App.getPath('userData'), '..', 'Groupe de Prière');
+  let gdpSettingsFile = Path.join(gdpDir, 'Settings');
+  let gdpSlidesDir = Path.join(gdpDir, 'slides');
+
+  try {
+    FS.accessSync(gdpDir, FS.constants.R_OK);
+    App.settings.setAll(JSON.parse(FS.readFileSync(gdpSettingsFile)));
+
+    FS.mkdirSync(App.getCachePath(), {recursive: true});
+    FS.readdirSync(gdpSlidesDir, {withFileTypes: true})
+      .filter(function (entry) {
+        return (entry.isDirectory() && entry.name.length == 32);
+      })
+      .forEach(function (entry) {
+        let entryDir = Path.join(gdpSlidesDir, entry.name);
+        let pdfFile = FS.readdirSync(entryDir, {withFileTypes: true})
+          .find(function (entry) {
+            return (entry.isFile() && entry.name.endsWith('.pdf'));
+          });
+
+        if (pdfFile)
+          FS.renameSync(Path.join(entryDir, pdfFile.name), Path.join(App.getCachePath(), entry.name + '.pdf'));
+      });
+
+    require('deltree')(gdpDir);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 var _initSettings = function () {
   var version = _versionStringToInt(App.getVersion());
 
   App.settings = require('electron-settings');
-  if (App.settings.get('version') == 20000) {
-    // Nothing to do.
-  }
-  if (App.settings.get('version') == 20100) {
-    if (App.settings.get('sourcesDir') == null)
-      App.settings.delete('sourcesDir');
-  }
+  _importSettingsFromGdp();
 
-  // Current version
-  App.settings.set('version', version);
-
-  // Defaults
-  App.settings.setAll(_.defaults(App.settings.getAll(), {
-    httpPort: 3333,
-    display: {
-      bgColor: 'black',
-      bgImage: undefined,
-    },
-    sourcesDir: App.getPath('documents'),
-  }));
+  switch (App.settings.get('version')) {
+    case 20000:
+      // Nothing to do.
+    case 20100:
+      if (App.settings.get('sourcesDir') == null)
+        App.settings.delete('sourcesDir');
+    default:
+      App.settings.set('version', version);
+      App.settings.setAll(_.defaults(App.settings.getAll(), {
+        httpPort: 3333,
+        display: {
+          bgColor: 'black',
+          bgImage: undefined,
+        },
+        sourcesDir: App.getPath('documents'),
+      }));
+  }
 
   return Promise.resolve();
 };
@@ -70,10 +101,9 @@ var _initDisplay = function () {
 };
 
 var _initSources = function () {
-  let currentPath = App.settings.get('sourcesDir');
-  let privatePath = App.getPath('userData');
+  let sourcesPath = App.settings.get('sourcesDir');
 
-  App.sourcesMediator = new SourcesDirMediator(privatePath, currentPath, HbsConfig);
+  App.sourcesMediator = new SourcesDirMediator(App.getTmpPath(), App.getCachePath(), sourcesPath, HbsConfig);
   App.sources = App.sourcesMediator.sources;
 //    App.sources.on('error', function (error) {
 //      Electron.dialog.showErrorBox('Sources introuvables', error.message);
@@ -348,6 +378,14 @@ var App = module.exports = _.extend(Electron.app, {
     if (App.isDev)
       return Path.resolve(process.cwd(), 'build', 'icons', '64x64.png');
     return Path.resolve(process.resourcesPath, 'icons', '64x64.png');
-  }
+  },
+
+  getTmpPath: function () {
+    return Path.join(App.getPath('userData'), 'HbsTmp');
+  },
+
+  getCachePath: function () {
+    return Path.join(App.getPath('userData'), 'HbsCache');
+  },
 
 });
