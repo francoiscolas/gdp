@@ -12,6 +12,9 @@ var HbsConfig = require('../config/config-main');
 var SourcesDirMediator = require('./sources_dir_mediator');
 var SourcesApi = require('./sources_api');
 
+var ElectronUpdater = require("electron-updater");
+ElectronUpdater.autoUpdater.checkForUpdatesAndNotify();
+
 var _versionStringToInt = function (str) {
   var parts = str.split('.');
   var result = 0;
