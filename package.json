@@ -1,7 +1,7 @@
 {
   "name": "hibiscusapp",
   "productName": "Hibiscus",
-  "version": "2.2.0-dev",
+  "version": "2.2.1-dev",
   "license": "MIT",
   "description": "Logiciel pour gérer l'affichage de fichiers sur grand écran (pdf, ppt, pps, odp).",
   "repository": "https://github.com/francoiscolas/hibiscusapp",
