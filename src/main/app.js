@@ -53,7 +53,7 @@ var _importSettingsFromGdp = function () {
 
     require('deltree')(gdpDir);
   } catch (error) {
-    console.log(error);
+//    console.log(error);
   }
 };
 
