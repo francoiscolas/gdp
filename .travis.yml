@@ -9,6 +9,7 @@ branches:
 script:
   - |
     ENV_OPT="-e GH_TOKEN=$GH_TOKEN"
+    ENV_OPT="$ENV_OPT -e HBS_BUILD_NUMBER="
     PUBLISH_OPT="-p onTagOrDraft"
     if [ "$TRAVIS_BRANCH" = "develop" ]; then
       ENV_OPT="-e BT_TOKEN=$BT_TOKEN"
