@@ -1,7 +1,8 @@
 'use strict';
 
 require('./index.scss');
-require('@fortawesome/fontawesome-free/css/all.css');
+require('@fortawesome/fontawesome-free/css/fontawesome.css');
+require('@fortawesome/fontawesome-free/css/solid.css');
 
 let $        = require('jquery');
 let Backbone = require('backbone');
