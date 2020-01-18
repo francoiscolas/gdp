@@ -6,10 +6,9 @@
     "!webpack.config.js"
   ],
   "extraResources": [
-    {"from": "build/www/", "to": "www/", "filter": "**/*"},
-    {"from": "app/", "to": "www/", "filter": "!main.js"},
-    {"from": "build/", "to": ".", "filter": "icon.png"},
-    {"from": "build/${os}/", "to": ".", "filter": "**/*"}
+    {"from": "build/", "to": ".", "filter": ["icons/", "www/", "icon.png"]},
+    {"from": "build/${os}/", "to": ".", "filter": "**/*"},
+    {"from": "app/", "to": "www/", "filter": "!main.js"}
   ],
   "linux": {
     "category": "Utility",
