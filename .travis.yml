@@ -1,5 +1,15 @@
-os: linux
-language: generic
+matrix:
+  include:
+    - os: linux
+      services: docker
+      language: generic
+    - os: osx
+      osx_image: xcode10.2
+      language: node_js
+      node_js: "12"
+      env:
+        - ELECTRON_CACHE=$HOME/.cache/electron
+        - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 
 branches:
   only:
@@ -8,23 +18,30 @@ branches:
 
 script:
   - |
-    ENV_OPT="-e GH_TOKEN=$GH_TOKEN"
-    ENV_OPT="$ENV_OPT -e HBS_BUILD_NUMBER="
-    PUBLISH_OPT="-p always"
     if [ "$TRAVIS_BRANCH" = "develop" ]; then
+      HBS_BUILD_NUMBER="-b$TRAVIS_BUILD_NUMBER"
       ENV_OPT="-e BT_TOKEN=$BT_TOKEN"
       ENV_OPT="$ENV_OPT -e TRAVIS_REPO_SLUG=francoiscolas/hibiscusapp"
-      ENV_OPT="$ENV_OPT -e HBS_BUILD_NUMBER=-b$TRAVIS_BUILD_NUMBER"
+      PUBLISH_OPT="-p always"
+    else
+      HBS_BUILD_NUMBER=
+      ENV_OPT="-e GH_TOKEN=$GH_TOKEN"
       PUBLISH_OPT="-p always"
     fi
+    ENV_OPT="$ENV_OPT -e HBS_BUILD_NUMBER=$HBS_BUILD_NUMBER"
 
-    docker run --rm $ENV_OPT \
-      -v ${PWD}:/project \
-      -v ~/.cache/electron:/root/.cache/electron \
-      -v ~/.cache/electron-builder:/root/.cache/electron-builder \
-      electronuserland/builder:wine \
-      /bin/bash -c "yarn --link-duplicates --pure-lockfile \
-                    && yarn dist -wl $PUBLISH_OPT"
+    if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+      docker run --rm $ENV_OPT \
+        -v ${PWD}:/project \
+        -v ~/.cache/electron:/root/.cache/electron \
+        -v ~/.cache/electron-builder:/root/.cache/electron-builder \
+        electronuserland/builder:wine \
+        /bin/bash -c "yarn --link-duplicates --pure-lockfile \
+                      && yarn dist -wl $PUBLISH_OPT"
+    else
+      export HBS_BUILD_NUMBER
+      yarn dist -m $PUBLISH_OPT
+    fi
 
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine

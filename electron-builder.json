@@ -20,6 +20,6 @@
   },
   "nsis": {"oneClick": false},
   "mac": {
-    "target": ["zip"]
+    "target": ["dmg", "zip"]
   }
 }
