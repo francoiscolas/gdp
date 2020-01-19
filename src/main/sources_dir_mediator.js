@@ -9,7 +9,24 @@ let ConverterFactory = require('./converter_factory');
 let SourcesDir = require('./sources_dir');
 let SourcesDirCache = require('./sources_dir_cache');
 
+const DAY = 1000 * 60 * 60 * 24;
 const TAG = 'SourcesDirMediator';
+
+var _cleanUpCache = function () {
+  this.cache
+    .filter(function (entry) {
+      let stat = FS.statSync(entry);
+      return ((Date.now() - stat.mtime.getTime()) / DAY > 30);
+    }, this)
+    .filter(function (entry) {
+      return !this.sources.find(function (source) {
+        return source.absolutePath == entry;
+      }, this);
+    }, this)
+    .forEach(function (entry) {
+      FS.unlink(entry, function () {});
+    }, this);
+};
 
 class SourcesDirMediator {
 
@@ -26,6 +43,7 @@ class SourcesDirMediator {
     config.converters.forEach(this.converters.registerConverter, this.converters);
 
     this.cache = new SourcesDirCache(cachePath);
+    _cleanUpCache.call(this);
   }
 
   formatsFor(entry) {

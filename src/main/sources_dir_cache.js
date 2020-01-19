@@ -46,6 +46,26 @@ class SourcesDirCache {
     }.bind(this));
   }
 
+  forEach(callback, thisArg) {
+    thisArg = thisArg || this;
+    FS.readdirSync(this.rootDir)
+      .forEach(function (entry) {
+        callback.call(thisArg, Path.join(this.rootDir, entry));
+      }, this);
+    return this;
+  }
+
+  filter(callback, thisArg) {
+    let entries = [];
+
+    thisArg = thisArg || this;
+    this.forEach(function (entry) {
+      if (callback.call(thisArg, entry))
+        entries.push(entry);
+    });
+    return entries;
+  }
+
 }
 
 module.exports = SourcesDirCache;
