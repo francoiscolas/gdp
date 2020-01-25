@@ -1,0 +1,74 @@
+---
+layout: default
+---
+<div class="container header">
+  <h1><img src="assets/images/icon.png"><br/>Hibiscus</h1>
+  <p>{{ page.description }}
+</div>
+<div class="container">
+  <a data-os="windows" class="button is-link is-medium" href="{{ site.data.downloads.windows }}">
+    <span class="icon">
+      <i class="fab fa-windows"></i>
+    </span>
+    <span>{{ site.data.tr[page.lang].download_for }} Windows</span>
+  </a>
+  <a data-os="mac" class="button is-link is-medium" href="{{ site.data.downloads.mac }}">
+    <span class="icon">
+      <i class="fab fa-apple"></i>
+    </span>
+    <span>{{ site.data.tr[page.lang].download_for }} MacOS</span>
+  </a>
+  <div data-os="linux" class="dropdown is-hoverable">
+    <div class="dropdown-trigger">
+      <button class="button is-link is-medium">
+        <span class="icon">
+          <i class="fab fa-linux"></i>
+        </span>
+        <span>{{ site.data.tr[page.lang].download_for }} Linux</span>
+        <span class="icon is-small">
+          <i class="fas fa-angle-down"></i>
+        </span>
+      </button>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu">
+      <div class="dropdown-content">
+        <a class="dropdown-item" href="{{ site.data.downloads.linux.AppImage }}">AppImage</a>
+        <a class="dropdown-item" href="{{ site.data.downloads.linux.deb }}">deb</a>
+        <a class="dropdown-item" href="{{ site.data.downloads.linux.targz }}">tar.gz</a>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:0.75rem">
+    Version {{ site.data.version.number }} |
+    <a href="https://github.com/francoiscolas/hibiscusapp">
+      {{ site.data.tr[page.lang].view_on_gh }}</a><br/>
+    <a href="https://github.com/francoiscolas/hibiscusapp/releases/tag/v2.2.0">
+      {{ site.data.tr[page.lang].more_dl_options }}</a>
+  </div>
+</div>
+<div class="container">
+  <img src="assets/images/screenshot.png" class="screenshot">
+</div>
+<div class="container features">
+  <h2>{{ site.data.tr[page.lang].features_title }}</h2>
+  <div class="columns is-multiline">
+    {% for item in site.data.tr[page.lang].features %}
+      <div class="column is-half">
+        <h3><i class="fas fa-2x {{ item.icon }}"></i><br/>{{ item.name }}</h3>
+        <p>{{ item.text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="container is-size-7">
+  &copy; 2015-2020 <a href="mailto:francoiscolas@gmail.com?subject=Hibiscus">François Colas</a>
+</div>
+<script>
+  (function () {
+    var platform = window.navigator.platform.toLowerCase();
+    document.querySelectorAll('[data-os]').forEach(function (el) {
+      if (platform.indexOf(el.dataset['os']) < 0)
+        el.className += ' is-hidden';
+    });
+  })();
+</script>

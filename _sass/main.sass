@@ -1,0 +1,54 @@
+$primary: #d50909 !default
+@import 'bulma-0.8.0/bulma'
+
+@import url('https://fonts.googleapis.com/css?family=Macondo&display=swap')
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css')
+
+body
+  background: $light
+
+.container
+  text-align: center
+  width: 1024px
+  max-width: 100%
+  padding: 1.5rem
+
+.header
+  h1
+    font-family: 'Macondo', cursive
+    font-size: 4rem
+    line-height: 4rem
+    img
+      height: 100px
+  p
+    font-size: 1.2rem
+
+nav
+  a
+    color: $primary
+    font-weight: bold
+    padding: 0.75rem
+    text-transform: uppercase
+    &:hover, &.current
+      color: unset
+    &.lang
+      color: unset
+      font-size: 0.8rem
+      padding: 0.25rem
+      i
+        margin-right: 4px
+      &:hover
+        text-decoration: underline
+
+.features
+  margin-bottom: 3rem
+  .column
+    margin-top: 3rem
+  h2
+    font-size: $size-2
+  h3
+    text-transform: uppercase
+    font-size: $size-4
+    line-height: $size-2
+    i
+      margin: 0 0.5rem

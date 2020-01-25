@@ -1,0 +1,62 @@
+fr:
+  download_for: Télécharger pour
+  view_on_gh: Voir le code source.
+  more_dl_options: Télécharger pour une autre plateforme.
+  features_title: Fonctionnalités
+  features:
+    - name: Simple d'utilisation
+      icon: fa-check-circle
+      text: >
+        J'ai essayé de faire en sorte de rester le plus simple possible.
+        Hibiscus est utilisable à titre personnel ou à l'échelle d'une
+        entreprise. Il suffit de se placer dans le dossier contenant les
+        sources à afficher et le tour est joué.
+    - name: Téléphone
+      icon: fa-mobile
+      text: >
+        Il est possible d'associer votre téléphone avec l'ordinateur exécutant
+        Hibiscus. Cela permet de contrôler l'affichage depuis votre téléphone
+        et ainsi d'être beaucoup plus libre de vos mouvements.
+    - name: Hors ligne
+      icon: fa-leaf
+      text: >
+        Hibiscus est écologique car il s'exécute uniquement sur votre
+        ordinateur. Le logiciel n'utilise pas de serveur distant pour
+        l'affichage ou le stockage de vos données (cela plus que doublerai la
+        consommation).
+    - name: Multiplatforme
+      icon: fa-desktop
+      text: >
+        Hibiscus est multiplatforme et vous permet donc d'afficher vos
+        fichiers quelque soit la situation dans laquelle vous êtes. Que ce
+        soit sous Windows, Mac ou Linux.
+
+en:
+  download_for: Download for
+  view_on_gh: View on GitHub.
+  more_dl_options: Download for other platforms.
+  features_title: Features
+  features:
+    - name: Simple and easy
+      icon: fa-check-circle
+      text: >
+        I tried to keep everything as simple as possible. Hibiscus is suitable
+        for daily activities as well as company use. Just go in the folder
+        containing sources, choose the file to display and that's it. 
+    - name: Téléphone
+      icon: fa-mobile
+      text: >
+        You can associate your phone or tablet with the computer where
+        Hibiscus is running. Doing this allows you to control the display from
+        your phone.
+    - name: Offline
+      icon: fa-leaf
+      text: >
+        Hibiscus is green because it only needs your computer to operate. No
+        needs for a remote service to display your files or store them.
+    - name: Multiplatform
+      icon: fa-desktop
+      text: >
+        Hibiscus is a multiplatform software. It allows you to display your
+        files whether you are running Windows, Mac or Linux.
+

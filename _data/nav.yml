@@ -1,0 +1,11 @@
+fr:
+  - name: Accueil
+    link: /accueil.html
+  - name: Notes de version
+    link: /notes-de-version.html
+
+en:
+  - name: Home
+    link: /
+  - name: Release Notes
+    link: /release-notes.html
