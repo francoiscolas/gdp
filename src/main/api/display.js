@@ -1,5 +1,5 @@
 var _  = require('lodash');
-var FS = require('mz/fs');
+var FS = require('fs');
 
 var MD5 = function (text) {
   return require('crypto').createHash('md5').update(text).digest('hex');
@@ -29,14 +29,16 @@ function Display(App) {
     bgImage: function (req, res) {
       var filepath = App.display.bgImage;
 
-      FS.stat(filepath).then(stat => {
-        var is;
+      FS.stat(filepath, function (error, stats) {
+        if (error) {
+          res.status(404).send('Not Found');
+        } else {
+          var is;
 
-        res.setHeader('Content-Length', stat.size);
-        is = FS.createReadStream(filepath);
-        is.pipe(res);
-      }).catch(error => {
-        res.status(404).send('Not Found');
+          res.setHeader('Content-Length', stats.size);
+          is = FS.createReadStream(filepath);
+          is.pipe(res);
+        }
       });
     },
 
