@@ -43,7 +43,7 @@ en:
         I tried to keep everything as simple as possible. Hibiscus is suitable
         for daily activities as well as company use. Just go in the folder
         containing sources, choose the file to display and that's it. 
-    - name: Téléphone
+    - name: Phones or tablets
       icon: fa-mobile
       text: >
         You can associate your phone or tablet with the computer where
