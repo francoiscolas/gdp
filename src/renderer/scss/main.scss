@@ -71,19 +71,17 @@ html.ep-index body {
     height: 100%;
     .source-actions {
       .level-left {
-        width: calc(100% - 270px);
+        width: calc(100% - 225px);
         .subtitle {
+          width: 100%;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
         }
       }
       .level-right {
-        button[disabled] {
+        button.page {
           min-width: 50px;
-        }
-        .publish {
-          margin-left: $block-spacing;
         }
       }
     }

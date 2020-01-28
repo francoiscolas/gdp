@@ -3,23 +3,22 @@
 let _                = require('lodash');
 let $                = require('jquery');
 let Backbone         = require('backbone');
-let Display          = require('../models/display');
-let DisplayView      = require('./displayview');
-let ListView         = require('./listview');
-let PreviewView      = require('./previewview');
-let SourceCollection = require('../collections/sourcecollection');
-let rmAccents        = require('../rm_accents');
 
-require('../lib/jquery.autocomplete');
-require('../lib/mousetrap');
+let Display          = require('./models/display');
+let SourceCollection = require('./collections/sourcecollection');
+
+let BigScreenView    = require('./views/big_screen_view');
+let ListView         = require('./views/listview');
+let PreviewView      = require('./views/preview_view');
+
+let rmAccents        = require('./rm_accents');
+
+require('./lib/jquery.autocomplete');
+require('./lib/mousetrap');
 
 let MainView = Backbone.View.extend({
 
   el: '#app',
-
-  events: {
-    'click button.publish': 'publish'
-  },
 
   template: _.template(`
     <div class="column is-one-quarter hero" id="sources-panel">
@@ -46,19 +45,20 @@ let MainView = Backbone.View.extend({
     this.sources = new SourceCollection()
     this.sources.fetch()
 
-    this.testView = new PreviewView({
-      el: '#test',
-      display: this.display 
-    })
-
-    this.displayView = new DisplayView({
-      el: '#display',
-      display: this.display 
-    })
-
     this.listView = new ListView({
       el: 'div#sources-list',
       collection: this.sources
+    })
+
+    this.displayView = new BigScreenView({
+      el: '#display',
+      display: this.display,
+    })
+
+    this.testView = new PreviewView({
+      el: '#test',
+      display: this.display,
+      bigScreenView: this.displayView,
     })
 
     this.$input = this.$('input[type=text]')
@@ -88,11 +88,6 @@ let MainView = Backbone.View.extend({
     this.listView.render()
     this.updateSize()
     return this
-  },
-
-  publish: function () {
-    this.displayView.setSource(this.testView.source,
-      {page: this.testView.currentPage});
   },
 
   updateSize: function () {
@@ -145,6 +140,7 @@ let MainView = Backbone.View.extend({
       this.displayView.setSource(null);
     } else if (source.get('formats').length > 0) {
       this.testView.setSource(source);
+      this.testView.render();
     }
   },
 

@@ -30,7 +30,7 @@ class Router extends Backbone.Router {
       if (msg.command == 'display.change')
         this.view.display.set(msg.data);
     }, this);
-    this._showView(require('./views/mainview'));
+    this._showView(require('./main_window'));
   }
 
   screen() {
@@ -44,7 +44,7 @@ class Router extends Backbone.Router {
       if (msg.command == 'display.change')
         this.view.settings.set(msg.data);
     }, this);
-    this._showView(require('./views/screenview'));
+    this._showView(require('./big_screen_window'));
   }
 
   settings() {
