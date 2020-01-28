@@ -133,14 +133,18 @@ let MainView = Backbone.View.extend({
     this.$input.val('')
   },
 
-  _onSourceActivated: function (source) {
+  _onSourceActivated: function (source, options) {
     if (source == '..' || source.get('isDir')) {
       this.sources.moveTo(source);
       this.testView.setSource(null);
       this.displayView.setSource(null);
     } else if (source.get('formats').length > 0) {
-      this.testView.setSource(source);
-      this.testView.render();
+      let view = this.testView;
+
+      if (options && options.ctrlKey)
+        view = this.displayView;
+      view.setSource(source);
+      view.render();
     }
   },
 

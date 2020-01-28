@@ -89,7 +89,7 @@ let ListView = Backbone.View.extend({
     var source = $a.data('source')
 
     if ($a.not('.disabled'))
-      this.trigger('activated', ($a.is('.item-parent-dir')) ? '..' : source)
+      this.trigger('activated', ($a.is('.item-parent-dir')) ? '..' : source, {ctrlKey: event.ctrlKey})
   }
 
 })
