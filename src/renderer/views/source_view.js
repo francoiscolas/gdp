@@ -5,6 +5,7 @@ let $        = require('jquery');
 let Backbone = require('backbone');
 
 let RendererFactory = require('../renderer_factory');
+let ImageRenderer   = require('./image_renderer');
 let PdfRenderer     = require('./pdf_renderer');
 
 let SourceView = Backbone.View.extend({
@@ -36,7 +37,7 @@ let SourceView = Backbone.View.extend({
 
     this.rendererFactory = new RendererFactory();
     this.rendererFactory.registerRenderer(PdfRenderer);
-    //this.rendererFactory.registerRenderer(ImageRenderer);
+    this.rendererFactory.registerRenderer(ImageRenderer);
 
     this.listenTo(this.display, 'change:bgColor', this.render);
     this.listenTo(this.display, 'change:bgImage', this.render);
