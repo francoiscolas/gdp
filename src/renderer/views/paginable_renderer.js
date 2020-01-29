@@ -12,8 +12,7 @@ let PaginableRenderer = Renderer.extend({
       this.page = options.page;
       this.pageCount = options.pageCount;
     } else {
-      this.page = options && options.display
-        && options.display.get('sourcePage') || 1;
+      this.page = 1;
       this.pageCount = 0;
     }
   },
