@@ -36,7 +36,7 @@ let MainView = Backbone.View.extend({
     <div class="column" id="display"></div>
   `),
 
-  initialize: function () {
+  initialize: function (options) {
     this.$el.html(this.template())
 
     this.display = new Display()
@@ -53,12 +53,14 @@ let MainView = Backbone.View.extend({
     this.displayView = new BigScreenView({
       el: '#display',
       display: this.display,
+      rendererFactory: options && options.rendererFactory,
     })
 
     this.testView = new PreviewView({
       el: '#test',
       display: this.display,
       bigScreenView: this.displayView,
+      rendererFactory: options && options.rendererFactory,
     })
 
     this.$input = this.$('input[type=text]')

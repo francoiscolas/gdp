@@ -36,8 +36,21 @@ let Renderer = Backbone.View.extend({
 
 });
 
+Renderer.type = null;
+
 Renderer.isRenderable = function (source) {
-  return false;
+  const Config   = require('../../config/config-renderer');
+  let type       = this.type;
+  let extensions = [];
+
+  Config.formats.forEach(function (format) {
+    if (format.type == type)
+      extensions.push(format.ext);
+  });
+  return !!source && !!source.get('formats')
+    .find(function (format) {
+      return extensions.includes(format.type);
+    });
 };
 
 module.exports = Renderer;

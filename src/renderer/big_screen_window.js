@@ -5,11 +5,6 @@ let Backbone         = require('backbone');
 let Display          = require('./models/display');
 let SourceCollection = require('./collections/sourcecollection');
 
-let RendererFactory = require('./renderer_factory');
-let ImageRenderer   = require('./views/image_renderer');
-let PdfRenderer     = require('./views/pdf_renderer');
-
-
 var ScreenView = Backbone.View.extend({
 
   el: '#app',
@@ -26,9 +21,7 @@ var ScreenView = Backbone.View.extend({
     this.sources = new SourceCollection();
     this.sources.fetch({success: this.initRenderer.bind(this)});
 
-    this.rendererFactory = new RendererFactory();
-    this.rendererFactory.registerRenderer(PdfRenderer);
-    this.rendererFactory.registerRenderer(ImageRenderer);
+    this.rendererFactory = options.rendererFactory;
 
     this.listenTo(this.settings, 'change:bgColor change:bgImage', this.render);
     this.listenTo(this.settings, 'change:sourceId', this.onSourceChanged);

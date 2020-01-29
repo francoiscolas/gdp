@@ -79,8 +79,6 @@ let PdfRenderer = PaginableRenderer.extend({
 
 });
 
-PdfRenderer.isRenderable = function (source) {
-  return !!source.get('formats').find(format => format.type == 'pdf');
-};
+PdfRenderer.type = 'pdf';
 
 module.exports =  PdfRenderer;

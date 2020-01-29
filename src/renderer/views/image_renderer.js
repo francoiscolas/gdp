@@ -21,13 +21,6 @@ let ImageRenderer = Renderer.extend({
 
 });
 
-ImageRenderer.isRenderable = function (source) {
-  return !!source.get('formats').find(format => [
-    'png',
-    'jpg',
-    'jpeg',
-    'gif'
-  ].includes(format.type));
-};
+ImageRenderer.type = 'image';
 
 module.exports = ImageRenderer;

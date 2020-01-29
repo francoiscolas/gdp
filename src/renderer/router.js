@@ -4,6 +4,8 @@ let _        = require('lodash');
 let $        = require('jquery');
 let Backbone = require('backbone');
 
+let RendererFactory = require('./renderer_factory');
+
 class Router extends Backbone.Router {
 
   initialize() {
@@ -12,6 +14,7 @@ class Router extends Backbone.Router {
     this.route('settings', 'settings');
     this.route('associate', 'associate');
     this.route('about', 'about');
+    this.rendererFactory = new RendererFactory();
   }
 
   execute(callback, args, name) {
@@ -30,7 +33,9 @@ class Router extends Backbone.Router {
       if (msg.command == 'display.change')
         this.view.display.set(msg.data);
     }, this);
-    this._showView(require('./main_window'));
+    this._showView(require('./main_window'), {
+      rendererFactory: this.rendererFactory
+    });
   }
 
   screen() {
@@ -44,7 +49,9 @@ class Router extends Backbone.Router {
       if (msg.command == 'display.change')
         this.view.settings.set(msg.data);
     }, this);
-    this._showView(require('./big_screen_window'));
+    this._showView(require('./big_screen_window'), {
+      rendererFactory: this.rendererFactory
+    });
   }
 
   settings() {
@@ -59,8 +66,8 @@ class Router extends Backbone.Router {
     this._showView(require('./views/aboutview'));
   }
 
-  _showView(ViewClass) {
-    this.view = new ViewClass();
+  _showView(ViewClass, options) {
+    this.view = new ViewClass(options);
     this.view.render();
   }
 

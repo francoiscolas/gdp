@@ -14,6 +14,12 @@ const Config = {
     {ext: 'jpg',  type: 'image',      needConvert: false},
     {ext: 'jpeg', type: 'image',      needConvert: false},
     {ext: 'gif',  type: 'image',      needConvert: false},
+    {ext: 'svg',  type: 'image',      needConvert: false},
+    {ext: 'webp', type: 'image',      needConvert: false},
+    {ext: 'apng', type: 'image',      needConvert: false},
+    {ext: 'tiff', type: 'image',      needConvert: false},
+    {ext: 'bmp', type: 'image',       needConvert: false},
+    {ext: 'ico', type: 'image',       needConvert: false},
   ],
 
 };
