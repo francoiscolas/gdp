@@ -20,7 +20,7 @@ let DisplayView = SourceView.extend({
   pushSettings: function () {
     this.display.save({
       sourceId: (this.source) ? this.source.id : null,
-      sourcePage: this.renderer && this.renderer.page || 0
+      sourceData: this.renderer && this.renderer.getData(),
     });
   }
 

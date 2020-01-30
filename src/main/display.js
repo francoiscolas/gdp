@@ -10,7 +10,7 @@ class Display extends EventEmitter {
     this.bgColor = _.get(options, 'bgColor', 'black');
     this.bgImage = _.get(options, 'bgImage');
     this.sourceId = null;
-    this.sourcePage = 0;
+    this.sourceData = null;
   }
 
   set(key, value, options) {

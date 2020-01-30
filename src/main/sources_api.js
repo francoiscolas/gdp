@@ -12,13 +12,13 @@ class SourcesApi {
     this.sources = mediator.sources;
   }
 
-  _getData(url) {
+  getData(rootUrl) {
     return this.sources.map(entry => {
-      return this._getEntryData(entry, url + '/' + entry.id);
+      return this.getEntryData(entry, rootUrl + '/' + entry.id);
     }).sort()
   }
 
-  _getEntryData(entry, url) {
+  getEntryData(entry, url) {
     let data = {
       id  : entry.id,
       name: entry.basename,
@@ -35,7 +35,7 @@ class SourcesApi {
 
   index(req, res) {
     Log.debug(`${TAG}#index> ip=${req.connection.remoteAddress}> ${this.sources.length} sources`);
-    res.send(this._getData(req.url));
+    res.send(this.getData(req.url));
   }
 
   update(req, res) {
@@ -49,7 +49,7 @@ class SourcesApi {
     if (newPath && this.sources.setPath(newPath)) {
       this.sources.once('read', () => {
         Log.debug(`${TAG}#update> sources changed to destId=${req.body.destId}`);
-        res.send(this._getData(req.url));
+        res.send(this.getData(req.url));
       });
     } else {
       this.sources.setPath(currentPath);
@@ -62,7 +62,7 @@ class SourcesApi {
     let entry = this.sources.findById(req.params.id);
 
     if (entry) {
-      res.send(this._getEntryData(entry, req.url));
+      res.send(this.getEntryData(entry, req.url));
     } else {
       Log.warn(`${TAG}#show> source ${req.params.id} not found`);
       res.status(404).send('Not Found');

@@ -2,7 +2,7 @@
 
 let _                = require('lodash');
 let Backbone         = require('backbone');
-let Display          = require('./models/display');
+let BigScreen        = require('./models/big_screen');
 let SourceCollection = require('./collections/sourcecollection');
 
 var ScreenView = Backbone.View.extend({
@@ -14,7 +14,7 @@ var ScreenView = Backbone.View.extend({
   sources: null,
 
   initialize: function (options) {
-    this.settings = new Display();
+    this.settings = new BigScreen();
     this.settings.fetch({success: this.initRenderer.bind(this)});
 
     this.source = null;
@@ -25,7 +25,7 @@ var ScreenView = Backbone.View.extend({
 
     this.listenTo(this.settings, 'change:bgColor change:bgImage', this.render);
     this.listenTo(this.settings, 'change:sourceId', this.onSourceChanged);
-    this.listenTo(this.settings, 'change:sourcePage', this.onPageChanged);
+    this.listenTo(this.settings, 'change:sourceData', this.onDataChanged);
   },
 
   render: function () {
@@ -41,7 +41,7 @@ var ScreenView = Backbone.View.extend({
 
   initRenderer: function () {
     this.onSourceChanged({render: false});
-    this.onPageChanged({render: false});
+    this.onDataChanged({render: false});
     this.render();
   },
 
@@ -62,9 +62,9 @@ var ScreenView = Backbone.View.extend({
       this.render();
   },
 
-  onPageChanged: function (options) {
-    if (this.renderer && this.renderer.setPage)
-      this.renderer.page = this.settings.get('sourcePage');
+  onDataChanged: function (options) {
+    if (this.renderer)
+      this.renderer.setData(this.settings.get('sourceData'));
     if (!options || options.render !== false)
       this.render();
   },

@@ -4,7 +4,7 @@ let _                = require('lodash');
 let $                = require('jquery');
 let Backbone         = require('backbone');
 
-let Display          = require('./models/display');
+let BigScreen        = require('./models/big_screen');
 let SourceCollection = require('./collections/sourcecollection');
 
 let BigScreenView    = require('./views/big_screen_view');
@@ -39,7 +39,7 @@ let MainView = Backbone.View.extend({
   initialize: function (options) {
     this.$el.html(this.template())
 
-    this.display = new Display()
+    this.display = new BigScreen()
     this.display.fetch()
 
     this.sources = new SourceCollection()

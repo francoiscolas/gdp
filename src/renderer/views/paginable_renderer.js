@@ -40,6 +40,17 @@ let PaginableRenderer = Renderer.extend({
     return actions.concat(this.$prevBtn, this.$pageBtn, this.$nextBtn);
   },
 
+  getData: function () {
+    return {
+      ...Renderer.prototype.getData.apply(this, arguments),
+      page: this.page,
+    };
+  },
+
+  setData: function (data) {
+    this.page = data && data.page;
+  },
+
   render: function () {
     Renderer.prototype.render.apply(this, arguments);
 

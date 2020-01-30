@@ -9,6 +9,7 @@ var WebSocket = require('ws');
 
 var HbsConfig = require('../config/config-main');
 
+var BigScreenApi = require('./big_screen_api');
 var SourcesDirMediator = require('./sources_dir_mediator');
 var SourcesApi = require('./sources_api');
 
@@ -123,7 +124,7 @@ var _startHttpServer = function () {
   return new Promise(function (resolve, reject) {
     var Express         = require('express');
     var JsonBodyParser  = require('body-parser').json();
-    var DisplayAPI      = require('./api/display')(App);
+    var bigScreenApi    = new BigScreenApi(App.display);
     var sourcesApi      = new SourcesApi(App.sourcesMediator);
 
     App.webApp = Express();
@@ -136,10 +137,10 @@ var _startHttpServer = function () {
       App.webApp.use(Express.static(Path.resolve(process.resourcesPath, 'www')));
     }
     App.webApp.set('env', (App.isDev) ? 'development' : 'production');
-    App.webApp.get('/api/display', DisplayAPI.show);
-    App.webApp.get('/api/display/bgImage', DisplayAPI.bgImage);
-    App.webApp.post('/api/display', JsonBodyParser, DisplayAPI.update);
-    App.webApp.delete('/api/display', DisplayAPI.clear);
+    App.webApp.get('/api/bigscreen', bigScreenApi.show.bind(bigScreenApi));
+    App.webApp.get('/api/bigscreen/bgImage', bigScreenApi.bgImage.bind(bigScreenApi));
+    App.webApp.post('/api/bigscreen', JsonBodyParser, bigScreenApi.update.bind(bigScreenApi));
+    App.webApp.delete('/api/bigscreen', bigScreenApi.clear.bind(bigScreenApi));
     App.webApp.get('/api/sources', sourcesApi.index.bind(sourcesApi));
 //    App.webApp.put('/api/sources', JsonBodyParser, sourcesApi.update.bind(sourcesApi));
     App.webApp.get('/api/sources/:id.:ext', sourcesApi.download.bind(sourcesApi));
@@ -154,13 +155,13 @@ var _startHttpServer = function () {
       App.sources.on('change', function () {
         ws.send(JSON.stringify({
           command: 'sources.change',
-          data: sourcesApi._getData('/api/sources'),
+          data: sourcesApi.getData('/api/sources'),
         }));
       });
       App.display.on('change', function () {
         ws.send(JSON.stringify({
-          command: 'display.change',
-          data: DisplayAPI.getData(),
+          command: 'bigscreen.change',
+          data: bigScreenApi.getData('/api/bigscreen'),
         }));
       });
     });

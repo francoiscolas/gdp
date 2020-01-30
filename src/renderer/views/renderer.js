@@ -30,6 +30,14 @@ let Renderer = Backbone.View.extend({
     return [];
   },
 
+  getData: function () {
+    return {};
+  },
+
+  setData: function (data) {
+    // nothing to do
+  },
+
   clone: function () {
     return null;
   },
