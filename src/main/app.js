@@ -172,8 +172,8 @@ var _startUi = function () {
   return new Promise(function (resolve, reject) {
     var r = _.after(2, resolve);
 
-    _startMainWindow().then(r);
     _startScreenWindow().then(r);
+    _startMainWindow().then(r);
   });
 };
 
