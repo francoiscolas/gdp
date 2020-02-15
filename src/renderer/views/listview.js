@@ -21,7 +21,8 @@ let _iconFor = function (filename) {
 let ListView = Backbone.View.extend({
 
   events: {
-    'click a': '_onClick'
+    'click a': '_onClick',
+    'scroll' : '_onScroll',
   },
 
   template: _.template(`
@@ -56,7 +57,7 @@ let ListView = Backbone.View.extend({
   `),
 
   initialize: function () {
-    var sources = this.collection
+    let sources = this.collection;
 
     this.listenTo(sources, 'reset', this.render)
     this.listenTo(sources, 'add', _.debounce(this.render.bind(this), 100));
@@ -65,8 +66,8 @@ let ListView = Backbone.View.extend({
 
   render: function () {
     this.$el.empty()
-//    this.$el.append(this.template({source: '..', _iconFor: _iconFor}));
     this.collection.each(this.addSource, this)
+    this._onScroll();
     return this
   },
 
@@ -90,7 +91,25 @@ let ListView = Backbone.View.extend({
 
     if ($a.not('.disabled'))
       this.trigger('activated', ($a.is('.item-parent-dir')) ? '..' : source, {ctrlKey: event.ctrlKey})
-  }
+  },
+
+  _onScroll: function (event) {
+    if (this.$el.prop('scrollHeight') > this.$el.height()) {
+      let atTop = (this.$el.scrollTop() == 0);
+      let atBot = ((this.$el.prop('scrollHeight')
+        - this.$el.scrollTop()
+        - this.$el.height()
+        - Number.parseInt(this.$el.css('padding-top'))
+        - Number.parseInt(this.$el.css('padding-bottom'))) == 0);
+      let boxShadow = [];
+
+      if (!atTop)
+        boxShadow.push('inset 0 10px 10px -10px #B5B5B5');
+      if (!atBot)
+        boxShadow.push('inset 0 -10px 10px -10px #B5B5B5');
+      this.$el.css('box-shadow', boxShadow.join(','));
+    }
+  },
 
 })
 
