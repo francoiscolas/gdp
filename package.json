@@ -19,7 +19,7 @@
     "backbone": "^1.4.0",
     "bulma": "^0.7.5",
     "css-loader": "^3.4.0",
-    "electron": "7.1.6",
+    "electron": "7.2.4",
     "electron-builder": "21.2.0",
     "file-loader": "^5.0.2",
     "jquery": "^3.4.1",
